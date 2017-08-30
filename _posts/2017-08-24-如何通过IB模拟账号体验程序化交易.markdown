@@ -18,7 +18,8 @@ categories: ib
 - IB API for Python
   - [IB 官方 API 文档]( https://interactivebrokers.github.io/tws-api/classIBApi_1_1Contract.html#gsc.tab=0)
   - [IbPy 第三方 Python API](https://github.com/blampe/IbPy)
-    - [教程](https://valiant-falstaff.github.io/IbPy-Getting-Started/)
+    - [入门教程](https://valiant-falstaff.github.io/IbPy-Getting-Started/)
+    - [下单DEMO](https://www.quantstart.com/articles/Using-Python-IBPy-and-the-Interactive-Brokers-API-to-Automate-Trades)
 
 - 其他信息
   - [TWS下载地址](https://www.interactivebrokers.com/en/index.php?f=16040)

@@ -6,4 +6,6 @@ categories: ib
 ---
 流畅的行文，让我夜不能寐！
 
+希望能把它翻译成中文。
+
 [IbPy Tutorial](https://valiant-falstaff.github.io/IbPy-Getting-Started/)
