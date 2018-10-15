@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "如何通过IB模拟账号体验程序化交易"
+title:  "今日参考盈亏该如何计算"
 date:   2017-08-24 12:59:08 +0800
 categories: ib
 ---

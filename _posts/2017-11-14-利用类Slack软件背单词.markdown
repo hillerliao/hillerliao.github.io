@@ -1,4 +1,9 @@
-# 利用类Slack软件背单词
+---
+layout: post
+title:  "利用类 Slack 软件背单词"
+date:   2017-08-30 12:59:08 +0800
+categories: pm
+---
 
 ### 出发点
 
@@ -15,18 +20,23 @@
 ### 最终效果预览
 
 
-
 提醒自己喝水，消息附带一个单词。
 
- ### 方案架构
+### 方案架构
+
 通过云服务器定时往类Slack软件BearyChat发送一条消息。具体如下：
+
 #### 触发器
 
-- 服务器。 购买便宜的vps作为服务器，每个月2.5美元，选择ubuntu系统，方便设置定时任务。
+在服务器上设一个定时任务
 
-- 域名。在万网上购买zhihai.me，便宜，一年十几块钱。没有对比godaddy 一年多少钱。
--  web服务。部署基于Django的mezzanine，省得自己折腾。为了学这个花了不少时间，顺便部署了一个博客。
+- 服务器。 购买便宜的 VPS 作为服务器，每个月 2.5 美元，选择 Ubuntu 系统，方便设置定时任务。
+
+- 域名。在万网上购买 `zhihai.me` ，便宜，一年十几块钱。没有对比godaddy 一年多少钱。
+
+-  WEB 服务。部署基于 Django 的 Mezzanine ，省得自己折腾。为了学这个花了不少时间，顺便部署了一个 [博客](http://zhihai.me) 。
 
 
 #### 接收器
-该BearyChat出场了。在客户端，以BearyChat作为消息接收工具。BearyChat提供了 Ingoing
+
+该 BearyChat 出场了。在客户端，以 BearyChat 作为消息接收工具。BearyChat提供了 Ingoing 这个好用的工具。

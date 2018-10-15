@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "如何将网站的内容发送到微信群"
+date:   2018-10-15 12:45:08 +0800
+categories: pm
+---
+
+### 过程简述
+
+`雪球等 --> rsshub --> inoreader --> ifttt --> web_wechat_api --> 微信`
+
+
+### 过程分述
+
+目前的推送过程是：
+
+- 通过 rsshub 作为数据抓取工具，生成 rss 格式数据；
+- inoreader 订阅多个 rsshub 生成的 rss 数据，形成 rss 组；
+- rss 组自身有又可以额外生成一个新 rss，这个新 rss 包括了多个子 rss ；
+- ifttt 上创建 applet，if  新 rss 更新了，then 通过 webhook 发一条消息到微信群。
+
+最后一步的 webhook 是关键，涉及到打通外部网络与微信群的通路，靠的是一个开源的项目 [web_wechat_api](https://github.com/joeeeeey/web_wechat_api)，它将微信个人号发送消息等接口封装成 web api ，方便外部系统调用。目前我稍微改造了一下，通过 Docker 部署在 vps 上。
