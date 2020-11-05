@@ -37,8 +37,9 @@ categories: 教程
 
 
 最终配置的抽取规则如下：
-
-> <div class="jzyg_lb_nrwz">{*}<h1><a href="{%}" title="{%}"{*}>{*}<p>{%}</p>{*}<p>{%}</p>
+```text
+<div class="jzyg_lb_nrwz">{*}<h1><a href="{%}" title="{%}"{*}>{*}<p>{%}</p>{*}<p>{%}</p>
+```
 
 
 # 设置监控任务
