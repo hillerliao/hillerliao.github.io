@@ -37,9 +37,8 @@ categories: 教程
 
 
 最终配置的抽取规则如下：
-```text
-<div class="jzyg_lb_nrwz">{*}<h1><a href="{%}" title="{%}"{*}>{*}<p>{%}</p>{*}<p>{%}</p>
-```
+
+![image.png](https://cdn.nlark.com/yuque/0/2020/png/147312/1604579741891-1fd39115-3df0-4fe8-bf61-6a016ac6a5b3.png#align=left&display=inline&height=22&margin=%5Bobject%20Object%5D&name=image.png&originHeight=43&originWidth=811&size=4922&status=done&style=none&width=405.5)
 
 
 # 设置监控任务
