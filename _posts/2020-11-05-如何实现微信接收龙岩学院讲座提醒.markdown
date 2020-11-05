@@ -44,7 +44,7 @@ categories: 教程
 
 # 设置监控任务
 利用免费服务 [IFTTT](https://ifttt.com)，一个自动化工具，IFTTT = if this then that ，即，如果符合某个条件则做某件事情。如果没有使用过，则可以参考一些 IFTTT 教程，如 [触发你的智能生活：IFTTT 入门](https://sspai.com/post/25270)。
-触发器(this) 我们选择  RSS，动作 (then) 我们选择 Webhook，具体步骤略过，最终配置如下图。
+触发器(this) 我们选择  RSS，动作 (then) 我们选择 Webhook，具体步骤略过，最终配置如下图。 
 
 
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/147312/1604540219734-4dc16462-b9fe-495f-a021-56acd2111157.png#align=left&display=inline&height=504&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1007&originWidth=492&size=68906&status=done&style=shadow&width=246)
