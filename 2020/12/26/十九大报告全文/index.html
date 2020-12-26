@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>十九大报告全文 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="同志们： 现在，我代表第十八届中央委员会向大会作报告。 中国共产党第十九次全国代表大会，是在全面建成小康社会决胜阶段、中国特色社会主义进入新时代的关键时期召开的一次十分重要的大会。 大会的主题是：不忘初心，牢记使命，高举中国特色社会主义伟大旗帜，决胜全面建成小康社会，夺取新时代中国特色社会主义伟大胜利，为实现中华民族伟大复兴的中国梦不懈奋斗。 不忘初心，方得始终。中国共产党人的初心和使命，就是为中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="十九大报告全文">
+<meta property="og:url" content="http://example.com/2020/12/26/%E5%8D%81%E4%B9%9D%E5%A4%A7%E6%8A%A5%E5%91%8A%E5%85%A8%E6%96%87/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="同志们： 现在，我代表第十八届中央委员会向大会作报告。 中国共产党第十九次全国代表大会，是在全面建成小康社会决胜阶段、中国特色社会主义进入新时代的关键时期召开的一次十分重要的大会。 大会的主题是：不忘初心，牢记使命，高举中国特色社会主义伟大旗帜，决胜全面建成小康社会，夺取新时代中国特色社会主义伟大胜利，为实现中华民族伟大复兴的中国梦不懈奋斗。 不忘初心，方得始终。中国共产党人的初心和使命，就是为中">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-26T11:58:17.000Z">
+<meta property="article:modified_time" content="2020-12-26T13:55:43.416Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -69,302 +73,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-2020-11-05-如何实现微信接收龙岩学院讲座提醒" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/26/2020-11-05-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E6%8E%A5%E6%94%B6%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92/" class="article-date">
-  <time class="dt-published" datetime="2020-12-26T11:58:42.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/26/2020-11-05-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E6%8E%A5%E6%94%B6%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92/">2020-11-05-如何实现微信接收龙岩学院讲座提醒</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="layout-posttitle-“如何实现微信接收龙岩学院讲座提醒”"><a href="#layout-posttitle-“如何实现微信接收龙岩学院讲座提醒”" class="headerlink" title="layout: posttitle:  “如何实现微信接收龙岩学院讲座提醒”"></a>layout: posttitle:  “如何实现微信接收龙岩学院讲座提醒”</h2><p>date:   2020-11-5 10:11:42 +0800<br>categories: 教程</p>
-<h1 id="如何实现微信接收龙岩学院讲座提醒"><a href="#如何实现微信接收龙岩学院讲座提醒" class="headerlink" title="如何实现微信接收龙岩学院讲座提醒"></a>如何实现微信接收龙岩学院讲座提醒</h1><h1 id="产品概述"><a href="#产品概述" class="headerlink" title="产品概述"></a>产品概述</h1><p>微信扫描二维码码关注公众号「新消息服务」。方便用户跟踪龙岩学院官网发布的讲座动态，无人值守，有新讲座时自动推送到微信。</p>
-<h1 id="实现步骤简述"><a href="#实现步骤简述" class="headerlink" title="实现步骤简述"></a>实现步骤简述</h1><p>步骤说起来很简单，就两步：抓取数据、推送消息。</p>
-<ul>
-<li>1、抓取龙岩学完首页的讲座信息；</li>
-<li>2、设置自动监控任务，检查是否有抓取到新内容，如果有，则将新内容推送到微信。</li>
-</ul>
-<p>如果要自己写代码、买服务器，成本太高，本文介绍一种 no code 的方案，具体用到三个工具： Feed43、IFTTT、WxPusher。</p>
-<ul>
-<li>抓取信息采用 <a target="_blank" rel="noopener" href="https://feed43.com/">Feed43</a>，免费烧制静态网页 RSS 的工具，烧制 RSS 相当于将非标准化格式的数据转换成标准化的通用格式，方便在后续步骤中使用。；</li>
-<li>自动监控任务采用  <a target="_blank" rel="noopener" href="https://ifttt.com/">IFTTT</a>，免费的自动化工具，自动监控 RSS 数据源是否有新内容；</li>
-<li>消息提醒采用 <a target="_blank" rel="noopener" href="https://wxpusher.zjiecode.com/">WxPusher</a>，免费的微信推送服务。</li>
-</ul>
-<blockquote>
-<p>Feed43 → IFTTT → WxPusher</p>
-</blockquote>
-<p>下面介绍主要步骤。</p>
-<h1 id="生成-RSS-地址"><a href="#生成-RSS-地址" class="headerlink" title="生成 RSS 地址"></a>生成 RSS 地址</h1><p>要利用免费烧制静态网页 RSS 的工具 Feed43 ，关键点在于找到所需数据在页面 HTML 源代码中的位置，需要一点 HTML 和 CSS 的知识。操作过程可参考 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26511654">RSS 入门篇：FEED43&amp;FeedEx-为静态网页定制 RSS 源 - 知乎</a></p>
-<p>最终配置的抽取规则如下：</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/147312/1604579741891-1fd39115-3df0-4fe8-bf61-6a016ac6a5b3.png#align=left&display=inline&height=22&margin=%5Bobject%20Object%5D&name=image.png&originHeight=43&originWidth=811&size=4922&status=done&style=none&width=405.5#alt=image.png" alt="image.png"></p>
-<h1 id="设置监控任务"><a href="#设置监控任务" class="headerlink" title="设置监控任务"></a>设置监控任务</h1><p>利用免费服务 <a target="_blank" rel="noopener" href="https://ifttt.com/">IFTTT</a>，一个自动化工具，IFTTT = if this then that ，即，如果符合某个条件则做某件事情。如果没有使用过，则可以参考一些 IFTTT 教程，如 <a target="_blank" rel="noopener" href="https://sspai.com/post/25270">触发你的智能生活：IFTTT 入门</a>。</p>
-<p>触发器(this) 我们选择  RSS，动作 (then) 我们选择 Webhook，具体步骤略过，最终配置如下图。</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/png/147312/1604540219734-4dc16462-b9fe-495f-a021-56acd2111157.png#align=left&display=inline&height=504&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1007&originWidth=492&size=68906&status=done&style=shadow&width=246#alt=image.png" alt="image.png"></p>
-<h1 id="获得微信提醒"><a href="#获得微信提醒" class="headerlink" title="获得微信提醒"></a>获得微信提醒</h1><p>要通过正常途径持续推送消息到微信，只有一条路，那就是服务号模板消息。开通服务号需要有企业资质，而注册一家企业的成本非常高。不用急，幸好已经有人注册了服务号并开发出一条消息通道供其他人免费使用，其产品的名字叫做「WxPusher」。官方是这么介绍的：</p>
-<blockquote>
-<p>WxPusher (微信推送服务)是一个使用微信公众号作为通道的，实时信息推送平台，你可以通过调用 API 的方式，把信息推送到微信上，无需安装额外的软件，即可做到信息实时通知。 你可以使用 WxPusher 来做服务器报警通知、抢课通知、抢票通知，信息更新提示等。</p>
-</blockquote>
-<p>我们在其上创建一个应用「消息来了」，然后创建一个主题「龙院讲座」，获得订阅二维码。将二维码分享给朋友，对方只需要扫一扫，即可实现订阅。</p>
-<p><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/147312/1604542059523-bbb8bdcc-f45f-4d8b-9c78-847fe87afb52.jpeg#align=left&display=inline&height=395&margin=%5Bobject%20Object%5D&name=%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92-%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg&originHeight=1304&originWidth=990&size=69543&status=done&style=stroke&width=300#alt=%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92-%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" alt="龙岩学院讲座提醒-二维码.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/2020-11-05-%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%BE%AE%E4%BF%A1%E6%8E%A5%E6%94%B6%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92/" data-id="ckj5rqbve000bwovq1t8rb43d" data-title="2020-11-05-如何实现微信接收龙岩学院讲座提醒" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2020-10-22-天猫精灵智能音箱新闻收听体验报告" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/26/2020-10-22-%E5%A4%A9%E7%8C%AB%E7%B2%BE%E7%81%B5%E6%99%BA%E8%83%BD%E9%9F%B3%E7%AE%B1%E6%96%B0%E9%97%BB%E6%94%B6%E5%90%AC%E4%BD%93%E9%AA%8C%E6%8A%A5%E5%91%8A/" class="article-date">
-  <time class="dt-published" datetime="2020-12-26T11:58:37.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/26/2020-10-22-%E5%A4%A9%E7%8C%AB%E7%B2%BE%E7%81%B5%E6%99%BA%E8%83%BD%E9%9F%B3%E7%AE%B1%E6%96%B0%E9%97%BB%E6%94%B6%E5%90%AC%E4%BD%93%E9%AA%8C%E6%8A%A5%E5%91%8A/">2020-10-22-天猫精灵智能音箱新闻收听体验报告</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="layout-posttitle-“天猫精灵智能音箱新闻收听体验报告”"><a href="#layout-posttitle-“天猫精灵智能音箱新闻收听体验报告”" class="headerlink" title="layout: posttitle:  “天猫精灵智能音箱新闻收听体验报告”"></a>layout: posttitle:  “天猫精灵智能音箱新闻收听体验报告”</h2><p>date:   2020-10-22 10:43:14 +0800<br>categories: 产品体验</p>
-<p>我主要用天猫精灵听新闻，基于这个需求，希望作出以下改进：</p>
-<h3 id="一、优化体验"><a href="#一、优化体验" class="headerlink" title="一、优化体验"></a>一、优化体验</h3><p>目前天猫精灵的资讯由乐天头条提供，这是什么机构？</p>
-<p>1、记住用户偏好，实现智能推荐</p>
-<p>记住用户偏好，举例：如果用户每天都请求 日本新闻、福建新闻、新西兰新闻，那么可以多推荐这类新闻给该用户，而不仅仅是推荐用户所在地的本地新闻。</p>
-<p>2、资讯排重</p>
-<p>出现资讯重复播放的问题，能否做到完整播放过的资讯，别再播放了。</p>
-<p>3、更精准地记住播放位置</p>
-<p>相同节目，无法记住上一次播放的位置，比如连载评书三国演义，上一次听到第二章的第 15 分 35 秒，再次播放时只会从第二章的开头播放，无法从 15 分 35 秒处继续播放。</p>
-<h3 id="二、提供更多资源"><a href="#二、提供更多资源" class="headerlink" title="二、提供更多资源"></a>二、提供更多资源</h3><p>特色爆款节目无法找到，如 新闻联播每日音频回放。</p>
-<p>缺少英语新闻。</p>
-<p>可能的丰富音频资源的办法：</p>
-<p>1、直接播放第三方音频</p>
-<p>希望能做到在天猫精灵 APP 内通过 webview 打开第三方网页，网页播放音频时，能选择将天猫精灵音箱作为外放。比如百度网盘里的音频，能将智能音箱作为外放。</p>
-<p>2、搭建内容开放平台，PGC</p>
-<p>一些不错的公众号文章，会提供音频版，但散落在微信公众平台，并不能为天猫精灵所用。天猫精灵能否与自媒体合作，给他们方便的工具，将内容提交到开放平台。如 财经早餐、人民日报、十点读书等，在喜马拉雅更新不勤快，但公众号更新很勤快，导致天猫精灵无法使用。</p>
-<p>3、让用户分享音频，UGC</p>
-<p>许多内容都是文字的，能否通过用户生产音频？比如用户可以念新闻，选择是否分享给其他用户。</p>
-<p>当然我知道这个体验反馈估计不会引起天猫精灵的注意，因为资讯是第三方的乐天头条提供的。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/2020-10-22-%E5%A4%A9%E7%8C%AB%E7%B2%BE%E7%81%B5%E6%99%BA%E8%83%BD%E9%9F%B3%E7%AE%B1%E6%96%B0%E9%97%BB%E6%94%B6%E5%90%AC%E4%BD%93%E9%AA%8C%E6%8A%A5%E5%91%8A/" data-id="ckj5rqbvc0009wovq1au4axnk" data-title="2020-10-22-天猫精灵智能音箱新闻收听体验报告" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2019-02-22-我理解的「离钱近」" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/26/2019-02-22-%E6%88%91%E7%90%86%E8%A7%A3%E7%9A%84%E3%80%8C%E7%A6%BB%E9%92%B1%E8%BF%91%E3%80%8D/" class="article-date">
-  <time class="dt-published" datetime="2020-12-26T11:58:32.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/26/2019-02-22-%E6%88%91%E7%90%86%E8%A7%A3%E7%9A%84%E3%80%8C%E7%A6%BB%E9%92%B1%E8%BF%91%E3%80%8D/">2019-02-22-我理解的「离钱近」</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="layout-posttitle-“我理解的「离钱近」”"><a href="#layout-posttitle-“我理解的「离钱近」”" class="headerlink" title="layout: posttitle:  “我理解的「离钱近」”"></a>layout: posttitle:  “我理解的「离钱近」”</h2><p>date:   2019-02-22 01:23:54 +0800<br>categories: 需求分析</p>
-<p>我对于「离钱近」的理解，其中一类场景的关键词是「账户」，比如银行等借贷平台、公募基金等资产管理公司。用户在这些公司创立账户，并把钱放进去，公司能动用这些钱，从中赚取价差、收取管理费或收益提成，非常爽。只要用户不走，就能持续收到钱。这类场景往往是牌照保护。</p>
-<p>另一类场景的关键词是「交易」，比如淘宝上每天在进行各种交易，一手交钱一手交货。又比如外卖，每天发生上千万量级的交易，覆盖人群大，还高频，这也算是离钱近。</p>
-<p>相对来说，媒体行业大家觉得离钱远，是因为媒体免费向用户提供内容，靠卖广告或软文收钱，不直接向用户收钱。知识付费稍微不同一点，直接像用户卖内容，一手交钱一手交货，离钱近。</p>
-<p>以上这些都是建立在用户有需求的基础上，而产品服务提供者比同行更好地提供了用户需要的东西，就收到钱了。或者东西差不多，但效率更高，也行。</p>
-<p>再看我们都了解的金融信息服务行业，它为金融行业从业者或投资者提供信息服务。如果是万得卖终端，一手交钱一手交货，属于交易场景，离钱近。至于后来者怎么切入，是另外一个问题。</p>
-<p>金融信息服务业相比于借贷、资产管理、投行等我们通常理解的金融行业，它没有账户，没有资金沉淀，离钱又远一些了。</p>
-<p>再看区块链行业，离交易近的环节，典型如一级市场投资、二级市场的交易所，是个好模式，尤其是交易所，等于是券商+交易所二合一。但目前看，给后来者似乎没什么机会了。</p>
-<p>基于区块链的项目，愿景宏大，但吹牛居多，虚无缥缈。有些概念甚至违背经济学原理。</p>
-<p>我最近几天在思考分布式商业有什么逻辑缺陷，我觉得它可能违背了分工提高效率的经济学原理。比如出行，打车的用户最关心的是怎么以合适的价格高效地找到出行服务提供者，除此之外，应该把精力花在他擅长的主业上，没必要去为出行服务平台拉用户，因为这样的机会成本很大。拉用户的事情，雇佣管理团队专职做就行了，专业的人才能做得更好。另外，有了基于通证的激励机制，就能解决管理层的道德风险问题吗？不见得，管理层该揩油的还是会揩油。</p>
-<p>此外，如果是早期项目，呈现的是一级市场的投资场景，分布式商业的模式过早地让普通个人投资者参与其中并不适合，风险太高，否则传统金融领域就没必要设定私募门槛了。机构投资者可以同时投资多个项目，如果某个项目黄了，对机构整体的收益风险并不大，但对个人投资者而言，由于资金实力有限，无法通过同时投资多个项目而分散风险，在一个项目上踩雷，血本无归，在投资上恐怕难以再翻身了。</p>
-<p>区块链是个好技术，在许多地方有它的价值，金融等行业也在尝试使用。但就像 AI ，没有场景、没有数据，一切都白搭，顶多为掌握了场景的甲方打工。庞大如百度，自动驾驶技术也得和车企合作。</p>
-<p>所以，不一定要有「账户」才离钱近，有交易场景，用户愿意买单，就是离钱近。当然，如果交易基数大、频次高、客单价高，就更好了。</p>
-<p>再具体到你的技术团队本身的优势，目前做的事情完全体现不出价值，机会成本太高了。好好挖掘实际需求、能利用自身优势做的事情，可能是更好的选择。可以暂时不全身心做主战场的事情，但可以花一部分精力去做主战场的事情，就好比</p>
-<p>Tushare 团队，兼职做、免费用，虽然暂时看不出什么大的前景，但慢慢积累用户，做出口碑，未来他们也许就可以拿到投资，全身心投入。现在已经开始搞积分了，token 的感觉，哈哈。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/2019-02-22-%E6%88%91%E7%90%86%E8%A7%A3%E7%9A%84%E3%80%8C%E7%A6%BB%E9%92%B1%E8%BF%91%E3%80%8D/" data-id="ckj5rqbvd000awovq970j0glr" data-title="2019-02-22-我理解的「离钱近」" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2019-02-13-旧电脑安装 Ubuntu 折腾记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/26/2019-02-13-%E6%97%A7%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%20Ubuntu%20%E6%8A%98%E8%85%BE%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2020-12-26T11:58:27.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/26/2019-02-13-%E6%97%A7%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%20Ubuntu%20%E6%8A%98%E8%85%BE%E8%AE%B0/">2019-02-13-旧电脑安装 Ubuntu 折腾记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="layout-posttitle-“旧电脑安装-Ubuntu-折腾记”"><a href="#layout-posttitle-“旧电脑安装-Ubuntu-折腾记”" class="headerlink" title="layout: posttitle:  “旧电脑安装 Ubuntu 折腾记”"></a>layout: posttitle:  “旧电脑安装 Ubuntu 折腾记”</h2><p>date:   2019-02-13 09:27:21 +0800<br>categories: IT</p>
-<p>家里只有一台 2012 年的 Mac 电脑，但常被被娘子占用，我自己如果没有带公司电脑回家，经常无电脑可用。书桌底下柜子里还躺着一台十多年前的惠普电脑，就想利用起来，不过安装的是 Windows XP 系统，作为编程开发环境不方便。遂打算改装系统，换成 Ubuntu，好专心用来码代码，避免出现 Windows 上各种奇怪的 Bug。</p>
-<p>说起用 Windows 环境写代码这事儿来。就拿几个月前的一次经历来说吧。当时在 Windows 环境下修改了一个 Python 脚本，本地测试一切正常，但更新到 Ubuntu 服务器之后脚本无法正常运行，费好大劲才定位到问题所在，原来是 file format 从 unix 变成 dos 了。</p>
-<p>回归正题，那就开始折腾吧。没想到折腾了三个晚上才搞定，中途最大的麻烦就是无线网卡驱动的安装问题。 我的老古董接网线也无法上网，只能通过离线安装，无形中增加了难度。找半天幸好找到了离线安装的办法。</p>
-<p>主要过程如下：</p>
-<p>安装 Ubuntu 14，64 位，可以安装无线网卡驱动，但运行太慢，操作很卡。有人建议那么老的电脑别安装 64 位系统；</p>
-<p>改成 Ubuntu 14，32 位，无法安装无线网卡驱动；</p>
-<p>改成 Ubuntu 16，32 位，无法安装无线网卡驱动；</p>
-<p>改成 LUbuntu 18, 32 位，无法正常启动，黑屏，也不报啥错误信息。而且安装过程也不够傻瓜，得自己配置分区，对我来说折腾过多次依然害怕；</p>
-<p>改成 Puppy Linux，竟然无需自己折腾无线网卡驱动，能联网！问题是无法正常显示中文，而且界面也奇丑无比；</p>
-<p>改成 Ubuntu 12，32 位，成功安装无线网卡驱动。</p>
-<p>按照提示 update 系统，结果所有界面都出现这样的问题，找不到窗口的菜单栏，无法关闭，终端也无法敲入命令，废了。</p>
-<p>重新安装 Ubuntu 12，32 位，回退到更新前的状态，重新安装驱动，重复做相同的事情，时间就这样浪费了。</p>
-<p>总算可以松一口气，老古董能正常使用了。希望以后别再乱升级，能正常运行就不错了，保证偶尔能应急用一下。</p>
-<p>折腾中途曾经想放弃，但不能让电脑正常使用让我很不甘心，最终还是坚持下来了。</p>
-<p>题外话，每天都要使用的东西，高频，应该买好用的，避免折腾，因为时间才是最贵的，应该把时间用来做更有价值的事情，而不是用在重复造轮子上。</p>
-<p>参考资料：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://mirrors.163.com/ubuntu-releases/12.04.5/">Ubuntu 12 系统 iso 文件</a></li>
-<li><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/ce4366494448fd3773afd306.html">利用 Rufus 制作 U 盘启动盘</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/ifmvo/article/details/54023628">Ubuntu 离线安装网卡驱动</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.cnbeta.com/articles/tech/417919.htm">7 款适用老旧设备并对初学者非常友好的轻量级 Linux 发行版</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/2019-02-13-%E6%97%A7%E7%94%B5%E8%84%91%E5%AE%89%E8%A3%85%20Ubuntu%20%E6%8A%98%E8%85%BE%E8%AE%B0/" data-id="ckj5rqbv60008wovqdrzdf1kn" data-title="2019-02-13-旧电脑安装 Ubuntu 折腾记" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2018-10-15-如何将网站的内容发送到微信群" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/26/2018-10-15-%E5%A6%82%E4%BD%95%E5%B0%86%E7%BD%91%E7%AB%99%E7%9A%84%E5%86%85%E5%AE%B9%E5%8F%91%E9%80%81%E5%88%B0%E5%BE%AE%E4%BF%A1%E7%BE%A4/" class="article-date">
-  <time class="dt-published" datetime="2020-12-26T11:58:22.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/26/2018-10-15-%E5%A6%82%E4%BD%95%E5%B0%86%E7%BD%91%E7%AB%99%E7%9A%84%E5%86%85%E5%AE%B9%E5%8F%91%E9%80%81%E5%88%B0%E5%BE%AE%E4%BF%A1%E7%BE%A4/">2018-10-15-如何将网站的内容发送到微信群</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="layout-posttitle-“如何将网站的内容发送到微信群”"><a href="#layout-posttitle-“如何将网站的内容发送到微信群”" class="headerlink" title="layout: posttitle:  “如何将网站的内容发送到微信群”"></a>layout: posttitle:  “如何将网站的内容发送到微信群”</h2><p>date:   2018-10-15 12:45:08 +0800<br>categories: pm</p>
-<h3 id="过程简述"><a href="#过程简述" class="headerlink" title="过程简述"></a>过程简述</h3><p><code>雪球等 --&gt; rsshub_rss / Huginn_rss --&gt; inoreader_rss聚合 --&gt; web_wechat_api --&gt; 微信</code></p>
-<h3 id="过程分述"><a href="#过程分述" class="headerlink" title="过程分述"></a>过程分述</h3><p>目前的推送过程是：</p>
-<ul>
-<li>通过开源的 Rsshub / Huginn 作为数据抓取工具，生成 rss 格式数据；</li>
-<li>inoreader 订阅多个 rsshub 生成的 rss 数据，形成 rss 组；</li>
-<li>rss 组自身有又可以额外生成一个新 rss，这个新 rss 包括了多个子 rss ；</li>
-<li>VPS 上创建定时任务检查 rss 更新，then 通过 webhook 发一条消息到微信群。</li>
-</ul>
-<p>最后一步的 webhook 是关键，涉及到打通外部网络与微信群的通路，靠的是一个开源的项目 <a target="_blank" rel="noopener" href="https://github.com/joeeeeey/web_wechat_api">web_wechat_api</a>，它将微信个人号发送消息等接口封装成 web api ，方便外部系统调用。目前我稍微改造了一下，通过 Docker 部署在 VPS 上，省去部署程序的痛苦。</p>
-<p>其次，这一步可能会漏消息，没搞明白什么原因。目前的解决方案是，如果发送结果为失败，则继续尝试重新发送。</p>
-<p>再者，基于个人微信号搭建的微信机器人，不太稳定，为此，我每隔一个小时给指定的小群发送一个托福单词，如果发送间断，说明通道服务挂了，需要登录 VPS 及时重启。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/2018-10-15-%E5%A6%82%E4%BD%95%E5%B0%86%E7%BD%91%E7%AB%99%E7%9A%84%E5%86%85%E5%AE%B9%E5%8F%91%E9%80%81%E5%88%B0%E5%BE%AE%E4%BF%A1%E7%BE%A4/" data-id="ckj5rqbv50006wovqfppr507d" data-title="2018-10-15-如何将网站的内容发送到微信群" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-十九大报告全文" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-十九大报告全文" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2020/12/26/%E5%8D%81%E4%B9%9D%E5%A4%A7%E6%8A%A5%E5%91%8A%E5%85%A8%E6%96%87/" class="article-date">
   <time class="dt-published" datetime="2020-12-26T11:58:17.000Z" itemprop="datePublished">2020-12-26</time>
@@ -377,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/26/%E5%8D%81%E4%B9%9D%E5%A4%A7%E6%8A%A5%E5%91%8A%E5%85%A8%E6%96%87/">十九大报告全文</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      十九大报告全文
     </h1>
   
 
@@ -567,262 +276,29 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-2017-11-14-利用类Slack软件背单词" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/26/2017-11-14-%E5%88%A9%E7%94%A8%E7%B1%BBSlack%E8%BD%AF%E4%BB%B6%E8%83%8C%E5%8D%95%E8%AF%8D/" class="article-date">
-  <time class="dt-published" datetime="2020-12-26T11:58:12.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2020/12/26/2018-10-15-%E5%A6%82%E4%BD%95%E5%B0%86%E7%BD%91%E7%AB%99%E7%9A%84%E5%86%85%E5%AE%B9%E5%8F%91%E9%80%81%E5%88%B0%E5%BE%AE%E4%BF%A1%E7%BE%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/26/2017-11-14-%E5%88%A9%E7%94%A8%E7%B1%BBSlack%E8%BD%AF%E4%BB%B6%E8%83%8C%E5%8D%95%E8%AF%8D/">2017-11-14-利用类Slack软件背单词</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="layout-posttitle-“利用类-Slack-软件背单词”"><a href="#layout-posttitle-“利用类-Slack-软件背单词”" class="headerlink" title="layout: posttitle:  “利用类 Slack 软件背单词”"></a>layout: posttitle:  “利用类 Slack 软件背单词”</h2><p>date:   2017-08-30 12:59:08 +0800<br>categories: pm</p>
-<h3 id="出发点"><a href="#出发点" class="headerlink" title="出发点"></a>出发点</h3><p>我认为英语单词需要天天背诵，重复重复再重复，是不是在眼前露个脸，加深记忆。</p>
-<h3 id="怎么做到？"><a href="#怎么做到？" class="headerlink" title="怎么做到？"></a>怎么做到？</h3><p>但是，问题来了，每天工作太忙，又有智能手机占用太多时间，哪有功夫去背单词？</p>
-<p>我的答案是：利用零碎时间。</p>
-<p>怎么利用？利用工具，通过定时发条消息到手机上的方式来实现。</p>
-<h3 id="最终效果预览"><a href="#最终效果预览" class="headerlink" title="最终效果预览"></a>最终效果预览</h3><p>提醒自己喝水，消息附带一个单词。</p>
-<h3 id="方案架构"><a href="#方案架构" class="headerlink" title="方案架构"></a>方案架构</h3><p>通过云服务器定时往类 Slack 软件 BearyChat 发送一条消息。具体如下：</p>
-<h4 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h4><p>在服务器上设一个定时任务</p>
-<ul>
-<li><p>服务器。 购买便宜的 VPS 作为服务器，每个月 2.5 美元，选择 Ubuntu 系统，方便设置定时任务。</p>
-</li>
-<li><p>域名。在万网上购买 <code>zhihai.me</code> ，便宜，一年十几块钱。没有对比 godaddy 一年多少钱。</p>
-</li>
-<li><p>WEB 服务。部署基于 Django 的 Mezzanine ，省得自己折腾。为了学这个花了不少时间，顺便部署了一个 <a target="_blank" rel="noopener" href="http://zhihai.me/">博客</a> 。</p>
-</li>
-</ul>
-<h4 id="接收器"><a href="#接收器" class="headerlink" title="接收器"></a>接收器</h4><p>该 BearyChat 出场了。在客户端，以 BearyChat 作为消息接收工具。BearyChat 提供了 Ingoing 这个好用的工具。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/2017-11-14-%E5%88%A9%E7%94%A8%E7%B1%BBSlack%E8%BD%AF%E4%BB%B6%E8%83%8C%E5%8D%95%E8%AF%8D/" data-id="ckj5rqbv40005wovq7rg7cqhh" data-title="2017-11-14-利用类Slack软件背单词" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2017-11-3-今日参考盈亏该如何计算" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/26/2017-11-3-%E4%BB%8A%E6%97%A5%E5%8F%82%E8%80%83%E7%9B%88%E4%BA%8F%E8%AF%A5%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97/" class="article-date">
-  <time class="dt-published" datetime="2020-12-26T11:58:07.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          2018-10-15-如何将网站的内容发送到微信群
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/26/2017-11-3-%E4%BB%8A%E6%97%A5%E5%8F%82%E8%80%83%E7%9B%88%E4%BA%8F%E8%AF%A5%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97/">2017-11-3-今日参考盈亏该如何计算</a>
-    </h1>
   
+    <a href="/2020/12/26/2017-11-14-%E5%88%A9%E7%94%A8%E7%B1%BBSlack%E8%BD%AF%E4%BB%B6%E8%83%8C%E5%8D%95%E8%AF%8D/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2017-11-14-利用类Slack软件背单词</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="layout-posttitle-“今日参考盈亏该如何计算”"><a href="#layout-posttitle-“今日参考盈亏该如何计算”" class="headerlink" title="layout: posttitle:  “今日参考盈亏该如何计算”"></a>layout: posttitle:  “今日参考盈亏该如何计算”</h2><p>date:   2017-08-24 12:59:08 +0800<br>categories: ib</p>
-<h2 id="所需工具"><a href="#所需工具" class="headerlink" title="所需工具"></a>所需工具</h2><p>今日参考盈亏该如何计算</p>
-<ol>
-<li>算法一：</li>
-</ol>
-<p>今日参考盈亏额 ＝</p>
-<ul>
-<li>（现价-昨日收盘价格）* (当前持股量-今日买入数量) //存量部分</li>
-<li>买入数量 * 现价 - 买入发生金额 //增量部分：买入</li>
-<li>卖出金额 - 昨收价 * 卖出数量 // 卖出</li>
-</ul>
-<ol>
-<li>算法二：</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/2017-11-3-%E4%BB%8A%E6%97%A5%E5%8F%82%E8%80%83%E7%9B%88%E4%BA%8F%E8%AF%A5%E5%A6%82%E4%BD%95%E8%AE%A1%E7%AE%97/" data-id="ckj5rqbv30004wovq5bqlhaxp" data-title="2017-11-3-今日参考盈亏该如何计算" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-
-  
-    <article id="post-2017-9-1-开通工银亚洲账户的经历" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/26/2017-9-1-%E5%BC%80%E9%80%9A%E5%B7%A5%E9%93%B6%E4%BA%9A%E6%B4%B2%E8%B4%A6%E6%88%B7%E7%9A%84%E7%BB%8F%E5%8E%86/" class="article-date">
-  <time class="dt-published" datetime="2020-12-26T11:58:02.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/26/2017-9-1-%E5%BC%80%E9%80%9A%E5%B7%A5%E9%93%B6%E4%BA%9A%E6%B4%B2%E8%B4%A6%E6%88%B7%E7%9A%84%E7%BB%8F%E5%8E%86/">2017-9-1-开通工银亚洲账户的经历</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="layout-posttitle-“开通工银亚洲账户的经历”"><a href="#layout-posttitle-“开通工银亚洲账户的经历”" class="headerlink" title="layout: posttitle:  “开通工银亚洲账户的经历”"></a>layout: posttitle:  “开通工银亚洲账户的经历”</h2><p>date:   2017-9-1 15:26:10 +0800<br>categories: ib</p>
-<p>富途证券通过支付宝上银汇款入金被拒。顺便想到出金问题。富途证券建议用境外银行卡，从境外卡汇款到境内同名卡。因为境外机构账户往境内账号汇款容易失败，而个人同名卡之间汇款成功率高。</p>
-<p>该开通什么银行的账户？看到帖子《<a target="_blank" rel="noopener" href="https://xueqiu.com/4043855103/75461122">吐血整理！内地办理香港银行卡最强攻略！</a>》</p>
-<p>联系招行信用卡客服索要最近三个月的纸质账单，收件地址为我的住所地址。这个用来证明居住地址的。不过后来才知道有办法不需要这个材料。</p>
-<p>打开工银亚洲网站，线上填写开户申请资料，打印申请表，确认可以线下见证的营业厅。</p>
-<p>拿着用公司打印机彩色打印的工银亚洲开户申请表，找附近支持工银亚洲线下见证的工行北京惠新支行。还没到银行开门我就已经在门口等候了。到了营业厅问询台，工作人员却告知办理工银亚洲线下见证的预约排队已经排到 2018 年 11 月！如果需要，我可以先做个预约，什么时候轮到我，就等电话通知吧？我说等明年 11 月，我都可能已经移民火星了。</p>
-<p>十分气愤，我反复质疑怎么可能要那么久，大声疾呼“不科学！让我预约是没有问题的，但要等一年多不科学。把排队名单给我看，不然我怎么相信你真的需要这么久？！”没有预约觉得理亏，我退一步：当天如果有人预约了没来，把这个空缺让给我，让我办理，不能让我那么辛苦专门请假白来一趟。必须告诉我今天是否有预约者无法前来办理。</p>
-<p>工作人员还算客气，给我去里面的办公室查了，过了一阵子，回来跟我说当天真的没有，都会来办理，第二天有人不来，我可以早点到，找工作人员要一个号，给我办理。我收行，病赔礼道歉，我态度不好，过于着急云云，并告诉她我开户的真实目的是投资境外股市。她很认真地指导我把能先填写签字的表格先填好，签名，除了日期留着办理当天再填写。相比线上工银亚洲公开的填写指引，她告诉我几个重要的修改：居住地址可以选择和身份证地址一样，如此一来就无需住址证明了；开户用途不要勾选发工资之类的，少填写为好，只需勾选两个，具体哪两个我已经忘记了。这两个地方真是潜规则呀，不去现场还不容易知道，害得我事先傻傻地找招行信用卡客服要最近三个月的纸质账单。</p>
-<p>离开银行回公司上班的路上，我顺便打电话咨询工商银行北辰支行，接电话的人告诉我，不支持护照办理，必须是签注有效期在三个月内的港澳台通行证才可以办理。预约队伍也排到了 2018 年的 7 月份。</p>
-<p>第二天一大早，带着已经准备好的材料再次前往工商银行惠新支行。40 分钟左右就办好了，给我一个保密信函和一个电子密码器。工作人员说我这次线下见证真是快。我说多亏了头一天她的同事亲自指导，少走了弯路。无需上传住址证明，确实让办理流程加快了不少。</p>
-<p>2017-08-30：工银亚洲来电话和我确认个人信息、收件地址等。提醒我注意汇入资金激活账户。</p>
-<p>2017 年 9 月 1 日，短信通知：<em>【工银亚洲】您的账户及银行服务已开通，请存入同名存款激活相关账户及银行服务。账户激活前一概拒纳收取任何非同名存款。</em></p>
-<p>对了，此时我该如何存款呢？账号在哪里？一会儿找客服确认。</p>
-<p>先分享到这里，若有错别字我再改。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/2017-9-1-%E5%BC%80%E9%80%9A%E5%B7%A5%E9%93%B6%E4%BA%9A%E6%B4%B2%E8%B4%A6%E6%88%B7%E7%9A%84%E7%BB%8F%E5%8E%86/" data-id="ckj5rqbv50007wovq4enh9z7z" data-title="2017-9-1-开通工银亚洲账户的经历" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-2017-08-30-产品设计之列表设计要点" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/26/2017-08-30-%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%88%97%E8%A1%A8%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9/" class="article-date">
-  <time class="dt-published" datetime="2020-12-26T11:57:57.000Z" itemprop="datePublished">2020-12-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/26/2017-08-30-%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%88%97%E8%A1%A8%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9/">2017-08-30-产品设计之列表设计要点</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <hr>
-<h2 id="layout-posttitle-“产品设计总结：列表类界面”"><a href="#layout-posttitle-“产品设计总结：列表类界面”" class="headerlink" title="layout: posttitle:  “产品设计总结：列表类界面”"></a>layout: posttitle:  “产品设计总结：列表类界面”</h2><p>date:   2017-08-30 12:59:08 +0800<br>categories: pm</p>
-<p>以交易记录列表为例，需要考虑一下几个地方：</p>
-<ul>
-<li>访问授权。</li>
-</ul>
-<p>是否需要登录才能访问。</p>
-<ul>
-<li>初始状态。</li>
-</ul>
-<p>为空时界面显示文案“该时段暂无记录”。</p>
-<ul>
-<li>翻页。</li>
-</ul>
-<p>每页显示 30 条记录。</p>
-<ul>
-<li><p>排序。</p>
-<ul>
-<li>按成交时间倒序；</li>
-<li>切换排序，是否可以按其他字段排序，正序与倒序。</li>
-</ul>
-</li>
-<li><p>刷新。</p>
-<ul>
-<li>打开时刷新一次；</li>
-<li>3s 自动刷新一次；</li>
-<li>下拉刷新。</li>
-</ul>
-</li>
-<li><p>缓存。</p>
-</li>
-</ul>
-<p>客户端是否提供缓存，以提升体验，避免等待请求时页面为空。</p>
-<ul>
-<li>时间范围。</li>
-</ul>
-<p>默认显示当月的记录，可选择其他月份。</p>
-<ul>
-<li>显示字段。</li>
-</ul>
-<p>每条记录显示：股票名称、股票代码、市场、交易方向、成交价格、成交数量、成交时间。</p>
-<ul>
-<li>操作按钮。</li>
-</ul>
-<p>点击各行是否提供操作菜单。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/26/2017-08-30-%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E4%B9%8B%E5%88%97%E8%A1%A8%E8%AE%BE%E8%AE%A1%E8%A6%81%E7%82%B9/" data-id="ckj5rqbv20003wovq8fiqe38t" data-title="2017-08-30-产品设计之列表设计要点" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-  </nav>
 
 </section>
         
