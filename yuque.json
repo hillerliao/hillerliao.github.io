@@ -1,8 +1,8 @@
 [
   {
-    "id": 29469745,
-    "slug": "syw286",
-    "title": "互联网证券周刊 Vol.55 (2021.01.09)",
+    "id": 29987955,
+    "slug": "oye54t",
+    "title": "互联网证券周刊 Vol. 56 (2021.1.16)",
     "book_id": 563048,
     "book": {
       "id": 563048,
@@ -13,11 +13,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -47,10 +47,89 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
+      "_serializer": "v2.user"
+    },
+    "format": "lake",
+    "body": "date: 2021-01-16 12:57:57 +0800<br />tags: [互联网证券周刊]<br />categories: [互联网证券周刊]\n\n---\n\n\n\n<a name=\"6Me05\"></a>\n# 监管\n\n- 证监会近日批准郑州商品交易所开展花生期货交易。\n<a name=\"waejg\"></a>\n# 行业\n\n- 2020年中信建投、国君、兴业、银河等多家券商金融产品销售破千亿。（[财联社](https://api3.cls.cn/share/article/663362?os=android&sv=734&app=)）\n- 万和证券分析师表示，资本市场深化改革将会是未来一段时间证券行业的投资主线，2021年也将是改革持续深化之年，年内将会出现政策密集期，“十四五规划”或将在资本市场改革方面大有动作，如IPO注册制改革全面推进以及备注瞩目的“T+0”制度。《[2020年这18项重大政策，正在深度影响券业](https://api3.cls.cn/share/article/661678?os=android&sv=734&app=)》\n- 证监会2021年1号和2号行政处罚书均发给了九鼎。一份处罚源于九鼎出钱并控制5个个人账户参与定增，公司在新三板挂牌后变现；另一份处罚因为九鼎在定增过程中虚假披露以规避200人规定。\n- “虽然爆款基金频现，但在基金投资者收益兑现、渠道方推行的赎旧买新恶习背景下，2020年下半年以来已有很多老基金出现不小的赎回，以至于基金公司只能靠新基金来冲规模，这一现象值得行业警惕。”华南一位公募内部人士透露。（《[开年15只爆款新基首募近4000亿，温州人开始卖房买基金了？行业人士惊呼：这个销售市场看不懂](https://api3.cls.cn/share/article/662778?os=android&sv=734&app=)》）\n<a name=\"sEqRJ\"></a>\n# 境外\n\n- 《[散户热情再度被点燃！6只低价股占美股全天成交量近五分之一](https://cn.investing.com/news/stock-market-news/article-1991876)》。2021年迄今，平均价格低于2美元的罗素3000股票上涨了近13%；股价低于5美元的股票上涨了近10%，这是股价超过100美元的股票所录得的涨幅的三倍以上。\n<a name=\"lW9t7\"></a>\n# 区块链\n\n- 深圳特区报报道，各大银行加码数字人民币应用创新，农行率先推出ATM机的数字人民币存取现功能，引导市民适应现金的数字化，探索服务转型。\n- 1月12日，由东方网自主研发构建的“东方链”版权管理系统正式上线，这是媒体行业首个区块链版权技术平台（东方网）\n- 用户在其平台完成注册后，Clark会通过以算法为基础的系统，搜索整个市场并为用户提供最优价格产品。目前，Clark的服务范围覆盖德国和奥地利两国，个人用户总量超过30万。\n<a name=\"7Dkvl\"></a>\n# 阅读\n\n- 恒泰证券私人财富总部负责人王莽：经历了证券交易和产品销售两个阶段之后，中长期看，高质量的买方投顾团队将是财富管理中最重要的竞争优势，海外市场过去十余年的经验已有启发，谁拥有最大规模、最强专业属性的投顾团队，谁就可以在财富管理中间获得长足的竞争力。（《[恒泰证券私人财富总部负责人王莽：顾问服务能力是券商财富管理的核心，“顾问价值”将大放异彩](https://api3.cls.cn/share/article/664051?os=android&sv=734&app=)》）\n- 《[非银行金融交易所专题一：论退市制度的逻辑](http://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=KoL3ajxbfBfZcygos7RXxzSEUxYH63w7h27iGx/+P5o=)》：\n   - 我国证券行业与欧美证券行业的发展轨迹不同。我国证券行业是先有主板，再有中小板以及科创板等，导致上市制度在一开始就较为严格，在一定程度上保证了企业质量，亦提升了“壳资源”价值，最终限制了退市制度的角色空间。而美国各板块的发展无此特定顺序，例如 NASDAQ是从场外交易市场逐步发展成场内交易市场，随着其挂牌企业的成长，才陆续设立板块，最后才有精选板，逐步设立更高的上市及退市标准。我们认为退市制度的演进，最终还是取决于产业趋势和经济环境。()\n   - 金融行业一直以来都是成长主线，因为无论什么类型的新兴行业成为下一轮的产业结构变迁主线，金融行业作为中介的价值都是非常凸显的，可以帮助社会辨认新兴产业的投资价值，提升资源分配的效率。\n   - 回顾以往，过去我国经济处于百业待兴的局面，产业结构以传统企业为主，各企业的成长性并不凸出，分析难度也较小，所以单一的财务指标是适用的。在中国经济换挡提质的节点，新兴产业正逐渐变成产业主线，而过于强调净亏损等单一财务指标，变得不再符合时宜。在充分竞争的市场中，企业需要持续投入以获取竞争优势，无可厚非，尤其是在新兴产业中，企业为了率先实现市场主动权，往往需要持续亏损多年，以培育市场或者构建基础设施等，同时随着企业战略的逐步兑现，企业的投资价值和社会价值会相应提升。非常典型的例子是，京东集团曾经连续 8 年亏损。\n",
+    "body_draft": "date: 2021-01-16 12:57:57 +0800<br />tags: [互联网证券周刊]<br />categories: [互联网证券周刊]\n\n---\n\n\n\n<a name=\"6Me05\"></a>\n# 监管\n\n- 证监会近日批准郑州商品交易所开展花生期货交易。\n<a name=\"waejg\"></a>\n# 行业\n\n- 2020年中信建投、国君、兴业、银河等多家券商金融产品销售破千亿。（[财联社](https://api3.cls.cn/share/article/663362?os=android&sv=734&app=)）\n- 万和证券分析师表示，资本市场深化改革将会是未来一段时间证券行业的投资主线，2021年也将是改革持续深化之年，年内将会出现政策密集期，“十四五规划”或将在资本市场改革方面大有动作，如IPO注册制改革全面推进以及备注瞩目的“T+0”制度。《[2020年这18项重大政策，正在深度影响券业](https://api3.cls.cn/share/article/661678?os=android&sv=734&app=)》\n- 证监会2021年1号和2号行政处罚书均发给了九鼎。一份处罚源于九鼎出钱并控制5个个人账户参与定增，公司在新三板挂牌后变现；另一份处罚因为九鼎在定增过程中虚假披露以规避200人规定。\n- “虽然爆款基金频现，但在基金投资者收益兑现、渠道方推行的赎旧买新恶习背景下，2020年下半年以来已有很多老基金出现不小的赎回，以至于基金公司只能靠新基金来冲规模，这一现象值得行业警惕。”华南一位公募内部人士透露。（《[开年15只爆款新基首募近4000亿，温州人开始卖房买基金了？行业人士惊呼：这个销售市场看不懂](https://api3.cls.cn/share/article/662778?os=android&sv=734&app=)》）\n<a name=\"sEqRJ\"></a>\n# 境外\n\n- 《[散户热情再度被点燃！6只低价股占美股全天成交量近五分之一](https://cn.investing.com/news/stock-market-news/article-1991876)》。2021年迄今，平均价格低于2美元的罗素3000股票上涨了近13%；股价低于5美元的股票上涨了近10%，这是股价超过100美元的股票所录得的涨幅的三倍以上。\n<a name=\"lW9t7\"></a>\n# 区块链\n\n- 深圳特区报报道，各大银行加码数字人民币应用创新，农行率先推出ATM机的数字人民币存取现功能，引导市民适应现金的数字化，探索服务转型。\n- 1月12日，由东方网自主研发构建的“东方链”版权管理系统正式上线，这是媒体行业首个区块链版权技术平台（东方网）\n- 用户在其平台完成注册后，Clark会通过以算法为基础的系统，搜索整个市场并为用户提供最优价格产品。目前，Clark的服务范围覆盖德国和奥地利两国，个人用户总量超过30万。\n<a name=\"7Dkvl\"></a>\n# 阅读\n\n- 恒泰证券私人财富总部负责人王莽：经历了证券交易和产品销售两个阶段之后，中长期看，高质量的买方投顾团队将是财富管理中最重要的竞争优势，海外市场过去十余年的经验已有启发，谁拥有最大规模、最强专业属性的投顾团队，谁就可以在财富管理中间获得长足的竞争力。（《[恒泰证券私人财富总部负责人王莽：顾问服务能力是券商财富管理的核心，“顾问价值”将大放异彩](https://api3.cls.cn/share/article/664051?os=android&sv=734&app=)》）\n- 《[非银行金融交易所专题一：论退市制度的逻辑](http://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=KoL3ajxbfBfZcygos7RXxzSEUxYH63w7h27iGx/+P5o=)》：\n   - 我国证券行业与欧美证券行业的发展轨迹不同。我国证券行业是先有主板，再有中小板以及科创板等，导致上市制度在一开始就较为严格，在一定程度上保证了企业质量，亦提升了“壳资源”价值，最终限制了退市制度的角色空间。而美国各板块的发展无此特定顺序，例如 NASDAQ是从场外交易市场逐步发展成场内交易市场，随着其挂牌企业的成长，才陆续设立板块，最后才有精选板，逐步设立更高的上市及退市标准。我们认为退市制度的演进，最终还是取决于产业趋势和经济环境。()\n   - 金融行业一直以来都是成长主线，因为无论什么类型的新兴行业成为下一轮的产业结构变迁主线，金融行业作为中介的价值都是非常凸显的，可以帮助社会辨认新兴产业的投资价值，提升资源分配的效率。\n   - 回顾以往，过去我国经济处于百业待兴的局面，产业结构以传统企业为主，各企业的成长性并不凸出，分析难度也较小，所以单一的财务指标是适用的。在中国经济换挡提质的节点，新兴产业正逐渐变成产业主线，而过于强调净亏损等单一财务指标，变得不再符合时宜。在充分竞争的市场中，企业需要持续投入以获取竞争优势，无可厚非，尤其是在新兴产业中，企业为了率先实现市场主动权，往往需要持续亏损多年，以培育市场或者构建基础设施等，同时随着企业战略的逐步兑现，企业的投资价值和社会价值会相应提升。非常典型的例子是，京东集团曾经连续 8 年亏损。\n",
+    "body_html": "<!doctype html><div class=\"lake-content-editor-core lake-engine lake-typography-traditional\" data-lake-element=\"root\" data-selection-147312=\"%7B%22path%22%3A%5B%5B2%2C1%2C0%2C4%5D%2C%5B2%2C1%2C0%2C4%5D%5D%2C%22uuid%22%3A%22147312%22%2C%22active%22%3Atrue%7D\"><p data-lake-id=\"d56e826b52f3b683f9539deeb1408c18\" style=\"font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word; margin: 0px;\">date: 2021-01-16 12:57:57 +0800</p><p data-lake-id=\"d6e5ec3054dcf98b6d94230b8a25778d\" style=\"font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word; margin: 0px;\">tags: [互联网证券周刊]</p><p data-lake-id=\"67a5213dc018982c9479fb927f06ef03\" style=\"font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word; margin: 0px;\">categories: [<span>互联网证券周刊</span>]</p><div data-card-type=\"block\" data-lake-card=\"hr\"><hr style=\"background-color: rgb(232, 232, 232); border: 1px solid transparent; margin: 18px 0px;\"></div><p data-lake-id=\"17bf61c1b2ea6ce90bb60dacaa803c0e\" style=\"font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word; margin: 0px;\"><br></p><h1 data-lake-id=\"2f34f911c07378162fe1c3f26fcb2a59\" id=\"6Me05\" style=\"padding: 7px 0px; margin: 0px; font-weight: 700; font-size: 28px; line-height: 36px;\">监管</h1><ul data-lake-id=\"dd931dd9fe55b6aa7f05876af9964d28\" lake-indent=\"0\" style=\"list-style-type: disc; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><li data-lake-id=\"48c089705d820ea8e5f49f0cf00c716a\">证监会近日批准郑州商品交易所开展花生期货交易。</li></ul><h1 data-lake-id=\"452022ba5389935bc04e6c6bc3211ca2\" id=\"waejg\" style=\"padding: 7px 0px; margin: 0px; font-weight: 700; font-size: 28px; line-height: 36px;\">行业</h1><ul data-lake-id=\"a77db3decf06fe4fd5627fbe0700d013\" lake-indent=\"0\" style=\"list-style-type: disc; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><li data-lake-id=\"697e6c8ffb0792da4a31b29756272890\">2020年中信建投、国君、兴业、银河等多家券商金融产品销售破千亿。（<a href=\"https://api3.cls.cn/share/article/663362?os=android&amp;sv=734&amp;app=\" target=\"_blank\">财联社</a>）</li><li data-lake-id=\"81273499c3ebaae30ee659eef4897651\">万和证券分析师表示，资本市场深化改革将会是未来一段时间证券行业的投资主线，2021年也将是改革持续深化之年，年内将会出现政策密集期，“十四五规划”或将在资本市场改革方面大有动作，如IPO注册制改革全面推进以及备注瞩目的“T+0”制度。《<a href=\"https://api3.cls.cn/share/article/661678?os=android&amp;sv=734&amp;app=\" target=\"_blank\">2020年这18项重大政策，正在深度影响券业</a><span>》</span></li><li data-lake-id=\"0422ebad5ee93bba005780e44f086f28\">证监会2021年1号和2号行政处罚书均发给了九鼎。一份处罚源于九鼎出钱并控制5个个人账户参与定增，公司在新三板挂牌后变现；另一份处罚因为九鼎在定增过程中虚假披露以规避200人规定。</li><li data-lake-id=\"e5044a108b811ab1e664fd6347aa7b0a\">“虽然爆款基金频现，但在基金投资者收益兑现、渠道方推行的赎旧买新恶习背景下，2020年下半年以来已有很多老基金出现不小的赎回，以至于基金公司只能靠新基金来冲规模，这一现象值得行业警惕。”华南一位公募内部人士透露。（《<a href=\"https://api3.cls.cn/share/article/662778?os=android&amp;sv=734&amp;app=\" target=\"_blank\">开年15只爆款新基首募近4000亿，温州人开始卖房买基金了？行业人士惊呼：这个销售市场看不懂</a>》）</li></ul><h1 data-lake-id=\"2d97c834261a695eb1342857eaa01fd3\" id=\"sEqRJ\" style=\"padding: 7px 0px; margin: 0px; font-weight: 700; font-size: 28px; line-height: 36px;\">境外</h1><ul data-lake-id=\"a4de7c7d9e4a314e95bd5d3c751ec352\" lake-indent=\"0\" style=\"list-style-type: disc; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><li data-lake-id=\"d5d6dbce8aa3ec7ddc99a327d1e71050\">《<a href=\"https://cn.investing.com/news/stock-market-news/article-1991876\" target=\"_blank\">散户热情再度被点燃！6只低价股占美股全天成交量近五分之一</a>》。2021年迄今，平均价格低于2美元的罗素3000股票上涨了近13%；股价低于5美元的股票上涨了近10%，这是股价超过100美元的股票所录得的涨幅的三倍以上。</li></ul><h1 data-lake-id=\"5ffdb3cc59a0402b495272a12c7e30fa\" id=\"lW9t7\" style=\"padding: 7px 0px; margin: 0px; font-weight: 700; font-size: 28px; line-height: 36px;\">区块链</h1><ul data-lake-id=\"ed99d8e8d05a9f73d59199b3034c20e4\" lake-indent=\"0\" style=\"list-style-type: disc; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><li data-lake-id=\"6e94db67298b2c0fe96d8fda69a92846\">深圳特区报报道，各大银行加码数字人民币应用创新，农行率先推出ATM机的数字人民币存取现功能，引导市民适应现金的数字化，探索服务转型。</li><li data-lake-id=\"b50d1f1d208056b6c195ec4e65a60e36\">1月12日，由东方网自主研发构建的“东方链”版权管理系统正式上线，这是媒体行业首个区块链版权技术平台（东方网）</li><li data-lake-id=\"151ce858385eef22bd44b96d033b4a86\">用户在其平台完成注册后，Clark会通过以算法为基础的系统，搜索整个市场并为用户提供最优价格产品。目前，Clark的服务范围覆盖德国和奥地利两国，个人用户总量超过30万。</li></ul><h1 data-lake-id=\"675e4a88322577bbab8d34f876599ce1\" id=\"7Dkvl\" style=\"padding: 7px 0px; margin: 0px; font-weight: 700; font-size: 28px; line-height: 36px;\">阅读</h1><ul data-lake-id=\"20163489f3f0b706e1e30b6e0a01fb96\" lake-indent=\"0\" style=\"list-style-type: disc; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><li data-lake-id=\"3e4748703a9fcca1ff39f64d66d783a5\">恒泰证券私人财富总部负责人王莽：经历了证券交易和产品销售两个阶段之后，中长期看，高质量的买方投顾团队将是财富管理中最重要的竞争优势，海外市场过去十余年的经验已有启发，谁拥有最大规模、最强专业属性的投顾团队，谁就可以在财富管理中间获得长足的竞争力。（《<a href=\"https://api3.cls.cn/share/article/664051?os=android&amp;sv=734&amp;app=\" target=\"_blank\">恒泰证券私人财富总部负责人王莽：顾问服务能力是券商财富管理的核心，“顾问价值”将大放异彩</a>》）</li><li data-lake-id=\"208b9016edf42e0054b9168390fa932a\">《<a href=\"http://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=KoL3ajxbfBfZcygos7RXxzSEUxYH63w7h27iGx/+P5o=\" target=\"_blank\">非银行金融交易所专题一：论退市制度的逻辑</a>》：</li></ul><ul data-lake-id=\"ca8523c172f5a342fcdb5c3c0cbef04a\" lake-indent=\"1\" style=\"list-style-type: none; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><ul data-lake-id=\"c8949eff0b957ae1d6e905a2598e9702\" lake-indent=\"0\" style=\"list-style-type: circle; margin: 0px; padding-left: 23px;\"><li data-lake-id=\"740a038c1bb5e8872cacabb5a1bcaeca\">我国证券行业与欧美证券行业的发展轨迹不同。我国证券行业是先有主板，再有中小板以及科创板等，导致上市制度在一开始就较为严格，在一定程度上保证了企业质量，亦提升了“壳资源”价值，最终限制了退市制度的角色空间。而美国各板块的发展无此特定顺序，例如 NASDAQ是从场外交易市场逐步发展成场内交易市场，随着其挂牌企业的成长，才陆续设立板块，最后才有精选板，逐步设立更高的上市及退市标准。我们认为退市制度的演进，最终还是取决于产业趋势和经济环境。()</li><li data-lake-id=\"12108222696679ab232711d1d73956f6\">金融行业一直以来都是成长主线，因为无论什么类型的新兴行业成为下一轮的产业结构变迁主线，金融行业作为中介的价值都是非常凸显的，可以帮助社会辨认新兴产业的投资价值，提升资源分配的效率。</li><li data-lake-id=\"178fdc78499efafacc26391c2ffff89c\">回顾以往，过去我国经济处于百业待兴的局面，产业结构以传统企业为主，各企业的成长性并不凸出，分析难度也较小，所以单一的财务指标是适用的。在中国经济换挡提质的节点，新兴产业正逐渐变成产业主线，而过于强调净亏损等单一财务指标，变得不再符合时宜。在充分竞争的市场中，企业需要持续投入以获取竞争优势，无可厚非，尤其是在新兴产业中，企业为了率先实现市场主动权，往往需要持续亏损多年，以培育市场或者构建基础设施等，同时随着企业战略的逐步兑现，企业的投资价值和社会价值会相应提升。非常典型的例子是，京东集团曾经连续 8 年亏损。</li></ul></ul></div>",
+    "body_lake": "<!doctype lake><meta name=\"doc-version\" content=\"1\" /><meta name=\"viewport\" content=\"fixed\" /><meta name=\"typography\" content=\"traditional\" /><p data-lake-id=\"d56e826b52f3b683f9539deeb1408c18\">date: 2021-01-16 12:57:57 +0800</p><p data-lake-id=\"d6e5ec3054dcf98b6d94230b8a25778d\">tags: [互联网证券周刊]</p><p data-lake-id=\"67a5213dc018982c9479fb927f06ef03\">categories: [<span>互联网证券周刊</span>]</p><card type=\"block\" name=\"hr\"></card><p data-lake-id=\"17bf61c1b2ea6ce90bb60dacaa803c0e\"><br /></p><h1 data-lake-id=\"2f34f911c07378162fe1c3f26fcb2a59\" id=\"6Me05\">监管</h1><ul data-lake-id=\"dd931dd9fe55b6aa7f05876af9964d28\"><li data-lake-id=\"48c089705d820ea8e5f49f0cf00c716a\">证监会近日批准郑州商品交易所开展花生期货交易。</li></ul><h1 data-lake-id=\"452022ba5389935bc04e6c6bc3211ca2\" id=\"waejg\">行业</h1><ul data-lake-id=\"a77db3decf06fe4fd5627fbe0700d013\"><li data-lake-id=\"697e6c8ffb0792da4a31b29756272890\">2020年中信建投、国君、兴业、银河等多家券商金融产品销售破千亿。（<a href=\"https://api3.cls.cn/share/article/663362?os=android&amp;sv=734&amp;app=\" target=\"_blank\">财联社</a>）</li><li data-lake-id=\"81273499c3ebaae30ee659eef4897651\">万和证券分析师表示，资本市场深化改革将会是未来一段时间证券行业的投资主线，2021年也将是改革持续深化之年，年内将会出现政策密集期，“十四五规划”或将在资本市场改革方面大有动作，如IPO注册制改革全面推进以及备注瞩目的“T+0”制度。《<a href=\"https://api3.cls.cn/share/article/661678?os=android&amp;sv=734&amp;app=\" target=\"_blank\">2020年这18项重大政策，正在深度影响券业</a><span>》</span></li><li data-lake-id=\"0422ebad5ee93bba005780e44f086f28\">证监会2021年1号和2号行政处罚书均发给了九鼎。一份处罚源于九鼎出钱并控制5个个人账户参与定增，公司在新三板挂牌后变现；另一份处罚因为九鼎在定增过程中虚假披露以规避200人规定。</li><li data-lake-id=\"e5044a108b811ab1e664fd6347aa7b0a\">“虽然爆款基金频现，但在基金投资者收益兑现、渠道方推行的赎旧买新恶习背景下，2020年下半年以来已有很多老基金出现不小的赎回，以至于基金公司只能靠新基金来冲规模，这一现象值得行业警惕。”华南一位公募内部人士透露。（《<a href=\"https://api3.cls.cn/share/article/662778?os=android&amp;sv=734&amp;app=\" target=\"_blank\">开年15只爆款新基首募近4000亿，温州人开始卖房买基金了？行业人士惊呼：这个销售市场看不懂</a>》）</li></ul><h1 data-lake-id=\"2d97c834261a695eb1342857eaa01fd3\" id=\"sEqRJ\">境外</h1><ul data-lake-id=\"a4de7c7d9e4a314e95bd5d3c751ec352\"><li data-lake-id=\"d5d6dbce8aa3ec7ddc99a327d1e71050\">《<a href=\"https://cn.investing.com/news/stock-market-news/article-1991876\" target=\"_blank\">散户热情再度被点燃！6只低价股占美股全天成交量近五分之一</a>》。2021年迄今，平均价格低于2美元的罗素3000股票上涨了近13%；股价低于5美元的股票上涨了近10%，这是股价超过100美元的股票所录得的涨幅的三倍以上。</li></ul><h1 data-lake-id=\"5ffdb3cc59a0402b495272a12c7e30fa\" id=\"lW9t7\">区块链</h1><ul data-lake-id=\"ed99d8e8d05a9f73d59199b3034c20e4\"><li data-lake-id=\"6e94db67298b2c0fe96d8fda69a92846\">深圳特区报报道，各大银行加码数字人民币应用创新，农行率先推出ATM机的数字人民币存取现功能，引导市民适应现金的数字化，探索服务转型。</li><li data-lake-id=\"b50d1f1d208056b6c195ec4e65a60e36\">1月12日，由东方网自主研发构建的“东方链”版权管理系统正式上线，这是媒体行业首个区块链版权技术平台（东方网）</li><li data-lake-id=\"151ce858385eef22bd44b96d033b4a86\">用户在其平台完成注册后，Clark会通过以算法为基础的系统，搜索整个市场并为用户提供最优价格产品。目前，Clark的服务范围覆盖德国和奥地利两国，个人用户总量超过30万。</li></ul><h1 data-lake-id=\"675e4a88322577bbab8d34f876599ce1\" id=\"7Dkvl\">阅读</h1><ul data-lake-id=\"20163489f3f0b706e1e30b6e0a01fb96\"><li data-lake-id=\"3e4748703a9fcca1ff39f64d66d783a5\">恒泰证券私人财富总部负责人王莽：经历了证券交易和产品销售两个阶段之后，中长期看，高质量的买方投顾团队将是财富管理中最重要的竞争优势，海外市场过去十余年的经验已有启发，谁拥有最大规模、最强专业属性的投顾团队，谁就可以在财富管理中间获得长足的竞争力。（《<a href=\"https://api3.cls.cn/share/article/664051?os=android&amp;sv=734&amp;app=\" target=\"_blank\">恒泰证券私人财富总部负责人王莽：顾问服务能力是券商财富管理的核心，“顾问价值”将大放异彩</a>》）</li><li data-lake-id=\"208b9016edf42e0054b9168390fa932a\">《<a href=\"http://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=KoL3ajxbfBfZcygos7RXxzSEUxYH63w7h27iGx/+P5o=\" target=\"_blank\">非银行金融交易所专题一：论退市制度的逻辑</a>》：</li></ul><ul data-lake-id=\"c8949eff0b957ae1d6e905a2598e9702\" data-lake-indent=\"1\"><li data-lake-id=\"740a038c1bb5e8872cacabb5a1bcaeca\">我国证券行业与欧美证券行业的发展轨迹不同。我国证券行业是先有主板，再有中小板以及科创板等，导致上市制度在一开始就较为严格，在一定程度上保证了企业质量，亦提升了“壳资源”价值，最终限制了退市制度的角色空间。而美国各板块的发展无此特定顺序，例如 NASDAQ是从场外交易市场逐步发展成场内交易市场，随着其挂牌企业的成长，才陆续设立板块，最后才有精选板，逐步设立更高的上市及退市标准。我们认为退市制度的演进，最终还是取决于产业趋势和经济环境。()</li><li data-lake-id=\"12108222696679ab232711d1d73956f6\">金融行业一直以来都是成长主线，因为无论什么类型的新兴行业成为下一轮的产业结构变迁主线，金融行业作为中介的价值都是非常凸显的，可以帮助社会辨认新兴产业的投资价值，提升资源分配的效率。</li><li data-lake-id=\"178fdc78499efafacc26391c2ffff89c\">回顾以往，过去我国经济处于百业待兴的局面，产业结构以传统企业为主，各企业的成长性并不凸出，分析难度也较小，所以单一的财务指标是适用的。在中国经济换挡提质的节点，新兴产业正逐渐变成产业主线，而过于强调净亏损等单一财务指标，变得不再符合时宜。在充分竞争的市场中，企业需要持续投入以获取竞争优势，无可厚非，尤其是在新兴产业中，企业为了率先实现市场主动权，往往需要持续亏损多年，以培育市场或者构建基础设施等，同时随着企业战略的逐步兑现，企业的投资价值和社会价值会相应提升。非常典型的例子是，京东集团曾经连续 8 年亏损。</li></ul>",
+    "body_draft_lake": "<!doctype lake><meta name=\"doc-version\" content=\"1\" /><meta name=\"viewport\" content=\"fixed\" /><meta name=\"typography\" content=\"traditional\" /><p data-lake-id=\"d56e826b52f3b683f9539deeb1408c18\">date: 2021-01-16 12:57:57 +0800</p><p data-lake-id=\"d6e5ec3054dcf98b6d94230b8a25778d\">tags: [互联网证券周刊]</p><p data-lake-id=\"67a5213dc018982c9479fb927f06ef03\">categories: [<span>互联网证券周刊</span>]</p><card type=\"block\" name=\"hr\"></card><p data-lake-id=\"17bf61c1b2ea6ce90bb60dacaa803c0e\"><br /></p><h1 data-lake-id=\"2f34f911c07378162fe1c3f26fcb2a59\" id=\"6Me05\">监管</h1><ul data-lake-id=\"dd931dd9fe55b6aa7f05876af9964d28\"><li data-lake-id=\"48c089705d820ea8e5f49f0cf00c716a\">证监会近日批准郑州商品交易所开展花生期货交易。</li></ul><h1 data-lake-id=\"452022ba5389935bc04e6c6bc3211ca2\" id=\"waejg\">行业</h1><ul data-lake-id=\"a77db3decf06fe4fd5627fbe0700d013\"><li data-lake-id=\"697e6c8ffb0792da4a31b29756272890\">2020年中信建投、国君、兴业、银河等多家券商金融产品销售破千亿。（<a href=\"https://api3.cls.cn/share/article/663362?os=android&amp;sv=734&amp;app=\" target=\"_blank\">财联社</a>）</li><li data-lake-id=\"81273499c3ebaae30ee659eef4897651\">万和证券分析师表示，资本市场深化改革将会是未来一段时间证券行业的投资主线，2021年也将是改革持续深化之年，年内将会出现政策密集期，“十四五规划”或将在资本市场改革方面大有动作，如IPO注册制改革全面推进以及备注瞩目的“T+0”制度。《<a href=\"https://api3.cls.cn/share/article/661678?os=android&amp;sv=734&amp;app=\" target=\"_blank\">2020年这18项重大政策，正在深度影响券业</a><span>》</span></li><li data-lake-id=\"0422ebad5ee93bba005780e44f086f28\">证监会2021年1号和2号行政处罚书均发给了九鼎。一份处罚源于九鼎出钱并控制5个个人账户参与定增，公司在新三板挂牌后变现；另一份处罚因为九鼎在定增过程中虚假披露以规避200人规定。</li><li data-lake-id=\"e5044a108b811ab1e664fd6347aa7b0a\">“虽然爆款基金频现，但在基金投资者收益兑现、渠道方推行的赎旧买新恶习背景下，2020年下半年以来已有很多老基金出现不小的赎回，以至于基金公司只能靠新基金来冲规模，这一现象值得行业警惕。”华南一位公募内部人士透露。（《<a href=\"https://api3.cls.cn/share/article/662778?os=android&amp;sv=734&amp;app=\" target=\"_blank\">开年15只爆款新基首募近4000亿，温州人开始卖房买基金了？行业人士惊呼：这个销售市场看不懂</a>》）</li></ul><h1 data-lake-id=\"2d97c834261a695eb1342857eaa01fd3\" id=\"sEqRJ\">境外</h1><ul data-lake-id=\"a4de7c7d9e4a314e95bd5d3c751ec352\"><li data-lake-id=\"d5d6dbce8aa3ec7ddc99a327d1e71050\">《<a href=\"https://cn.investing.com/news/stock-market-news/article-1991876\" target=\"_blank\">散户热情再度被点燃！6只低价股占美股全天成交量近五分之一</a>》。2021年迄今，平均价格低于2美元的罗素3000股票上涨了近13%；股价低于5美元的股票上涨了近10%，这是股价超过100美元的股票所录得的涨幅的三倍以上。</li></ul><h1 data-lake-id=\"5ffdb3cc59a0402b495272a12c7e30fa\" id=\"lW9t7\">区块链</h1><ul data-lake-id=\"ed99d8e8d05a9f73d59199b3034c20e4\"><li data-lake-id=\"6e94db67298b2c0fe96d8fda69a92846\">深圳特区报报道，各大银行加码数字人民币应用创新，农行率先推出ATM机的数字人民币存取现功能，引导市民适应现金的数字化，探索服务转型。</li><li data-lake-id=\"b50d1f1d208056b6c195ec4e65a60e36\">1月12日，由东方网自主研发构建的“东方链”版权管理系统正式上线，这是媒体行业首个区块链版权技术平台（东方网）</li><li data-lake-id=\"151ce858385eef22bd44b96d033b4a86\">用户在其平台完成注册后，Clark会通过以算法为基础的系统，搜索整个市场并为用户提供最优价格产品。目前，Clark的服务范围覆盖德国和奥地利两国，个人用户总量超过30万。</li></ul><h1 data-lake-id=\"675e4a88322577bbab8d34f876599ce1\" id=\"7Dkvl\">阅读</h1><ul data-lake-id=\"20163489f3f0b706e1e30b6e0a01fb96\"><li data-lake-id=\"3e4748703a9fcca1ff39f64d66d783a5\">恒泰证券私人财富总部负责人王莽：经历了证券交易和产品销售两个阶段之后，中长期看，高质量的买方投顾团队将是财富管理中最重要的竞争优势，海外市场过去十余年的经验已有启发，谁拥有最大规模、最强专业属性的投顾团队，谁就可以在财富管理中间获得长足的竞争力。（《<a href=\"https://api3.cls.cn/share/article/664051?os=android&amp;sv=734&amp;app=\" target=\"_blank\">恒泰证券私人财富总部负责人王莽：顾问服务能力是券商财富管理的核心，“顾问价值”将大放异彩</a>》）</li><li data-lake-id=\"208b9016edf42e0054b9168390fa932a\">《<a href=\"http://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=KoL3ajxbfBfZcygos7RXxzSEUxYH63w7h27iGx/+P5o=\" target=\"_blank\">非银行金融交易所专题一：论退市制度的逻辑</a>》：</li></ul><ul data-lake-id=\"c8949eff0b957ae1d6e905a2598e9702\" data-lake-indent=\"1\"><li data-lake-id=\"740a038c1bb5e8872cacabb5a1bcaeca\">我国证券行业与欧美证券行业的发展轨迹不同。我国证券行业是先有主板，再有中小板以及科创板等，导致上市制度在一开始就较为严格，在一定程度上保证了企业质量，亦提升了“壳资源”价值，最终限制了退市制度的角色空间。而美国各板块的发展无此特定顺序，例如 NASDAQ是从场外交易市场逐步发展成场内交易市场，随着其挂牌企业的成长，才陆续设立板块，最后才有精选板，逐步设立更高的上市及退市标准。我们认为退市制度的演进，最终还是取决于产业趋势和经济环境。()</li><li data-lake-id=\"12108222696679ab232711d1d73956f6\">金融行业一直以来都是成长主线，因为无论什么类型的新兴行业成为下一轮的产业结构变迁主线，金融行业作为中介的价值都是非常凸显的，可以帮助社会辨认新兴产业的投资价值，提升资源分配的效率。</li><li data-lake-id=\"178fdc78499efafacc26391c2ffff89c\">回顾以往，过去我国经济处于百业待兴的局面，产业结构以传统企业为主，各企业的成长性并不凸出，分析难度也较小，所以单一的财务指标是适用的。在中国经济换挡提质的节点，新兴产业正逐渐变成产业主线，而过于强调净亏损等单一财务指标，变得不再符合时宜。在充分竞争的市场中，企业需要持续投入以获取竞争优势，无可厚非，尤其是在新兴产业中，企业为了率先实现市场主动权，往往需要持续亏损多年，以培育市场或者构建基础设施等，同时随着企业战略的逐步兑现，企业的投资价值和社会价值会相应提升。非常典型的例子是，京东集团曾经连续 8 年亏损。</li></ul>",
+    "public": 1,
+    "status": 1,
+    "view_status": 0,
+    "read_status": 1,
+    "likes_count": 0,
+    "comments_count": 0,
+    "content_updated_at": "2021-01-16T14:02:39.000Z",
+    "deleted_at": null,
+    "created_at": "2021-01-12T00:58:42.000Z",
+    "updated_at": "2021-01-16T14:02:39.000Z",
+    "published_at": "2021-01-16T14:02:39.000Z",
+    "first_published_at": "2021-01-16T05:25:33.000Z",
+    "word_count": 1499,
+    "cover": null,
+    "description": "date: 2021-01-16 12:57:57 +0800tags: [互联网证券周刊]categories: [互联网证券周刊]监管证监会近日批准郑州商品交易所开展花生期货交易。行业2020年中信建投、国君、兴业、银河等多家券商金融产品销售破千亿。（财联社）万和证券分析师表示，资本市场深...",
+    "custom_description": null,
+    "hits": 1,
+    "_serializer": "v2.doc_detail"
+  },
+  {
+    "id": 29469745,
+    "slug": "syw286",
+    "title": "互联网证券周刊 Vol.55 (2021.01.09)",
+    "book_id": 563048,
+    "book": {
+      "id": 563048,
+      "type": "Book",
+      "slug": "secweekly",
+      "name": "互联网证券周刊",
+      "user_id": 150839,
+      "description": "每周分享互联网证券行业动态。",
+      "creator_id": 147312,
+      "public": 1,
+      "items_count": 66,
+      "likes_count": 0,
+      "watches_count": 53,
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
+      "created_at": "2019-11-17T13:28:22.000Z",
+      "namespace": "securities/secweekly",
+      "user": {
+        "id": 150839,
+        "type": "Group",
+        "login": "securities",
+        "name": "互联网证券",
+        "description": "",
+        "avatar_url": "https://gw.alipayobjects.com/zos/rmsportal/SZXCSCJTuhRSmAggBlVp.png",
+        "books_count": 5,
+        "public_books_count": 5,
+        "followers_count": 0,
+        "following_count": 0,
+        "created_at": "2018-07-22T03:30:56.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
+        "_serializer": "v2.user"
+      },
+      "_serializer": "v2.book"
+    },
+    "user_id": 147312,
+    "creator": {
+      "id": 147312,
+      "type": "User",
+      "login": "caibaoniao",
+      "name": "财报鸟",
+      "description": null,
+      "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
+      "books_count": 4,
+      "public_books_count": 1,
+      "followers_count": 12,
+      "following_count": 3,
+      "created_at": "2018-07-11T09:30:57.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -75,7 +154,7 @@
     "cover": null,
     "description": "date: 2021-01-09 12:57:57 +0800tags: [互联网证券周刊]categories: [互联网证券周刊]监管监会发布了《关于加强私募投资基金监管的若干规定》。 行业Wind数据显示，2020年AB股成交总额为206.08万亿元，较2019年（126.93万亿元）增...",
     "custom_description": null,
-    "hits": 6,
+    "hits": 7,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -92,11 +171,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -126,10 +205,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -154,7 +233,7 @@
     "cover": null,
     "description": "date: 2021-01-01 12:57:57 +0800tags: [互联网证券周刊]categories: [互联网证券周刊]监管证监会相关会议表示，近期要做好六项重点工作：以国有上市公司为突破口，带动公司治理水平整体提升；以注册制为契机，从源头上提高上市公司质量；以多元化退出为渠道，...",
     "custom_description": null,
-    "hits": 24,
+    "hits": 25,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -171,11 +250,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -205,10 +284,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -233,7 +312,7 @@
     "cover": null,
     "description": "date: 2020-12-26 19:57:57 +0800tags: [互联网证券周刊]categories: [互联网证券周刊]监管证监会会议提出，下一步证监会要着力加强资本市场投资端建设，增强财富管理功能，促进居民储蓄向投资转化，助力扩大内需。推动加强多层次、多支柱养老保险体系与资本市...",
     "custom_description": null,
-    "hits": 8,
+    "hits": 9,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -250,11 +329,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -284,10 +363,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -312,7 +391,7 @@
     "cover": null,
     "description": "监管央行、银保监会发布《系统重要性银行评估办法》，将建立早期纠正机制，推动系统重要性银行降低复杂性和系统性风险，建立健全资本内在约束机制，提升银行抵御风险和吸收损失的能力；系统重要性银行最终名单将经国务院金融委确定。中国人民银行党委书记、银保监会主席郭树清近日在《辅导读本》发表文章《完善现代金...",
     "custom_description": null,
-    "hits": 15,
+    "hits": 16,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -329,11 +408,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -363,10 +442,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -408,11 +487,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -442,10 +521,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -487,11 +566,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -521,10 +600,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -566,11 +645,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -600,10 +679,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -645,11 +724,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -679,10 +758,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -724,11 +803,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -758,10 +837,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -803,11 +882,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -837,10 +916,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -882,11 +961,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -916,10 +995,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -961,11 +1040,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -995,10 +1074,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1040,11 +1119,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1074,10 +1153,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1119,11 +1198,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1153,10 +1232,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1198,11 +1277,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1232,10 +1311,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1277,11 +1356,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1311,10 +1390,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1356,11 +1435,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1390,10 +1469,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1435,11 +1514,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1469,10 +1548,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1514,11 +1593,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1548,10 +1627,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1593,11 +1672,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1627,10 +1706,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1672,11 +1751,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1706,10 +1785,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1751,11 +1830,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1785,10 +1864,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1830,11 +1909,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1864,10 +1943,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1909,11 +1988,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1943,10 +2022,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1988,11 +2067,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2022,10 +2101,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2067,11 +2146,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2101,10 +2180,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2146,11 +2225,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2180,10 +2259,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2225,11 +2304,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2259,10 +2338,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2304,11 +2383,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2338,10 +2417,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2383,11 +2462,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2417,10 +2496,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2462,11 +2541,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2496,10 +2575,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2541,11 +2620,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2575,10 +2654,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2620,11 +2699,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2654,10 +2733,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2699,11 +2778,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2733,10 +2812,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2778,11 +2857,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2812,10 +2891,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2857,11 +2936,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2891,10 +2970,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2936,11 +3015,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2970,10 +3049,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3015,11 +3094,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3049,10 +3128,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3094,11 +3173,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3128,10 +3207,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3173,11 +3252,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3207,10 +3286,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3239,83 +3318,6 @@
     "_serializer": "v2.doc_detail"
   },
   {
-    "id": 4900364,
-    "slug": "gvgtbk",
-    "title": "券商经营数据-2019",
-    "book_id": 563048,
-    "book": {
-      "id": 563048,
-      "type": "Book",
-      "slug": "secweekly",
-      "name": "互联网证券周刊",
-      "user_id": 150839,
-      "description": "每周分享互联网证券行业动态。",
-      "creator_id": 147312,
-      "public": 1,
-      "items_count": 67,
-      "likes_count": 0,
-      "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
-      "created_at": "2019-11-17T13:28:22.000Z",
-      "namespace": "securities/secweekly",
-      "user": {
-        "id": 150839,
-        "type": "Group",
-        "login": "securities",
-        "name": "互联网证券",
-        "description": "",
-        "avatar_url": "https://gw.alipayobjects.com/zos/rmsportal/SZXCSCJTuhRSmAggBlVp.png",
-        "books_count": 5,
-        "public_books_count": 5,
-        "followers_count": 0,
-        "following_count": 0,
-        "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2021-01-03T02:27:49.000Z",
-        "_serializer": "v2.user"
-      },
-      "_serializer": "v2.book"
-    },
-    "user_id": 147312,
-    "creator": {
-      "id": 147312,
-      "type": "User",
-      "login": "caibaoniao",
-      "name": "财报鸟",
-      "description": null,
-      "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
-      "books_count": 4,
-      "public_books_count": 1,
-      "followers_count": 11,
-      "following_count": 3,
-      "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
-      "_serializer": "v2.user"
-    },
-    "format": "lakesheet",
-    "body": "{\"format\":\"lakesheet\",\"type\":\"Sheet\",\"version\":\"1.0\",\"larkJson\":true,\"sheet\":\"xÅ½y]GzæùU\\fþ1pcªnÝØÎRÀ`P]ö´\\rCmMWy\\u0006\\r£P ¥´M\\u0014E\\n\\u0012UvQ\\u0000\\\"L23¹KRÜÄM¢Hf[2ÉÌ\\u0004ú³ä¹Ë_ý\\u0015&Î='\\\"IAç¸O\\\\»\\u0001¢6Õ=/ã7ÞøÅ\\u0013Oüý¿í9°÷¹=?ßSÍ¯WNTOî\\fæ_\\r.­îùÉÏ\\u000eþË/\\u000f~qàÐË¾øÉÏçöÏ}thßÁ\\u0003ïùù¿ÕÿÐþïú'{>:¸ÏÏ³wÿßbò?îþ½öW¿ûoî\\u0007Íýåägü®~à\\u001f'?úâ\\u0003íùÇ}û\\u000fÍ}Öüç}\\u0007>û×=?ï¿û\\\\ÿdÏ'sýÓÜ/çöïo³ïcÛÿwï/þÒþå?ýìà!û×ýÕ;é¿ÿÍOö|¼÷ÐÞú¯ß÷ÿòûºíÇ¿«×÷ØG\\bÿ?¹\\u0017ñç¶ñåàú£ÿTÿcéþñàËÕêÎÝÿÓÎúÉÔÿÇÉÿK¹ÿ×ÎÆÝÁ\\u000bã;_Õÿ«ö^?Z]ßØy³Ùþ\\u0003ãþÁøä¹ÑÅ\\u0007Õ#ãÇ'ÿ|gc»:~lòÔÌýßê8Õëç{{þèþÊ¾);ëw¶o\\u001e±ßó½\\u0006\\t\\u0017RæÅ»ú·=\\u001fíßû¹}5{öï;ð;ûÖ\\u000eÍý«}·{þùÐ¡Oþ³Ùo0×ûÇ}\\u0007ö\\u001eøh®÷¹ý÷ÞG\\u0007?é}tàgR0º'EÙ+óºÔ?ûà¿ýÿò³_þ×_ýå¯þê·¿úõßþòo~&û²?ùªæßúê§ö1¥éRö>üÿËFüâ³ýÿ\\u0001ÿøG÷\\u0015ý\\u001b\\u001b¼¸j\\u0013ÿGÞÎ¥è÷ßûìþÞ':ïÛ´\\rùüÐÞCû>ê}þùkÁÇû>ÿhÿÁÏ¿ølîgû÷}~hîã}\\u0007þñàÏö\\u001e8`Óù£¹Oæ\\u000e\\u001cúÙGþ/-Êe}QäÅoëoýÛ\\u0003½O?þÇÉ·Vï§íÊæëÂØ¿xóWÿ¬ù\\u001f·ê¿åçö¯ùû}ö>?tð£ßýèKÿèàgÚÿËÜ¿üì÷¿üÏ¿ýÅþýÿùýûç\\u000eí;ð\\u0017söîÛßûô?ý?'¿Þ÷ñÿÑïË\\\\eÿýOömKQd¿®þA/;UÝ}°û×¼ÄC~mÿqV¨ÈÌíßÜ¾è¼(¿yë~ù^Rþ{Çä£yï5/m\\u000fÖnNÞ_öÃ®m+Ää\\u001fä?ø\\u0007×GK7&ÿ xÿ/.îmOþAùþ/lÚlm5åã\\u0007¥pñòÎÆwÍ?\\u0011?Ì¶ÁWÍ??üUKÍßXü C?ßY¿Öü\\u0013ýÃ§¹Æ÷ÛoÿÆãc\\u000fýð7¶\\u00186ÿäoàñøÂËÉ?ý\\u001f¾Á¯´\\u001eªÌ4}Ä×kÙË´­ä¶è¾ßÉû²×°7ý;\\u0015¯Â\\u0016¯<ËT¿-^¶yï\\u0014ÛêÁ÷Ïþ\\u0017×ôÉß27¹þªéï\\u0007ljúû)9¼øÌ~ÈêÉò`ãìû½¯L^æS¼±¶t ®Øî/_7hÿ§{ÿiîÝ¿ý\\\\\\u000bÛòÇ^\\u0004ý¦}ïw,Û\\u0013Ç¯½ß2¡Ë\\u001fVýÿÈ2Ú/TÞ¶¬Ìm/ü÷,£?Õ¼\\\"ýÃ`Ë\\\\õfc°péq\\u0007Éë|\\u0015JfÿQ\\u001däý¼ßÿêÐÁÏæ&cî\\u001f>µÿþ÷{\\u000e¨=¿±ÿÄ/\\u0001ùç/>üð§\\u001füâïÞ[\\u0000L\\u0016?º\\u0002ø©hW\\u0000õøáÿÿÙzöÞ2 ÿÞ* ¿»\\nhfZïûÿæ&ÿ§û?þÕä?×ëÞ÷ñÇs\\u0007öüüÐg_Ìí®\\u000fêÿæJ8ñ;MþÎ¿ËÈßåäï\\nòw%ù»f6ÁüP°?dSF°9#Ø¤\\u0011lÖ\\b6m\\u00047M\\u001cÁfd3G²#ÙÌlæH6s$9Í\\u001cÉfd3G²£ØÌQlæ(zb3G±£ØÌQlæ(6s\\u00149Í\\u001cÍff3G³£é\\u0019\\u000e9Í\\u001cÍff3G³£ÙÌ1læ\\u00186s\\f9Í\\u001cCOÙÌ1læ\\u00186s\\f9ÍÍÍÍÍÍ^W±±±±³³³³³³ÓKr6sr6sr6s\\n6s\\n6s\\n6s\\n6s\\n6s\\n6s\\n6s\\næ°S°S²S²S²S²S²S²S²S²SÒ '4\\nìÓ,°OÃÀ>M\\u0003û4\\u000eìÓ<°O\\u0003Á>M\\u0004û4\\u0012ìÓ9é\\u001câ2Oy¤Ì3e\\u001e*óTÇÊ4W\\u00164X\\u00164Y\\u00164Z\\u00164[\\u00164\\\\\\u00164]\\u00164^\\u00164_\\u00164`\\u00164a\\u00164b\\u00164c\\u00164d\\u00164e\\u00164f\\u00164g\\u00164h\\u00164i\\u00164j\\u00164k\\u00164l\\u00164m\\u00164n\\u00164o\\u00164p\\u00164q\\u00164r\\u00164s\\u00164t\\u00164u\\u00164v\\u00164w\\u00164x\\u00164y\\u00164z\\u00164{\\u00164|\\u00164}\\u00164~\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164\\u00164 \\u00164¡\\u00164¢\\u00164£\\u00164¤\\u00164¥\\u00164¦\\u00164§4§4§4§4§4§4§4§4§4§4§4§4§4§4§4§4§4§4§4§¼þ\\u0017@'( é\\u001câ5Ð¼\\bWAó2h^\\u0007Í\\u000b¡iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN-iN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­hN­xÇ\\u000eÞ²÷ìH0í s·íà};xã\\u000eÞ¹·î 9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¢9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µ¦9µæ=¦yiÞe·Nð¦swæ­¦y¯iÞlæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔæÔ¿\\u0015¿\\u0016¿\\u0017¿\\u0018¿\\u00191ájD:øË\\u0011ùÛ\\u0011ùë\\u0011iNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNmhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ\\u0019Í©3Sg4§ÎhNÑ:£9uFsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiNÓ:§9uNsêæÔ9Í©sSç4§ÎiN]Ðº 9uAsêæÔ\\u0005Í©\\u000bS\\u00174§.hN]Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í\\u0005M\\u000b6\\u00174m.hÚ\\\\Ð´¹ isAÓæ¦Í%MK64m.iÚ\\\\Ò´¹¤isIÓæVE4§.iN]Òº¤9uIsêæÔ%Í©KS4§.iN]Òº¤9uIsêæÔ%Í©KS4§.iN]Òº¤9uIsêæÔ%Í©KS4§.iN]Òº¤9uIsêæÔ%Í©KS4§.iN]Òº¤9uIsêæÔ%Í©KS4§.iN]Òº¤9uIsêæÔ%Í©KS4§.iN]Òº¤9uIsêæÔ%Í©KS4§.iN]Òº¤9uIsêæÔ%Í©KS4§.iN]Ò´¹¤isIÓæ¦Í%MK64m.iÚ\\\\Ò´¹¤isIÓæ¦Í%MK64m.iÚ\\\\Ò´¹¤isIÓæ¦Í%MK64m.iÚ,ú4n¶?e³ÈþM#ûS6ìOÙD²?e3ÉþM%ûS6ìOÙd²?å³\\u0006Ïö§|6ÑèÙþÏ&\\u001a>ÛòÙDãgûS>h\\u0000mÊg\\u0013 íOùl¢!´ý)M4¶?å³\\u0006Ñö§|6Ñ(ÚþÏ&\\u001aFÛòÙDãhûS>h mÊg\\u0013¤íOùl¢¡´ý)M4¶?å³\\u0006Óö§|6ÑhÚþÏ&\\u001aNÛòÙDãiûS>h@mÊg\\u0013¨íOùl¢!µý)M4¦¶?å³\\u0006Õö§|6Ñ¨ÚþÏ&\\u001aVÛòÙDãjûS>h`mÊg\\u0013¬íOùl¢¡µý)M4¶¶?å³\\u0006×ö§|6ÑÐÛþÏ&\\u001a{ÛòÙDoûS>hômÊg\\u0013\\r¿íOùl¢ñ·ý)M4\\u0000·?å³Fàö§|6Ñ\\u0010ÜþÏ&\\u001aÛòÙDpûS>h\\u0014nJgàY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸àY¸à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶à¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶ä¶äÅÝgágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágágá\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0007Ú\\u0017wkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001ehk\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b\\u001eh\\u001b^Ümx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016nx\\u0016ñ,<ãYxÆ³ðgá\\u0019ÏÂ3g<\\u000bÏx\\u0016ñ,<ãYxÆ³ðgá\\u0019ÏÂ3g<\\u000bÏx\\u0016ñ,<ãYxÆ³ðgá\\u0019ÏÂ3g<\\u000bÏx\\u0016ñ,<ãYxÆ³ðdáö·\\u001f\\u001dÜÿÅ'\\u0007>·?ÿãî?ü·=í=ðOsÿpð_&´ÿþË_\\u001c8´çç6Z1ùÝä·ÿÞþïÊ>àà§ö\\u001d<mÏ$]\\u000eýáSû=¿ß»ÿ¹=?iþÝþÓ¿ß3^ùvxöØèèíá½{~óÇúo²ïÀÇsÿj\\u001fÿî3eö=Ì}öOs¿Û¿¿ýKîûØ>ñø+m\\u001føég\\u0007\\u000fÍ}tèWsûí¿6ÿþ7?ÙóñÞC{ýß¡ÉÛÉ_öÐä_oÿ_÷~2·§~u?ö\\u000f?üâ\\u001fþbï¡É??öÏ?øÅßíù£ûñ>þ½æ½\\u0013FLþObòRye¡ûýwâw\\\"DÙËä$ì\\fU\\u001d?UÝ}0>yn|åýÏ)Ñú=»$«£©î]Ú\\u001e¬Ý«_%\\u0004êË^6£»[µº<øò5\\u001f£Ì{vöWÇ01F×ß®_\\u0018\\u001e}m_^B$Ó³+´:RÖÝ'§v¶o\\u000fN\\u001e\\\\ß\\u0018==RÍ¯óñò¼§¯w·ìÞöðÂõÁÕñáS6\\t\\u0013ÙÐ`EwãÞ\\u001e\\u001e®\\\\©.ÝO\\nÓoò¼ì\\f3¼ølgýdõdy°qvøäðàù\\u0011>^¦zeÓ,Ñ]\\\"+\\u000bÃ\\u000b¶uöÓ%EÓm´îQ-.Uw«\\u001b6\\u0019OnWO^&\\u0004\\u0014½¬I~Ñ]7vÖ\\u001f\\u000f­7ÏVOÏ\\u000f_K¦'ºëÍÂÁË6Îû¿øel·.X v\\u001c¾³~­ég;o¯\\fÏ¨|\\u0010S÷rÑÄì®%xqxjÅþI\\b%{ý¦\\bPLîmî¼^m2\\u000f¥mÙjÊè®#;\\u001bßí¬_O\\u001dÆ´ê©6\\u001dA\\u00159{f´°6¾½1:ù¬Z]\\u0018ç\\u0003ª¢·\\u0001»ëÉÎæ×ö\\u0005&eÊzª\\u0019Èdw\\u0019\\u0019\\u001d>2ººZõîiÓê®!¥3u¯^¸\\u0010Ç\\u0016ü&\\u0003%rØZõäTµµ9zq§3T&K©d¿;,{y;¹é®\\u001bµÇ_ß\\u0019¾YN\\neÝeãÝ\\u0001&ð¹Â\\u000137HKP3&¯ÑÒi¯Ñvä6\\t»kÆàÅ«ÑÚµ@G\\u000eR½¢\\u0019È$¨\\u0019ë«ù\\u0015ÛªÀ¸\\u0012\\u0013Í´)ß]6>øÃ¯\\u000fþÎ®n¢4AºKÅèÁ¼\\fØ·W­\\u001fMÔ¼<Õ],\\u0006/®Ú¢d;qµ},)h:±ê.\\u0016u¥M¢ÛþU-Dµ0\\u001cSöÊ¦7«îÂaç¥ÕâåzsôuõølR4Ó¶\\u0010¬U\\u000e_\\u001bmmÙwB~\\u001d\\nL7l7Þüfgccxñ&\\u001fÉ.õ¦D)°b9½f×zöí^ã\\u000f¢µíê®\\u00196)ê7X\\tm¤vàR¨f\\\\·«=[\\u0006Ñ´7&h×¯`±²Y\\u001d?\\u0016XôEjâéÅöm|~V\\u0010ªh?\\u0006sIa\\u001f\\u001eyZÝ¾°./Ü<M\\u0003²a;ïæe»$JÓ\\u0001SM;fÙ`¥;i°!w+X\\rf\\u0019WØ\\u0002:¥¶¡Úeî®\\u0016\\u001fÌ\\u001dÚûëÏö~<÷Ù¤PªIuÝ]-lcFÏ¿ª¾~ÖT¤)µ\\r(Û¶uW6çï~³³°\\\\¶¡Úî¥»+-ºÃûËÕê²ý×¤%Öoó£»h\\f¯×Ê6õN¥.ÎEæ\\n½î®\\u001e¾n\\fç×Ó2spÅtW\\u0010;,Û\\n\\u001cÊÎEH\\u0000t¼Þ®ÏÍ RÖ,ÊMw\\u0011\\u0019¼ºROÚÎv\\u000f1qÚd4\\u0000nØéÓÓ3áa9*ZSìMw\\u0005\\u0019|¹:xñíÎÛk©pÏFsÑ]DvÞ^©.\\u001ci\\u0006$L$´C7\\u0006TõëÕñçõ½ÙIqÚ$ì.\\u001fõ;¼ürçÍ×©ër\\u001b­¥¿¦»|4ù±óúìèEÚ\\u000bíçê.\\u001cMNT'nU'R¢rï0kêÒ\\t»@¯ÇÕ!ÚFkV°\\u0019d\\u001bõ·JÁ56N[y38ñ\\u0018\\u001d¹X­.$j:rÖ]6ì\\u00186¸q99\\u0003ÛéÈ\\u0000Û°ìáåêøzÚ<@ôÚ`k\\\\ÞÙø®i×,¢èem2v\\u00176ï¾p>\\u0003ó»\\u000flÃfÀèm´\\u001df`Þa;×ákÕÙ§¶|$\\u0012ÍX\\u0019ÇâÒèÆb\\u000bÍ7î\\u000e®\\\\HÙàså#G3z\\u0006×\\u0004¬Áåën\\u001c\\u0010\\u0013°Ý¹ÌÁÄces¸²2ì÷²¦sç l=±Ó´9Nß\\u0001°\\u001c,]ÖnÖ\\u000b¥÷Ç[WoÞVgçÓúwß¥e\\u000eÇ;kè\\u0006ô¥\\u0005lz]\\u000eI©ÍÔ,)ÝG\\u000e ÇÅ¹¤iNé\\u0010i\\u000ef\\u001f\\u000fo\\u000fNß\\u001c\\u001e=4}+{²m\\u000ey¼<]-lWOO\\fo%l½~3sËÁÄãÒvus)©ln:ZIÇÂ¥ñí­ÑÓç|¢W4Õ°@p´Î V\\u0014®T\\u0014pÊa\\u000bSRÖ9FTt\\u001777«ógv6¶\\u0013¶é{Y\\u0007\\u0005X¬ßµõh\\u0006oÎ\\u0006k\\nQÑ]\\u00177\\u001f\\u000f7¶K\\t´!o¡|\\u0001j\\u000f\\u001e}8&É¶IÝµáÝ]¨ñ£+ÃGOâ5áÀ\\fcò¹5)=Ñ6\\fè7®nU\\u001b÷M4½ÛÜ-Áäâía¿7:zoxæQJ¼v\\u0014.ÁêdñÎàÔéáÒÉ0M\\\" Pø=òÉr¼nä|Âº+s¸·\\u0004k»ß&áµ¬×o\\u0006©\\u0012L'\\\\¶ãë&i¿\\u0011D¼½R-°3¥je!A¢áÖªewÁ\\u0018nÛyØÓÑü·)aÚ]\\u0012L#lÇ=¶Ù@®Hí¦IÙ]%ê½ÂµµÔ*a|.*1Y¨V\\u000b·ª·\\u001bI\\u0013YÝ+M«ð\\u0002³+\\u0017ì\\u00146©\\u001ai·í)úXÜ5¿27\\u0011äÍ&\\u0016Øc}~'jã)\\\"qo°»>4hktäý\\u000fI¡\\u001c¯»LØ$\\u001c_xi'Kã«ÇSSÑ\\u0006l%]}0»Ø¸SÝ¾Ørã\\u000fm_KÌHÝJ×ú`®ÑÖWö\\u001b&jµ]}0Ó_KVvyac\\u001fì¸N¤¼?\\u001d<;U-NÌ'4ì×f/¹ÉËä4Q­\\u001c\\u000féD¿¿kGâôPí>@\\\"Ñ»ß¿^²ÓÂZ\\u0010¢6Ð^g\\b\\u0014¢Ín|my´ñ\\b\\r1Áh»\\n \\u0010µ\\u0013_Û½ë¹¯]\\u000eM@eJ@í\\u0002iÇäeÎ`^õ¤ût`öq÷\\u001bûÇ.\\u001f\\u001aRÙ,þÔXªÝ\\u000b¤\\u0015]þÆv\\u0000iÔNï\\u0005Ð\\u0006vÚÂR\\u001b·\\\"Jt|ÿK;&«óðP\\u0000}¨\\u001d³kÍþËÕëiÊ¨]16X°¸ÕeÑG\\u0004te\\u0012iE_×E¤ecª\\u0016\\u0011­U\\\"\\b \\u0018\\u001dÝÛ\\u001e\\u001f{hßgÝ\\u0007Ö>kZw%±³ºdí¡[O\\b \\u0018\\u001d­®ÿ¤*þ@\\u0000©¨ß¯¦Ía6\\u0001\\u0004£õÞü·C@ÂÂ¥^Ùvh \\u0016µqªãÇEf½²Î\\u0001©h£\\u001en\\u001b½<¾³ñ(©Ùm¼î\\u00022X=7¸Ünp¤\\u001eg\\u0012nC ñèÓåÁå{;ëÓT\\u0001½¼-ö@<Z]9U=¹1<{¢g]I9t¶\\u001b\\rëÍ\\nËPm$0\\ty³¼óö};\\u001b§p¨T\\u0000åèpéTuÿèpûmR\\u001c\\u0018!¡y@^\\u0019\\u0013ª­@4únþÅ\\u0007i[Q=\\u0019H8ú¸\\u0016MÂ5´41¤q1Á;Ê\\u0014§-@AZ?3zò4Y(å'\\u0003@?ÚO´ÿí@\\u0006ä£¶(ÚN¬yp{\\u0002IH_?«³þä·ÕÂ7©¨T¸½6T¤3ÙÖ\\u0013n@\\u0000\\u0015i£´ÍRáWXKj§¥6éÿú¯\\\"µ\\u0015\\u0004H[~5mú^¿-ø@G\\u001a¥<\\u000fòz\\u0007\\u0001D¤ÕñïêóéñN(0õxñ*,Ý\\båÆ\\u0016$\\u001c}G\\u000b0|ð¦Zx\\u001eÖq2 \\\"µ\\u0015Ø®ZR*}·±-´ß¶o6FO¶Æ\\u0017^n'¨\\u001dri2_J¢´:qÝÆÌX\\u0017Rcf\\\"÷\\u0016\\u0002èJÛv¾ºW]:\\u001aÓ¦Üm'X×^E4#Ëh;;TÖ-L¦íüÇ\\u00172¤1|=;Ú\\r¿á£)e=Ó\\u000eá@c:>ú¤:ú0µmJI¿c'ÌÔfI\\u001dêÆâÜèHÂ\\u0013Y8~\\ft¦õaçÅKI*n©Ín\\u0000i3e¨¿\\u001eÝ9ú*¥(\\nçÞ!àtáaµx{øÍÆør¨¥6uö0\\u001ehNmÅ´#CjÛêËMü\\u0016\\u00036Óóäh²ðb\\u0010t§ËçK«Ãï·ìb1E-YHw\\u0006Z ÅéÄnepìVj\\u000f\\u0017öÛ¹#¼\\u0002HO\\u0007/îÛ\\u0016Ú÷9¼XgLä.\\u0013\\u0002õiã£úõJ%ý.\\nÐ6\\u000bÔ`E_;ý¢\\u0000ÚÓæU6Óçä!=+Ö[\\u0000õiÓ¾\\u0019|½¬¾ë!ýic\\u000b:w¨\\u001d)Úº\\tD¨ÃÍs3\\u0018Æu¹ÛÍútr¨\\t6O¨Eîx\\u001e\\u0010¡î¬¯\\u000e.¾ÜÙ84ä©<ëi×ÈîêRÝÛ¬\\u0005\\u000b\\t³*×îè£\\u0000bÔw'EÃ·w\\u001b¯§,¢ps\\u0001´©µ£ÓËÉÃl.ý¸\\u0007ä©M0;­Fè<\\u001cÌöu·&\\u0002\\\"U#|?O=& 3å÷W^µÚz²óörò»Ìú=Õv\\u0004 W­\\u000f^¾ÙH~¦ï³\\u0004ÈV«µµZ\\u001al×@\\u0000ñêpéËú ÖúÉ¤\\n]\\u0007sÛG@¼Z­¬T¯¾jZ6:&êi÷JAmy½]\\u001b1¤¾R\\u001bL¹V\\r«l°.M:~,¼b\\u0007©Y¿V-^NmPÊÇ µYqÍb>fgHn\\u0017\\u0004iZ';³Ì\\u0017Q[ð´q»kËøäbµqÂÆµC|ê<¾×wí\\u0004åe~Óþù½\\u0007~\\u0012*ï©¶¿#uëú¤Zúk~\\u000ed®áJz0áå&HìúäÈàÙä`v$w;«@ïº³¾P\\u0013ÇÔ`}åI4P½ÚêUëf±\\f\\u0012»9Ò]S\\u0017¯\\u001eK­)eé+3P¿Ú¶Í`°+ýö\\u0004Ú×º¤ÏÙË~[A$¿ÎÏ¯U\\u001bJ¢\\\\\\u0018\\u0000j_\\u0019dpýáxólòB²tó\\u0005\\tÔ¯×_Ú\\u0012ú½l¬¢lcu\\tl{þ8!LîÞ\\u0012^Ç_¯¾_I_÷\\u0005\\u0010Ê?Ù\\u0011{\\u0006±¤K\\u000e@O^Þ¯³ðÌñ¾é\\t×¯Vþíõk3b\\u000b^ñ*âµVEo$/õsåfX\\u0012]\\u0007WNØ\\u0019ù\\f&\\u0003vÙÖ®õeÐ\\u00155bø\\u000e\\u0006ä®¯\\u001eW¯n$ÇòÎd\\u0012]\\u001bEKêB;\\u0013<I¬s­6®Ï&!mDé$d\\u0000\\u001c«ï\\fC$P¸î¼þÊ®íÓwÜ\\t\\u0004\\t$®õ\\u001eàí3M\\u0007AÄvCB\\\"WÔ×Û6'î\\u001cÑ«õ%½.¯Î \\u0017\\u0018á¶©%\\u0010½7î\\u0016Î7S¹TPbúD\\u0002Ñk3QÑë´s¶+ «ÔwæáCj§×þØ\\u0004\\u001aØ\\u001a=ZÍ«­#ºw\\u000bØÉdbwjErX»Î?»´v\\u001b\\t°µ\\u0001òÒº èß$@&ÇÎÍ \\u000bÚX­ÎWD±\\u000b¶Z'íiåK5²Q}þb\\u0016íÞ\\u0016\\u0016hagS¤UéÛ\\u0005Ä°uII§Nµiu\\u001bÈAõôò\\fÞ¡%õrw\\r±K¦Z¦µ+spK\\u0002)ls\\u000e=¹]ïÄ\\u0002ÕãÅU;eA»Ú­\\u0000\\tô°3_VçS¶L/k§@\\u0006[]¯V/\\u000eÞ¤ë?üN´\\u0004\\nØZÙþlµÝ2Zy>¾x89®ìõÛR\\f\\u0014±õ´'§c\\tGw%Ä\\u000e.ß\\u001b\\u001eO^TÙXÎ¶\\u001db×nÎ\\u0000È+/\\u0000@\\u0015;£ïÕw;$\\u0010Ä6³×\\u0019Äj­\\u001e%PÄVgO\\rn$O\\tl¬\\u0016\\tJ \\u001dÜ>:X2w§\\u0014%Ã6.{3å&«@\\f;þÓ\\u0019|/\\u001b«ïr\\u001e¬lî/?¬&§¹Ó÷-ý\\u001byª\\u001eÅÊFj%\\u0013PÅÎ\\r\\u0016\\u0016î±aÚÍ5¼TÏ\\u001cErÈÝ&Çdö¾\\u0011ë\\u0001\\u0002¿Nöef3çîÈ DÚ×s3ÂIÑËÝGC'\\u001f¶ÓóPø\\u0001P¼\\u000eæÏmÎèEî²\\u001f zµ\\u000b^Oìfµ«íç\\u0006@ÿ:x±dC'Çê·$\\u0010¿¶£O\\u0006\\u0017\\u0013Ì´Déî Èduò\\u0001·ÖJ×,ä°új­ºþl\\u0016û¼eO·©\\tt¯5µ»ò|6©i#ºxöuFæ¥¯Ì@ù:¸ùl\\u0006(e¡\\u0004º×ÑÒÚ,ÞaÞ+ÚB\\tT¯SÛÕVúVoîo\\u0019B^«g.=\\u001c¼N>uQ»å·Ñ\\u0013Ú7³øb¹ÛHì:ð'ÇÊ<¿BZ×µ;ë«3å¾\\u0018²X]¼<3¾j#öM\\u0002ëàÊ7çf³¨©#º÷\\tªÈ$br,ã§¬@êZod<¨ÙX²­X@ÞÚìe§\\fØýj ,\\u0019\\\\¹\\u001aH¸F\\u00122°'{5k§T@ÏZÛy¿¼ü\\u0002GXÈmõâýY\\u0014+åtK\\u0012¨Y«g«µµ\\u0019ÄrC4Ð±ÎhV½ös!×Õ\\u000bóõfÞ\\ftD»;¾HÇzöy\\u0003\\u001dÓUtî`\\u0004JÖZëp÷AÝÏn^OÕªÿ%\\u0012²®¯\\u000fOÜQÕ÷î$\\u0012(Xk/±\\u0019¤¿ð°\\u0013\\bX\\u0007WOÏ¢]Â]\\\"*~µÕ-^\\u001e~w\\u0006\\u0011û.OÀÌÖf½bKU¹å\\u0005¯\\u000eæÏÕÙ¤ô´Ò\\f@®:¼º53g¥_ë\\u0002¥js¦g6Â)ï%Ð«\\u000eÝ¬çr¹gÒ@­Z\\u0003þkÉi9C\\r\\t´ªÍ\\u0019çáÖRuo3Y\\u0012ãg\\u0005@¯Z\\u0019ÌÈü\\u0000U×Öf@öÓJ Sm\\u001b§Ê(|ÁG2Õ*Ë~§Áõ©¦í-@¨Úø~þåàÖíjåq3KM»`\\u00162c\\u0004Úá}\\u00054«Ã\\u0019H¥´+\\u001e\\nU­ÖG\\b\\u0012§\\u001fÚ\\u001dGR@«:X«\\u000fQ'oÆ8MB&­ïÈNfS¥»OG!éêLd²Ò]E rµ=>¹U/©·I&\\u0014¯Nz[m¡wéDJ¨¾\\u000b\\u0005ÊÈú±Áémû§.ZI\\u0007®©B6­\\u000fÎÛIñLtWÙvjïÑEÖ¬39ÉSD7'UHªzâøèüÕjùnò±*wlY\\u0001±êÌI¿\\u0013\\r¬\\\\fè÷ zî³uWÙì¡ÝÛÑ±ÞÙI\\u001dûB+dÍºyv6¡ÚÛFµ\\u0004¤Ïýö®J\\u0005\\u0014ªÐ0=R«ìRÈõÌ£çwfvpøLòðÍUt\\u0019wL¨6Rw\\u0015ù@þ]Ãvª'w\\u0006ó¯®5é÷2×4PH6\\u0017«¯½úný¢\\u001aõêéÚ';=kUw\\u0001ùÝ?T+¶F¦\\u0007k+\\b¡fÉèÂá;&V6'g[¯Ø¶ÕFb[[;\\u001b\\t\\u0017\\u0018ô]EF&­\\u0017î¼¹to`VôµóUHºqn|ù[\\u001b-auVf\\u0013C) HýÛ\\u000f?üÛ?K=î¤J¹\\u001bG\\u0015vgÝYßHVþÌB\\u000e­ÛooÀvÊÒ\\u0018S@ZKmÔW=n,¦(*m°6ûEëù3öõ¥¶Ìvg'JUÈ¤õÚr¾ß\\\\ùpÿ\\u0017§È®ò^îò\\u001e\\u0000ÔÓ§l\\t±ÿ:¸ørðÝVR_Z:\\u0002\\u0002Õjã~í¸üævê×Jù92\\u0010¦6ßÍ.Îþï\\u000fÿöW)ÛýÓe+ M\\u001d¿¹XÏH6®ª×®b\\u0001]jõõëÔn-Lá¶+\\u0014R¥»Ñ\\u001cêNÙô Mê#õå\\u0019o§øqKí\\u0014*$Jýòbd;[2\\\\\\u0018À@\\u001e¶aêËíÌ*íöÏÂÛR@Zd©yÑ÷Ç§\\u0014P¤\\u000e\\u001f³côÒVÆéGYìÆBæ!ÇR[UJ\\u000f4\\u0010u|{£Vd$¦¢ðÅ\\u0017\\bQí{«\\u001bbXìæ ¢Ú©Íðâ¤ân«#¦@:¸r3uÌ\\u000b?$#\\u0011êÖÁÒñ\\u0019hî5U\\nOí{Kzq¹\\u0017\\u000b+ ;ýÛ¿I~oÒ\\u001dW@sjóm¸r¾©Fi\\u0017=æ~®\\u0004§Ë§j¬Q÷]£ÀêäÍõçãË\\t~l»æZ\\nK++Is\\b\\u001b¥ÝöU@VZï·%^9k\\u0007öV-¥¨tíd=3z»ôLî\\u0013\\u000f9©n=\\u0019\\u001f}¶ÀÒÎ#C\\u0001!éxëjjW2^R¤t¸y®¾\\u001935ô\\u0002äúäµe\\u0003\\\\K½EÜFlMì\\u0015ÐÖ\\u00198\\u0019pkó¥íÔnæ,TÝR$aÿ+w\\\"\\u0004\\u0005Ä¤;o¯Uçj¬0|p¾_M»70sW+ )\\u001d-­Ùo÷IRíÐÚ\\u001d¾V@PZ\\u001d8X=gÕs\\u000b/«åÕ¤­\\u0019¦B²Òå¯wÎ¥êXm(°\\u0010¹t|°ø*im¥ç@FZm?\\u001a®,$UÅú$t@CZ[ó\\u001f¾4¿P¹\\u0013\\u001a+  ­×pé´\\u000bÔ]7\\u001a¡åäìEÊü>/\\u0010Ö\\u0005*©EÆiÌ\\u0014Ö¯.i§åT@7Ú¬\\u0014Ó¢´\\u001f\\b(Fm÷ipHR VÈ£\\\\Ô¾·\\u001a%\\u0011¥ÝzÄ¢Ûv^M\\u001dm,ÇSRtðåjí\\u0018ÈÍiFt´µ5þúýX£ç\\t)!½;B\\u001aÑÉ\\u0001Í¢`çõé4O\\\\\\u0002\\u001aÑ:7RRÝFÉÝÇB3z\\u000e3Ú^IKBãõ\\u0012@\\u001d:Ê\\\"ô]wß\\u0019 %)ÝH\\u0005Ä¡v*8Úþ¶ºr*µ\\fJo®¥éák£#\\u0017c\\t?Z\\u0001h­¦9v+M¸Ów'û\\u0015\\u0010Öïü«\\u000ffÒ{é) \\rµS´DôÎÏ\\nY6N·výsêQ\\nSw{ÈÀÔÖÀ#\\u0017ígúß\\u0002¹\\u0011\\u000b\\bB\\u0007_Ýk.KßYÿ¶¾Ð0Ö\\u001a¯Ë\\u0000ºÐz{ó\\\\b²ÒÖA \\tmRâ\\u000f\\u000f&ì'ÙHí¹Q\\rä õÖ÷¶2U\\u000b)»\\u0005Ú½; \\u0013Íi-\\u0011Ú>4 Ûpí©\\u001e\\fL'7\\fØ±±©»iáD\\u001b®»`Ôkýç¯Ó.2Ôîrc\\rä ¦Ö['\\r»ÇÊ4Ð\\u000e®>I-µu ÷¡À\\näéáûs©óA\\u001b¬ï>\\u0013XL¶ûH{þ¸\\u0006\\u0002P;o²57ùR\\u001bå0¤\\u0006\\nP[5ìpU7ízÂNH\\u001d«m\\u0017Ðîûä×\\u00077w éhRÞæ:r,]?6x¾R\\u001d¯%AI±ÚU\\u0006*Ð_ìß÷éÞ?üÕßüt|ÿê`ýi=\\\\ûS«hyrÞQ8R­0t|î-ÄÃ+y½¹\\u0006Ðzá>3\\u0014ÞNT\\u0003E¨­\\u001fí\\u000bÅnª;ò¨¡éÙú\\u0012©DUéöm5ÐNXòË4íóöÑ@\\n:x¶:yIíiÕÖ\\u001azN»+-ÎÄ!³p«Xä \\u001fÏ`wËO\\u001752,Ý8Z\\u001d\\u000b§\\u0016ÖH\\bzáDué¾\\u001d]R_£»HI\\u0003-¨}m6\\u0007Ó\\u0016*ÎÑA#\\tè©GI3ßÜmbh þlT}Õñ\\u0014_ñpqºËÄøë\\u001bÃ·Ôv)=8sÓy\\r´ÕñçsQÜø\\u0005$ÍÖíOLq\\u001fÚRûâ¹VéÆÆ\\u001dû\\u0002gpð¯m\\u001a\\u0010{VsµÌOiÌsgã»õë©\\u0003£ñk\\u0005ä;:\\u0011â4å(aÇÂí#hd;záåd\\u0015ðö´\\u001f¥¾³¹WtgëV\\u0002¥v\\u001b«\\u001aI;7.':åT\\u0010\\u001aH:G/¿®ïU~'y\\u001f¡çò\\u000eASÕÖ«êî5û'S·çÆ5ÒrN4tÕö£Áb\\\"ô#<Pr\\u000eWVÒÐ¯å@Ài\\u001bNêüô\\u0001\\t8/?Lü>n\\u0016\\u0006´ÍnÏLt\\u0017_ýá³/>MÑ¦5PkÚ¸]ØÛÑè¾ßg?Ðÿ| \\u0013ð\\u0006ø\\u001a\\b7k¾jÑá®ÑÐ@°YóÆÄ\\r9od«\\\\³Z|zÂÙøk¤ÔlêÏdÎ&vº9\\rän'=Õ@¥é%\\u0015)qZµF~¡çÏ$\\u0006iÝ\\u00014\\u0010hVgkæÔq¨ß+Úª\\u0000$u\\b«ÛIc?ç¥N³5'Jnp@«9¾zb|òÜàÔáUEé|ò5\\u0010k\\u000eç×ýËù£qS\\u0006 ÒÜÙØ°FÏ_ÙRdlB4BT#¹ææ­Á|Ú¾ö®\\u0016E\\u0003¹fõäú¤]iRÊYHiä\\u0005zôæðáÙ\\u00136\\\\B,á§(@·9Z|¶7ªÄZ#ÅæÊ\\u001dû\\t%\\\\z\\b\\r\\u0014ÍÅ®É\\u001b¾ÊmÓk$Ú\\\\ªµýiz]z\\u000e\\u0014Ã'døé`áÒèÅR3Cúû\\u00105Pm6Ð-5Ví\\u0011ëbùÄÖÔüØµÕ@¯ùá\\u001c<0÷êäFu8g»\\t\\u0002jÆÙsµå­ïI»\\u001eÞ­R#÷ÏÓöOR!\\u0014¦=ß­DsûQÝ»\\u00127-Ý\\u001e\\u001f\\u0012h\\u001e}=º±Ø$|R¬V¥FsuÙ~¥¤\\r\\u0000·c\\u0004\\u001bwªï\\u001fWó+¶Q)×E\\u0002\\u001bGÎ×¶I§\\u0012E\\u0003æøûõñÚÛ\\u0014 êVkÈÚóÉõÔÚ¹@4ÒfnK:ùú®§¿~ªÿ&±1\\u000eo\\u0000efmr|éDýÞ\\u0012ë·qgµ5g>x:¸þ°>\\fb/aü<\\u0016ÝI?¿Z\\u0013»ñU\\u0003qæøñÅÁ³KÍ\\u0010\\u0012Êµ¨»,42¡á\\u0004íôk( Ì\\u001c{T\\u001f¬Lã4È³óÊZv$5õ£+ºp~ã¤ÎÈý\\u001dA\\u001a]7z¥ùDÉ³!ç\\u0003¦0spæäàròRC8_\\u0018\\rä;ëëc\\u0003v\\u0016»q!½m\\u000eL ÓÎÓg§×\\u0007Ç\\u001f^$1*áB\\u0001=æùµá©\\u0015û')N[Ò\\u001cs´xjpëuòDÅ\\u000fÈ«sáRuáÛ¤Ñ£ï\\u001fPd\\u000eWæí\\u001f\\u0016Ã\\u0007I¡\\nKØVooÞ\\u001eÞK8uÙ÷«x¤ÊxüÚÚ4¸ü #¹Ív ÈTYß®2\\u0006_%yNgyÏå:VÔtg!Áö®~\\u0006Ý&ÿäÔøðzR¤\\\\{be&Ó­hêwøÝVÂ¼\\\"7nß\\u0000Qfuo³?1¸°,4µöH·º+F=\\u001c¹8Nô\\u0005°Ë\\\\\\u0006h2Çß|g\\u0017¡Õüêèùý`FîfGÈg¯g¦\\tòö(\\u00063W6[Kµe RÚí¬\\u0018 Î\\u001cm§©«U_ì~-°\\tºº<zqÇ6(mþ$J7ú\\u001b Ê\\u001c<S-¬$õe)üUX\\u0006Ý&ÿüt=\\u001coMíË²oÜ¡Kì9m°GWSøNßaM\\u0003t>§6K\\u0014¥\\u0013H\\u001a Ä\\u001c^?&ñ/TO¹f\\u0015ÉÚ\\tû'ÉDU\\u0014~_Ô _ÎÕåáÚ³z<Nz{¶Àû$ì®\\u0017¶ÚÖV\\t|\\u0018;nµ'\\f9Ý\\u000eHrRèÜ­\\f\\u0010aÚ9¼-íi{¾R¸}\\tdáÑ6«nÜêòøÎWÉ_®ïÍ³\\rc¶xx²\\u0018O\\u000fégõ\\u0006\\b2¨7|ð´\\u0004§Þ*óNé\\u0007ÒLÛßvÞ>OÀeN÷l&³E)£Kiv¿Yw\\u0011©\\u0017Ò¢\\bg{d*³\\u001e/\\u0017ÖíìRÅµ\\bë§ê\\u000b'\\u0012c\\u0015»Q¤Ë<|³Ð\\u001fÛLº\\\\4/zY[\\u0017:³ÝÇJ¬Vµ×û^èjøº÷\\u000e\\u0012\\u001aenõo.óËëã×\\u000bÕö£¤$Ì¼\\u000b¾AòÌõÇÕÒÍÁËùúUâ¬¾Ø1ÈóÍF}íæ±[Gí$$!ìå® hÌ\\u001b|uopi5\\u0007dÂ\\u0001\\u0001\\u0003ÔFØÑ³ºp$í»\\t_¢`³ÝÓO_aîâ5®?w2un²ûZ°vÔmJÙ¶q|Þ\\u0003,:YçÕ\\tIx\\u0007\\b7¿\\\\\\u001d|suçí\\u0015\\u001a)ËØVjÐð¯ê:º<7îÌA7Â¹:|®ÔiöÖ\\fp¦ÖÃÚµÉ\\u0000\\rgÓÔ²öZn+!Ðr\\u000e¾Ú\\u001a>Ö(¯Ô2@ÂÙ:X%Î?Êms²RIM\\t¥ýL\\u0003H9\\u001bÖÛ\\u0000Ä$a[/\\u0003=g7Nã\\tq¤5è\\u0006øÃ7ëm¤\\u0006íN?óîÍ¤zn£´þ-\\u0006¨9ÿ.YëßoctWÑË¯S\\u0007'Yzj\\u0007¤Ã\\u0013\\u000b6JZ Â9:\\u0019tÕû$Õ¥`Æ\\u00022@Æ9|sÕNÃÒ\\u001aevS¡»2Ôòµ·©ZúÃï\\u0006H9\\u0007×ç«ã§v¶n%\\u0013~y\\u0005¤Ã7Ïk'ÅÛÉô³ïìo\\f\\u0010tÚ·ß+¹i}w\\u0002É\\u0000AçÎëyû'ù`³?ûk sgýähk+M\\bVö²¶#c\\u0017ÎÔ(9\\u0001A§\\u001d\\u0007lTP86\\u00034õ\\u0010j+\\u0011}:«\\f\\u00034Ë/mçJM?\\u001b«Ò\\u0019 äÁ\\\\Bx\\u0013X\\u0003dµë\\\\¬²è\\t÷êÀ²ãþ¥Á­t\\u000e;Ñ\\u0001\\u0012ÎñåoÇ\\u0017RØ_îk\\u0011rÚ<|³>ßùuÄ;ÀrãìõáéË\\r\\\\JÕ\\u001eú5HÀÙ\\f¾Ig2ßzs|îÑàÎý\\u0014ó¨¬\\u0015j\\u0019 ßl*kêæ¦0íÕ\\u0006\\t8\\u001e¦u$oßh¿æÓÚRqt'\\u0001ÆÕúZ\\u0017\\b\\u0010Õåá©êúÃáÆvÊ.ÇèèvöÕåú~ja\\u0015Î¯Ö Í¾z^}|»\\u0000 è\\u001c­N7]Ì®fon\\u0012HÚgì;ªARÎÉÏ~¬´}\\u0002?W\\u0001jÎv-ðõ8\\u0001-gµp³ºXJçn³QT÷6m'Fs;XÑ9ÜZJ:PXìf\\u001ePt6WK$ÂØÂù^\\u0018d±ùøbRÍ\\u0001BÎ\\u000fþ:å÷vø\\u00068kÞ;©\\f©S¢Ì©S\\rPp¶³ñÉhêD\\\"óÛö@Ç9q<xÞ6åÚ\\u0006f\\u0012\\u0013\\u0014j[ùÍ\\u0000 åÜY<X;9X:ÓDOQÍ»E!¼y½67´ngýZê4^â\\u0006dÕÒêÂ·I]Ìøî]_\\\\ª]\\u001b\\u0017¾©\\u001e'¨Ûg}@Í9Zz4øÓ´í\\u001b?E®ß}0\\\\:þÚÝØ\\fYlÚþx:Í8î\\u0001)g½¾Ù8Q½Þª¶d@ÈÙ\\u0004±¯±ZO¹Áí§dÈYóõêäÏÙÑóÇ)¡2\\u0017ª»`Ôi}!©ÜÚ8î[MÑíGõ&GJûÛ%2 ÞÜÙúnt?mW»\\u0013Á\\u0019\\u0010n6sôáÕÍ$¨)eH¼¹uyð§å´\\r\\u0001·ç\\u0001ÝæxëjêúFµöm\\u0019\\u0010m¿\\u001aÝN¼ºXl4\\u0017oW'®\\u000fïnUg\\u0012îßRí¶x\\u0006ÄõÂððµjýHu>å¾\\u0002>2 Ó4b¼ò²á\\u001f3\\u0004\\u0016\\u001cÛl\\u0011O2+·¶ÉVsrÙÝgÈ'sûöèð4\\u0005§ðËN³^=]¹4EQÎÞ<\\u0003úÌÚ;kãQ=Î¦\\u001c½ó\\u0004\\u0019º/ýò­jûAêÝPH¹ºlkjír\\u0010-ùÈ\\u0014sxu«Ú¸?#.ÒõË\\fs´ùfðÕVRZH7sÍ\\u0010óÕT<*È?\\u0003:L\\u001bÄ¾ºÑ«{Ø¥» #\\u0003JÌVÙ¨æd@9|p~{\\t9.Ý\\u0006h\\u0006D£\\u000b_ïH<Éêæ\\rÈ\\u001eÓ®`¼l6$B¹l\\u0000»T\\u0017îUëOâ´³H ¿l¼Ð²tÆ!\\u0019^J¥Í\\f4¥þFá\\f.\\u001bö¹Ä|p#-ºúüÑéjñYb\\tòqºKC}ÃêÎ8í;©6ÅÔ²9ÌW\\u0017¼C²þNð\\fÈ,«­É,é+¹Å3Y­/GNã¾\\u0012¨\\u000e÷6\\u0013SÁMº¼òÚ£/Ó@¼ô$\\u0000h+¨YÀæ­¤±t\\f)+Ï\\u001cm_I¬\\nínt\\u0006$£#gìô.±rû8`¾pãé7«Ù$/[o(!Ìm;5I\\u0016O9|!oÌIgM;\\u0015èçá@T9¾¶<¸ü2ÕÑC:Ã®\\fh*ëã\\u000fÎ'öZGºrgýjµáâêpø^»\\bü½\\u0005l\\u0006Dã­«£«ÉòáwB¥ÅÄ.®Z~Rm^I((½®æßTç\\u001e6¿K\\bÕÆ\\u0001ubb^ü¡Ú8Ý\\u0015bôôÍ½dM;³\\u0001uåèÚÑÑµIõK\\u000e\\u000b'\\u001aÍ¾²ÝÝJ\\\\]xåzî3_]Þy»8\\u0017Ø> ­´¡\\u001a½Y²hªW¸Ï\\u00055SÃ/f0+÷²Ñ\\fh+mÛªícãs)\\u0002\\fw.)\\u0003ºÊVëxB¸ãV\\u0019RV®\\u001fÛY?R\\u001fmL\\u000bµß\\nÈ+'v\\bNãÔ]-\\u001ax¸³~!í$­sÈÏÐýæo\\u000fÛHOíÆ\\u0001ëIôþÛr\\b$«Ü~[éº»ÁºòÌÉjõËÄÌ3.#º«ÄÎÆ÷öOäÉ'å}@$²t\\u001e´3ÖNÒ2uþ'üÞ\\u0016XV'oUw¯¥i9ÝÙ§\\fùcÞ½Vßûf÷Þ\\n\\u00123 °lwn\\u0017¾I:õ,üÆ\\tPX6\\u0003ýàÊÍáÙc3\\tÕ](NÛÑ7±Già LLf-éC¼Ã@dÙ*µ\\u0012'³ÂD ±\\u001cÝX¬wîRlFýõ½\\u0019rÌtk_üúê®\\rcA³Y3PÝ\\u0015\\\"Ë\\u001aæ^ó\\u001cä\\u0003*Ëú¶··\\u000fjìê®\\u0014õÒãðÍ$\\u000e\\\"_kL3Ï¯ÙY_\\u00121x'\\u000eLLÖkvv98L|}#±\\u0010µÂÞ\\f+k9ÖÂJúÌÈQ1 ±\\u001c-ß\\u001aý*±I\\u000eR\\u0001eíÛ6·G#3 ­¬=Æ\\u0016o^\\u001eßÙHÐB\\bO#¨²>NÿâÛÔv}§=Ì¨òä¹G;o\\u0013D\\u0017}¿q\\u000b\\u0014ÕÝo÷Ò²»ït\\u0019º®Ü¹F$\\u0015Ô¾_\\b¢ëÊ\\u001bÙº]v¦húîJê\\f\\b)Ç×êetêÛsqÒ.aVwÞ\\\\õ\\u0006RI\\u0001]Z\\nqz¹zrd6æ,}'ÔË¨²^Ï\\\\I0í;»\\u001cc~¬E¤,\\u0006ûN\\r\\u0003-e³ëP­\\u001fÙYO÷Ý!¡\\u001ch)CB©ë¦¾³©Ìrpi~¸t²>þrÊåP`\\u0002qmÙ.fFOV\\u0013ôäEæ®ÂÉ rüýC;K¶>Un\\u0013q\\u000eTÕòCû'9öÊë\\u001cè*m\\u0018»ü¬/H'üí¿9òÅ<ó¥-S©ÁD}À¹©ñ9PYV×ç«Çgm¤ÁõïÒCúÛ´r ¹\\u001c\\u001c»\\u001a©Î9Ò[n=Iù?\\u0007jËæ¢ÔXÞZ)GÎ6-¶\\u000f\\u0018í\\bR\\u000eô\\u001f\\u001cül-\\u001dÕz\\u0002UYÏ)\\u0000(6ÏÕ77\\u0002»Ô.¦v#\\\"kS³¨UÒÍ8r ¿üõ¾OöÍ Ræ¾\\u0018¨\\u001b÷®ÕRümú\\u000e=ç@|9|r¸Öè'6J\\u001agÀ#õå;±lJ\\b×w\\u000b\\u001cÈ/\\u0007×¾¬ÿ\\\\¾4dÚÒÛjÏs Á¬î=«ïÒM-ºÓøåÐ\\u000eóéèì\\u0019Äj\\u0017«9bN¢¤~¯ú z[\\u0011\\u0016³D%TwÓ\\r Ä\\u001c¯¼lü£\\u0013\\u0002yQx\\u000e¤¯¶ÆoÓGGwj\\u000e¤ã;A¯*$.Gfw¿±f\\u0010-÷Å\\u001dh2g\\u0010Gûi!2Á´ýiam|{£¹{#=¦pm\\u0003%cûQuü^ÒMåTÛ9fÖ«ã«ß&ù\\u0001+§Ë.s´´dÞ(}¦\\u0003E¦¹\\u000fÞ<O\\u001e®zîµ!3»Á­Ä+\\u0019ýª\\u000eh2k\\u001fÊ4\\u001c¨Ý·.vÕú$­vßÉés É\\u001cnÜIí;»KatIùärqº¡¶ÔÒ\\u0018staùúãje³¶}ºmÿ¯~ÃÇ,dæNAä@¥¹³ý\\rtðTª²çÚ\\u0006\\nÄÝoíû\\u001c<?ÝDLHÅ<s\\u0002á\\u001c©4ß^ O\\f\\t'LÏT³ÉêÈ½j#é>Ë¼µÚÉVs°ú|P\\u001bL¾Û¥\\u0013ÕÍ\\u0014\\u0013&YöÊv\\u000bdÍõ/G·Ï/&\\\\ü\\\\\\u0016\\u000e¿çH»¹tfg}aðåjµÐ²Ì_oC;Ì:)ÓFÇÜ\\tRst¿ùÙsõ\\u0012áÜÔ´\\u001f¬õùÉvs0oÇã+Ïªã§\\u0012by\\u000fµ\\u001cùcÞ»a\\u0013Ã¾IÛ´´µ][­³_±QÒ®eö¹æ@Á9x¶Ôm½®9Ýe£j3%ýÝ^9Ro6%êÞæÎÛ«IÓ4á/³ËÑ=çn(KÊ\\n±;\\u001f@W×ÞiQÜL\\u001aybNÚòÿ\\fWnV¯·wÖ¯§,\\n\\u0017®»b¼;\\u0017\\u0018¾y[OÝ\\f*Ýá\\u001cH9ÿ²Z¨+«s\\tµw÷uv½\\u0007þðÉÁ/>OÒúÍ³)Õñ£cI³líÄ9RrN\\u0007Õ#IöÔ\\u0004è9ßm[Rþ+'ÖÊ¦sßÎÆ¹´\\nïw@ÌÙÊnä½ýÒû£ç@Ï9øê^úõyÓ|äèªóÛ\\u0017«ÇgSé¾ôß\\tè8ëóRkEaü\\u000fÈ9[QFê[ôv29tî¼y³ó:°*ç \\u0003=çàú©áÅÉ\\u001eËvÛÎÑ ó¿ÿ÷Toy±»Yî<oïSLôÌüÖ\\u0005PtÚ/T-^\\u0003÷®e¬3/§9\\u0018w\\u0012 \\u0007zÎÚÞêêæ`ms´y?ÝÅÆa\\u0007 ìl}K¶\\u0013Ü\\u000b½ÑB|3ÝJ6¶÷/\\u0010H:ý-lÍéãÄn>\\bdÓÉ]ØÙ-ä@ÓY\\u000b\\u0006çW'R£µ's ì\\u001c½üºÚHPì\\u0012($ë¼w'¹ëº\\u000bCrì¨,Ü÷\\u0001kÍÕ77\\u001bË³tq§iè\\\"ôÕç£µÛé/°u#ËÑEèo¯¤Çim\\u001fs ñ´Aª»×ì¤8m­áÑó¡µÑ;tò¦\\u0019ÅúõÁ¯CGBÑ2­Ü\\r/9\\u0016{Önn@iv(ÊµGhHñy÷ÁàêÆà8\\u0010ë\\\"iãï,ÉÑmè§VêÏµt:õ£)áåÓ9R}<g\\u0017YvåÃGeæ%\\u000b@÷9xùprÐÿNÈï4\\u0018Ïä¾X!\\u0017Í\\t\\u0019==RÍ¯'\\u0004Ë{\\u0005º\\u0014}e³fOgWj$dÿõ-k\\u0004C\\nã,\\u0006\\nd©ùz»ZÈv^]Iê\\u0003¢èïÆ\\u000bí¥/¼\\u001c|ÿ,õ­¾s\\rqÌ5×\\u001f×^p©Áì',\\\\00ù¸¶<Úx4ºPºDæ2¥»Ì\\r^¼²éoûAB\\u001c#z>Tw-±%k´}}gýð`þUR\\u0013Yá\\u0005º!ýøÖèÉÓÑÉoÇOÙò\\u0010Ï.øÚ£Ë\\u0005PW¾\\u001d=Z(ë[sM\\u001b\\u000bTã§ì `ûYh\\u000f \\\"\\\\S+\\u000bd¼yi{°vs®Z\\u00063º` åvæ\\u000bä¾¹ºlÇl>J9®Q\\u0000%èèúÑõ\\u000bõl)ª0n§¡@bÐÍucZ:2ÝNµ\\n$\\t½·=¼pÝv¶Ô´W¯SÈóíááÊê\\u0012\\u0010RûsV+(ôâ³õÕåÁÆÙZ\\u0003ø\\u001c\\\\»\\u0019Ñ´~ÖFDâáÊÍÁEÛ@x\\u000088Jwña|9\\u0017ª»ËÍ\\u00142¤H\\bNïÜ\\u001eN\\u0001ä¡µåû³ÕñæÙÔ)Pæ\\u0017¸\\u0005\\u0010Úd´.\\u001bèÃýh_ \\u0014Ì8u@\\u0001D¢Õñçµ³ü¤¿Ù¥Ôðì\\t¸;\\u0010éÏ2\\u0016@*:y\\u0017ë3#§Àqà§+]EJÑÍÅ%.7¤vÐ¯\\u0000JÑïìR*yÕæ\\u0002Râ\\u0016£ÏªÕá) Z\\töpí¶\\n \\u0016ÝÙüº^q¤¤ê;H[ çÎÃGFW§Þ­¥@ÑZ`ñx°p)eÎßjÛ\\n \\u0017m¯:ØÚ\\u001c½H<æî j\\u0001ô¢õÍ\\u0014¿¶ÔáåOå¶\\n \\u0016}wI^­ù)\\u000fRN^c=9Ny¢ïzîMñj´v-µ+k¿/Q\\u0000Å¨èWó+¶]©£('W\\u0001£\\u001füá×\\u00077w é\\r¶ç\\u001c\\u000b \\u001d\\u001d=·Ó\\u0002û\\u0006«õ£)c[/\\u0001íèàÅU[êuî6p\\u0004\\t6Ë\\u001d<(|Ô\\u0006YºÙ¤{D\\u0016O&ÕÄZpá¾\\u00188\\b{o»Z¼\\\\Ov¾®\\u001e\\u001dá`¸Ü/Ïª´^ånmAqq0Pé+\\bÚ\\u000e½ùÍÎÆÆð\\\" ·áñÒñü\\u0002}^«ï\\u0015IçÂAÎ\\u0002Þ£~§~UÑ_GZ ¿Ï\\u0006Þ¾¸4\\rÞ½¡¯\\u0000RÒje³:~,u9(_Å\\u0000%i\\r¶¶üL';è\\u0002IR?<ò´º}1aíî\\u000e\\u0014\\u0015@DZwäÍËv©ÒÛ(`Ò±²Y\\u0013«ç\\u0006KwxDÝ¿Ú¹\\u0014\\u0010\\u000e®>±å>\\u0019ëû¹(~0whï¯?ÛûñÜgf\\u0012bnñ\\u0000Ô£µxäùWÕ×Ï¢4Ï¶K[7j\\u0002\\riõw¿§öÃms0$!]\\\\\\u001aÞ_®Ïîß_NZ\\u0015n¸@:Ò#çë%´Mý¥S©köÝi\\u000eºoÝo¤Í¯¥¦¥ð&0\\u0005\\u0012.^¶x\\u0016±ÚÞ|A'\\bÉ±¤\\u001f¦ªtðêJ=;2hz_Õ\\u0002\\bK=¦\\u0019ÑÆÝ\\u0000V\\u0000]i£ÙÚy{-\\u0015ÿI(¼\\u0000zÒzúÂfIå{û\\u0002¨Jí´ :þ\\\\Ô{¤\\tS·z\\u0001ÂÒú5^~¹óæëä5`ß³1 ,mr¤Þ|ö\\u000e\\u001dýFºÒIbT'nU'¦+ýæÉpÅR]:a\\u0017ëõ\\b³²Yà<ÿ\\nd\\fºt¦þ8I\\u000b\\u0015á<PÚ9G}¹íêBê¢¨\\u0018\\u0017È\\u0014tqipãrú\\u0014»õg)#è\\u0004o\\u000fß,WÇ×æ\\u00006íÚ\\r÷\\u0002y.^ÞÙø®iÙ\\faé'\\u0003è&ö&ÕS>[é7A®Ô¶Ç6l\\u0006ÜÞ¸SM\\u0005ºÝv°Ã×ª³O-Â»-\\u0014èJöÅ¥ÑÅ\\u0016¤oÜ\\u001d\\\\\\u0001¶ô\\u0011YÙÆ÷§Ú[\\u0013¯\\u0006H)\\u001en\\u0007LW6++3ÉH\\u0007=ÚtëIº@Âw7d\\u001fºv³^(]¼?ÞºÚ/IêãÆù\\u0014@qúîBº\\u0001IËi÷ñöt.©¢ý(ÌDo,Î%Íp¼\\tC\\u00014§·\\u0007§o6*¹\\u0014ðì \\u001f\\u0014®\\u0016¶«§'·\\u0012¶RßÚ\\u0004²Óñ¥íêæRbñp«# ;\\u001d,\\\\\\u001aßÞ\\u001a=\\u0005Çß\\\"\\u0016îÕ!^ZOCgP32wf«\\u0000²Ó¦B%åqGÒ\\n¤9}s³:f\\u0007U\\f%·D\\u0001ÓÁú][f\\u0002-\\u001dÂ\\u0001ÒÓáÍÇÃmxïCøí9~\\u0003ä¦õ\\u0014ñèÃ\\u0019´ÊßèS\\u0000½é»ÛTãGWÀuñ¤\\u0003hN:15îè`D§û5=¤¬×î\\u001e\\u0002ÝØþö°ßê\\u001b\\u001d½7<\\u0003,#\\u0006\\u0012×<°nY¼38uz¸\\u0004._\\r\\r·ÎCS¿>Y×íOXù\\u0013Ï%\\u0012Þý6MüÐN\\u0011K¤4}r¹¢Ëk#Hk\\u000b[¼½R-°3¨jea\\u0006ûo%P\\u000e·í\\u0004íéhþÛ7×¦D|Fm\\u000f>¶Ù¯éþ%ÐÖ;kké\\u001bæ¹k\\u0004(\\u000fukµp«z»4§ÍÜM\\tT¤6ÕjeJ\\u0019RN\\u001f^¢»Ú\\u0017ªù¹n/©äµ'ÃJ \\u001e­]#g²\\tå÷ J \\u001emØÖèHÈ8s.ü%Ú,\\u001c_xYëÂ¯\\u001eOÏÅög\\t¤Ã;Õí-ÔÔNS-ùº\\u0004\\u0014¥-l]ye¿aÊ§kg\\u0019%Ð\\u000eç×RÅ\\\"Ò¹:HD:ýþtðìTµ|:\\r#÷Ü\\u000bì. ï\\u001e\\fJÏ\\u0016ØHHúý];ú¦®\\u0007 ËÝ¿\\u0019½dgµX*E z.ûcàdY×TH\\u001a»ÕJd2zñíÜõ¬×®&Ô2%MÚcV%\\u0012NÞå,öêâ¡DêÑÉ\\t2»rh å,\\u000eÊÙá´\\rÛ]Mªåol7H\\u0007\\u000e®p\\u0001!iêvq;D%\\u0010ïiÇÑ\\u0019(÷Úô\\u0007êQ;d×Òþ\\u000f«#×Ó4¤n¨\\u0004\\u0012R¿²\\u0005±ïå. X§¼®H­ÚNÄkþ\\\"ø\\u0012]\\u0004o{|ì¡}u'XOêÚ-7, ôÊdY¢;§S\\\"ëÑÓõé;r3á\\u0006²Q¿A9\\u0003]ò#\\u000bÐÖ{zóßB'«P¾Ó\\u001b@7Z\\u000b²\\u001fKJ»$º\\u0003~\\\"\\u001enÜpó(M\\u0007³\\rÝ\\u0005c°znp¹ÝÜH=éä\\r¥K$!}º<¸|ogýpÚù·Ý5,º\\u0016þÊ©êÉáÙ\\u0013õÄêJÂ4;´S*äE:\\u0013e¿5¶,\\u001béå··ì\\u000bÜÙ8\\u0004\\u001d¤;cZ\\u0002ñèpéTuÿèp\\u001bÜ.\\u0017îÍn¥\\u0004£ê<U_éo¯(jôÝ\\u000eý\\u000f\\u0012Ç-ß´î\\u0002òî1Ý\\u0006&ÅÌ\\u001dÓ+ÔmJ$¶%\\u000b\\u0019?3zò4Y åÄ¾%6\\u0007\\u0017í¿&%£ð\\u0000HGm]¬}ïK~ë\\u001dS\\\"ýhs\\fÿä·õpDT´ZË\\u0012\\tHg´ç&@@Ú,gsÒÔï¬XGj'¢6éÿú¯SJ°K{ \\u001fmÕ,vZÁ^\\t$¤3Ò÷T;¸\\u0000ýhuü»ú¼`bz\\b§Á-\\u0019isÐ?11Þù\\\\ t¼£\\u0003\\u0018>xS-<L_9Z\\u0005Ô£¥GªJÅ[È4ÞÏ&vù-û mJ\\u001aO¢AiM02;DX\\u0002\\u0019iM0Pÿpè~ù`Ç\\u000eF2yß]?[\\u0002ýh¬M0îûJìIv6áì\\u0010Êc\\u000f  µ³\\t²<ó\\u000b]6\\u001fcg\\u0013n\\\\íBÔÆå$ÖÍæÇ\\\"6KidJ\\u001ai]\\u0003\\u001e\\u000e\\u000fÙW>5\\u0011ß¦ï\\b%ÐFùÔt7\\u0006\\u0006MiÂmè\\u0017\\u0015\\u0002µh/M8»´»æ±\\u0004\\u001aÑX[\\u001aðÂº\\u000b@¬\\u0007MøµÕ:ò¶\\u0002ih\\u0007MDy?¤\\u0012iC#Mh\\\"·\\u001f44Â&\\\\¶I#I(f3 \\u0013\\u0000ßñé~2ò\\u0013w\\u0001Ï\\u0007\\f3ÒP\\u0006<\\u001c,Bö1à±`7\\u0001Ïïî×±Ö0àá`Q\\u0010o\\u0004\\u0003ßÝoc}_ÀÃáÓ\\b\\u0017ðhÐ-§2u\\tW9í\\u0007\\\"$¾1uén\\u000e[Fy¸\\u0004[áo\\u0001*â2ÊÂ\\u00054\\u0002ôßxÏ\\u0016ðüî\\u001cvh\\u0001\\u0005ãr\\u001f\\u000bxrhS\\u0001¹¯\\u0004?iß+OH2Ê}\\u0005´\\u0000l\\u001aÄ­'wwà)¼UÀóC4\\u0001+ð\\nÙ\\u001du\\u0010} t²Rél}4R1Å9§ §w÷ØQ\\nzjw?òEAîî«Q>(èÑXµ\\u0018ï{\\u0012^p¸º\\rÚÝsc}O\\\"êòáÀ´9¸?\\u001cÓ.á\\u0002a\\u0005cpK\\u000e}'0y´9\\u0001OÇ\\u0002Å0\\u0019ù\\u001aª}IP¡\\u0018ÁQ3ÀP\\u001ccc\\u0012\\u00159A\\u0005åH\\u001b\\u0013Ô\\u00120:Ç¸ G\\u0005rÐ¥$æ\\r\\u0015î\\rñ9Ò¨$f6»p`Ð1*A¯¬»_G\\u0019 G\\u0003\\u0001a¼\\u0013IÌ{r\\u0005\\b£H@c\\\\0Òy\\u0004=\\u001dè}âF\\\"^U»_d#v÷ñ)¬FÂÜÅyIØÝý>Êj\\u0004½>°¦q\\u0016Aîîéa#\\u00016sE\\u0017HF\\u001aDT°ÌE\\u0003»iF\\\"è¥\\u0001,\\u001eé\\u001b\\u0012¿þ\\u0015} ÷\\u000bûf\\u0000}_¬MHD4n.\\u0007DQ6!¨%Ý½=Ê\\u0015\\u0004=\\u001aNà£lAÐÓá;`\\u0003\\u0012±âóÕ\\t¨÷ª\\u0018\\u001b®¾¯Ð\\u0006!l\\u0003Þ\\u0017XGÚ~\\u0004[\\u000bwÖÈÆCòi|?\\\":JáJ%4{\\f\\u0019¼\\u001d#>ÐÓÁ\\u0018\\u001fcì\\u001e\\r\\u0006óx\\u001fifZèBðx'\\u0001«ïª#öqròÉ1ØH\\u0017´ò@\\nñ·i;P\\fhz\\u0012ëÔ\\u0002@\\u0014\\u00176æ\\u0000\\u0006º\\u0011\\u0007z*\\u0018ÉczèÑ`Ô1Ú@\\u0006£vÐX\\u0003=\\u0017\\fÙA#\\rô\\\\\\u0004Üâ3ÂS\\u001eÛppÈ\\u000e8g f{0N\\u0019è¹`Î\\u001dé\\u0011QÁ´=Ý4l\\u0001\\u001c\\u000f#­0ÐÓ»{ê\\u0014Ö\\u0017\\u0011iT¸\\u0005èÓ¢¼/Pcº;p¬×\\u0005z:\\u0018ã½-P\\u00000ù\\u000ezY ç;wEè¨ç\\u0018\\u001aÒaó\\nÔ\\u00120Ò\\u0006Ý*Â{±Ma_\\u0005h\\u0004Pý)ÐsÁ \\u001bãG\\u001eÝÝg£\\f)Ð£A4 Ç:;\\u001c\\u001b\\u000f\\fÆA\\u000b\\nÔ\\u000e¬3\\t[N gwwàXm\\u00157\\u0001mXÇ\\u0004j\\t¼\\u001b!ÖS\\u0002\\u0005\\u0000£ðT\\u001e\\u0012 \\u0006ÐEyF)®è\\tG\\u000e`,ì\\u001a\\u001a\\u00016¸b]\\\"ÂCw·×ÝÏ§ð@\\rêîØQ¾\\u0010èÑèØ8\\u001f\\bôôîÞ\\u001dkü\\u0010±°÷;Ë@S6óCõe»Ô\\niÍ\\\"½\\u001fÐûCwÎOéõ\\u0000Â Y·\\u0003z4\\u0010&îxd»\\u0013o .2s@\\rèîÜ±æ\\rèé`â\\u001doÖ\\u0010³[ã\\u0012\\u0016éÎ\\\"Ý\\u001a\\\"Âån²\\täg±v\\r\\u0011¥¸tC\\nÒ¤\\u0005ý\\u001a\\\"¶ wÛÕÝï£\\f\\u001bPN\\u000b\\u0007â\\u001d\\u001bº\\u0003\\b I\\u001b\\u0007\\u001d\\u001aÂÕ±¯zý6Û\\u0004¨cL\\u001aP+Àb;Þ!b³¥=}f#v)l\\u0019PÀ\\u0004>Æ\\u0001=\\u001aó®\\u000b\\u0011Ýc÷»u9«ñzÿ³Î\\u0011Ï\\u0006\\u0003Ã~¤óBÄþÛs\\u0013@¿\\u0016¶^Án.NH¥JHÀ:B¡£­\\u0017\\\"\\u0010ØíLØo\\n÷\\b¾r\\u0006Ó6*`ìA\\u0003\\u0006Ð¿ÐõÍ1\\u000báVx\\u0007a\\u001b\\fÌ\\u001ab,\\u0017\\\"²]ø\\u0017\\u0006æ\\u000b1\\u000bSÌß\\u0005ÒÂÅ. ¯\\u0004¦\\u0007ìæÍ\\u000fËOpÀ\\u0003âm\\u0016ÂE×\\u001fG³!¡L.h´\\u0010ºÛ\\u000bl7ZØ(§i¤öï ýA)t\\rÙëÅ8-D´ªtý\\u0018(ç¢¬\\u0016ÂK¤Ì«Â\\u0004\\u0012ÍMk¶0Åö·\\u0000º(·ð\\u000bÍK¯o\\u0015Èko\\nÃ¬g\\u0005êçP=ãm¾(ÇP¸ÜFS®\\\"\\u0003Á]åB(Z&³Ý\\bD°\\\"\\u0015~\\u000e\\u0007wÑ\\u000b¡h²ÈÜ}56 ^\\u0004,\\u0017ùQÚ\\u000fæ\\\"J¬åB(\\u0011ùn\\u0003\\u0012½8Ï`ëLÖs5\\fö¦1]\\b~;»ª\\u0014þDº\\u0011F\\fÁÔ´EÅ¿Ðî¢27C¸»$C\\u0000e_9ÃDkgA@Ù\\u0017áÎ\\u0010jý:îîD\\u001bª»|ÄØ3\\u0004cÞÎÍN»KH´AC÷K\\u0003¾h`sLéÎ\\b ò³h\\böb?ïF¢¿X`ÛlrY\\u0001$1\\u000e\\r¡Pe¿×w¥\\u0002iý\\u0002\\u0006äBw=óh\\u0000\\u000e¹éÅ­\\u001a@\\u0000\\u0000.c]\\u001aÀÓ¶ hÓÐý\\\\ åÆ§\\u0001\\u0004\\u0000{±F\\ràé`Q1SC°G{a³@7)Çz7Ç«ÝI)\\u0010\\u0002FÚ9\\u0004\\u000bßp\\u0015Ð\\ro*ð±×÷QÁÒ\\\"Êá!\\u0018Ìô|,P\\u0006¢<\\u001fÂ\\u000b\\u0018gài\\u0001R\\u0011åú\\u0000\\u0012?æn¡°íCw\\u0000dv\\u0017ö}Èpá&@N\\u0018g\\u0005\\u0001\\u001a\\u0011ÚÊ^\\u0010Áå?\\u0017$0Î\\f\\u0002´¡»\\u0000Ä¹AGww÷iì @\\u0000Ð³£ü y$;£\\r.?1\\u0000í@\\u0012¤HC\\bðôî¾\\u001c4è~*\\fÆ\\u0019BG#Õ`!\\u0004x4V\\rNa\\b\\u0011\\\\Ùï\\u0012e '6\\bO!ü\\u0002\\u0004È\\t#¶CôîL@_\\u0018Þ,\\u0004ß\\tÌÔc\\r!ÀÓ¡0ß\\u0006ë»gÞÆWF pÐ\\fxoh!Dxêæ7\\u0010\\u0018F\\u001bBt·\\u0004YÐE\\u0019BGåxØ\\u0010\\\"brëæ\\u0019@M\\u0018m\\b\\u0011îå~\\u000f]$\\u001ce\\b\\u0001^Yw¿3\\u0000îî×ã)\\f!ÂïÉO¶0Î\\u0010\\u00024\\u0006\\u001aâÄ\\u0019B§\\u00039Ñ\\u0014\\u0010áRå,¯\\u0004\\u0013Na\\b\\u0011½Âìîøq\\u0010Áá*w×9Ù``5\\u001få\\u0011\\u0011|W¬\\u000b ?p\\b¾C½»¥¼îbm#\\\"\\u000647\\u0012 !b¬oDwÖ\\u0003Ýa´oDt»Kl<¸\\u0005\\u00182\\u0000íÀî\\u001aQÆ\\u0011\\u0011]×\\u0014xãgqDgK$R\\u001dF\\u0019GGÃ~q\\u0004x:\\\\#IÔïv/À0Î9\\\"¼p\\t+Ö0Î9\\u0002¼0°^u\\bî^©\\\\SÐò}*çpOþ[!»¼ s\\u0004xyhw?Ò9\\u0002<\\u001dL\\u0006¢#ÂË:w4B\\u0002Qá4V\\u0012áf\\u0001ñV\\u0012áY¡4.\\\"\\nÄZI\\u001bè(»D*Ã°DwZ\\u0000AáV\\u0012 \\u0006tÝ¶\\u0000\\u0001P\\u0019±\\u0000\\u0006\\u000bý\\u0004x*\\u0018Û£Ôaò+}æ=Ê[¢»\\u0019@\\n\\u0018á-\\u0001\\u000bFõ°·\\u0004x.bwÞ\\u0012\\u0011ój·o$?^Ø\\\\\\u0002´£»ÓFKçy¬¹DÄÓ\\u0015m Ø0\\u0000Í\\u0000}6Ö\\\\\\u0002<=Î¢:d.\\u0011³ÿXº\\u0017\\u0005Æî(wîÖ õ]¬»DpÆæ\\u000flH ½Æn\\u0002´\\u0007LÙÃv\\u0013à¹ +Og7\\u0011\\u0002¹½`\\u0014v\\u0001»\\tÐ\\u00120\\u001aí&Âû]ý^á¦çÈ\\u000f/Êo\\u0002´\\u0002ü\\tûMç9Êo\\u0002<\\u001aßó\\u0014öè~4º6Öo\\\"8\\u0019N×*\\\".Ân\\u00024\\u0003e\\\"ì&À³»;p´ÝDxlÓ®ë\\u0002¡[ÝDxmÐ^!gcAúhÿ\\tðîÀ@=ÿ\\u0004\\u0001oð\\bBº§}\\u00021<ì?\\u0001\\u001a\\u0001öÓ¢ý'\\\"¸\\u0003Ò\\u0012¨ã¦1 èn\\u0011RÇE\\u0019PGÞ\\u001ek@\\u0001ÞÝß£\\r(ÂPM;(\\u0004TpÓ\\u0018PÄL\\u000e\\\\AZ¸X\\u0003\\nðþÀØ=µ\\u0001\\u0005\\b\\u0003änQ\\u0006\\u0014àÑ@ïºy÷´\\u0003¡[\\u0003Ew\\u000bÄ-Ú\\u0002<\\u001dÌÅ§p  §.cÚ-Ö\\\"B]â¾\\fÐ¼E;PD\\u0014cw°Y\\\"!\\\\Ø\\\"\\u0018)ógÝ$ÐÅÅyP¬èî÷ÓxP\\u0000\\u0000=(Ù&ûù.û\\u0002²¸q\\t\\u0005h\\u0006XOaB\\u0011Á¸Ý¤\\u0005èå¦1¡èn\\u0012RÍEPG±>Ö\\\"üéýW\\t\\u0004s´°ì½`YÖ3.Ë\\\\.Ú\\\"\\u0014¯ðb@\\tDs\\u0011.\\u0014a=Ráª\\fº½5Ê\\\"<4øP°(ÄÚP\\u0004;Sá÷»%6íÆ\\\"øF\\u000b[¹Ý\\u0010.y\\r»Ptw0tÅk\\u000bE°\\u0015Ò@l\\u0017çB\\u0011&~q\\u000bÔwq.\\u0014á7®j \\u0001Þ\\u0014.\\u0014ÁÚñ\\u000e\\\"C\\\"¼ì\\u0004ÉÒ@71EðÚ©/\\\"X¯\\u0017v¦ÈKw:H¢ec­)Â[À¾\\u0017ü;èr|/\\u0000`!Ê\\\"<¾x}\\b\\u0010ñÅySDa¿!ä{S{SDhÐÜÇ\\u0003J¾8o`#ËÝý\\u001bä$85E)UÙ×¨«ò7Û]Yâ¬)Bá2-ýù\\\"\\t4}qÖ\\u0014¡hªè{é²DWÛ»x°a¸\\u0002ä}Ñö\\u0014Á\\u000f§woÃ@÷7\\u000eÛS\\u0004C\\u0015¶ó¹$ò\\u001bõ§\\b\\u0005ÔYÞ\\u0013m( \\u0004ó§\\bF«·M3\\u0017\\rÖhPLwZ\\u0018R\\bG\\u0018T\\u0003îªø\\u0015P\\u000eNãP\\u0011Ì\\u001b;¦÷¥JKCÅDë·\\u0006·o\\u001d*o.×n\\u0013K\\u0001í`AE0­Å®( \\u00196¨\\b\\u0006T¥¿ZI\\u0001-a´gE(`÷¤Ï\\b\\u0000A£,+­+¥§+¤/u­\\b\\u0006´Äíæ) /±­\\bÆê\\u001b-¬BÂÂ\\u0000ÚéîV@>\\u0018ç[\\u0001\\u001eÝ]\\f¦ñ­\\u0000\\u0001\\u0000ìõ­\\u0000O\\u0007S°o\\u0005x.t$ö­\\u0000\\u0001B·ôEøV§c\\u000bÒXßàx½[#Ñ½»±¾\\u0015Áp÷Q@d\\u0018é[\\u0011ìÖ½Ìujè-8oEp þ@¡BúÃ(ßpáò»\\u001f\\n¹\\fF\\u0019W\\u0000BY\\u0001¥bqEÄkt\\bJÅ8\\u000bFXYtw6ä\\\"\\u0018¶²\\b6ÅÓ>#À¼ ÊÊ\\u00024\\\"´!\\u0002­,Ë?í×\\nh\\u0016ã¼,º\\u001bnëò²\\u0000î.\\u0001ÓxY\\u0000 ·GyY×\\u001d^| à½1^\\u0016 \\u001dHÎ\\u0014ée\\u0001ÞÝ^\\u0016à©<FyYG#Eb\\u0005x4V$Náe\\u0011JÒãE\\u0005´Ñ^\\u0016\\u0011Ó\\n·>\\u0006ZÅmìp 7\\bh\\u0017Ã;Ý\\tI\\u0017c­,ÀÓ»{rEè\\u001då=ím¨TAæ \\u0019`²²\\b@þ¼´\\u0002ZÅh+\\u000bÐ\\u0012¨[°²\\u00006á!+Ð\\u001b2þ\\u0014\\u0005tÑV\\u0016ÁyÍî\\u0000]Í\\u001beeÑýÊJ1ÎÊ\\u0002<º»_§°²\\bâìp3Y R³²\\u0000V>qV\\u0016àéÝ½{\\u001a+p9÷ \\u0017\\t\\u0013§°²\\bB4ï3¢^1ÎÉ\\\"XÁúÞ%R!{¾('pÖ¹kG\\u00151F\\u0018Y\\u0004¿\\u0002Öó±&\\u0016Á7èbÝÃX\\u0007îd\\u0007ºÅh\\u0007¹¼K< [p°\\u0000íÀ>\\u001fQ\\u000e\\u0016áÉÛÍR@¹\\u0018ç`\\u0001Z\\u0012<ò\\u001fp°\\u0000Óû8\\u0007\\u000bðt¸(\\u000f9X\\u0019yÏ¸î\\u0007Ôq\\u000e\\u0016\\u0011_Ú\\rc@¨\\u0018ç`ÑýÂP1ÚÁ\\\"¼%ê<ô\\u0015Ô)Ne`\\u0011¾:U¬ö~A\\u0003\\u000bðî\\u0006 ÒÀ\\u0002<\\u001dL\\u0001¢\\f,ÂC±\\u0007§@8ExºáÎ( GÆÀ\\\"bã\\u0002Bë¿8ÿð\\u001c@»%\\u0013Ò'ý+º³\\u0002H\\u0011§ô¯\\u00001ÀÒ~\\nÿ\\n\\u0010\\u0000U\\u0018ÿ\\nðh°º\\u000fùW§=Jµ\\u0018ÎSg·£0Î¿\\u00024\\u0003\\fëaÿ\\nð\\\\0¦ý+Às\\u0011¯ô¯\\bë\\u0016ü1IìüÂþ\\u0015Ýí\\u0000¢¿\\bÿ\\nð\\\\0-õ¯ØÔs£\\u0004õEøWf>\\u001bë_\\u0001\\u001eç©\\u001dò¯\\b\\u000bÍvÕ!@®\\u0017ç_\\u0001Z\\u0003¶Ùcý+ÂÃXîæk@7\\u0005h\\u000f°ý+\\\"&ìÎ^R#-Þt\\u0016aøo|P0s\\u000f8Zt¾34waG\\u0018]\\u001b4òér´\\u0000­èîõ\\u0011\\u0016à¹`¬r´\\u0000îî×q\\u0016àÑ _Ç:Z\\u0004'\\u0019»ÛD\\u001a\\bæ\\\",-@;°&ÂÒ¢ûÙ@\\u0006\\u0017mi\\u0011±ÁÕÎ\\u00064\\u0010ÁÅYZ\\u0017`î^E\\rDpÓXZw\\u0007Æîé,-@\\f0GYZ\\u0004KÓ;\\t\\fTr\\u0011\\u0016 \\u0011Ý}<ÞÒ\\\"\\\"ËkGÜ\\t_\\u001eèæ¢\\u001c-À£Ñ\\u0016ÝO\\u000fºíE8Z?¬i ÆÑ\\\"õÜE\\u0007\\u001aäb\\r-Àë\\u0003C÷Ô\\u0016 Lw§3´\\u0000\\u0006BØÄMÂ\\u001fØÓ@í\\u0016çg\\u0001\\u001a\\u0000±Z\\u0005x:ôÏö³@h>aÁd=ÖÏ\\\"bñáÂ\\u0001Ý[´ED\\\"¸\\u0011\\u0005iáÂv\\u0016a±Û½×@\\u0019\\u0017çfÑ\\u0013@\\u00137\\u0005\\bÐÝÝÇa7à\\u0000/Láu¨\\u001a\\bãÆQn\\u0016 \\u0019`>Eün\\u0006¹iÜ,@À>ÊÍ\\u0002<\\u001aó±n\\u0016\\u0011Kugs®dÖ½ß\\u0019û»Y\\u0006\\u0004sÑn\\u0016á¼îen¼\\u0001Â¹\\b;pµî;öîº²³Øbs%\\rÝs\\u001bïg\\u0011#Î\\tNc\\u0013Àiü,Qs¹;]G\\u0017âý,º»\\u0018º\\r7ÊÏ\\\"¬\\u001eó\\u000b[ ¸³³\\b\\u0003°Ü÷.0e²³¸oDxSØY¸ëÊH7m!±k¤0o\\u001a3Âì® ã\\u0018/ðÈ\\u001dëÕèVÝX+p½ò#\\fPïÑÂÜ\\u001fÄò]\\u00009\\u000bFyYç°î~s\\rT|q^\\u0016áXÀ ýÞÔV\\u0016\\u0011ßÎ÷ºÐ)þTB)ü>¾FñV\\u0016¹(3T.{ÚÜ@Ú\\u0017ee\\u0011\\fWw\\u0003 î²²\\bFËì\\u0015n¦.æ\\rvñ`(£wï1Ö@ç\\u0017ke\\u0011þp&ÛJ\\u0002\\u0001à8he\\u0011\\f%ò~/ó¡À\\u0002&ÒÊ\\\"\\u0018PÛi«;¨$0ÊÊ\\\"\\u001cM*¸R\\u0003à\\u0014V\\u0016á¯§÷\\u0010Ð@;\\u0018ke\\u0011ñ\\róÝÍA !ÂÊ\\\"ÜÈ~á\\u001cö5P\\u0012F9Y+KßpÖ@[\\u0018ö¶èyÞ ]\\u0003Ya·EÄWÓÞJ\\u00035a¬·E8`&vW:@f\\u0018ëm\\u0011\\u000e(2hV\\u0003åa¹EDór¦FÚÃHsð°às ;0¶xÂ{rj¤8Ä'\\u001cGêÝ\\u0011\\u0015H\\r£¼.Â}Zz÷g\\u001d´BZ?ôêg\\rä±~\\u0018?\\u0016¯]x#-bÐ\\u000f#üê¼§\\u0006ÊÄ)\\f2Â©QìN\\u0012l1Ö2\\u0003½9°®·Ì\\b6(ß\\u001dPÐÍÄ\\u0019áp¦ç_\\u001f<\\u0018á\\u0011\\f¦¼yÓ8fûVæ¯¦ÕHñ\\u0018ã\\u0011\\u001e¥mAt£4ò>qÌ\\u0018§ýy6\\r´Q\\u0019\\u0011Ó*Ïbü\\u000eÃ\\u0019 «!oÃ aFøµéÝ¥'PKF\\u0019f³Ï\\u001fÕH&\\u0019tÐi»4[\\u0003ÕdF8Ø;Ó^tq§\\u0006Êî\\\"1§Fw\\u0000D1\\u001a\\u0011S??q1ð2ã\\bO\\\\3ÒÅB\\u0002«8`¸Ò\\u001f14@7\\u0019rÝhÒ]\\u0016¢\\\\8Â_ËÛX\\u0018(«°å@I×]\\u0007¦³ååþÝ\\u0001\\u0007H[p\\u0017ö\\u001a ·\\fïÇÇ\\\"é\\u0011°\\t(0§áIð7~\\u001a$É´êHB·K`°$3·#¾Xî\\u0012\\u001eJ2#¶\\bÂÀËOÃ\\fºí8ÆÌ#¢f¸D\\u0004\\\"ÍX/næ²\\u0011\\u0019Æ{³£ÜM} Ý\\u001c\\u0007í>bfO\\u000e0¡ôû\\bcs¯M4èþä\\u0018¿\\u000fP|3Êï\\u0003<\\u001a\\t8ãý>ÂßEù\\u0001\\u0011h8£ü>bæyÎRÂ ùf¤\\u0003\\bzyÝ%a\\n\\u0007®ê®ê0HÉ\\u0019ï\\u0000\\u0012ó\\nwC\\\"\\u0013\\b\\u000b}5\\u001bA¶1\\u0016 \\u0011¤Â\\u001d3@ù\\u0019¶\\u0000\\bÔ÷I\\b\\u0018E¤\\u000bHø%îN£\\u00024Ò\\b\\u0004ä<\\u0010|Æ\\u001aÄ\\u0000\\t·§eâ3l\\u0004\\u0012ñA·4G:ÄA\\u0007\\fFYD¤;\\\"f\\\"4Æ+\\u0004å\\u0003\\\\sDy §Cü\\u0010ð\\nØ\\nð§{\\fÐ~FyDMMÜ\\\\\\u0012è@£ÌB\\\" ¥Ñ\\u0018 \\fu\\u000fN\\u0019(\\fÆ>$\\nè¸Ï\\u0007-\\u0015Cþ!\\u0011{9½¾¤\\u0018q\\\" á 4ÊQ$¦\\u0004\\tW\\u0016\\\"t\\nKI²_D\\u0001Eè\\u0014\\\"\\u0011éï\\u00177Ø1ÊS$&\\u0011µ\\u0007êHÐT\\u0004%\\u0006\\\"ÓD¼<ãû24du\\u0019Ù>r½\\u000béCclG\\\"Vôî0\\u0001ÒÐ\\u000fI\\fCu[|\\u0006¨B£$¨\\u0011m2®K\\u00039h3\\tÈ@ ÿ\\f;DP\\u001d'7@ø\\u0019¶*Y²û\\u000fÓ]\\u001bb½K\\\"Úåöå\\r²o\\fZ \\u000f\\u0003.}\\u000bZD$ò\\r\\u0000+H/\\bXºþ\\tta/\\u0013ð¾+c¤IÌäÛ¥3ÐnNan\\u0012þN¹WÙ\\u001b à27©8nÀC\\nÎH·\\u0001Âé7\\rÐoNáv²\\u0003,9n'1ØÕ¤\\b7×(³>åg¯H´ÍNÐ+\\u0003Ó ÙIZÆm\\u0012\\u001bäè\\u0018ãu\\u0002\\u001a\\u0001da¯\\föq ¹2?Amèî÷Qæ'èÑ G¿´ñW\\u000e\\u001a ¨\\f võ@ù\\tzvð®×ô}\\u001bãEw\\u0006\\b%£ÌO¢Ö5>ká½\\f±î'\\u0011Ísã\\nLNç\\u00121Vû½R ²Gy¥\\u001e9\\u0001ÑdØ\\u001e%f\\u0019ç\\u0003uh¿`¼þîÄ\\rÈ(§ðK\\u0001\\u001d\\r&cüRÂièZ\\u0002ªE¤{\\njFÈë1ì\\u0012\\u0006®\\u0007\\u0003©ä\\u0014æ)\\u0011SC¿àAzÉHó¹G/H(9­J\\f\\u0012ô[dH4\\u0019ã¯\\u0012Q¡Û\\u0001Éô-+FZ2Êp%¦:¹PÝÅ\\\"Ö\\u0005t1x\\u0007t´\\u0001Ë4Í\\u0001ËHÿh¶\\u0003Õd¬ÿJÌ6ïbÐ\\u0010ç¹ÏÔ])¢ìVº\\u001f\\u0001¹ä\\u0014v+(\\u0000Øz\\bÚ­DÔ7w\\u000bk\\u0006ôã\\u0018¯¼\\u0012.\\u0014\\u0000\\bñÞ+S2 Â{%\\\"¢[KfH-\\u0019cÆR\\u0002L\\u001b\\\"ÍXbdp¥k\\tN§Ë\\t³ÝÄ\\u0000H'\\u0018dêS\\u001el^\\u0006XbòÝ½Bt}s\\u0011KÄ\\u0010î¦Ç\\u0019º¹9Ú%b>îlu3ì\\\\}XÀb½ôJÝ\\fÝå\\u001c´\\\\X\\u0014öýw\\u0002³\\u0018\\u000f\\u0018Vær\\u001dè\\\"£<Xbö½|»À´!Æ%f\\u0010ß\\r\\u0016<'\\u001ecÂ\\u0012ÑKIÄ3Ù\\u0002s×e@+9\\u0005KÌ²Ãõ.,¡\\f:°DtdÿáÐýÐ\\u000e,1Ò\\u0011W}zr6òjÓ3.C\\u0015f\\u0003KÌ\\u001bù2Ê%â¹S&\\u0019ONëÀ\\u00121»ñ\\u0012()£\\u001cX\\\"ÚXøXï×ÑÃÎìûý¯\\u000e\\u001dülnò?\\u001dúÃ~û\\u001fþ~ÏïÕ\\u001eû¿«ßþ³Úó\\u001b\\u001bá\\u000fNþ×\\u0003Âþ¯\\u0007²ßþ£(»¿¿ç7üãoþ\\b1Oà\",\"calcChain\":[],\"vessels\":{\"ZPe4fq\":{\"type\":\"chart\",\"id\":\"ZPe4fq\",\"selections\":{\"row\":1,\"col\":1,\"rowCount\":1476,\"colCount\":2,\"activeRow\":1,\"activeCol\":1},\"chartConfigs\":{\"chartType\":\"line\",\"hiddenData\":true,\"label\":{\"visible\":true},\"xAxis\":{\"title\":{\"visible\":true}},\"yAxis\":{\"title\":{\"visible\":true}},\"titles\":{\"xAxis\":\"月份\",\"yAxis\":\"MAU\",\"title\":\"雪球股票MAU走势\"}},\"sheet\":1,\"dataSheet\":1,\"bbox\":{\"left\":702,\"top\":22,\"width\":600,\"height\":400},\"dataType\":{\"name\":\"number\",\"decimal\":2}}},\"useUTC\":true,\"versionId\":\"Mw01fmfgDOe0z7hl\",\"useIndex\":true}",
-    "body_draft": "{\"format\":\"lakesheet\",\"type\":\"Sheet\",\"version\":\"1.0\",\"larkJson\":true,\"sheet\":\"xÅWÿoÓF\\u0014ÿ_üÃÄ¤`ß\\u001d\\u001di 0&Mû\\\"2iÒªª²+X8v\\u0014»\\u0005TE*C]\\u000b\\u0013eS)Ûh×m\\u0015I+\\u001d\\u001b0B\\u0010TÚß\\u0012æ¿Øó]ö¼±©i±s~÷î}Þç}»LÌ)Ó`JEI:ÉêÉöfºô4]}¨Vx±\\u001aÎ\\u0004±R!\\bùÌ½0Ê\\\\&ï´¤¸¡¯TðþÝÜ[8 5ËÎæ\\nbYåjm®\\u001dØæJ3`°öüµÄo/¨³KJ\\u0005í?7;©ÁZçXùþ@Ç«\\u001f9'N\\u0003øf+\\u0001nm\\u001fèÉRwb'YÐq\\u0014ÐÆùjÈÁ1ðÛN×};\\u0013\\\\Þ~lnìmêu\\u0016KÙF¾KÏwõºwÓïVú?d_áÑ/õnïù \\u000búßìnÜèuï'+Wú·æû7õº;ÉÂU~ªoËì$Ï\\u001e§×ï)í\\u001còÐ^çAoççÝß®@(%pZPkÿQsë;\\u0011°¢ø^p\\u0001\\bÙ% U9\\u001fÇÍ¦\\u0001ýLö\\u0002'p\\u001aÁ[uÃê\\u0006\\u001aÁXÅeC%ØVmZ±\\rÛÐ><{æVý¨vºöþTíÓ«\\u001fh\\u0004\\u0011Ä\\u001fÇuñBúqøR¶ËÈ&DýäÔ{`q¦å\\u001f¦Áv;â±ôÉ÷ó#\\u00183(Á\\bIa·Àº\\u00142bP)6\\u0003G¢Ø=W\\\"{P÷\\\"×\\u000f£\\u0016Ó|/YÝ\\u000b¦CÍ\\t\\u0002Èd5X\\u0010kî\\u00104¶5\\u0013aZSY¬§\\u0002µYæ±Ö%äÉÚÑ±¶Ê\\u0000\\\\@\\u001f5ý¡\\u0000æ¬×T£8t/$Ý\\r[MØÂ.j³ÕS'|ÿäï³Ø\\u000bN±Øñ|µy¾ù.×öêï D¨n¾\\u0005¿m-Ã5d¸\\u000b×»÷÷àr\\u0012c^Ò 6-ý\\r3ó`\\u0003ÑÔ²\\u0004rJ\\rdKI9n[<\\u001fË\\u0012MýÕô÷\\u001f9f±´¡Cp\\u0001-\\bÖw7¸À\\u0019¿±¼{o\\u000blY\\u0003ÒæåKÑ>PAåÛ^wKHp1ÛÒ'O\\u0014%Ë\\u00021.dèÂã^ç\\u0018ÅÓrg°ì? î_ýEHÌ¢\\u000e4C!)2ð ¿ò§Üï­C¿{Óvwà6íA9æxª`K49TÌôö³sA7Ë¢W\\fç\\u0016QM\\u0003&\\u001a\\f\\u001f¹Ù!¢\\\"òÚ®2¦&nA\\u0013§¦©£A\\u0013\\u0007÷ääè§<:âÙÆQÒ25\\u000ek¶É\\u0006EØåÒ|uë\\u0011\\u00042Ù¾v¿ÂN\\tÅ\\u0011ñ/\\rf\\u001bd+\\u00079ä7sl?(L\\u0010508b\\\"â#ü\\u001b\\ft¤þü\\u001d9¡±a\\u0017§ßaV>²t:¨FB\\u0015³ò¶\\u0004EF±7B»OwÓë«G\\\\ 4ËW¬\\u0013ó°\\nD6(Ø§M²}MºC\\u001d1;¦\\u000f¯}È\\u0006\\u0005;òÄM¿ZûçÝXü¡\\u00031{I\\u0010:ªB³m;¿K1ÞB+Ø\\u0012dÉW[[½Î|²´Æ¯<ãN¥Ï_\\u0013Y\\u001dCd-C\\u0003\\u000e.þÁ6§g¶\\u0016-Æ3ær\\u0013Þ\\u0013J \\u0003@ª\\u0013e²Ýü\\u001bÐÕH\",\"calcChain\":[],\"vessels\":{},\"useUTC\":true,\"versionId\":\"40VkYepIx7NztgUt\",\"useIndex\":true}",
-    "body_html": "",
-    "public": 1,
-    "status": 0,
-    "view_status": 0,
-    "read_status": 1,
-    "likes_count": 0,
-    "comments_count": 0,
-    "content_updated_at": "2020-04-04T04:01:21.000Z",
-    "deleted_at": null,
-    "created_at": "2020-03-01T23:10:55.000Z",
-    "updated_at": "2020-04-04T04:01:21.000Z",
-    "published_at": "2020-03-28T06:43:57.000Z",
-    "first_published_at": "2020-03-28T06:43:57.000Z",
-    "word_count": 0,
-    "cover": "https://cdn.nlark.com/yuque/0/2020/png/147312/1585377837363-f481929f-685d-43d1-8a62-91c164093e31.png",
-    "description": "",
-    "custom_description": null,
-    "hits": 103,
-    "_serializer": "v2.doc_detail"
-  },
-  {
     "id": 4894032,
     "slug": "ll2ne6",
     "title": "互联网证券周刊 Vol.14 (2020.3.7)",
@@ -3329,11 +3331,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3363,10 +3365,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3408,11 +3410,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3442,10 +3444,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3487,11 +3489,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3521,10 +3523,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3566,11 +3568,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3600,10 +3602,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3645,11 +3647,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3679,10 +3681,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3724,11 +3726,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3758,10 +3760,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3803,11 +3805,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3837,10 +3839,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3882,11 +3884,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3916,10 +3918,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3961,11 +3963,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3995,10 +3997,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4040,11 +4042,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4074,10 +4076,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4119,11 +4121,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4153,10 +4155,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4198,11 +4200,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4232,10 +4234,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4277,11 +4279,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4311,10 +4313,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4356,11 +4358,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4390,10 +4392,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4435,11 +4437,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4469,10 +4471,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4514,11 +4516,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 67,
+      "items_count": 66,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-12T00:58:42.184Z",
-      "updated_at": "2021-01-12T00:58:42.000Z",
+      "content_updated_at": "2021-01-16T14:05:29.112Z",
+      "updated_at": "2021-01-16T14:05:29.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4548,10 +4550,10 @@
       "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
       "books_count": 4,
       "public_books_count": 1,
-      "followers_count": 11,
+      "followers_count": 12,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2021-01-15T23:06:51.000Z",
+      "updated_at": "2021-01-16T06:39:00.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
