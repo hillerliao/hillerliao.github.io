@@ -1,8 +1,8 @@
 [
   {
-    "id": 29435562,
-    "slug": "th9gd5",
-    "title": "互联网证券周刊 Vol.54 (2021.01.01)",
+    "id": 29469745,
+    "slug": "syw286",
+    "title": "互联网证券周刊 Vol.55 (2021.01.09)",
     "book_id": 563048,
     "book": {
       "id": 563048,
@@ -13,11 +13,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -32,7 +32,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -50,7 +50,86 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
+      "_serializer": "v2.user"
+    },
+    "format": "lake",
+    "body": "date: 2021-01-09 12:57:57 +0800<br />tags: [互联网证券周刊]<br />categories: [互联网证券周刊]\n\n---\n\n<a name=\"cgJCQ\"></a>\n# 监管\n\n- 监会发布了《[关于加强私募投资基金监管的若干规定](http://www.csrc.gov.cn/pub/newsite/zjhxwfb/xwdd/202101/t20210108_390462.html)》。\n<a name=\"PrL8z\"></a>\n#  行业\n\n- Wind数据显示，2020年AB股成交总额为206.08万亿元，较2019年（126.93万亿元）增长62.36%，创出2016年以来新高。按2020年前三季度行业平均佣金率测算，2020年券商AB股交易佣金收入约为1174.47亿元，远超2019年（787.63亿元）。2020年券商佣金总收入较2019年增长约49.11%。（中证网）\n- 财联社消息，互联网人身险销售规范正向业内征求意见。互联网人身险专属产品范围限于意外险、健康险（除护理险）、定期寿险、十年期及以上普通型人寿保险和十年期及以上普通年金保险，以及获得中国银保监会同意开展的其他人身保险产品。\n<a name=\"4KcUH\"></a>\n# 境外\n\n- 证券日报网1月8日消息，近日，富途旗下的富途证券国际（香港）有限公司（以下简称富途证券）获得了第3类（杠杆式外汇交易）牌照，同时获准开放第7类牌照（提供自动化交易）暗盘接入第三方中介机构。至此，富途证券已拿下第1、2、3、4、5、7、9类金融牌照，已将10类SFC常见牌照中的7类收入囊中。\n- 在线券商Robinhood考虑通过IPO将其股票出售给客户。\n<a name=\"b6W04\"></a>\n# 区块链\n\n- 美国货币监理署（OCC）发布解释性信件，允许受监管的联邦银行使用稳定币来进行支付活动。\n<a name=\"ozjxb\"></a>\n# 阅读\n\n- 《[炒股不如投基金？这届90后太会搞钱了 | CBNData](https://www.cbndata.com/information/125149?utm_source=chouti&utm_mediumyuanqi0107=&utm_campaign=xfz)》：DT财经采集了知乎上理财、股票、基金三个话题下的近3000条问题，希望用数据来看一看年轻人对于投资理财都有着怎样的困惑？大家都在投资些啥？为什么年轻人突然就开始理财了？\n- 《[证券行业深度研究报告：以美国和日本市场发展历程为鉴，衍生品业务或为下一片券业蓝海](http://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=CAcVfkun5PAo1MB0tWAT2t/dJ29J1ElZo9o47+n4yZc=)》\n",
+    "body_draft": "date: 2021-01-09 12:57:57 +0800<br />tags: [互联网证券周刊]<br />categories: [互联网证券周刊]\n\n---\n\n<a name=\"cgJCQ\"></a>\n# 监管\n\n- 监会发布了《[关于加强私募投资基金监管的若干规定](http://www.csrc.gov.cn/pub/newsite/zjhxwfb/xwdd/202101/t20210108_390462.html)》。\n<a name=\"PrL8z\"></a>\n#  行业\n\n- Wind数据显示，2020年AB股成交总额为206.08万亿元，较2019年（126.93万亿元）增长62.36%，创出2016年以来新高。按2020年前三季度行业平均佣金率测算，2020年券商AB股交易佣金收入约为1174.47亿元，远超2019年（787.63亿元）。2020年券商佣金总收入较2019年增长约49.11%。（中证网）\n- 财联社消息，互联网人身险销售规范正向业内征求意见。互联网人身险专属产品范围限于意外险、健康险（除护理险）、定期寿险、十年期及以上普通型人寿保险和十年期及以上普通年金保险，以及获得中国银保监会同意开展的其他人身保险产品。\n<a name=\"4KcUH\"></a>\n# 境外\n\n- 证券日报网1月8日消息，近日，富途旗下的富途证券国际（香港）有限公司（以下简称富途证券）获得了第3类（杠杆式外汇交易）牌照，同时获准开放第7类牌照（提供自动化交易）暗盘接入第三方中介机构。至此，富途证券已拿下第1、2、3、4、5、7、9类金融牌照，已将10类SFC常见牌照中的7类收入囊中。\n- 在线券商Robinhood考虑通过IPO将其股票出售给客户。\n<a name=\"b6W04\"></a>\n# 区块链\n\n- 美国货币监理署（OCC）发布解释性信件，允许受监管的联邦银行使用稳定币来进行支付活动。\n<a name=\"ozjxb\"></a>\n# 阅读\n\n- 《[炒股不如投基金？这届90后太会搞钱了 | CBNData](https://www.cbndata.com/information/125149?utm_source=chouti&utm_mediumyuanqi0107=&utm_campaign=xfz)》：DT财经采集了知乎上理财、股票、基金三个话题下的近3000条问题，希望用数据来看一看年轻人对于投资理财都有着怎样的困惑？大家都在投资些啥？为什么年轻人突然就开始理财了？\n- 《[证券行业深度研究报告：以美国和日本市场发展历程为鉴，衍生品业务或为下一片券业蓝海](http://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=CAcVfkun5PAo1MB0tWAT2t/dJ29J1ElZo9o47+n4yZc=)》\n",
+    "body_html": "<!doctype html><div class=\"lake-content-editor-core lake-engine lake-typography-traditional\" data-lake-element=\"root\" data-selection-147312=\"%7B%22path%22%3A%5B%5D%2C%22uuid%22%3A%22147312%22%2C%22active%22%3Atrue%7D\"><p data-lake-id=\"a20d224c568e48b9d67847a2c66a8c01_p_0\" style=\"font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word; margin: 0px;\">date: 2021-01-09 12:57:57 +0800</p><p data-lake-id=\"9f32c44655a4a2ae9ce4f519b31103ea\" style=\"font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word; margin: 0px;\">tags: [互联网证券周刊]</p><p data-lake-id=\"e381feeb152387d3e4bafcd8b6127121\" style=\"font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word; margin: 0px;\">categories: [<span>互联网证券周刊</span>]</p><div data-card-type=\"block\" data-lake-card=\"hr\"><hr style=\"background-color: rgb(232, 232, 232); border: 1px solid transparent; margin: 18px 0px;\"></div><h1 data-lake-id=\"838127100a4c86d0eaada5d884a805e9\" id=\"cgJCQ\" style=\"padding: 7px 0px; margin: 0px; font-weight: 700; font-size: 28px; line-height: 36px;\">监管</h1><ul data-lake-id=\"3ed83417dec2f95265aa338624f811ef\" lake-indent=\"0\" style=\"list-style-type: disc; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><li data-lake-id=\"55ca20b9795f87fc50f88a52595e9f5c\">监会发布了《<a href=\"http://www.csrc.gov.cn/pub/newsite/zjhxwfb/xwdd/202101/t20210108_390462.html\" target=\"_blank\" class=\"\">关于加强私募投资基金监管的若干规定</a>》。</li></ul><h1 data-lake-id=\"f93a6bad5bb54da3c83ad67fda01067a\" id=\"PrL8z\" style=\"padding: 7px 0px; margin: 0px; font-weight: 700; font-size: 28px; line-height: 36px;\"> 行业</h1><ul data-lake-id=\"000885b5ef320883d5e0e2a3cb40269b\" lake-indent=\"0\" style=\"list-style-type: disc; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><li data-lake-id=\"18acec53a0e48fb2f3f9badb50d11900\">Wind数据显示，2020年AB股成交总额为206.08万亿元，较2019年（126.93万亿元）增长62.36%，创出2016年以来新高。按2020年前三季度行业平均佣金率测算，2020年券商AB股交易佣金收入约为1174.47亿元，远超2019年（787.63亿元）。2020年券商佣金总收入较2019年增长约49.11%。（中证网）</li><li data-lake-id=\"00795c363c2430daaaa77da92741a53a\"><span class=\"lake-fontsize-12\" data-mce-style=\"font-size: 12px\" style=\"font-size: 16px;\">财联社消息，互联网人身险销售规范正向业内征求意见。互联网人身险专属产品范围限于意外险、健康险（除护理险）、定期寿险、十年期及以上普通型人寿保险和十年期及以上普通年金保险，以及获得中国银保监会同意开展的其他人身保险产品。</span></li></ul><h1 data-lake-id=\"4b311ef779bb0ae48bfec1ac6a458bab\" id=\"4KcUH\" style=\"padding: 7px 0px; margin: 0px; font-weight: 700; font-size: 28px; line-height: 36px;\">境外</h1><ul data-lake-id=\"b445f8172d0e38f9a9b7b6abbd903524\" lake-indent=\"0\" style=\"list-style-type: disc; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><li data-lake-id=\"1667d882eb5958e6ad085ed65c2ddf8b\">证券日报网1月8日消息，近日，富途旗下的富途证券国际（香港）有限公司（以下简称富途证券）获得了第3类（杠杆式外汇交易）牌照，同时获准开放第7类牌照（提供自动化交易）暗盘接入第三方中介机构。至此，富途证券已拿下第1、2、3、4、5、7、9类金融牌照，已将10类SFC常见牌照中的7类收入囊中。</li><li data-lake-id=\"25e995b43c73df100e02e6d027814f2d\">在线券商Robinhood考虑通过IPO将其股票出售给客户。</li></ul><h1 data-lake-id=\"97ae11ee936e85bac104b983efcb4afd\" id=\"b6W04\" style=\"padding: 7px 0px; margin: 0px; font-weight: 700; font-size: 28px; line-height: 36px;\">区块链</h1><ul data-lake-id=\"6d8c1993c6b23ead95091ade949c14ea\" lake-indent=\"0\" style=\"list-style-type: disc; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><li data-lake-id=\"739e1e7ba79d3e82d6e48a956e55c86a\">美国货币监理署（OCC）发布解释性信件，允许受监管的联邦银行使用稳定币来进行支付活动。</li></ul><h1 data-lake-id=\"ed496826eeb2085a1acbc3271c816eb3\" id=\"ozjxb\" style=\"padding: 7px 0px; margin: 0px; font-weight: 700; font-size: 28px; line-height: 36px;\">阅读</h1><ul data-lake-id=\"aaa088e8eec7758df77b8878c11102ee\" lake-indent=\"0\" style=\"list-style-type: disc; margin: 0px; padding-left: 23px; font-size: 14px; color: rgb(38, 38, 38); line-height: 1.74; letter-spacing: 0.05em; outline-style: none; overflow-wrap: break-word;\"><li data-lake-id=\"48dd6a98ecb1b18b07121c32b67f04fd\">《<a href=\"https://www.cbndata.com/information/125149?utm_source=chouti&amp;utm_mediumyuanqi0107=&amp;utm_campaign=xfz\" target=\"_blank\">炒股不如投基金？这届90后太会搞钱了 | CBNData</a>》：DT财经采集了知乎上理财、股票、基金三个话题下的近3000条问题，希望用数据来看一看年轻人对于投资理财都有着怎样的困惑？大家都在投资些啥？为什么年轻人突然就开始理财了？</li><li data-lake-id=\"d3cac2e81fa3e5e1373eebca83a4dd5f\">《<a href=\"http://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=CAcVfkun5PAo1MB0tWAT2t/dJ29J1ElZo9o47+n4yZc=\" target=\"_blank\">证券行业深度研究报告：以美国和日本市场发展历程为鉴，衍生品业务或为下一片券业蓝海</a>》</li></ul></div>",
+    "body_lake": "<!doctype lake><meta name=\"doc-version\" content=\"1\" /><meta name=\"viewport\" content=\"fixed\" /><meta name=\"typography\" content=\"traditional\" /><p data-lake-id=\"a20d224c568e48b9d67847a2c66a8c01_p_0\">date: 2021-01-09 12:57:57 +0800</p><p data-lake-id=\"9f32c44655a4a2ae9ce4f519b31103ea\">tags: [互联网证券周刊]</p><p data-lake-id=\"e381feeb152387d3e4bafcd8b6127121\">categories: [<span>互联网证券周刊</span>]</p><card type=\"block\" name=\"hr\"></card><h1 data-lake-id=\"838127100a4c86d0eaada5d884a805e9\" id=\"cgJCQ\">监管</h1><ul data-lake-id=\"3ed83417dec2f95265aa338624f811ef\"><li data-lake-id=\"55ca20b9795f87fc50f88a52595e9f5c\">监会发布了《<a href=\"http://www.csrc.gov.cn/pub/newsite/zjhxwfb/xwdd/202101/t20210108_390462.html\" target=\"_blank\">关于加强私募投资基金监管的若干规定</a>》。</li></ul><h1 data-lake-id=\"f93a6bad5bb54da3c83ad67fda01067a\" id=\"PrL8z\"> 行业</h1><ul data-lake-id=\"000885b5ef320883d5e0e2a3cb40269b\"><li data-lake-id=\"18acec53a0e48fb2f3f9badb50d11900\">Wind数据显示，2020年AB股成交总额为206.08万亿元，较2019年（126.93万亿元）增长62.36%，创出2016年以来新高。按2020年前三季度行业平均佣金率测算，2020年券商AB股交易佣金收入约为1174.47亿元，远超2019年（787.63亿元）。2020年券商佣金总收入较2019年增长约49.11%。（中证网）</li><li data-lake-id=\"00795c363c2430daaaa77da92741a53a\"><span class=\"lake-fontsize-12\">财联社消息，互联网人身险销售规范正向业内征求意见。互联网人身险专属产品范围限于意外险、健康险（除护理险）、定期寿险、十年期及以上普通型人寿保险和十年期及以上普通年金保险，以及获得中国银保监会同意开展的其他人身保险产品。</span></li></ul><h1 data-lake-id=\"4b311ef779bb0ae48bfec1ac6a458bab\" id=\"4KcUH\">境外</h1><ul data-lake-id=\"b445f8172d0e38f9a9b7b6abbd903524\"><li data-lake-id=\"1667d882eb5958e6ad085ed65c2ddf8b\">证券日报网1月8日消息，近日，富途旗下的富途证券国际（香港）有限公司（以下简称富途证券）获得了第3类（杠杆式外汇交易）牌照，同时获准开放第7类牌照（提供自动化交易）暗盘接入第三方中介机构。至此，富途证券已拿下第1、2、3、4、5、7、9类金融牌照，已将10类SFC常见牌照中的7类收入囊中。</li><li data-lake-id=\"25e995b43c73df100e02e6d027814f2d\">在线券商Robinhood考虑通过IPO将其股票出售给客户。</li></ul><h1 data-lake-id=\"97ae11ee936e85bac104b983efcb4afd\" id=\"b6W04\">区块链</h1><ul data-lake-id=\"6d8c1993c6b23ead95091ade949c14ea\"><li data-lake-id=\"739e1e7ba79d3e82d6e48a956e55c86a\">美国货币监理署（OCC）发布解释性信件，允许受监管的联邦银行使用稳定币来进行支付活动。</li></ul><h1 data-lake-id=\"ed496826eeb2085a1acbc3271c816eb3\" id=\"ozjxb\">阅读</h1><ul data-lake-id=\"aaa088e8eec7758df77b8878c11102ee\"><li data-lake-id=\"48dd6a98ecb1b18b07121c32b67f04fd\">《<a href=\"https://www.cbndata.com/information/125149?utm_source=chouti&amp;utm_mediumyuanqi0107=&amp;utm_campaign=xfz\" target=\"_blank\">炒股不如投基金？这届90后太会搞钱了 | CBNData</a>》：DT财经采集了知乎上理财、股票、基金三个话题下的近3000条问题，希望用数据来看一看年轻人对于投资理财都有着怎样的困惑？大家都在投资些啥？为什么年轻人突然就开始理财了？</li><li data-lake-id=\"d3cac2e81fa3e5e1373eebca83a4dd5f\">《<a href=\"http://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=CAcVfkun5PAo1MB0tWAT2t/dJ29J1ElZo9o47+n4yZc=\" target=\"_blank\">证券行业深度研究报告：以美国和日本市场发展历程为鉴，衍生品业务或为下一片券业蓝海</a>》</li></ul>",
+    "body_draft_lake": "<!doctype lake><meta name=\"doc-version\" content=\"1\" /><meta name=\"viewport\" content=\"fixed\" /><meta name=\"typography\" content=\"traditional\" /><p data-lake-id=\"a20d224c568e48b9d67847a2c66a8c01_p_0\">date: 2021-01-09 12:57:57 +0800</p><p data-lake-id=\"9f32c44655a4a2ae9ce4f519b31103ea\">tags: [互联网证券周刊]</p><p data-lake-id=\"e381feeb152387d3e4bafcd8b6127121\">categories: [<span>互联网证券周刊</span>]</p><card type=\"block\" name=\"hr\"></card><h1 data-lake-id=\"838127100a4c86d0eaada5d884a805e9\" id=\"cgJCQ\">监管</h1><ul data-lake-id=\"3ed83417dec2f95265aa338624f811ef\"><li data-lake-id=\"55ca20b9795f87fc50f88a52595e9f5c\">监会发布了《<a href=\"http://www.csrc.gov.cn/pub/newsite/zjhxwfb/xwdd/202101/t20210108_390462.html\" target=\"_blank\">关于加强私募投资基金监管的若干规定</a>》。</li></ul><h1 data-lake-id=\"f93a6bad5bb54da3c83ad67fda01067a\" id=\"PrL8z\"> 行业</h1><ul data-lake-id=\"000885b5ef320883d5e0e2a3cb40269b\"><li data-lake-id=\"18acec53a0e48fb2f3f9badb50d11900\">Wind数据显示，2020年AB股成交总额为206.08万亿元，较2019年（126.93万亿元）增长62.36%，创出2016年以来新高。按2020年前三季度行业平均佣金率测算，2020年券商AB股交易佣金收入约为1174.47亿元，远超2019年（787.63亿元）。2020年券商佣金总收入较2019年增长约49.11%。（中证网）</li><li data-lake-id=\"00795c363c2430daaaa77da92741a53a\"><span class=\"lake-fontsize-12\">财联社消息，互联网人身险销售规范正向业内征求意见。互联网人身险专属产品范围限于意外险、健康险（除护理险）、定期寿险、十年期及以上普通型人寿保险和十年期及以上普通年金保险，以及获得中国银保监会同意开展的其他人身保险产品。</span></li></ul><h1 data-lake-id=\"4b311ef779bb0ae48bfec1ac6a458bab\" id=\"4KcUH\">境外</h1><ul data-lake-id=\"b445f8172d0e38f9a9b7b6abbd903524\"><li data-lake-id=\"1667d882eb5958e6ad085ed65c2ddf8b\">证券日报网1月8日消息，近日，富途旗下的富途证券国际（香港）有限公司（以下简称富途证券）获得了第3类（杠杆式外汇交易）牌照，同时获准开放第7类牌照（提供自动化交易）暗盘接入第三方中介机构。至此，富途证券已拿下第1、2、3、4、5、7、9类金融牌照，已将10类SFC常见牌照中的7类收入囊中。</li><li data-lake-id=\"25e995b43c73df100e02e6d027814f2d\">在线券商Robinhood考虑通过IPO将其股票出售给客户。</li></ul><h1 data-lake-id=\"97ae11ee936e85bac104b983efcb4afd\" id=\"b6W04\">区块链</h1><ul data-lake-id=\"6d8c1993c6b23ead95091ade949c14ea\"><li data-lake-id=\"739e1e7ba79d3e82d6e48a956e55c86a\">美国货币监理署（OCC）发布解释性信件，允许受监管的联邦银行使用稳定币来进行支付活动。</li></ul><h1 data-lake-id=\"ed496826eeb2085a1acbc3271c816eb3\" id=\"ozjxb\">阅读</h1><ul data-lake-id=\"aaa088e8eec7758df77b8878c11102ee\"><li data-lake-id=\"48dd6a98ecb1b18b07121c32b67f04fd\">《<a href=\"https://www.cbndata.com/information/125149?utm_source=chouti&amp;utm_mediumyuanqi0107=&amp;utm_campaign=xfz\" target=\"_blank\">炒股不如投基金？这届90后太会搞钱了 | CBNData</a>》：DT财经采集了知乎上理财、股票、基金三个话题下的近3000条问题，希望用数据来看一看年轻人对于投资理财都有着怎样的困惑？大家都在投资些啥？为什么年轻人突然就开始理财了？</li><li data-lake-id=\"d3cac2e81fa3e5e1373eebca83a4dd5f\">《<a href=\"http://data.eastmoney.com/report/zw_industry.jshtml?encodeUrl=CAcVfkun5PAo1MB0tWAT2t/dJ29J1ElZo9o47+n4yZc=\" target=\"_blank\">证券行业深度研究报告：以美国和日本市场发展历程为鉴，衍生品业务或为下一片券业蓝海</a>》</li></ul>",
+    "public": 1,
+    "status": 1,
+    "view_status": 0,
+    "read_status": 1,
+    "likes_count": 0,
+    "comments_count": 0,
+    "content_updated_at": "2021-01-12T00:44:12.000Z",
+    "deleted_at": null,
+    "created_at": "2021-01-02T13:55:34.000Z",
+    "updated_at": "2021-01-12T00:44:14.000Z",
+    "published_at": "2021-01-12T00:44:12.000Z",
+    "first_published_at": "2021-01-12T00:44:12.000Z",
+    "word_count": 625,
+    "cover": null,
+    "description": "date: 2021-01-09 12:57:57 +0800tags: [互联网证券周刊]categories: [互联网证券周刊]监管监会发布了《关于加强私募投资基金监管的若干规定》。 行业Wind数据显示，2020年AB股成交总额为206.08万亿元，较2019年（126.93万亿元）增...",
+    "custom_description": null,
+    "hits": 6,
+    "_serializer": "v2.doc_detail"
+  },
+  {
+    "id": 29435562,
+    "slug": "th9gd5",
+    "title": "互联网证券周刊 Vol.54 (2021.01.01)",
+    "book_id": 563048,
+    "book": {
+      "id": 563048,
+      "type": "Book",
+      "slug": "secweekly",
+      "name": "互联网证券周刊",
+      "user_id": 150839,
+      "description": "每周分享互联网证券行业动态。",
+      "creator_id": 147312,
+      "public": 1,
+      "items_count": 67,
+      "likes_count": 0,
+      "watches_count": 53,
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
+      "created_at": "2019-11-17T13:28:22.000Z",
+      "namespace": "securities/secweekly",
+      "user": {
+        "id": 150839,
+        "type": "Group",
+        "login": "securities",
+        "name": "互联网证券",
+        "description": "",
+        "avatar_url": "https://gw.alipayobjects.com/zos/rmsportal/SZXCSCJTuhRSmAggBlVp.png",
+        "books_count": 5,
+        "public_books_count": 5,
+        "followers_count": 0,
+        "following_count": 0,
+        "created_at": "2018-07-22T03:30:56.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
+        "_serializer": "v2.user"
+      },
+      "_serializer": "v2.book"
+    },
+    "user_id": 147312,
+    "creator": {
+      "id": 147312,
+      "type": "User",
+      "login": "caibaoniao",
+      "name": "财报鸟",
+      "description": null,
+      "avatar_url": "https://cdn.yuque.com/yuque/0/2018/png/147312/1531390955222-avatar/e0f473e4-2a8b-4957-b407-eded3fdb1699.png",
+      "books_count": 4,
+      "public_books_count": 1,
+      "followers_count": 11,
+      "following_count": 3,
+      "created_at": "2018-07-11T09:30:57.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -75,7 +154,7 @@
     "cover": null,
     "description": "date: 2021-01-01 12:57:57 +0800tags: [互联网证券周刊]categories: [互联网证券周刊]监管证监会相关会议表示，近期要做好六项重点工作：以国有上市公司为突破口，带动公司治理水平整体提升；以注册制为契机，从源头上提高上市公司质量；以多元化退出为渠道，...",
     "custom_description": null,
-    "hits": 0,
+    "hits": 24,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -92,11 +171,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -111,7 +190,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -129,7 +208,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -154,7 +233,7 @@
     "cover": null,
     "description": "date: 2020-12-26 19:57:57 +0800tags: [互联网证券周刊]categories: [互联网证券周刊]监管证监会会议提出，下一步证监会要着力加强资本市场投资端建设，增强财富管理功能，促进居民储蓄向投资转化，助力扩大内需。推动加强多层次、多支柱养老保险体系与资本市...",
     "custom_description": null,
-    "hits": 7,
+    "hits": 8,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -171,11 +250,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -190,7 +269,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -208,7 +287,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -250,11 +329,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -269,7 +348,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -287,7 +366,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -329,11 +408,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -348,7 +427,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -366,7 +445,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -408,11 +487,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -427,7 +506,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -445,7 +524,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -487,11 +566,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -506,7 +585,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -524,7 +603,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -566,11 +645,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -585,7 +664,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -603,7 +682,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -628,7 +707,7 @@
     "cover": "https://cdn.nlark.com/yuque/0/2020/png/147312/1604186474253-9eb8da14-636d-4205-94a6-c96b02b97455.png",
     "description": "行业蚂蚁H股IPO最终有155万名散户参与认购。蚂蚁A股IPO网上发行有效申购户数515.56万户首批获得基金投顾试点资格的独立基金销售机构盈米基金近日推出新品。10月23日，盈米基金旗下且慢平台上线“四笔钱”投顾服务，并在试点阶段以交易手续费抵扣投顾服务费的模式进行推广，投资者选择投顾业务时...",
     "custom_description": null,
-    "hits": 26,
+    "hits": 27,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -645,11 +724,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -664,7 +743,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -682,7 +761,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -724,11 +803,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -743,7 +822,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -761,7 +840,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -803,11 +882,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -822,7 +901,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -840,7 +919,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -882,11 +961,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -901,7 +980,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -919,7 +998,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -961,11 +1040,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -980,7 +1059,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -998,7 +1077,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1040,11 +1119,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1059,7 +1138,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1077,7 +1156,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1119,11 +1198,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1138,7 +1217,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1156,7 +1235,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1198,11 +1277,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1217,7 +1296,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1235,7 +1314,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1277,11 +1356,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1296,7 +1375,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1314,7 +1393,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1356,11 +1435,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1375,7 +1454,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1393,7 +1472,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1435,11 +1514,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1454,7 +1533,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1472,7 +1551,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1514,11 +1593,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1533,7 +1612,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1551,7 +1630,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1593,11 +1672,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1612,7 +1691,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1630,7 +1709,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1655,7 +1734,7 @@
     "cover": null,
     "description": "监管成都市已于近日正式获批开展央行金融科技创新监管试点，目前金融科技创新监管试点 范围已扩大至北京、上海、重庆、深圳、雄安新区、杭州、苏州、广州、成都 9 个地区。首批32家新三板精选层公司将于7月27日正式开始交易。央行和证监会联合发布通知，将打通银行间债券市场和交易所债券市场的基础设施。债...",
     "custom_description": null,
-    "hits": 41,
+    "hits": 44,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -1672,11 +1751,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1691,7 +1770,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1709,7 +1788,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1734,7 +1813,7 @@
     "cover": null,
     "description": "监管银保监会依法接管，并委托六家市场机构分别托管了“明天系”旗下华夏人寿、天安财险、天安人寿、易安财险、新时代信托和新华信托六家机构；证监会依法委托四家机构托管了“明天系”旗下新时代证券、国盛证券、国盛期货。自1999年明天控股集团正式成立以来，“明天系”通过无数壳公司非法占有或控制大量金融牌...",
     "custom_description": null,
-    "hits": 29,
+    "hits": 30,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -1751,11 +1830,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1770,7 +1849,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1788,7 +1867,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1830,11 +1909,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1849,7 +1928,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1867,7 +1946,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1909,11 +1988,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -1928,7 +2007,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -1946,7 +2025,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -1988,11 +2067,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2007,7 +2086,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2025,7 +2104,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2067,11 +2146,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2086,7 +2165,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2104,7 +2183,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2146,11 +2225,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2165,7 +2244,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2183,7 +2262,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2225,11 +2304,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2244,7 +2323,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2262,7 +2341,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2287,7 +2366,7 @@
     "cover": null,
     "description": "监管上交所表示适时推出做市商制度、研究引入单次T+0交易，保证市场的流动性，从而保证价格发现功能的正常实现。买卖同一只股票，当天只能买卖一次，限制每天回转交易次数，以后根据经验和情况逐渐放开。深交所理事长王建军：创业板改革并试点注册制各项准备工作已基本就绪，交易所层面业务规则已经上报，内部业务...",
     "custom_description": null,
-    "hits": 64,
+    "hits": 65,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -2304,11 +2383,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2323,7 +2402,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2341,7 +2420,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2383,11 +2462,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2402,7 +2481,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2420,7 +2499,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2462,11 +2541,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2481,7 +2560,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2499,7 +2578,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2541,11 +2620,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2560,7 +2639,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2578,7 +2657,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2603,7 +2682,7 @@
     "cover": null,
     "description": "监管证监会和国家发改委近日联合发布《关于推进基础设施领域不动产投资信托基金（REITs）试点相关工作的通知》，将以“公募基金+ABS”的方式试点基础设施领域的公募REITs产品。中央全面深化改革委员会第十三次会议审议通过《创业板改革并试点注册制总体实施方案》。  4月30日证监会发布了《关于创...",
     "custom_description": null,
-    "hits": 62,
+    "hits": 65,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -2620,11 +2699,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2639,7 +2718,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2657,7 +2736,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2682,7 +2761,7 @@
     "cover": null,
     "description": "📎互联网证券周刊_vol21.mp3监管证监会近日批准大连商品交易所开展生猪期货交易。生猪是我国价值最大的农副产品，生猪期货将成为我国期货市场上市的第一个活体交割品种。中国证券业协会近期向证券公司下发了《证券公司声誉风险管理指引》征求意见稿，要求证券公司建立声誉风险管理制度和机制。《指引》指...",
     "custom_description": null,
-    "hits": 34,
+    "hits": 37,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -2699,11 +2778,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2718,7 +2797,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2736,7 +2815,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2778,11 +2857,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2797,7 +2876,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2815,7 +2894,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2857,11 +2936,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2876,7 +2955,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2894,7 +2973,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -2919,7 +2998,7 @@
     "cover": "https://cdn.nlark.com/yuque/0/2020/png/147312/1585922887450-b62f5f10-b007-4897-966e-644661905e9d.png",
     "description": "监管4月3日，上交所就《科创板上市公司股东以非公开转让和配售方式减持股份实施细则（征求意见稿）》公开征求意见。根据《实施细则》，非公开转让方式的股份受让方，只能是具备相应定价能力和风险承受能力的专业机构投资者。科创板的非公开转让制度，主要借鉴了美国市场非公开转让的思路，对合格投资者的身份和持股...",
     "custom_description": null,
-    "hits": 61,
+    "hits": 62,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -2936,11 +3015,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -2955,7 +3034,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -2973,7 +3052,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3015,11 +3094,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3034,7 +3113,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3052,7 +3131,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3077,7 +3156,7 @@
     "cover": "https://cdn.nlark.com/yuque/0/2020/svg/147312/1584608841623-09fd569e-81f0-4438-83bc-d94a3b7b8c2f.svg",
     "description": "音频版监管上海证券交易所在最新发布的《ETF行业发展报告（2020）》中表示：正在研究推出ETF集合申购机制，要在2020年持续推动ETF集合申购业务试点和常态化。持续推动ETF理财平台建设相关工作，让更多个人和机构投资者参与。ETF理财平台允许投资者通过银行、互联网等渠道直接投资ETF。（提...",
     "custom_description": null,
-    "hits": 89,
+    "hits": 90,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -3094,11 +3173,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3113,7 +3192,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3131,7 +3210,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3173,11 +3252,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3192,7 +3271,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3210,7 +3289,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lakesheet",
@@ -3233,7 +3312,7 @@
     "cover": "https://cdn.nlark.com/yuque/0/2020/png/147312/1585377837363-f481929f-685d-43d1-8a62-91c164093e31.png",
     "description": "",
     "custom_description": null,
-    "hits": 102,
+    "hits": 103,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -3250,11 +3329,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3269,7 +3348,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3287,7 +3366,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3312,7 +3391,7 @@
     "cover": null,
     "description": "📎互联网证券周刊_vol14.mp3（直接播放）监管证监会发布《中国证监会关于全国中小企业股份转让系统挂牌公司转板上市的指导意见》征求意见稿，转板制度正式落地的时间，业内分析认为，如果精选层都能在今年下半年落地，2022年内有望看到成功转板科创板的案例；如果创业板注册制能在2021年落地，2...",
     "custom_description": null,
-    "hits": 111,
+    "hits": 112,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -3329,11 +3408,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3348,7 +3427,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3366,7 +3445,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3408,11 +3487,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3427,7 +3506,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3445,7 +3524,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3470,7 +3549,7 @@
     "cover": null,
     "description": "监管证监会于近日发布了《关于废止部分证券期货规范性文件的决定》，决定废止18部证券期货规范性文件。主要对不完全适应证券市场发展实践、不适应资本市场全面深化改革需要、不符合上位法规定、所规范事项已不存在或已执行完毕、或者已有新的规则予以规范的制度文件等，予以废止。上海证监局日前发布关于对上海东方...",
     "custom_description": null,
-    "hits": 33,
+    "hits": 34,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -3487,11 +3566,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3506,7 +3585,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3524,7 +3603,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3566,11 +3645,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3585,7 +3664,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3603,7 +3682,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3645,11 +3724,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3664,7 +3743,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3682,7 +3761,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3724,11 +3803,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3743,7 +3822,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3761,7 +3840,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3803,11 +3882,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3822,7 +3901,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3840,7 +3919,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3882,11 +3961,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3901,7 +3980,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3919,7 +3998,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -3944,7 +4023,7 @@
     "cover": null,
     "description": "监管沪深证券交易所已对外发布修订的《沪港通业务实施办法》和《深港通业务实施办法》。两地证券交易所和证券登记结算机构正在抓紧推进上线技术准备工作，有关技术系统拟于2020年1月13日正式启用。南向投资者识别码制度实施后，南向投资者将提供识别码等信息。交易所深交所发布关于嘉实沪深300ETF期权合...",
     "custom_description": null,
-    "hits": 93,
+    "hits": 95,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -3961,11 +4040,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -3980,7 +4059,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -3998,7 +4077,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4040,11 +4119,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4059,7 +4138,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -4077,7 +4156,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4119,11 +4198,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4138,7 +4217,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -4156,7 +4235,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4198,11 +4277,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4217,7 +4296,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -4235,7 +4314,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4260,7 +4339,7 @@
     "cover": null,
     "description": "资讯监管【剑指虚拟货币借区块链“还魂” 全国性清理整顿大幕已开启】《科创板日报》22日讯，从接近国家互联网金融风险专项整治小组办公室人士处获悉，区块链不等于虚拟货币，监管部门对于虚拟货币炒作和虚拟货币交易场所的打击态度没有丝毫改变。目前监管部门已经通盘部署，要求全国各地全面排查属地借助区块链开...",
     "custom_description": null,
-    "hits": 85,
+    "hits": 86,
     "_serializer": "v2.doc_detail"
   },
   {
@@ -4277,11 +4356,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4296,7 +4375,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -4314,7 +4393,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4356,11 +4435,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4375,7 +4454,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -4393,7 +4472,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4435,11 +4514,11 @@
       "description": "每周分享互联网证券行业动态。",
       "creator_id": 147312,
       "public": 1,
-      "items_count": 65,
+      "items_count": 67,
       "likes_count": 0,
       "watches_count": 53,
-      "content_updated_at": "2021-01-01T05:13:19.021Z",
-      "updated_at": "2021-01-01T05:13:19.000Z",
+      "content_updated_at": "2021-01-12T00:58:42.184Z",
+      "updated_at": "2021-01-12T00:58:42.000Z",
       "created_at": "2019-11-17T13:28:22.000Z",
       "namespace": "securities/secweekly",
       "user": {
@@ -4454,7 +4533,7 @@
         "followers_count": 0,
         "following_count": 0,
         "created_at": "2018-07-22T03:30:56.000Z",
-        "updated_at": "2020-12-20T17:46:36.000Z",
+        "updated_at": "2021-01-03T02:27:49.000Z",
         "_serializer": "v2.user"
       },
       "_serializer": "v2.book"
@@ -4472,7 +4551,7 @@
       "followers_count": 11,
       "following_count": 3,
       "created_at": "2018-07-11T09:30:57.000Z",
-      "updated_at": "2020-12-25T10:58:04.000Z",
+      "updated_at": "2021-01-15T23:06:51.000Z",
       "_serializer": "v2.user"
     },
     "format": "lake",
@@ -4497,7 +4576,7 @@
     "cover": null,
     "description": "文档简介先简单罗列原始资料，抽时间稍加归纳分析。软件更新日志一些本周或近期有更新的软件，更新日志如下（来自小米应用商店）：蛋卷基金【新增】雪球大V基金组合重磅来袭；持仓基金新增组合分类。近期更新：基金赎回增加7日赎回费提示；设置页增加税收居民身份确认。东兴1981、新增投资账本功能，账户收益清晰明了； 2、新增每日仓位功能，账户历史信息轻松查阅； 3、新增筹码分布功能，洞察资金成本分布； 4、新增盯盘精灵功能，实时接受市场异动； 5、新增k线展示模式，随意切换空心实心；...",
     "custom_description": null,
-    "hits": 80,
+    "hits": 81,
     "_serializer": "v2.doc_detail"
   }
 ]
