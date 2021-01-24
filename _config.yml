@@ -125,5 +125,5 @@ baidusitemap:
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository: https://github.com/hillerliao/hillerliao.github.io
+  repository: https://gh_token@github.com/hillerliao/hillerliao.github.io
   branch: hexo
