@@ -16,7 +16,7 @@ branches:
     - hexo_source
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_c6aab2e639db_key -iv $encrypted_c6aab2e639db_iv
+  #- openssl aes-256-cbc -K $encrypted_c6aab2e639db_key -iv $encrypted_c6aab2e639db_iv
   - npm install -g hexo-cli
 
 # Start: Build Lifecycle
