@@ -1,3 +1,4 @@
 [submodule "themes/next"]
 	path = themes/next
-	url = git@github.com:hillerliao/hexo-theme-next.git
+	url = https://gh_token@github.com/hillerliao/hexo-theme-next
+	#url = git@github.com:hillerliao/hexo-theme-next.git 
