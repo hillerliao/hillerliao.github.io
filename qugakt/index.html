@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zhihai.me","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="产品概述微信扫描二维码码关注公众号「新消息服务」。方便用户跟踪龙岩学院官网发布的讲座动态，无人值守，有新讲座时自动推送到微信。 实现步骤简述步骤说起来很简单，就两步：抓取数据、推送消息。  1、抓取龙岩学完首页的讲座信息； 2、设置自动监控任务，检查是否有抓取到新内容，如果有，则将新内容推送到微信。  如果要自己写代码、买服务器，成本太高，本文介绍一种 no code 的方案，具体用到三个工具：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何实现微信接收龙岩学院讲座提醒">
+<meta property="og:url" content="https://zhihai.me/qugakt/index.html">
+<meta property="og:site_name" content="廖智海">
+<meta property="og:description" content="产品概述微信扫描二维码码关注公众号「新消息服务」。方便用户跟踪龙岩学院官网发布的讲座动态，无人值守，有新讲座时自动推送到微信。 实现步骤简述步骤说起来很简单，就两步：抓取数据、推送消息。  1、抓取龙岩学完首页的讲座信息； 2、设置自动监控任务，检查是否有抓取到新内容，如果有，则将新内容推送到微信。  如果要自己写代码、买服务器，成本太高，本文介绍一种 no code 的方案，具体用到三个工具：">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/147312/1604579741891-1fd39115-3df0-4fe8-bf61-6a016ac6a5b3.png#align=left&display=inline&height=22&margin=%5Bobject%20Object%5D&name=image.png&originHeight=43&originWidth=811&size=4922&status=done&style=none&width=405.5#align=left&display=inline&height=43&margin=%5Bobject%20Object%5D&originHeight=43&originWidth=811&status=done&style=none&width=811">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/147312/1604540219734-4dc16462-b9fe-495f-a021-56acd2111157.png#align=left&display=inline&height=504&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1007&originWidth=492&size=68906&status=done&style=shadow&width=246#align=left&display=inline&height=1007&margin=%5Bobject%20Object%5D&originHeight=1007&originWidth=492&status=done&style=none&width=492">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpeg/147312/1604542059523-bbb8bdcc-f45f-4d8b-9c78-847fe87afb52.jpeg#align=left&display=inline&height=395&margin=%5Bobject%20Object%5D&name=%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92-%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg&originHeight=1304&originWidth=990&size=69543&status=done&style=stroke&width=300#align=left&display=inline&height=1304&margin=%5Bobject%20Object%5D&originHeight=1304&originWidth=990&status=done&style=none&width=990">
+<meta property="article:published_time" content="2020-11-05T11:57:57.000Z">
+<meta property="article:modified_time" content="2021-03-11T11:17:01.393Z">
+<meta property="article:author" content="Hiller Liao">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2020/png/147312/1604579741891-1fd39115-3df0-4fe8-bf61-6a016ac6a5b3.png#align=left&display=inline&height=22&margin=%5Bobject%20Object%5D&name=image.png&originHeight=43&originWidth=811&size=4922&status=done&style=none&width=405.5#align=left&display=inline&height=43&margin=%5Bobject%20Object%5D&originHeight=43&originWidth=811&status=done&style=none&width=811">
+
+<link rel="canonical" href="https://zhihai.me/qugakt/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>如何实现微信接收龙岩学院讲座提醒 | 廖智海</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2068c35de7fdb589ff8625ea793028d7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="廖智海" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">廖智海</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://zhihai.me/qugakt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hiller Liao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="廖智海">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何实现微信接收龙岩学院讲座提醒
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-11-05 11:57:57" itemprop="dateCreated datePublished" datetime="2020-11-05T11:57:57+00:00">2020-11-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-11 11:17:01" itemprop="dateModified" datetime="2021-03-11T11:17:01+00:00">2021-03-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="产品概述"><a href="#产品概述" class="headerlink" title="产品概述"></a>产品概述</h1><p>微信扫描二维码码关注公众号「新消息服务」。方便用户跟踪龙岩学院官网发布的讲座动态，无人值守，有新讲座时自动推送到微信。</p>
+<h1 id="实现步骤简述"><a href="#实现步骤简述" class="headerlink" title="实现步骤简述"></a>实现步骤简述</h1><p>步骤说起来很简单，就两步：抓取数据、推送消息。</p>
+<ul>
+<li>1、抓取龙岩学完首页的讲座信息；</li>
+<li>2、设置自动监控任务，检查是否有抓取到新内容，如果有，则将新内容推送到微信。</li>
+</ul>
+<p>如果要自己写代码、买服务器，成本太高，本文介绍一种 no code 的方案，具体用到三个工具： Feed43、IFTTT、WxPusher。</p>
+<ul>
+<li>抓取信息采用 <a target="_blank" rel="noopener" href="https://feed43.com/">Feed43</a>，免费烧制静态网页 RSS 的工具，烧制 RSS 相当于将非标准化格式的数据转换成标准化的通用格式，方便在后续步骤中使用。；</li>
+<li>自动监控任务采用  <a target="_blank" rel="noopener" href="https://ifttt.com/">IFTTT</a>，免费的自动化工具，自动监控 RSS 数据源是否有新内容；</li>
+<li>消息提醒采用 <a target="_blank" rel="noopener" href="https://wxpusher.zjiecode.com/">WxPusher</a>，免费的微信推送服务。</li>
+</ul>
+<blockquote>
+<p>Feed43 → IFTTT → WxPusher</p>
+</blockquote>
+<p>下面介绍主要步骤。</p>
+<h1 id="生成-RSS-地址"><a href="#生成-RSS-地址" class="headerlink" title="生成 RSS 地址"></a>生成 RSS 地址</h1><p>要利用免费烧制静态网页 RSS 的工具 Feed43 ，关键点在于找到所需数据在页面 HTML 源代码中的位置，需要一点 HTML 和 CSS 的知识。操作过程可参考 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26511654">RSS 入门篇：FEED43&amp;FeedEx-为静态网页定制 RSS 源 - 知乎</a></p>
+<p>最终配置的抽取规则如下：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/147312/1604579741891-1fd39115-3df0-4fe8-bf61-6a016ac6a5b3.png#align=left&display=inline&height=22&margin=%5Bobject%20Object%5D&name=image.png&originHeight=43&originWidth=811&size=4922&status=done&style=none&width=405.5#align=left&display=inline&height=43&margin=%5Bobject%20Object%5D&originHeight=43&originWidth=811&status=done&style=none&width=811" alt="image.png"></p>
+<h1 id="设置监控任务"><a href="#设置监控任务" class="headerlink" title="设置监控任务"></a>设置监控任务</h1><p>利用免费服务 <a target="_blank" rel="noopener" href="https://ifttt.com/">IFTTT</a>，一个自动化工具，IFTTT = if this then that ，即，如果符合某个条件则做某件事情。如果没有使用过，则可以参考一些 IFTTT 教程，如 <a target="_blank" rel="noopener" href="https://sspai.com/post/25270">触发你的智能生活：IFTTT 入门</a>。<br>触发器(this) 我们选择  RSS，动作 (then) 我们选择 Webhook，具体步骤略过，最终配置如下图。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/147312/1604540219734-4dc16462-b9fe-495f-a021-56acd2111157.png#align=left&display=inline&height=504&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1007&originWidth=492&size=68906&status=done&style=shadow&width=246#align=left&display=inline&height=1007&margin=%5Bobject%20Object%5D&originHeight=1007&originWidth=492&status=done&style=none&width=492" alt="image.png"></p>
+<h1 id="获得微信提醒"><a href="#获得微信提醒" class="headerlink" title="获得微信提醒"></a>获得微信提醒</h1><p>要通过正常途径持续推送消息到微信，只有一条路，那就是服务号模板消息。开通服务号需要有企业资质，而注册一家企业的成本非常高。不用急，幸好已经有人注册了服务号并开发出一条消息通道供其他人免费使用，其产品的名字叫做「WxPusher」。官方是这么介绍的：</p>
+<blockquote>
+<p>WxPusher (微信推送服务)是一个使用微信公众号作为通道的，实时信息推送平台，你可以通过调用 API 的方式，把信息推送到微信上，无需安装额外的软件，即可做到信息实时通知。 你可以使用 WxPusher 来做服务器报警通知、抢课通知、抢票通知，信息更新提示等。</p>
+</blockquote>
+<p>我们在其上创建一个应用「消息来了」，然后创建一个主题「龙院讲座」，获得订阅二维码。将二维码分享给朋友，对方只需要扫一扫，即可实现订阅。<br><img src="https://cdn.nlark.com/yuque/0/2020/jpeg/147312/1604542059523-bbb8bdcc-f45f-4d8b-9c78-847fe87afb52.jpeg#align=left&display=inline&height=395&margin=%5Bobject%20Object%5D&name=%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92-%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg&originHeight=1304&originWidth=990&size=69543&status=done&style=stroke&width=300#align=left&display=inline&height=1304&margin=%5Bobject%20Object%5D&originHeight=1304&originWidth=990&status=done&style=none&width=990" alt="龙岩学院讲座提醒-二维码.jpg"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/dgl1ys/" rel="prev" title="互联网证券周刊 Vol. 48 (2020.11.07)">
+      <i class="fa fa-chevron-left"></i> 互联网证券周刊 Vol. 48 (2020.11.07)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/gtl4rh/" rel="next" title="互联网证券周刊 Vol. 49 (2020.11.14)">
+      互联网证券周刊 Vol. 49 (2020.11.14) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A7%E5%93%81%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">产品概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4%E7%AE%80%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">实现步骤简述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%9F%E6%88%90-RSS-%E5%9C%B0%E5%9D%80"><span class="nav-number">3.</span> <span class="nav-text">生成 RSS 地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%9B%91%E6%8E%A7%E4%BB%BB%E5%8A%A1"><span class="nav-number">4.</span> <span class="nav-text">设置监控任务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E5%BE%AE%E4%BF%A1%E6%8F%90%E9%86%92"><span class="nav-number">5.</span> <span class="nav-text">获得微信提醒</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Hiller Liao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">78</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hiller Liao</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
