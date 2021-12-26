@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>如何实现微信接收龙岩学院讲座提醒</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="编程 categories: 编程 产品概述 微信扫描二维码码关注公众号「新消息服务」。方便用户跟踪龙岩学院官网发布的讲座动态，无人值守 …" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">zhihai.me by pelican</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/blog.html">blog</a></li>
+                    <li><a href="/category/secweekly.html">secweekly</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/ru-he-shi-xian-wei-xin-jie-shou-long-yan-xue-yuan-jiang-zuo-ti-xing.html" rel="bookmark"
+           title="Permalink to 如何实现微信接收龙岩学院讲座提醒">如何实现微信接收龙岩学院讲座提醒</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2020-11-05T19:57:57+08:00">
+                Published: Thu 05 November 2020
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hillerliao.html">hillerliao</a>
+        </address>
+<p>In <a href="/category/blog.html">blog</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>编程
+categories:</li>
+<li>编程</li>
+</ul>
+<hr>
+<h1>产品概述</h1>
+<p>微信扫描二维码码关注公众号「新消息服务」。方便用户跟踪龙岩学院官网发布的讲座动态，无人值守，有新讲座时自动推送到微信。</p>
+<h1>实现步骤简述</h1>
+<p>步骤说起来很简单，就两步：抓取数据、推送消息。</p>
+<ul>
+<li>1、抓取龙岩学完首页的讲座信息；</li>
+<li>2、设置自动监控任务，检查是否有抓取到新内容，如果有，则将新内容推送到微信。</li>
+</ul>
+<p>如果要自己写代码、买服务器，成本太高，本文介绍一种 no code 的方案，具体用到三个工具： Feed43、IFTTT、WxPusher。</p>
+<ul>
+<li>抓取信息采用 <a href="https://feed43.com">Feed43</a>，免费烧制静态网页 RSS 的工具，烧制 RSS 相当于将非标准化格式的数据转换成标准化的通用格式，方便在后续步骤中使用。；</li>
+<li>自动监控任务采用  <a href="https://ifttt.com">IFTTT</a>，免费的自动化工具，自动监控 RSS 数据源是否有新内容；</li>
+<li>消息提醒采用 <a href="https://wxpusher.zjiecode.com">WxPusher</a>，免费的微信推送服务。</li>
+</ul>
+<blockquote>
+<p>Feed43 → IFTTT → WxPusher</p>
+</blockquote>
+<p>下面介绍主要步骤。</p>
+<h1>生成 RSS 地址</h1>
+<p>要利用免费烧制静态网页 RSS 的工具 Feed43 ，关键点在于找到所需数据在页面 HTML 源代码中的位置，需要一点 HTML 和 CSS 的知识。操作过程可参考 <a href="https://zhuanlan.zhihu.com/p/26511654">RSS 入门篇：FEED43&amp;FeedEx-为静态网页定制 RSS 源 - 知乎</a></p>
+<p>最终配置的抽取规则如下：</p>
+<p><img alt="image.png" src="https://cdn.nlark.com/yuque/0/2020/png/147312/1604579741891-1fd39115-3df0-4fe8-bf61-6a016ac6a5b3.png#align=left&amp;display=inline&amp;height=22&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=43&amp;originWidth=811&amp;size=4922&amp;status=done&amp;style=none&amp;width=405.5#align=left&amp;display=inline&amp;height=43&amp;margin=%5Bobject%20Object%5D&amp;originHeight=43&amp;originWidth=811&amp;status=done&amp;style=none&amp;width=811"></p>
+<h1>设置监控任务</h1>
+<p>利用免费服务 <a href="https://ifttt.com">IFTTT</a>，一个自动化工具，IFTTT = if this then that ，即，如果符合某个条件则做某件事情。如果没有使用过，则可以参考一些 IFTTT 教程，如 <a href="https://sspai.com/post/25270">触发你的智能生活：IFTTT 入门</a>。
+触发器(this) 我们选择  RSS，动作 (then) 我们选择 Webhook，具体步骤略过，最终配置如下图。</p>
+<p><img alt="image.png" src="https://cdn.nlark.com/yuque/0/2020/png/147312/1604540219734-4dc16462-b9fe-495f-a021-56acd2111157.png#align=left&amp;display=inline&amp;height=504&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1007&amp;originWidth=492&amp;size=68906&amp;status=done&amp;style=shadow&amp;width=246#align=left&amp;display=inline&amp;height=1007&amp;margin=%5Bobject%20Object%5D&amp;originHeight=1007&amp;originWidth=492&amp;status=done&amp;style=none&amp;width=492"></p>
+<h1>获得微信提醒</h1>
+<p>要通过正常途径持续推送消息到微信，只有一条路，那就是服务号模板消息。开通服务号需要有企业资质，而注册一家企业的成本非常高。不用急，幸好已经有人注册了服务号并开发出一条消息通道供其他人免费使用，其产品的名字叫做「WxPusher」。官方是这么介绍的：</p>
+<blockquote>
+<p>WxPusher (微信推送服务)是一个使用微信公众号作为通道的，实时信息推送平台，你可以通过调用 API 的方式，把信息推送到微信上，无需安装额外的软件，即可做到信息实时通知。 你可以使用 WxPusher 来做服务器报警通知、抢课通知、抢票通知，信息更新提示等。</p>
+</blockquote>
+<p>我们在其上创建一个应用「消息来了」，然后创建一个主题「龙院讲座」，获得订阅二维码。将二维码分享给朋友，对方只需要扫一扫，即可实现订阅。
+<img alt="龙岩学院讲座提醒-二维码.jpg" src="https://cdn.nlark.com/yuque/0/2020/jpeg/147312/1604542059523-bbb8bdcc-f45f-4d8b-9c78-847fe87afb52.jpeg#align=left&amp;display=inline&amp;height=395&amp;margin=%5Bobject%20Object%5D&amp;name=%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92-%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg&amp;originHeight=1304&amp;originWidth=990&amp;size=69543&amp;status=done&amp;style=stroke&amp;width=300#align=left&amp;display=inline&amp;height=1304&amp;margin=%5Bobject%20Object%5D&amp;originHeight=1304&amp;originWidth=990&amp;status=done&amp;style=none&amp;width=990"></p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
