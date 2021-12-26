@@ -1,12 +1,15 @@
 AUTHOR = 'hillerliao'
-SITENAME = 'zhihai.me by pelican'
+SITENAME = '廖智海'
 SITEURL = ''
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Rome'
+TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = 'en'
+
+THEME = "pelican-hyde"
+
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
