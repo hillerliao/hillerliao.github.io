@@ -15,7 +15,7 @@ PROFILE_IMAGE = 'avatar.jpg'
 
 STATIC_PATHS = ['images']
 
-GOOGLE_ANALYTICS = '297740936'
+GOOGLE_ANALYTICS = 'UA-79917414-1'
 
 # Feed generation is usually not desired when developing
 # FEED_ALL_ATOM = None
