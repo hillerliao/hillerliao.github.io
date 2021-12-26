@@ -1,5 +1,6 @@
 AUTHOR = 'hillerliao'
 SITENAME = '廖智海'
+SITESUBTITLE = '互联网产品折腾师'
 SITEURL = ''
 
 PATH = 'content'
@@ -10,13 +11,21 @@ DEFAULT_LANG = 'en'
 
 THEME = "pelican-hyde"
 
+PROFILE_IMAGE = 'avatar.jpg'
+
+STATIC_PATHS = ['images']
+
+# GOOGLE_ANALYTICS = ''
 
 # Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
+# FEED_ALL_ATOM = None
+FEED_ALL_RSS = 'feeds/all.rss.xml'
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+
 
 # Blogroll
 LINKS = (('Pelican', 'https://getpelican.com/'),
@@ -25,8 +34,8 @@ LINKS = (('Pelican', 'https://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('twitter', 'https://twitter.com/hillerliao'),
+          ('github', 'https://github.com/hillerliao'),)
 
 DEFAULT_PAGINATION = False
 
