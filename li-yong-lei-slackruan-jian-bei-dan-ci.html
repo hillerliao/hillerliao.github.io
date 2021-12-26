@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>利用类Slack软件背单词</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="编程 categories: 编程 出发点 我认为英语单词需要天天背诵，重复重复再重复，是不是在眼前露个脸，加深记忆。 怎么做到？ 但是，问题来 …" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">zhihai.me by pelican</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/blog.html">blog</a></li>
+                    <li><a href="/category/secweekly.html">secweekly</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/li-yong-lei-slackruan-jian-bei-dan-ci.html" rel="bookmark"
+           title="Permalink to 利用类Slack软件背单词">利用类Slack软件背单词</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2017-11-14T19:57:57+08:00">
+                Published: Tue 14 November 2017
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hillerliao.html">hillerliao</a>
+        </address>
+<p>In <a href="/category/blog.html">blog</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>编程
+categories:</li>
+<li>编程</li>
+</ul>
+<hr>
+<h3>出发点</h3>
+<p>我认为英语单词需要天天背诵，重复重复再重复，是不是在眼前露个脸，加深记忆。</p>
+<h3>怎么做到？</h3>
+<p>但是，问题来了，每天工作太忙，又有智能手机占用太多时间，哪有功夫去背单词？</p>
+<p>我的答案是：利用零碎时间。</p>
+<p>怎么利用？利用工具，通过定时发条消息到手机上的方式来实现。</p>
+<h3>最终效果预览</h3>
+<p>提醒自己喝水，消息附带一个单词。</p>
+<h3>方案架构</h3>
+<p>通过云服务器定时往类 Slack 软件 BearyChat 发送一条消息。具体如下：</p>
+<h4>触发器</h4>
+<p>在服务器上设一个定时任务</p>
+<ul>
+<li>服务器。 购买便宜的 VPS 作为服务器，每个月 2.5 美元，选择 Ubuntu 系统，方便设置定时任务。</li>
+<li>域名。在万网上购买 <code>zhihai.me</code> ，便宜，一年十几块钱。没有对比 godaddy 一年多少钱。</li>
+<li>WEB 服务。部署基于 Django 的 Mezzanine ，省得自己折腾。为了学这个花了不少时间，顺便部署了一个 <a href="http://zhihai.me">博客</a> 。</li>
+</ul>
+<h4>接收器</h4>
+<p>该 BearyChat 出场了。在客户端，以 BearyChat 作为消息接收工具。BearyChat 提供了 Ingoing 这个好用的工具。</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

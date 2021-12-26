@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>如何将网站的内容发送到微信群</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="编程 categories: 编程 过程简述 雪球等 --> rsshub_rss / Huginn_rss --> inoreader_rss聚合 --> web_wechat_api --> 微信 过程分述 目前的推送过程是： 通过开源的 Rsshub / Huginn 作为数据抓取 …" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">zhihai.me by pelican</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="/category/blog.html">blog</a></li>
+                    <li><a href="/category/secweekly.html">secweekly</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/ru-he-jiang-wang-zhan-de-nei-rong-fa-song-dao-wei-xin-qun.html" rel="bookmark"
+           title="Permalink to 如何将网站的内容发送到微信群">如何将网站的内容发送到微信群</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2018-10-15T19:57:57+08:00">
+                Published: Mon 15 October 2018
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="/author/hillerliao.html">hillerliao</a>
+        </address>
+<p>In <a href="/category/blog.html">blog</a>.</p>
+
+</footer><!-- /.post-info -->      <ul>
+<li>编程
+categories:</li>
+<li>编程</li>
+</ul>
+<hr>
+<h3>过程简述</h3>
+<p><code>雪球等 --&gt; rsshub_rss / Huginn_rss --&gt; inoreader_rss聚合 --&gt; web_wechat_api --&gt; 微信</code></p>
+<h3>过程分述</h3>
+<p>目前的推送过程是：</p>
+<ul>
+<li>通过开源的 Rsshub / Huginn 作为数据抓取工具，生成 rss 格式数据；</li>
+<li>inoreader 订阅多个 rsshub 生成的 rss 数据，形成 rss 组；</li>
+<li>rss 组自身有又可以额外生成一个新 rss，这个新 rss 包括了多个子 rss ；</li>
+<li>VPS 上创建定时任务检查 rss 更新，then 通过 webhook 发一条消息到微信群。</li>
+</ul>
+<p>最后一步的 webhook 是关键，涉及到打通外部网络与微信群的通路，靠的是一个开源的项目 <a href="https://github.com/joeeeeey/web_wechat_api">web_wechat_api</a>，它将微信个人号发送消息等接口封装成 web api ，方便外部系统调用。目前我稍微改造了一下，通过 Docker 部署在 VPS 上，省去部署程序的痛苦。</p>
+<p>其次，这一步可能会漏消息，没搞明白什么原因。目前的解决方案是，如果发送结果为失败，则继续尝试重新发送。</p>
+<p>再者，基于个人微信号搭建的微信机器人，不太稳定，为此，我每隔一个小时给指定的小群发送一个托福单词，如果发送间断，说明通道服务挂了，需要登录 VPS 及时重启。</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
