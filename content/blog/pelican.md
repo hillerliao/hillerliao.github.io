@@ -16,7 +16,7 @@ summary: Short version for index and feeds
 ## 第一次配置环境
 
 ```
-进入项目根目录  
+# 进入项目根目录  
 pipenv shell  
 pip install pelican markdown
 
@@ -34,7 +34,7 @@ pelican content
 pelican -l -b 0.0.0.0 -p 8082 -r
 
 # publish to github pages
-pip install ghp-import=
+pip install ghp-import=2.1.0
 ghp-import output -b gh-pages
 github push origin gh-pages
 ```
