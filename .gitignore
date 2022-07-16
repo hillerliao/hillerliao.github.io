@@ -1,3 +1,4 @@
-themes_dl
+pelican-themes
 output
 .DS_Store
+__pycache__/
