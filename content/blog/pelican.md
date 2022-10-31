@@ -36,5 +36,5 @@ pelican -l -b 0.0.0.0 -p 8082 -r
 # publish to github pages
 pip install ghp-import=2.1.0
 ghp-import output -b gh-pages
-github push origin gh-pages
+git push origin gh-pages
 ```

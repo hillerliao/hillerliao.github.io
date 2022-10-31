@@ -1,3 +1,13 @@
+---
+title: 阿里云函数版 RSS 过滤器上线
+urlname: rssfilter-on-aliyun-cf
+date: '2022-9-18 10:57:57 +0800'
+tags:
+  - 产品体验
+categories:
+  - 产品体验
+---
+
 为方便薅阿里云函数计算的羊毛，将 [RSSHub-Python](https://github.com/hillerliao/RSSHub-python) 项目里的 [RSS 过滤器](https://pyrsshub.vercel.app/feeds)功能独立出来，做成阿里云函数计算的版本。
 
 项目地址：`https://github.com/hillerliao/RssFilter`
