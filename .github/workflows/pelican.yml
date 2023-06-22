@@ -15,9 +15,8 @@ jobs:
         submodules: 'true'
     - name: Install packages
       run: pip install -r requirements.txt
-    - name: install theme
-      run: pelican-themes -i themes_dl/pelican-hyde
     - uses: rehanhaider/pelican-to-github-pages@v1.0.3
+      run: pelican-themes -i themes_dl/pelican-hyde
       env:
         GITHUB_TOKEN: ${{secrets.PELICAN_DEPLOYMENT_TOKEN}}
         GH_PAGES_CNAME: ${{secrets.DOMAIN_CNAME}}
