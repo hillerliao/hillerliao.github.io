@@ -41,3 +41,16 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+
+WEBRING_FEED_URLS = [
+    'https://flomo.liaozh.top/u/101/rss.xml',
+    'https://rsshub.app/telegram/channel/JapanCoder',
+    'https://nitter.net/hillerliao/rss',
+    'https://rss.smallmaple.com/rss/user/1281593140'
+]
+WEBRING_ARTICLES_PER_FEED = 3000
+WEBRING_MAX_ARTICLES = 6000
+WEBRING_SUMMARY_WORDS = 250
+
+TEMPLATE_PAGES = { 'talk.html': 'talk/index.html' }
