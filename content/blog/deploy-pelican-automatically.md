@@ -3,11 +3,11 @@
 title: 尝试让 Pelican 博客的部分发布步骤自动化
 date: '2023-06-22 20:33'
 modified: '2023-06-22 20:33'
-tags: 小工具,
+tags: pelican,
 category: blog
 slug: automated-pelican-publishment
 authors: hillerliao
-summary: 尝试让 pelican 发布博客自动化，为此折腾了一天，几点收货。
+summary: 尝试让 pelican 发布博客自动化，为此折腾了一天，几点收货。 
 ---
 
 个人独立博客上最新一篇文章出现烂图，严重影响站点形象，而且持续了好长一段时间没有修复。图床用的是腾讯的某个服务，后来不让我的站点引用了。我早就忘了具体通过哪个图床工具上传的。
