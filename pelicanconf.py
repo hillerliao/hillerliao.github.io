@@ -9,7 +9,7 @@ TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = 'en'
 
-THEME = "pelican-hyde"
+THEME = "themes_dl/pelican-hyde"
 
 PROFILE_IMAGE = 'avatar.jpg'
 
