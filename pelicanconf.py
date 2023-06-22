@@ -44,8 +44,7 @@ DEFAULT_PAGINATION = False
 
 
 WEBRING_FEED_URLS = [
-    'https://flomo.liaozh.top/u/101/rss.xml',
-    'https://rsshub.app/telegram/channel/JapanCoder' 
+    'https://flomo.liaozh.top/u/101/rss.xml'
 ]
 WEBRING_ARTICLES_PER_FEED = 3000
 WEBRING_MAX_ARTICLES = 6000
