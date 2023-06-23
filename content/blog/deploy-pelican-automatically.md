@@ -49,6 +49,9 @@ summary: 尝试让 pelican 发布博客自动化，为此折腾了一天，几�
 
 - 实际感受了 [Codium](https://www.codium.ai/) 这个工具在辅助阅读代码时的便利。
 
+- 基于 pelican 生成的静态博客如何更新到 github Pages？还有一个方法是借助 git hook。在执行 push 前触发运行指定脚本。[参考案例](https://nekrasovp.github.io/pelican-github-script-automation.html)
+
 ## 参考资料
 
 - 通过 [How to use Pelican on GitHub Pages Gittip](https://gist.github.com/JosefJezek/6053301)  发现 `theme` 配置项可以填入整个路径。
+- [Move blog to github and automate deploying with git hooks - Data driven](https://nekrasovp.github.io/pelican-github-script-automation.html)
