@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="一个简单脚本，让我抛弃笔记软件flomo" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="/yi-ge-jian-dan-jiao-ben-rang-wo-pao-qi-bi-ji-ruan-jian-flomo.html" />
+		<meta property="og:image" content="/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>一个简单脚本，让我抛弃笔记软件flomo - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/poole.css" />
+		<link rel="stylesheet" href="/theme/css/hyde.css" />
+		<link rel="stylesheet" href="/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">一个简单脚本，让我抛弃笔记软件flomo</h1>
+	<span class="post-date">Tue 19 December 2023</span>
+	<ul>
+<li>笔记软件
+categories:</li>
+<li>工具</li>
+</ul>
+<hr>
+<p>连续好几年购买了笔记软件 flomo 的会员之后，今年10月下旬我没有再续费。</p>
+<p>回想起当初使用 flomo 的原因，除了记录无压力之外，最主要就是看中 flomo 的笔记回顾功能。避免笔记沉睡，想法非常好。通过简单的一条微信模板消息，就能避免笔记沉睡。</p>
+<p>但不知从何时起，每日回顾功能改版了，每天发送的微信模板消息一模一样，仅相当于定时提醒的闹钟，毫无信息量，无法勾起我点进去看的欲望，久而久之，这类消息也就被我选择性无视了，甚至有垃圾信息的味道。</p>
+<p>还有什么功能可以实现类似效果呢？</p>
+<p>之前在 VPS 上通过 Docker 部署了仿 flomo 的 memos，输入体验接近 flomo ，但没有随机回顾功能，一直没有成为我的主力笔记软件。</p>
+<p>最近狠下心来，借助 Chat GPT 用 Python 写了一个简单的脚本，连接 memos 的 SQLite 数据库，随机获取一条笔记内容，并推送到 Telegram 。为了增强体验，增加了简单的关键词过滤，比如排除掉带有“存档”字眼的笔记。 写好之后，在系统的定时任务里增加一条运行该脚本的任务。</p>
+<p>试运行发现效果挺好，我就借助别人写的数据迁移工具，把 flomo上的数据导出后导入到 memos 中。</p>
+<p>当然，自己搭建的服务，就怕不稳定，数据备份很重要。我在自己电脑的 Wsl 上、安卓手机的 Termux上分别设置定时任务，将 SQLite 数据库文件备份到本地。</p>
+<p>到此，总算可以彻底告别 flomo 了。 meomos 加上简单的脚本，恢复了我的笔记回顾习惯，也帮我省了一笔 flomo 会员费，还避免了 VPS 吃灰，少花钱反而提升了体验，可谓是一举多得。</p>
+
+
+</div>
+		</div>
+	</body>
+</html>

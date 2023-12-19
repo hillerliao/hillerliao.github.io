@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="利用类Slack软件背单词" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="/li-yong-lei-slackruan-jian-bei-dan-ci.html" />
+		<meta property="og:image" content="/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>利用类Slack软件背单词 - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/poole.css" />
+		<link rel="stylesheet" href="/theme/css/hyde.css" />
+		<link rel="stylesheet" href="/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">利用类Slack软件背单词</h1>
+	<span class="post-date">Tue 14 November 2017</span>
+	<ul>
+<li>编程
+categories:</li>
+<li>编程</li>
+</ul>
+<hr>
+<h3>出发点</h3>
+<p>我认为英语单词需要天天背诵，重复重复再重复，是不是在眼前露个脸，加深记忆。</p>
+<h3>怎么做到？</h3>
+<p>但是，问题来了，每天工作太忙，又有智能手机占用太多时间，哪有功夫去背单词？</p>
+<p>我的答案是：利用零碎时间。</p>
+<p>怎么利用？利用工具，通过定时发条消息到手机上的方式来实现。</p>
+<h3>最终效果预览</h3>
+<p>提醒自己喝水，消息附带一个单词。</p>
+<h3>方案架构</h3>
+<p>通过云服务器定时往类 Slack 软件 BearyChat 发送一条消息。具体如下：</p>
+<h4>触发器</h4>
+<p>在服务器上设一个定时任务</p>
+<ul>
+<li>服务器。 购买便宜的 VPS 作为服务器，每个月 2.5 美元，选择 Ubuntu 系统，方便设置定时任务。</li>
+<li>域名。在万网上购买 <code>zhihai.me</code> ，便宜，一年十几块钱。没有对比 godaddy 一年多少钱。</li>
+<li>WEB 服务。部署基于 Django 的 Mezzanine ，省得自己折腾。为了学这个花了不少时间，顺便部署了一个 <a href="http://zhihai.me">博客</a> 。</li>
+</ul>
+<h4>接收器</h4>
+<p>该 BearyChat 出场了。在客户端，以 BearyChat 作为消息接收工具。BearyChat 提供了 Ingoing 这个好用的工具。</p>
+
+
+</div>
+		</div>
+	</body>
+</html>

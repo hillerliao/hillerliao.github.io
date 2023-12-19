@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="尝试让 Pelican 博客的部分发布步骤自动化" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="/automated-pelican-publishment.html" />
+		<meta property="og:image" content="/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>尝试让 Pelican 博客的部分发布步骤自动化 - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/poole.css" />
+		<link rel="stylesheet" href="/theme/css/hyde.css" />
+		<link rel="stylesheet" href="/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">尝试让 Pelican 博客的部分发布步骤自动化</h1>
+	<span class="post-date">Thu 22 June 2023</span>
+	<p>个人独立博客上最新一篇文章出现烂图，严重影响站点形象，而且持续了好长一段时间没有修复。图床用的是腾讯的某个服务，后来不让我的站点引用了。我早就忘了具体通过哪个图床工具上传的。</p>
+<h2>操作繁琐 修改动力不足</h2>
+<p>为什么迟迟不修复？ </p>
+<p>我的个人博客用 Pelican 生成，静态文件托管在 Github Pages，操作过程大致为：</p>
+<ul>
+<li>本地添加 Markdown 文件；</li>
+<li>手动运行命令生成 HTML 静态文件；</li>
+<li>运行命令将静态文件推送到 Github 仓库的 gh-page 分支。</li>
+</ul>
+<p>这一顿操作太麻烦，导致我对更新博客有所抵触。</p>
+<p>今天端午节，决定花点时间让上述步骤半自动化。没想到折腾了一天才搞定。</p>
+<p>为了让这一天变得更有价值一点，稍作记录，顺便执行 push 触发一下自动更新的过程。</p>
+<h2>走了一些弯路</h2>
+<p>耗时太多主要是由于走了一些弯路，碰到好几个障碍：</p>
+<ul>
+<li>
+<p>将 Github 仓库拉到本地，项目内的主题文件夹内容为空。经分析，问题出在引用其他仓库作为子模块。为让子模块文件夹内容出现，花了很大力气才搞定。直到现在，对Git子模块的理解还是云里雾里。</p>
+</li>
+<li>
+<p>运行 Github Workflow 报错，说是主题文件没找到。尝试修改别人的 Github Workflow Action ，加入安装主题的命令，然后尝试在 workflow里使用。但发现需要发布到 Marketplace 才行。 思路不对，我的做法是硬编码了，fork 之后的修改不合理。明明知道不合理的做法还是花了大力气尝试。进行一项尝试前尽量多花点时间评估方案的合理性。</p>
+</li>
+<li>
+<p>对 Pelican 配置文件不够熟悉，折腾了大半天才知道配置项 theme 的值可以是整个路径，之前以为必须是路径的最后一节，导致使用时以为也必须通过pelican-themes 命令安装主题才能添加主题文件。 技术选型需要尽可能先对官方文档读一遍，并找一些别人的操作案例多看，然后再自己动手。</p>
+</li>
+<li>
+<p>找 <a href="https://github.com/rehanhaider/pelican-to-github-pages/tree/main">Workflow 模板</a>时一开始找的是 Stars 数更少的一个，里面用到的一个关键 Action <a href="https://github.com/rehanhaider/pelican-to-github-pages/blob/main/entrypoint.sh">源代码</a>读起来不太好理解，后来找了另外一个模板，所引用的 <a href="https://github.com/marketplace/actions/github-pages-pelican-build-action">Action</a> 实现思路和我自己理解的更接近，借助 Codium 进行<a href="https://github.com/nelsonjchen/gh-pages-pelican-action/blob/master/entrypoint.sh">源代码</a>解读，基本理解了过程。它将生成的 output 作为仓库推送到 gh-page 分支。 当然前者对我还是有价值的， 因为它指定了 submodule相关的操作。</p>
+</li>
+</ul>
+<h2>意外的收获</h2>
+<p>折腾过程中也算是有几点意外收获：</p>
+<ul>
+<li>
+<p>Git 仓库内子模块又是一个仓库的时候，该怎么做才能在 Clone 时子模块的内容也能同时克隆下来。<code>--recursive</code> 参数能解决这个问题。</p>
+</li>
+<li>
+<p>Github Workflow 的配置文件里<code>run</code>可以直接运行指定的脚本文件。其实别人的 Action 最核心的就是一个shell脚本文件。以后如果想在 workflow 里运行自有脚本，可以尝试该功能。</p>
+</li>
+<li>
+<p>实际感受了 <a href="https://www.codium.ai/">Codium</a> 这个工具在辅助阅读代码时的便利。</p>
+</li>
+<li>
+<p>基于 pelican 生成的静态博客如何更新到 github Pages？还有一个方法是借助 git hook。在执行 push 前触发运行指定脚本。<a href="https://nekrasovp.github.io/pelican-github-script-automation.html">参考案例</a></p>
+</li>
+</ul>
+<h2>参考资料</h2>
+<ul>
+<li>通过 <a href="https://gist.github.com/JosefJezek/6053301">How to use Pelican on GitHub Pages Gittip</a>  发现 <code>theme</code> 配置项可以填入整个路径。</li>
+<li><a href="https://nekrasovp.github.io/pelican-github-script-automation.html">Move blog to github and automate deploying with git hooks - Data driven</a></li>
+</ul>
+
+		<span class="post-tags">
+			Tags:
+			<ul>
+					<li><a href="/tag/pelican.html">pelican</a></li>
+			</ul>
+		</span>
+
+</div>
+		</div>
+	</body>
+</html>
