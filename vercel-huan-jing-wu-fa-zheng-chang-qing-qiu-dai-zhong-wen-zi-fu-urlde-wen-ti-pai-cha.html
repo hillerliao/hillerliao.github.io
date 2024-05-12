@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="Vercel 环境无法正常请求带中文字符URL的问题排查" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="/vercel-huan-jing-wu-fa-zheng-chang-qing-qiu-dai-zhong-wen-zi-fu-urlde-wen-ti-pai-cha.html" />
+		<meta property="og:image" content="/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>Vercel 环境无法正常请求带中文字符URL的问题排查 - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/poole.css" />
+		<link rel="stylesheet" href="/theme/css/hyde.css" />
+		<link rel="stylesheet" href="/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">Vercel 环境无法正常请求带中文字符URL的问题排查</h1>
+	<span class="post-date">Thu 11 August 2022</span>
+	<ul>
+<li>运维
+categories:</li>
+<li>运维</li>
+</ul>
+<hr>
+<h2>问题描述</h2>
+<p>利用 <a href="https://github.com/hillerliao/RSSHub-python">RSSHub-python</a> 项目抓取<a href="https://www.aisixiang.com/">爱思想</a>网站搜索结果列表生成 RSS 时，在 <a href="https://vercel.com/">Vercel</a> 环境下，关键词为英文时一切正常，关键词为中文时无法获取到结果。</p>
+<h2>问题分析</h2>
+<p>根据第一版程序，请求<code>https://pyrsshub.vercel.app/aisixiang/search/author/%E9%83%91%E6%B0%B8%E5%B9%B4</code>得到的HTML 源码<code>&lt;title&gt;&lt;![CDATA[%E9%83%91%E6%B0%B8%E5%B9%B4 - author搜索 - 爱思想]]&gt;&lt;/title&gt;</code>可以看出，RSS 地址中的中文字符在 HTML 源码没有正常显示，还是 urlencode之后的状态。
+第一版本<a href="https://github.com/hillerliao/RSSHub-python/commit/cfcb04afa116941292a1bddab03cfbad4fde59da">程序</a>通过以下代码直接将URL 中的中文字符转换为为GBK编码的字符。</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">quote</span>
+<span class="n">keywords_gbk</span> <span class="o">=</span> <span class="n">quote</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;gbk&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>然后将上述转换后的字符拼成目标网站的 URL 供爬虫发送请求之用。
+程序在本地、docker 上运行，都没有问题，但在 vercel.app 环境中不灵。
+具体原因没搞懂，也不方便调试。结论就是： vercel.app 的环境不支持 urlencode 过的字符串直接urlencode为 gbk 字符串，需要先解码再编码。</p>
+<h2>查找方案</h2>
+<p>先解码再编码的解决方案：
+<code>rss 地址中的中文字符 → urldecode 为 utf-8字符 → urlencode 为 gbk 字符</code>
+增加中间这一步，兼容 vercel.app 环境。
+<strong>编码</strong>：一般来说，URL只能使用英文字母、阿拉伯数字和某些标点符号，不能使用其他文字和符号。如果URL中有汉字，就必须编码（<code>urlencode</code>）后使用。这一步由浏览器完成。
+<strong>解码</strong>：当urlencode之后的字符串传递到后端之后，Flask 响应函数需要进行解码（<code>urldecode</code>），可以用 Python 库<code>urllib.parse</code> 的<code>unquote</code>函数进行解码。
+<strong>编码</strong>：接着，将解码后的字符，按照目标网站指定的字符集进行编码（<code>urlencode</code>），可以用<code>quote</code>方法实现。
+具体到爱思想搜索结果列表页，为什么确定用的是gbk 字符来编码？<code>https://www.aisixiang.com/data/search.php?keyWords=%D1%D6%D1%A7%CD%A8&amp;searchfield=author</code> 属于其他页面搜索框的 Get 方法触发的请求，URL包含汉字，这时的URL编码方法由网页的编码决定，也就是由HTML源码中字符集的设定决定。 查看 HTML 源码 <code>&lt;meta http-equiv="Content-Type" content="text/html; charset=gbk" /&gt;</code>得知，所发请求必须是GBK 编码的 URL。
+<a href="https://github.com/hillerliao/RSSHub-python/commit/53e055637a85191cf88987740eeedb7bdb8204af">最终程序</a>修改为：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">quote</span><span class="p">,</span> <span class="n">unquote</span>
+<span class="n">keywords</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="c1"># 或者用 gbk 字符集解码</span>
+<span class="n">keywords_gbk</span> <span class="o">=</span> <span class="n">quote</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;gbk&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>以字符<code>郑永年</code>为例：</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">quote</span><span class="p">,</span> <span class="n">unquote</span>
+
+<span class="n">str_urlencoded</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%E</span><span class="s1">9</span><span class="si">%83%</span><span class="s1">91</span><span class="si">%E</span><span class="s1">6%B0%B8</span><span class="si">%E</span><span class="s1">5%B9%B4&#39;</span> 
+<span class="n">str_utf8_decoded</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">str_urlencoded</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">str_gbk</span> <span class="o">=</span> <span class="n">quote</span><span class="p">(</span><span class="n">str_utf8</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;gbk&#39;</span><span class="p">)</span>
+<span class="n">str_gbk2</span> <span class="o">=</span> <span class="n">quote</span><span class="p">(</span><span class="n">str_urlencoded</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;gbk&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;按 utf8 解码结果：&#39;</span><span class="p">,</span> <span class="n">str_utf8_decoded</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;按 gbk 编码结果：&#39;</span><span class="p">,</span><span class="n">str_gbk</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;urlencoded字符直接按gbk编码结果：&#39;</span><span class="p">,</span> <span class="n">str_gbk2</span><span class="p">)</span>
+</code></pre></div>
+
+<p>运行结果：</p>
+<div class="highlight"><pre><span></span><code><span class="n">按</span> <span class="n">utf8</span> <span class="n">解码结果</span><span class="err">：</span> <span class="n">郑永年</span>
+<span class="n">按</span> <span class="n">gbk</span> <span class="n">编码结果</span><span class="err">：</span> <span class="o">%</span><span class="n">D6</span><span class="o">%</span><span class="n">A3</span><span class="o">%</span><span class="n">D3</span><span class="o">%</span><span class="n">C0</span><span class="o">%</span><span class="n">C4</span><span class="o">%</span><span class="n">EA</span>  <span class="err">（</span><span class="n">此为需要的结果</span><span class="err">）</span>
+<span class="n">urlencoded</span> <span class="n">字符直接按gbk编码结果</span><span class="err">：</span> <span class="o">%</span><span class="mf">25E9</span><span class="o">%</span><span class="mi">2583</span><span class="o">%</span><span class="mi">2591</span><span class="o">%</span><span class="mf">25E6</span><span class="o">%</span><span class="mi">25</span><span class="n">B0</span><span class="o">%</span><span class="mi">25</span><span class="n">B8</span><span class="o">%</span><span class="mf">25E5</span><span class="o">%</span><span class="mi">25</span><span class="n">B9</span><span class="o">%</span><span class="mi">25</span><span class="n">B4</span> <span class="err">（</span><span class="n">在</span> <span class="n">vercel</span> <span class="n">环境出错的结果</span><span class="err">）</span>
+</code></pre></div>
+
+<h2>后续工作</h2>
+<p>需要再次研究Vercel环境下怎么调试的问题，提高问题排查效率。</p>
+<h2>参考资料</h2>
+<ul>
+<li><a href="https://www.ruanyifeng.com/blog/2010/02/url_encoding.html">关于URL编码 - 阮一峰的网络日志</a></li>
+<li><a href="https://blog.csdn.net/a359680405/article/details/44857359">Python菜鸟晋级11----urlencode与unquote_翻滚吧挨踢男的博客-CSDN博客</a></li>
+</ul>
+
+
+</div>
+		</div>
+	</body>
+</html>
