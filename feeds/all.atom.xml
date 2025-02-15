@@ -1,0 +1,1424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2025-02-15T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>SQL to CSV Converter：为产品或运营人员打造的数据格式转换利器</title><link href="/sql-to-csv-converterwei-chan-pin-huo-yun-ying-ren-yuan-da-zao-de-shu-ju-ge-shi-zhuan-huan-li-qi.html" rel="alternate"></link><published>2025-02-15T00:00:00+08:00</published><updated>2025-02-15T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2025-02-15:/sql-to-csv-converterwei-chan-pin-huo-yun-ying-ren-yuan-da-zao-de-shu-ju-ge-shi-zhuan-huan-li-qi.html</id><summary type="html">&lt;p&gt;在日常运营工作中，数据是决策的关键，但获取和处理数据的过程往往并不顺利。运营人员常常需要从数据团队获取用户 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;在日常运营工作中，数据是决策的关键，但获取和处理数据的过程往往并不顺利。运营人员常常需要从数据团队获取用户行为、市场反馈或业务指标等数据，但这些数据通常以SQL查询结果的形式提供。对于不熟悉SQL的运营人员来说，查看和分析这些数据无疑是一项挑战。幸运的是，&lt;strong&gt;SQL to CSV Converter&lt;/strong&gt; 这个工具的出现，为这一问题提供了完美的解决方案。&lt;/p&gt;
+&lt;h2&gt;什么是 SQL to CSV Converter？&lt;/h2&gt;
+&lt;p&gt;SQL to CSV Converter 是一个基于 Flask 框架开发的开源工具，能够将 SQL 查询结果轻松转换为 CSV 格式。它提供了一个简洁直观的 Web 界面，让运营人员无需复杂的操作即可完成数据格式的转换。项目代码完全开源，托管在 &lt;a href="https://github.com/hillerliao/sql2csv"&gt;GitHub&lt;/a&gt; 上，用户可以根据需要自行部署或使用其在线演示站点。&lt;/p&gt;
+&lt;h2&gt;运营人员的痛点与解决方案&lt;/h2&gt;
+&lt;h3&gt;场景：运营人员的数据需求&lt;/h3&gt;
+&lt;p&gt;运营人员在工作中常常需要从数据团队获取数据。例如，他们可能需要分析用户在某个新功能上线后的使用情况，或者统计某个营销活动的转化率。然而，数据团队通常会以 SQL 查询结果的形式提供这些数据，这对于运营人员来说并不友好。SQL 文件不仅难以直接查看，还需要专业的工具或技能才能进行进一步处理。&lt;/p&gt;
+&lt;p&gt;这种情况不仅浪费了运营人员的时间，还可能导致数据处理过程中的错误。而 SQL to CSV Converter 的出现，完美解决了这一痛点。运营人员只需将 SQL 查询结果上传到工具中，即可一键将其转换为 CSV 格式。CSV 文件可以直接用 Excel 打开，方便运营人员进行数据整理、分析和可视化。&lt;/p&gt;
+&lt;h3&gt;在线演示站与文件限制&lt;/h3&gt;
+&lt;p&gt;为了方便运营人员快速体验和使用，SQL to CSV Converter 提供了一个在线演示站点，访问 &lt;a href="https://sql2csv.vercel.app/"&gt;https://sql2csv.vercel.app/&lt;/a&gt; 即可使用。该站点支持直接上传 SQL 文件，并将其转换为 CSV 格式，无需任何复杂的配置或安装。&lt;/p&gt;
+&lt;p&gt;需要注意的是，为了确保服务的稳定性和安全性，演示站点对上传文件的大小进行了限制，&lt;strong&gt;单个文件的大小不得超过 4.5MB&lt;/strong&gt;。如果运营人员需要处理更大的文件，可以考虑将数据拆分后分别上传，或者在本地环境中部署该工具。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;SQL to CSV Converter 是一个专为运营人员设计的实用工具，它通过简单的操作，将复杂的 SQL 查询结果转换为易于查看和处理的 CSV 格式。无论是日常的数据分析，还是紧急的数据提取，这个工具都能帮助运营人员快速完成任务，节省时间和精力。如果你也经常面临类似的数据处理问题，不妨试试 SQL to CSV Converter，它可能会成为你工作中不可或缺的帮手。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>免装单词App，在 iPhone 锁屏随机显示单词</title><link href="/randomly-show-a-word-on-ios-lockscreen.html" rel="alternate"></link><published>2024-10-17T23:23:00+08:00</published><updated>2024-10-17T23:23:00+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2024-10-17:/randomly-show-a-word-on-ios-lockscreen.html</id><summary type="html">&lt;p&gt;免装单词App，在iPhone锁屏随机显示单词！这样，你每天解锁手机的时候，都能顺便瞟一眼单词，日积月累，词汇量自然水涨船高！&lt;/p&gt;</summary><content type="html">&lt;p&gt;亲爱的朋友们，你是否曾经为背单词而烦恼？是否觉得用手机时有很多零碎时间没有利用上？&lt;/p&gt;
+&lt;p&gt;今天，我要给大家带来一个神奇的方法——免装单词App，在iPhone锁屏随机显示单词！这样，你每天解锁手机的时候，都能顺便瞟一眼单词，日积月累，词汇量自然水涨船高！&lt;/p&gt;
+&lt;p&gt;有些背单词软件可能有提供这种功能，但通常有一些问题：单词列表不受自己控制，显示的内容无法自定义，搞不好还收费。&lt;/p&gt;
+&lt;p&gt;今天我就来给大家介绍一种免费实现自定义锁屏单词小组件的办法。&lt;/p&gt;
+&lt;h2&gt;需要的工具&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;iPhone；&lt;/li&gt;
+&lt;li&gt;Scriptable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Scriptable是一款iOS应用程序，允许用户使用JavaScript自动化构建和自定义桌面或锁屏小部件。&lt;/p&gt;
+&lt;p&gt;得益于优秀的 Scriptable（苹果应用商店的开发者工具类排名前十），我们只需要写一点简单的基于JavaScript的脚本，就能干很多事情。&lt;/p&gt;
+&lt;h2&gt;脚本代码&lt;/h2&gt;
+&lt;p&gt;借助ChatGPT，把需求描述一番，很快就有了如下脚本：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;指定&lt;/span&gt;&lt;span class="n"&gt;RSS源的URL&lt;/span&gt;
+&lt;span class="k"&gt;const&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;https://politepol.com/fd/f1NYOd8OAcsA.xml&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;使用&lt;/span&gt;&lt;span class="n"&gt;fetch来获取RSS数据&lt;/span&gt;
+&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;req&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rssData&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;await&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;req&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loadString&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;输出&lt;/span&gt;&lt;span class="n"&gt;RSS数据到日志&lt;/span&gt;
+&lt;span class="n"&gt;console&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rssData&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;使用正则表达式解析&lt;/span&gt;&lt;span class="n"&gt;RSS中的内容&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;ChatGPT给的参考代码中变量名为title&lt;/span&gt;&lt;span class="err"&gt;，这里实际选择读取摘要。&lt;/span&gt;
+&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;titles&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[];&lt;/span&gt;
+&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;regex&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;.*&lt;/span&gt;&lt;span class="err"&gt;?&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;\&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;/&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;match&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="k"&gt;while&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="k"&gt;match&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;regex&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;exec&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rssData&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;!==&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb nb-Type"&gt;null&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;titles&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;match&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;创建一个&lt;/span&gt;&lt;span class="n"&gt;Widget展示RSS摘要&lt;/span&gt;
+&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ListWidget&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;backgroundColor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb nb-Type"&gt;Color&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;#1a1a1a&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;如果解析到的摘要为空，显示占位符&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;titles&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;===&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;placeholder&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;addText&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;No RSS data available&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;placeholder&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;textColor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb nb-Type"&gt;Color&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;white&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;placeholder&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Font&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;systemFont&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;添加&lt;/span&gt;&lt;span class="n"&gt;RSS摘要到Widget&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Math&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;titles&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;titles&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;let&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;addText&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;textColor&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb nb-Type"&gt;Color&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;white&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Font&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;systemFont&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;addSpacer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;设置&lt;/span&gt;&lt;span class="n"&gt;Widget定期刷新&lt;/span&gt;&lt;span class="err"&gt;，设为&lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="err"&gt;分钟。&lt;/span&gt;
+&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;refreshAfterDate&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;new&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Date&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;60&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;预览&lt;/span&gt;&lt;span class="n"&gt;Widget&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;runsInWidget&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;Script&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setWidget&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;widget&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;presentMedium&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="n"&gt;Script&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;complete&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;具体代码是什么意思，我们就不用管太多了，只需要注意替换数据源地址就行。上述示例的 RSS 地址 &lt;code&gt;https://politepol.com/fd/f1NYOd8OAcsA.xml&lt;/code&gt; 系通过名为 &lt;a href="https://politepol.com/"&gt;politepol&lt;/a&gt; 的网页生成RSS服务将 &lt;code&gt;https://pyrss.vercel.app/word/jlpt2&lt;/code&gt;页面的日语N2单词转换而成。如果想要英文单词，请联系我。&lt;/p&gt;
+&lt;p&gt;你可以在Scriptable上先运行脚本以验证数据是否获取成功，然后再进行下一步的设置。&lt;/p&gt;
+&lt;h2&gt;设置为锁屏组件&lt;/h2&gt;
+&lt;p&gt;接下来，开始编辑锁屏界面。添加 Scriptable 小组件，并选取刚才添加到 Scriptable 的脚本，即告完成。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://fastly.jsdelivr.net/gh/henrylovemiller/img@main/1727536737513%E9%94%81%E5%B1%8F%E5%8D%95%E8%AF%8D.png"&gt;&lt;/p&gt;
+&lt;h2&gt;更多可能&lt;/h2&gt;
+&lt;p&gt;也可以把小组件钉在手机桌面上。相比锁屏界面，桌面组件效果对样式要求更高，可以通过修改脚本中的样式代码让桌面小组件变得更加漂亮。&lt;/p&gt;
+&lt;p&gt;此外，不仅仅是单词，天气、热搜、格言、倒数日之类的小组件，都可以借助Scriptable实现，核心就是换个数据和显示样式，本质都一样。只要你有想法，借助ChatGPT大概率能实现，一次不行，再试一次。&lt;/p&gt;
+&lt;p&gt;如果觉得这篇文章有意思，对你有启发，欢迎点个赞。&lt;/p&gt;</content><category term="blog"></category><category term="小工具"></category></entry><entry><title>让上网变得麻烦一点 效率就能提高一点</title><link href="/control-wifi-to-raise-productivity.html" rel="alternate"></link><published>2024-05-12T12:31:00+08:00</published><updated>2024-05-12T12:31:00+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2024-05-12:/control-wifi-to-raise-productivity.html</id><summary type="html">&lt;p&gt;电脑一断网，它就是非常棒的效率工具。能断则断，最好不过。如果不能，就设法减少联网次数。&lt;/p&gt;</summary><content type="html">&lt;p&gt;近来发现自己一打开电脑，效率就比较低下。于是，就开始琢磨，问题出在哪里？有什么提高效率的办法？今天简单记录针对这个问题的思考过程可尝试的解决方案。&lt;/p&gt;
+&lt;p&gt;主要结论是，上网太方便是效率杀手，减少信息输入，适当让上网变得不那么容易，可以提高效率。&lt;/p&gt;
+&lt;h2&gt;用电脑时都在干些什么&lt;/h2&gt;
+&lt;p&gt;大部分人为了记录金钱支出，会使用记账软件。但对时间支出，似乎没有详细记录过，只是能说出一天之内大概做了些什么。这种印象往往不准确。比如，大概知道花了不少时间看娱乐休闲网站，但到底是哪些网站、哪些页面吸引了自己，并不太清楚。&lt;/p&gt;
+&lt;p&gt;所以，要找到效率低下的根源，首先要看看时间到底花到哪里去了。&lt;/p&gt;
+&lt;p&gt;我采取的办法是，找一个详细记录电脑使用时间的软件。对比了几款软件之后，我相中了免费开源的“ActivityWatch”。这个软件既省钱又相对安全。毕竟相当于安装了一个监控软件，还是谨慎为上。&lt;/p&gt;
+&lt;h2&gt;屏蔽部分网站&lt;/h2&gt;
+&lt;p&gt;有几个网站或软件，像Twitter、抽屉热榜、雪球、微信朋友圈之类的，无需统计就能知道自己几乎天天访问。要么是社交媒体，要么是时事资讯站点，一旦有网络环境，就会时不时占领我的心智。&lt;/p&gt;
+&lt;p&gt;对付它们，无需手软，简单粗暴，直接屏蔽。不访问也没什么损失，如果真有特别重要的事件，总是会传到自己耳朵的，没必要第一时间知道。&lt;/p&gt;
+&lt;p&gt;可以采用两种方法来达到屏蔽的目的。第一种是修改电脑的 Hosts 文件，将指定的几个域名跳转到127.0.0.1。这种做法的好处是全局生效，并稍微带点取消难度。毕竟要重新修改一次 hosts 文件得好几步，比较费事。但凡稍微有点麻烦的事情，人往往会选择放弃，我也不例外。&lt;/p&gt;
+&lt;p&gt;这种做法也有办法绕过，那就是 VPN 。一开始我发现修改 Hosts 的做法对 Edge 浏览器无效，推测是 Edge 运行在“隔离浏览”环境所致（曾经踩到垃圾网站导致电脑染上病毒，右下角一直弹垃圾广告，所以开启了 Microsoft Defender 的隔离浏览功能），后来无意中发现是 Edge 浏览器自带 VPN 功能所致。那几天刚好在 Edge 的引导下开启了 VPN，访问Twitter等网站时骗过了 Hosts 。&lt;/p&gt;
+&lt;p&gt;针对这种情况，我安装了一个叫做 Redirector 的浏览器插件。它能够将指定网址自动跳转到另一个网址，达到屏蔽效果。比如我指定 Twitter.com 这个域名下的网页跳转到一个随机显示日语单词的自建网站，屏蔽的同时顺便背一背单词，一举两得。这种做法也有缺点，关闭插件比较容易。&lt;/p&gt;
+&lt;p&gt;实际观察下来，根据上网时间消费记录的分析揪出几个时间消耗大户，一举屏蔽，能节约不少时间。&lt;/p&gt;
+&lt;p&gt;反过来想，刷新闻刷八卦真是人的一大需求。屏蔽它们等于是在与人性对抗。所以，手痒时，这些方法都面临无效的命运。因为我会临时取消屏蔽。比如临时想看 Twitter，就默默开启 Edge 的 VPN。。。&lt;/p&gt;
+&lt;p&gt;此外，有些网站的部分界面会带有诱导性的内容，让自己在看需要的网页内容时跑题。比如百度各种页面右侧的热搜榜。这种情况的话，可以针对网页的指定区域定向屏蔽，比如安装开源的广告过滤插件 uBlock Origin。&lt;/p&gt;
+&lt;p&gt;当然了，屏蔽是“堵”的做法，还可以适当辅以“疏”，比如选取日报类的资讯文章来阅读，在固定的时间集中消费一定数量的内容，更加高效。也能避免打断正常使用电脑办公学习的时间。&lt;/p&gt;
+&lt;h2&gt;减少消息推送&lt;/h2&gt;
+&lt;p&gt;关闭Windows环境下各个软件的消息推送，或开启“请勿打扰”模式，甚至全局关闭通知功能，则是减少被动接收通知类信息的办法。大部分消息推送并没有那么重要，定期看即可。这个和 iOS 等系统的类似，不多说。&lt;/p&gt;
+&lt;h2&gt;多用离线软件 减少联网需求&lt;/h2&gt;
+&lt;p&gt;要想减少上网带来的时间碎片化，还有一类做法是减少联网需求。少联网也就意味着少了很多“跑题”的机会。&lt;/p&gt;
+&lt;p&gt;安装带有离线功能的软件，在本机环境内解决需求，能减少联网的次数。&lt;/p&gt;
+&lt;p&gt;需要上B站看视频教程？那就把视频通过客户端缓存到本地，或者直接通过一些视频下载工具下载到本地再看。&lt;/p&gt;
+&lt;p&gt;查词典时需要联网？那就用带有离线功能的词典，比如有道、欧路等。&lt;/p&gt;
+&lt;p&gt;需要联网使用Google翻译？可以用有道翻译，带有离线功能，基本满足需求。&lt;/p&gt;
+&lt;p&gt;想要使用 ChatGPT？如果有条件，本地上跑一个大模型也是可以的。&lt;/p&gt;
+&lt;p&gt;想简单联网查个资料？ 将安卓手机连上电脑，通过 AnLink 等软件在电脑上操作手机。小窗口上操作手机比较费劲，也就不容易跑题了。&lt;/p&gt;
+&lt;p&gt;简而言之，电脑能不连网尽量不联网。&lt;/p&gt;
+&lt;h2&gt;增加联网难度&lt;/h2&gt;
+&lt;p&gt;话说回来，不联网也是不现实的，不然电脑就废了。但是，适当增加联网难度，让自己珍惜每一次联网机会，也能适当提高效率。&lt;/p&gt;
+&lt;p&gt;为了灵活控制电脑的网络连接，近期在尝试使用一个叫做 InternetOff 的小软件。体验了一段时间，发现它能较好地满足我的需求。&lt;/p&gt;
+&lt;p&gt;虽然手动点击电脑右下角的 WiFi 图标也能关闭或开启网络连接，但通过 InternetOff 来干这个事情有以下几点优势：   &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以选择开启网络的时长，时间一到就自动断网；  &lt;/li&gt;
+&lt;li&gt;可以设置操作密码（解锁），想开启网络就得输入自己设置的操作密码，稍微增加了一点操作难度；  &lt;/li&gt;
+&lt;li&gt;可以设置指定禁止联网的时间段（Schedule）。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;该软件的联网时长选项，除了总是联网这项，最低的一档是5分钟，最高的一档是1小时，中间两档为15分钟、30分钟。针对不同的上网需求，我可以选择不同的时长。比如，有时候就想发个邮件，自己估摸着写好后3分钟就能发送成功，那么，我可以选择5分钟。它能让我知道这次联网的核心任务就是发邮件，如果跑题了，五分钟之后还没搞定，网就断了，会有一点痛感。&lt;/p&gt;
+&lt;p&gt;开启联网时， InternetOff 会在电脑状态栏以比较弱的绿色进度条显示剩余联网时长，制造一种紧迫感。剩余时长在1分钟以上时，只会精确到分钟，没有和一些倒计时软件一样采取跳秒的设计。跳秒的设计太过于抢眼，喧宾夺主干扰人。&lt;/p&gt;
+&lt;p&gt;其次，开启联网的操作密码也可以好好利用。我把打开电脑希望每天都要优先完成的任务名称设置为操作密码。每次想输入操作密码准备联网时，就会提醒自己是否已经完成了重要任务。事优先的理念就落实到了软件上。&lt;/p&gt;
+&lt;p&gt;另外，利用 Schedule 功能，我设置了几段不联网时段：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;早上八点到九点。起床后效率较高，可以用来写东西，避免输入信息；  &lt;/li&gt;
+&lt;li&gt;中午一点到两点，吃饭，休息；  &lt;/li&gt;
+&lt;li&gt;傍晚六点到七点，断网后出门跑步，或准备做饭；  &lt;/li&gt;
+&lt;li&gt;晚上十一点到十二点，收心，回顾一天，准备睡觉。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;八点到九点时段，有时候我会打开电脑记录日常生活流水账，或完善之前写了一部分还没完成的文章。
+有几天在6点到7点之间断网后出去跑步了，实现了使用该软件的目标。&lt;/p&gt;
+&lt;p&gt;这个软件有几个地方还可以改进，其中之一是希望开启联网时支持注明联网目的。在进度条的位置展示目标，轻微提醒自己别跑题。其次，禁止联网时段希望能支持选择半点，现在只支持选择整点，不够灵活。比如，我想晚上十点半开始断网，但按照软件现在的设计，没法实现。&lt;/p&gt;
+&lt;h2&gt;结语&lt;/h2&gt;
+&lt;p&gt;总之，电脑一断网，它就是非常棒的效率工具。能断则断，最好不过。如果不能，就设法减少联网次数。日子一久，你会发现，以前迟迟无法写完的博客，不知不觉发表了；以前无法坚持的外语听写练习，已经积累20个小时了；以前在收藏夹里吃灰的视频教程，已经看完100集了；一直想背的单词，已经背了好几遍了。&lt;/p&gt;
+&lt;p&gt;有时候生活不需要太便利，不是吗？&lt;/p&gt;</content><category term="blog"></category><category term="小工具"></category></entry><entry><title>一个简单脚本，让我抛弃笔记软件flomo</title><link href="/yi-ge-jian-dan-jiao-ben-rang-wo-pao-qi-bi-ji-ruan-jian-flomo.html" rel="alternate"></link><published>2023-12-19T21:39:57+08:00</published><updated>2023-12-19T21:39:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2023-12-19:/yi-ge-jian-dan-jiao-ben-rang-wo-pao-qi-bi-ji-ruan-jian-flomo.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;笔记软件
+categories:&lt;/li&gt;
+&lt;li&gt;工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;连续好几年购买了笔记软件 flomo 的会员之后，今年10月下旬我没有再续费。&lt;/p&gt;
+&lt;p&gt;回想起当初使用 flomo 的原因，除了记录无压力之外，最主 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;笔记软件
+categories:&lt;/li&gt;
+&lt;li&gt;工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;连续好几年购买了笔记软件 flomo 的会员之后，今年10月下旬我没有再续费。&lt;/p&gt;
+&lt;p&gt;回想起当初使用 flomo 的原因，除了记录无压力之外，最主要就是看中 flomo 的笔记回顾功能。避免笔记沉睡，想法非常好。通过简单的一条微信模板消息，就能避免笔记沉睡。&lt;/p&gt;
+&lt;p&gt;但不知从何时起，每日回顾功能改版了，每天发送的微信模板消息一模一样，仅相当于定时提醒的闹钟，毫无信息量，无法勾起我点进去看的欲望，久而久之，这类消息也就被我选择性无视了，甚至有垃圾信息的味道。&lt;/p&gt;
+&lt;p&gt;还有什么功能可以实现类似效果呢？&lt;/p&gt;
+&lt;p&gt;之前在 VPS 上通过 Docker 部署了仿 flomo 的 memos，输入体验接近 flomo ，但没有随机回顾功能，一直没有成为我的主力笔记软件。&lt;/p&gt;
+&lt;p&gt;最近狠下心来，借助 Chat GPT 用 Python 写了一个简单的脚本，连接 memos 的 SQLite 数据库，随机获取一条笔记内容，并推送到 Telegram 。为了增强体验，增加了简单的关键词过滤，比如排除掉带有“存档”字眼的笔记。 写好之后，在系统的定时任务里增加一条运行该脚本的任务。&lt;/p&gt;
+&lt;p&gt;试运行发现效果挺好，我就借助别人写的数据迁移工具，把 flomo上的数据导出后导入到 memos 中。&lt;/p&gt;
+&lt;p&gt;当然，自己搭建的服务，就怕不稳定，数据备份很重要。我在自己电脑的 Wsl 上、安卓手机的 Termux上分别设置定时任务，将 SQLite 数据库文件备份到本地。&lt;/p&gt;
+&lt;p&gt;到此，总算可以彻底告别 flomo 了。 meomos 加上简单的脚本，恢复了我的笔记回顾习惯，也帮我省了一笔 flomo 会员费，还避免了 VPS 吃灰，少花钱反而提升了体验，可谓是一举多得。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>尝试让 Pelican 博客的部分发布步骤自动化</title><link href="/automated-pelican-publishment.html" rel="alternate"></link><published>2023-06-22T20:33:00+08:00</published><updated>2023-06-22T20:33:00+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2023-06-22:/automated-pelican-publishment.html</id><summary type="html">&lt;p&gt;尝试让 pelican 发布博客自动化，为此折腾了一天，几点收货。&lt;/p&gt;</summary><content type="html">&lt;p&gt;个人独立博客上最新一篇文章出现烂图，严重影响站点形象，而且持续了好长一段时间没有修复。图床用的是腾讯的某个服务，后来不让我的站点引用了。我早就忘了具体通过哪个图床工具上传的。&lt;/p&gt;
+&lt;h2&gt;操作繁琐 修改动力不足&lt;/h2&gt;
+&lt;p&gt;为什么迟迟不修复？ &lt;/p&gt;
+&lt;p&gt;我的个人博客用 Pelican 生成，静态文件托管在 Github Pages，操作过程大致为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本地添加 Markdown 文件；&lt;/li&gt;
+&lt;li&gt;手动运行命令生成 HTML 静态文件；&lt;/li&gt;
+&lt;li&gt;运行命令将静态文件推送到 Github 仓库的 gh-page 分支。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这一顿操作太麻烦，导致我对更新博客有所抵触。&lt;/p&gt;
+&lt;p&gt;今天端午节，决定花点时间让上述步骤半自动化。没想到折腾了一天才搞定。&lt;/p&gt;
+&lt;p&gt;为了让这一天变得更有价值一点，稍作记录，顺便执行 push 触发一下自动更新的过程。&lt;/p&gt;
+&lt;h2&gt;走了一些弯路&lt;/h2&gt;
+&lt;p&gt;耗时太多主要是由于走了一些弯路，碰到好几个障碍：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;将 Github 仓库拉到本地，项目内的主题文件夹内容为空。经分析，问题出在引用其他仓库作为子模块。为让子模块文件夹内容出现，花了很大力气才搞定。直到现在，对Git子模块的理解还是云里雾里。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;运行 Github Workflow 报错，说是主题文件没找到。尝试修改别人的 Github Workflow Action ，加入安装主题的命令，然后尝试在 workflow里使用。但发现需要发布到 Marketplace 才行。 思路不对，我的做法是硬编码了，fork 之后的修改不合理。明明知道不合理的做法还是花了大力气尝试。进行一项尝试前尽量多花点时间评估方案的合理性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对 Pelican 配置文件不够熟悉，折腾了大半天才知道配置项 theme 的值可以是整个路径，之前以为必须是路径的最后一节，导致使用时以为也必须通过pelican-themes 命令安装主题才能添加主题文件。 技术选型需要尽可能先对官方文档读一遍，并找一些别人的操作案例多看，然后再自己动手。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;找 &lt;a href="https://github.com/rehanhaider/pelican-to-github-pages/tree/main"&gt;Workflow 模板&lt;/a&gt;时一开始找的是 Stars 数更少的一个，里面用到的一个关键 Action &lt;a href="https://github.com/rehanhaider/pelican-to-github-pages/blob/main/entrypoint.sh"&gt;源代码&lt;/a&gt;读起来不太好理解，后来找了另外一个模板，所引用的 &lt;a href="https://github.com/marketplace/actions/github-pages-pelican-build-action"&gt;Action&lt;/a&gt; 实现思路和我自己理解的更接近，借助 Codium 进行&lt;a href="https://github.com/nelsonjchen/gh-pages-pelican-action/blob/master/entrypoint.sh"&gt;源代码&lt;/a&gt;解读，基本理解了过程。它将生成的 output 作为仓库推送到 gh-page 分支。 当然前者对我还是有价值的， 因为它指定了 submodule相关的操作。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;意外的收获&lt;/h2&gt;
+&lt;p&gt;折腾过程中也算是有几点意外收获：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Git 仓库内子模块又是一个仓库的时候，该怎么做才能在 Clone 时子模块的内容也能同时克隆下来。&lt;code&gt;--recursive&lt;/code&gt; 参数能解决这个问题。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Github Workflow 的配置文件里&lt;code&gt;run&lt;/code&gt;可以直接运行指定的脚本文件。其实别人的 Action 最核心的就是一个shell脚本文件。以后如果想在 workflow 里运行自有脚本，可以尝试该功能。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;实际感受了 &lt;a href="https://www.codium.ai/"&gt;Codium&lt;/a&gt; 这个工具在辅助阅读代码时的便利。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;基于 pelican 生成的静态博客如何更新到 github Pages？还有一个方法是借助 git hook。在执行 push 前触发运行指定脚本。&lt;a href="https://nekrasovp.github.io/pelican-github-script-automation.html"&gt;参考案例&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;通过 &lt;a href="https://gist.github.com/JosefJezek/6053301"&gt;How to use Pelican on GitHub Pages Gittip&lt;/a&gt;  发现 &lt;code&gt;theme&lt;/code&gt; 配置项可以填入整个路径。&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://nekrasovp.github.io/pelican-github-script-automation.html"&gt;Move blog to github and automate deploying with git hooks - Data driven&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="pelican"></category></entry><entry><title>E843，高效利用微信学英语、看新闻的小工具</title><link href="/e843.html" rel="alternate"></link><published>2022-11-06T16:54:00+08:00</published><updated>2022-11-06T16:54:00+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2022-11-06:/e843.html</id><summary type="html">&lt;p&gt;实时推送经济学人国际简讯到微信，碎片化时间享用高质量资讯。&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近半年断断续续利用业余时间自建了一个企业微信应用「E843」，用于推送经济学人 World in Brief 栏目发布的国际简讯到个人微信。 &lt;/p&gt;
+&lt;p&gt;&lt;img alt="企业微信自建应用 E843" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/wecom_E843_profile.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;应用名字来自经济学人的创办年份 1843 年，将数字 1 换成 Economist 的首字母 E 而成。E 也可以理解为 English 的首字母 E。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="E843界面预览" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/E843_preview.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;自己体验了一段时间「E843」，觉得还不错，现在介绍给大家。&lt;/p&gt;
+&lt;h2&gt;为什么选择 World in Brief ？&lt;/h2&gt;
+&lt;p&gt;由于本人很喜欢 The Economist 这个媒体，但就我目前的英语水平和浮躁心态，要看那些长篇大论不太现实。照此下去，难道就没有满足我利用碎片化时间欣赏 The Economist 精彩内容的办法了？&lt;/p&gt;
+&lt;p&gt;直到有一天， The Economist 官网推出 World in Brief 栏目，这让我感觉到事情有望出现转机。该栏目是一个实时播报重大国际事件的页面，具备如下特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1、短小精悍，几十个字一条新闻，比只看标题的新闻内容更丰富，比整篇文章更短，很适合碎片化阅读；&lt;/li&gt;
+&lt;li&gt;2、陈述事实，没有观点和明显立场。这在信息过载的喧嚣世界里，显得很有吸引力；&lt;/li&gt;
+&lt;li&gt;3、每天更新，比周刊时效性更强；&lt;/li&gt;
+&lt;li&gt;4、每天十来条国际大事，数量适中，阅读压力小。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;举例：  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Vladimir Putin, Russia’s president, said any remaining civilians in Kherson in southern Ukraine should leave, his first public acknowledgement that Ukrainian forces are drawing close to the occupied city. Meanwhile, Ukraine’s president, Volodymyr Zelensky, said that the most intense fighting was around Bakhmut, 500km away, where Russia was “forcing tens or hundreds of thousands more people to the meat grinder”.  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;简而言之，它是一个很适合利用碎片化时间来阅读的高质量新闻源。&lt;/p&gt;
+&lt;h2&gt;怎么看：无需安装软件，用个人微信就能看&lt;/h2&gt;
+&lt;p&gt;有了合适的新闻源，还需要合适的载体。碎片化阅读最好的工具，对中国大陆大部分人而言，恐怕非微信莫属。微信聊天界面还支持长按内容将英文翻译成中文，无需跳出应用。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="E843翻译示例" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/E843_translator.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;但要向个人微信不间断推送消息，目前能使用的手段只有企业微信的个人微信插件这一条路。至于自动发送消息，可以借助自建应用或者群聊机器人。自建应用类似微信公众号，属于点对点单聊，不会有群聊消息的干扰，就像有些理发店宣传的那样，纯干活不废话。&lt;/p&gt;
+&lt;p&gt;综合考虑，最终选择企业微信自建应用「E843」 实现消息推送。&lt;/p&gt;
+&lt;h2&gt;多少钱：50元一年&lt;/h2&gt;
+&lt;p&gt;如果你也想要使用上述服务，可以申请加入我在企业微信创建的"企业"「智海」。由于该"企业"不是认证主体，有200人上限，加满之后将无法接纳新"员工"。&lt;/p&gt;
+&lt;p&gt;为让有限的名额给到真正需要的人，「E843」 需付费使用，50元一年。可以支付5元体验一个月。&lt;/p&gt;
+&lt;p&gt;扫码联系牛牛（微信：cbnn2018），备注「E843」。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="扫码加入 E843" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/wechat_cbnn_qrcode.jpg"&gt;&lt;/p&gt;</content><category term="blog"></category><category term="小工具"></category></entry><entry><title>每周五天英语学习法</title><link href="/mei-zhou-wu-tian-ying-yu-xue-xi-fa.html" rel="alternate"></link><published>2022-10-30T13:51:57+08:00</published><updated>2022-10-30T13:51:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2022-10-30:/mei-zhou-wu-tian-ying-yu-xue-xi-fa.html</id><summary type="html">&lt;p&gt;最近在油管看到一个介绍英语学习方法的视频「 &lt;a href="https://www.bilibili.com/video/BV1QJ411J7UG/"&gt;The Best Way To Learn English (In my humble opinion.)&lt;/a&gt;&lt;br&gt;
+」，播放量达到140多万次，讲得挺好，本文将其精华内容作个 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近在油管看到一个介绍英语学习方法的视频「 &lt;a href="https://www.bilibili.com/video/BV1QJ411J7UG/"&gt;The Best Way To Learn English (In my humble opinion.)&lt;/a&gt;&lt;br&gt;
+」，播放量达到140多万次，讲得挺好，本文将其精华内容作个整理。  &lt;/p&gt;
+&lt;p&gt;作者是来自加拿大的英语老师Bob，也学过法语。Bob基于自己的教学经验与学习经历，总结出这份英语学习计划。  &lt;/p&gt;
+&lt;p&gt;Bob 建议，学习者每周应该关注五个领域，星期一专注于阅读，星期二专注于写作，星期三专注于听力，星期四专注于口语，周五专注于词汇积累。当然，这并不是说每天将整个学习时间都花在一件事上，但每天需要有所侧重。  &lt;/p&gt;
+&lt;p&gt;下面是Bob给出的具体学习计划：  &lt;/p&gt;
+&lt;p&gt;你需要的东西： &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每天1小时（30分钟也可以）。  &lt;/li&gt;
+&lt;li&gt;一个笔记本和一支笔，每天写下新的词汇。  &lt;/li&gt;
+&lt;li&gt;一首英文歌曲。  &lt;/li&gt;
+&lt;li&gt;一本英文书。  &lt;/li&gt;
+&lt;li&gt;英语电视节目。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;周一（花30-40分钟阅读）  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;看书。  &lt;/li&gt;
+&lt;li&gt;看新闻。  &lt;/li&gt;
+&lt;li&gt;阅读 &lt;a href="http://simple.wikipedia.com"&gt;wikipedia simple版&lt;/a&gt;中的文章。    &lt;/li&gt;
+&lt;li&gt;在笔记本上写下一些新单词及其定义。  &lt;/li&gt;
+&lt;li&gt;花剩下的时间：  &lt;ul&gt;
+&lt;li&gt;大声朗读你的书。  &lt;/li&gt;
+&lt;li&gt;写出书中的一些段落。  &lt;/li&gt;
+&lt;li&gt;听你书的有声读物。  &lt;/li&gt;
+&lt;li&gt;使用Duolingo或其他学习应用程序。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;周二（花30-40分钟写作）  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在笔记本上写下你昨天、今天和明天所做的事情。  &lt;/li&gt;
+&lt;li&gt;在YouTube视频上写一些评论。  &lt;/li&gt;
+&lt;li&gt;写一些关于你喜欢和不喜欢你的歌曲、你的书和电视节目的句子。  &lt;/li&gt;
+&lt;li&gt;写下你前一天在书中读到的内容的摘要。  &lt;/li&gt;
+&lt;li&gt;在你的字典里放一些新单词。  &lt;/li&gt;
+&lt;li&gt;花剩下的时间：  &lt;ul&gt;
+&lt;li&gt;读你写的东西。  &lt;/li&gt;
+&lt;li&gt;将你的东西粘贴到谷歌翻译中，利用其发音功能播放出来。  &lt;/li&gt;
+&lt;li&gt;大声朗读你写的东西。  &lt;/li&gt;
+&lt;li&gt;使用Duolingo或其他学习应用程序。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;周三（花30-40分钟听）：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;看电视节目。  &lt;/li&gt;
+&lt;li&gt;听歌。  &lt;/li&gt;
+&lt;li&gt;听你所选图书的有声版本。  &lt;/li&gt;
+&lt;li&gt;观看一些YouTube视频。  &lt;/li&gt;
+&lt;li&gt;在你的字典里输入新单词。  &lt;/li&gt;
+&lt;li&gt;花剩下的时间：  &lt;ul&gt;
+&lt;li&gt;阅读电视节目的内容。  &lt;/li&gt;
+&lt;li&gt;写下所听歌曲给你的感觉。  &lt;/li&gt;
+&lt;li&gt;影子跟读或跟读电视节目中的人物。  &lt;/li&gt;
+&lt;li&gt;跟着你的歌唱。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;周四（花30-40分钟说）：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;聘请导师，可借助这些平台：  &lt;ul&gt;
+&lt;li&gt;Preply：http://tracking.preply.com/SH2X    &lt;/li&gt;
+&lt;li&gt;Cambly：http://cambly.com    &lt;/li&gt;
+&lt;li&gt;iTalki：http://italki.com  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;大声说话。  &lt;/li&gt;
+&lt;li&gt;叙述你的生活。  &lt;/li&gt;
+&lt;li&gt;录制自己的叙述并播放。  &lt;/li&gt;
+&lt;li&gt;把单词放在你的字典里。  &lt;/li&gt;
+&lt;li&gt;花剩下的时间：  &lt;ul&gt;
+&lt;li&gt;大声朗读。  &lt;/li&gt;
+&lt;li&gt;大声唱歌。  &lt;/li&gt;
+&lt;li&gt;影子跟读或模仿电视节目中的演员。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;周五（花整整一个小时在词汇上）：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;查看字典中的所有单词。  &lt;/li&gt;
+&lt;li&gt;把它们写出来。  &lt;/li&gt;
+&lt;li&gt;大声说出来。  &lt;/li&gt;
+&lt;li&gt;在句子中使用它们。  &lt;/li&gt;
+&lt;li&gt;制作一个&lt;a href="http://quizlet.com"&gt;Quizlet&lt;/a&gt;卡片集合。  &lt;/li&gt;
+&lt;li&gt;制作抽认卡。  &lt;/li&gt;
+&lt;li&gt;努力学习，直到你把它们都记住了。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;周末：  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;查找新歌。  &lt;/li&gt;
+&lt;li&gt;找一本新书。  &lt;/li&gt;
+&lt;li&gt;查找新的电视节目。  &lt;/li&gt;
+&lt;li&gt;休息一下。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;⌛ 请记住：视频观看三遍，节奏为：今天两次打开英文字幕，明天一次关闭英文字幕，以强化你学到的英语。  &lt;/p&gt;
+&lt;p&gt;以上就是 Bob 分享的英语学习计划。其实没有什么特别之处，重要的是能坚持实施。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>阿里云函数版 RSS 过滤器上线</title><link href="/a-li-yun-han-shu-ban-rss-guo-lu-qi-shang-xian.html" rel="alternate"></link><published>2022-09-18T10:57:57+08:00</published><updated>2022-09-18T10:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2022-09-18:/a-li-yun-han-shu-ban-rss-guo-lu-qi-shang-xian.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;产品体验
+categories:&lt;/li&gt;
+&lt;li&gt;产品体验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;为方便薅阿里云函数计算的羊毛，将 &lt;a href="https://github.com/hillerliao/RSSHub-python"&gt;RSSHub-Python&lt;/a&gt; 项目里的 &lt;a href="https://pyrsshub.vercel.app/feeds"&gt;RSS 过滤器&lt;/a&gt;功能独立出来，做成阿里云函数计算的版 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;产品体验
+categories:&lt;/li&gt;
+&lt;li&gt;产品体验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;为方便薅阿里云函数计算的羊毛，将 &lt;a href="https://github.com/hillerliao/RSSHub-python"&gt;RSSHub-Python&lt;/a&gt; 项目里的 &lt;a href="https://pyrsshub.vercel.app/feeds"&gt;RSS 过滤器&lt;/a&gt;功能独立出来，做成阿里云函数计算的版本。&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;code&gt;https://github.com/hillerliao/RssFilter&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;部署方法记录如下：&lt;/p&gt;
+&lt;h2&gt;一、创建服务&lt;/h2&gt;
+&lt;p&gt;1、进入&lt;a href="https://fcnext.console.aliyun.com/overview"&gt;阿里云函数计算&lt;/a&gt;后台，点击创建服务。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="阿里云函数计算概览" src="https://github.com/easychen/wecomchan/raw/main/python-aliyunfc/pic/image-20220205142747826.png"&gt;&lt;/p&gt;
+&lt;p&gt;2、填入服务名称，比如 &lt;code&gt;RssFilter&lt;/code&gt;，点击确定。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="阿里云函数计算-创建服务" src="https://raw.githubusercontent.com/hillerliao/img/main/20220918133712.png"&gt;&lt;/p&gt;
+&lt;h2&gt;二、配置函数&lt;/h2&gt;
+&lt;p&gt;3、配置函数。&lt;/p&gt;
+&lt;p&gt;3.1 进入刚创建的服务，点击&lt;code&gt;创建函数&lt;/code&gt;；&lt;br&gt;
+3.2 选择&lt;code&gt;使用自定义运行时创建&lt;/code&gt;，填写函数名称，如&lt;code&gt;main&lt;/code&gt;；&lt;br&gt;
+3.3 代码上传方式选择&lt;code&gt;通过 ZIP 包上传代码&lt;/code&gt;，将本项目仓库中的&lt;a href="https://github.com/hillerliao/RssFilter/blob/main/func-code-4-RSSFilter.zip"&gt;过滤器zip代码包&lt;/a&gt;&lt;code&gt;func-code-4-RSSFilter.zip&lt;/code&gt;下载后上传；&lt;br&gt;
+3.4 启动命令填入&lt;code&gt;python app.py&lt;/code&gt;；  &lt;/p&gt;
+&lt;p&gt;点击 &lt;code&gt;创建&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="阿里云函数计算-配置函数" src="https://raw.githubusercontent.com/hillerliao/img/main/20220918134114.png"&gt;&lt;/p&gt;
+&lt;h2&gt;三、获取地址&lt;/h2&gt;
+&lt;p&gt;4、获得测试地址，带上路径和参数，如 &lt;code&gt;/filter?feed=&amp;lt;rss 地址&amp;gt;&amp;amp;include_title=&amp;lt;过滤词&amp;gt;&lt;/code&gt; 支持的参数同 RSSHub-Python 的 &lt;a href="https://pyrsshub.vercel.app/feeds"&gt;RSS Filter参数&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="阿里云函数计算-获取函数公网地址" src="https://raw.githubusercontent.com/hillerliao/img/main/20220918134337.png"&gt;&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;http://&amp;lt;testing sub domain for fc&amp;gt;.cn-beijing.functioncompute.com/filter?feed=https://sspai.com/feed&amp;amp;include_title=派评&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;5、测试验证通过后，点击 &lt;code&gt;部署代码&lt;/code&gt;，部署完成。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="阿里云函数计算-在线编辑器" src="https://raw.githubusercontent.com/hillerliao/img/main/20220918134819.png"&gt;&lt;/p&gt;
+&lt;h2&gt;四、制作 RSS 过滤器的初衷&lt;/h2&gt;
+&lt;p&gt;回顾我作 RSS 过滤器的初心：提高信息获取效率。&lt;/p&gt;
+&lt;p&gt;比如，有些 RSS，我只关心带有特定关键词的内容；另一些 RSS，我不想看到含有特定关键词的广告内容。有了 RSS 过滤器，这些需求都能得到满足。&lt;/p&gt;
+&lt;p&gt;好了，如果你觉得本项目对你有用，不妨请我喝杯咖啡。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="个人微信收款码-智海" src="https://raw.githubusercontent.com/hillerliao/img/main/IMG_0096%20copy.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;如果有改进建议，欢迎交流。微信： &lt;code&gt;hillerliao&lt;/code&gt;。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>如何训练你的大脑用英语思考</title><link href="/ru-he-xun-lian-ni-de-da-nao-yong-ying-yu-si-kao.html" rel="alternate"></link><published>2022-08-16T08:36:53+08:00</published><updated>2022-08-16T08:36:53+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2022-08-16:/ru-he-xun-lian-ni-de-da-nao-yong-ying-yu-si-kao.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;学外语
+categories:&lt;/li&gt;
+&lt;li&gt;学外语&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;如果有条件，你从小跟着父母从中国去了美国，可以每天使用英语几小时，英语可能已成为你“内心语言”的 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;学外语
+categories:&lt;/li&gt;
+&lt;li&gt;学外语&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;如果有条件，你从小跟着父母从中国去了美国，可以每天使用英语几小时，英语可能已成为你“内心语言”的一部分。换句话说，你开始用英语思考。你的大脑不再试图将汉语翻译成英语。
+但是，大多数中国人在日常生活中可能没有很多机会练习英语，甚至可能只是在自学。当你开口说话时，你说的可能比你想要的慢。这是因为你的大脑仍然在从你的第一语言进行翻译，这听起来也很不自然。毕竟，英语和其他语言一样，有自己的句子结构。
+有什么办法让你更接近流利的水平？这里推荐一个方法：用英语思考。
+这并不难，但确实需要有意识的努力和实践，下面是一些有帮助的“心理练习”。&lt;/p&gt;
+&lt;h2&gt;用一个词思考&lt;/h2&gt;
+&lt;p&gt;大多数专家指出，最好从小事做起。因此，用单个词来思考不失为好的开始。环顾四周，你看到了什么？在你的脑海中，试着说出你周围的每个物体的名字。
+说出他们周围看到的东西的名字，无论他们身在何处。当它成为一种习惯后，东西会突然出现在你的脑海里——电脑、电话、椅子、桌子。不管它是什么。
+建议先从名词开始，然后再添加动词。
+你也可以在家里醒来和睡觉前这样做。
+如果你是学生给房间或公寓里的所有东西都贴上标签，这样，这些英语单词就可以在你的的脑海中留下印象。&lt;/p&gt;
+&lt;h2&gt;描述生词&lt;/h2&gt;
+&lt;p&gt;另一个练习是在你的头脑中描述你不知道该用什么词的物体。
+举个例子，如果你在看你的房子，看到你的车库，但你想不起“车库”的英文名字，你可以说，“我把车放在里面的地方。” 或者你可以说，“它在我家旁边。我把东西放在那里。'”
+你也可以使用较短的短语，如“它类似于…”或“它与…相反”。
+这样做可以帮助任何语言的学习者。&lt;/p&gt;
+&lt;h2&gt;用句子思考&lt;/h2&gt;
+&lt;p&gt;下一个练习是用简单的句子思考。
+例如，如果你坐在公园里，你可以告诉自己这样的事情：“今天天气真好”和“人们正在和朋友一起运动。”
+一旦这变得容易，你就可以继续学习更难的句子。
+你可以用这个练习来思考你想用英语对人们说什么：你在脑海中说出这些句子，或者尝试将这些单词组合在一起，不用过多考虑这些句子是否绝对正确。&lt;/p&gt;
+&lt;h2&gt;描述你的一天&lt;/h2&gt;
+&lt;p&gt;专家建议的另一项练习是描述你的日常活动。有几种方法可以做到这一点。
+早上醒来时，你可以在脑子里制定计划。这需要其他动词时态，所以技能水平要高一点。
+例如，你可能会告诉自己，“当我离开家的时候，我要喝杯冰咖啡。然后，我要坐火车去上课。我今天和阿峰一起学习。他说他在图书馆预订了一个下午2点的自习室。”&lt;/p&gt;
+&lt;h2&gt;对话思考&lt;/h2&gt;
+&lt;p&gt;现在，让我们转到对话思考：想象自己在和别人说话。你在问问题，并思考答案。
+这个方法能很好地练习你在真实对话中可能说的话。
+假设一个想象中的人问你这样的问题，“你觉得昨晚的颁奖典礼怎么样？”你会怎么回答？想象这个对话，并在脑海中练习。
+你可以大声说出来，也可以保持沉默。&lt;/p&gt;
+&lt;h2&gt;记笔记&lt;/h2&gt;
+&lt;p&gt;对于所有这些练习，当然会有你不知道的单词和短语。所以，在某个时候你需要使用字典。
+如果你的技能水平足够高，你可以考虑使用英译英词典。
+建议每天只写下5到10个新词和短语。
+记笔记可以帮助你记住你需要那个词或短语来表达的情况。当你再次处于这种情况时，这使你很容易回忆起来。&lt;/p&gt;
+&lt;h2&gt;每天练习&lt;/h2&gt;
+&lt;p&gt;那么，你应该花多少时间在这些练习上？每天做一点。
+当你每天都这样做时，一遍又一遍，一点一点地做，这就是&lt;strong&gt;关键&lt;/strong&gt;。
+当你把事情变成一种习惯时，它会突然出现在你的脑海中，而在你意识到之前，实际上，你是在用英语思考。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Vercel 环境无法正常请求带中文字符URL的问题排查</title><link href="/vercel-huan-jing-wu-fa-zheng-chang-qing-qiu-dai-zhong-wen-zi-fu-urlde-wen-ti-pai-cha.html" rel="alternate"></link><published>2022-08-11T21:12:57+08:00</published><updated>2022-08-11T21:12:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2022-08-11:/vercel-huan-jing-wu-fa-zheng-chang-qing-qiu-dai-zhong-wen-zi-fu-urlde-wen-ti-pai-cha.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;运维
+categories:&lt;/li&gt;
+&lt;li&gt;运维&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;利用 &lt;a href="https://github.com/hillerliao/RSSHub-python"&gt;RSSHub-python&lt;/a&gt; 项目抓取&lt;a href="https://www.aisixiang.com/"&gt;爱思想&lt;/a&gt;网站搜索结果列表生成 RSS 时，在 &lt;a href="https://vercel.com/"&gt;Vercel&lt;/a&gt; 环境下，关键词为英文时一切正常，关键词 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;运维
+categories:&lt;/li&gt;
+&lt;li&gt;运维&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;问题描述&lt;/h2&gt;
+&lt;p&gt;利用 &lt;a href="https://github.com/hillerliao/RSSHub-python"&gt;RSSHub-python&lt;/a&gt; 项目抓取&lt;a href="https://www.aisixiang.com/"&gt;爱思想&lt;/a&gt;网站搜索结果列表生成 RSS 时，在 &lt;a href="https://vercel.com/"&gt;Vercel&lt;/a&gt; 环境下，关键词为英文时一切正常，关键词为中文时无法获取到结果。&lt;/p&gt;
+&lt;h2&gt;问题分析&lt;/h2&gt;
+&lt;p&gt;根据第一版程序，请求&lt;code&gt;https://pyrsshub.vercel.app/aisixiang/search/author/%E9%83%91%E6%B0%B8%E5%B9%B4&lt;/code&gt;得到的HTML 源码&lt;code&gt;&amp;lt;title&amp;gt;&amp;lt;![CDATA[%E9%83%91%E6%B0%B8%E5%B9%B4 - author搜索 - 爱思想]]&amp;gt;&amp;lt;/title&amp;gt;&lt;/code&gt;可以看出，RSS 地址中的中文字符在 HTML 源码没有正常显示，还是 urlencode之后的状态。
+第一版本&lt;a href="https://github.com/hillerliao/RSSHub-python/commit/cfcb04afa116941292a1bddab03cfbad4fde59da"&gt;程序&lt;/a&gt;通过以下代码直接将URL 中的中文字符转换为为GBK编码的字符。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;
+&lt;span class="n"&gt;keywords_gbk&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;gbk&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;然后将上述转换后的字符拼成目标网站的 URL 供爬虫发送请求之用。
+程序在本地、docker 上运行，都没有问题，但在 vercel.app 环境中不灵。
+具体原因没搞懂，也不方便调试。结论就是： vercel.app 的环境不支持 urlencode 过的字符串直接urlencode为 gbk 字符串，需要先解码再编码。&lt;/p&gt;
+&lt;h2&gt;查找方案&lt;/h2&gt;
+&lt;p&gt;先解码再编码的解决方案：
+&lt;code&gt;rss 地址中的中文字符 → urldecode 为 utf-8字符 → urlencode 为 gbk 字符&lt;/code&gt;
+增加中间这一步，兼容 vercel.app 环境。
+&lt;strong&gt;编码&lt;/strong&gt;：一般来说，URL只能使用英文字母、阿拉伯数字和某些标点符号，不能使用其他文字和符号。如果URL中有汉字，就必须编码（&lt;code&gt;urlencode&lt;/code&gt;）后使用。这一步由浏览器完成。
+&lt;strong&gt;解码&lt;/strong&gt;：当urlencode之后的字符串传递到后端之后，Flask 响应函数需要进行解码（&lt;code&gt;urldecode&lt;/code&gt;），可以用 Python 库&lt;code&gt;urllib.parse&lt;/code&gt; 的&lt;code&gt;unquote&lt;/code&gt;函数进行解码。
+&lt;strong&gt;编码&lt;/strong&gt;：接着，将解码后的字符，按照目标网站指定的字符集进行编码（&lt;code&gt;urlencode&lt;/code&gt;），可以用&lt;code&gt;quote&lt;/code&gt;方法实现。
+具体到爱思想搜索结果列表页，为什么确定用的是gbk 字符来编码？&lt;code&gt;https://www.aisixiang.com/data/search.php?keyWords=%D1%D6%D1%A7%CD%A8&amp;amp;searchfield=author&lt;/code&gt; 属于其他页面搜索框的 Get 方法触发的请求，URL包含汉字，这时的URL编码方法由网页的编码决定，也就是由HTML源码中字符集的设定决定。 查看 HTML 源码 &lt;code&gt;&amp;lt;meta http-equiv="Content-Type" content="text/html; charset=gbk" /&amp;gt;&lt;/code&gt;得知，所发请求必须是GBK 编码的 URL。
+&lt;a href="https://github.com/hillerliao/RSSHub-python/commit/53e055637a85191cf88987740eeedb7bdb8204af"&gt;最终程序&lt;/a&gt;修改为：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;
+&lt;span class="n"&gt;keywords&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 或者用 gbk 字符集解码&lt;/span&gt;
+&lt;span class="n"&gt;keywords_gbk&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;gbk&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;以字符&lt;code&gt;郑永年&lt;/code&gt;为例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;
+
+&lt;span class="n"&gt;str_urlencoded&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%E&lt;/span&gt;&lt;span class="s1"&gt;9&lt;/span&gt;&lt;span class="si"&gt;%83%&lt;/span&gt;&lt;span class="s1"&gt;91&lt;/span&gt;&lt;span class="si"&gt;%E&lt;/span&gt;&lt;span class="s1"&gt;6%B0%B8&lt;/span&gt;&lt;span class="si"&gt;%E&lt;/span&gt;&lt;span class="s1"&gt;5%B9%B4&amp;#39;&lt;/span&gt; 
+&lt;span class="n"&gt;str_utf8_decoded&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;str_urlencoded&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;str_gbk&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;str_utf8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;gbk&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;str_gbk2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;str_urlencoded&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;gbk&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;按 utf8 解码结果：&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;str_utf8_decoded&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;按 gbk 编码结果：&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;str_gbk&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;urlencoded字符直接按gbk编码结果：&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;str_gbk2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;按&lt;/span&gt; &lt;span class="n"&gt;utf8&lt;/span&gt; &lt;span class="n"&gt;解码结果&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt; &lt;span class="n"&gt;郑永年&lt;/span&gt;
+&lt;span class="n"&gt;按&lt;/span&gt; &lt;span class="n"&gt;gbk&lt;/span&gt; &lt;span class="n"&gt;编码结果&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;D6&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;A3&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;D3&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;C0&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;C4&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;EA&lt;/span&gt;  &lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;此为需要的结果&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;span class="n"&gt;urlencoded&lt;/span&gt; &lt;span class="n"&gt;字符直接按gbk编码结果&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mf"&gt;25E9&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;2583&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;2591&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mf"&gt;25E6&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="n"&gt;B0&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="n"&gt;B8&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mf"&gt;25E5&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="n"&gt;B9&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="n"&gt;B4&lt;/span&gt; &lt;span class="err"&gt;（&lt;/span&gt;&lt;span class="n"&gt;在&lt;/span&gt; &lt;span class="n"&gt;vercel&lt;/span&gt; &lt;span class="n"&gt;环境出错的结果&lt;/span&gt;&lt;span class="err"&gt;）&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;后续工作&lt;/h2&gt;
+&lt;p&gt;需要再次研究Vercel环境下怎么调试的问题，提高问题排查效率。&lt;/p&gt;
+&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.ruanyifeng.com/blog/2010/02/url_encoding.html"&gt;关于URL编码 - 阮一峰的网络日志&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.csdn.net/a359680405/article/details/44857359"&gt;Python菜鸟晋级11----urlencode与unquote_翻滚吧挨踢男的博客-CSDN博客&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>如何发布 pelican 到 github pages</title><link href="/publish-pelican-to-ghp.html" rel="alternate"></link><published>2021-12-26T17:32:00+08:00</published><updated>2021-12-26T17:32:00+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2021-12-26:/publish-pelican-to-ghp.html</id><summary type="html">&lt;p&gt;Short version for index and feeds&lt;/p&gt;</summary><content type="html">&lt;p&gt;去年决定将静态博客的生成工具从 hexo 改成基于 Python 的 pelican，初次搬运之后就没在动过，以至于已经忘了该如何更新。&lt;/p&gt;
+&lt;p&gt;为避免再次遗忘，现决定将发布过程写下来。  &lt;/p&gt;
+&lt;h2&gt;第一次配置环境&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# 进入项目根目录  
+pipenv shell  
+pip install pelican markdown
+
+# change theme Enter prject home directory, run 
+git clone https://github.com/getpelican/pelican-themes.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# generate html pages&lt;/span&gt;
+&lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="n"&gt;content&lt;/span&gt;
+
+&lt;span class="c1"&gt;# preview &lt;/span&gt;
+&lt;span class="n"&gt;pelican&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;l&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="mf"&gt;0.0.0.0&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="mi"&gt;8082&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;
+
+&lt;span class="c1"&gt;# publish to github pages&lt;/span&gt;
+&lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;import&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;2.1.0&lt;/span&gt;
+&lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;output&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
+&lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="blog"></category><category term="pelican"></category></entry><entry><title>部署Flask项目到手机上 并供外网访问</title><link href="/bu-shu-flaskxiang-mu-dao-shou-ji-shang-bing-gong-wai-wang-fang-wen.html" rel="alternate"></link><published>2021-11-29T21:03:57+08:00</published><updated>2021-11-29T21:03:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2021-11-29:/bu-shu-flaskxiang-mu-dao-shou-ji-shang-bing-gong-wai-wang-fang-wen.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;教程
+categories:&lt;/li&gt;
+&lt;li&gt;教程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;为什么写这篇文章？本需求的实现将之前折腾的几个服务综合起来，链条比较长，记录之，备忘。&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;需求缘起&lt;/h2&gt;
+&lt;p&gt;有一个 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;教程
+categories:&lt;/li&gt;
+&lt;li&gt;教程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;为什么写这篇文章？本需求的实现将之前折腾的几个服务综合起来，链条比较长，记录之，备忘。&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;需求缘起&lt;/h2&gt;
+&lt;p&gt;有一个抓取微信公众号文章生成 RSS 地址的 Flask 项目RSSHub-python，本地运行没什么问题，一旦部署到服务器上，秒秒钟被数据源网站搜狗给封杀了。&lt;/p&gt;
+&lt;p&gt;从两种环境的不同结果来看，本地运行没有问题可能是因为本地出口 IP 没有被封杀。顺着这个思路，如果把服务部署在本地，并保证持续不断地运行，即可避免被封杀的悲剧。&lt;/p&gt;
+&lt;p&gt;但本地化部署需要解决被外网访问的问题。电脑不适合一直开着，购买树莓派之类的硬件设备需要花钱，而且过往经历告诉我，树莓派大部分时候只是用来吃灰。综合考虑，我决定用闲置的安卓机OnePlus 2作为服务器运行服务，还能省省电。而要让外网能访问，可以借助内网穿透来实现。&lt;/p&gt;
+&lt;p&gt;简单说，需要准备一台OS版本至少在6.0以上的Android手机。本文以 Android 版本为 10的Redmi 10X 为例进行介绍。&lt;/p&gt;
+&lt;h2&gt;部署方案&lt;/h2&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1637474979948-88ed5582-7cad-4b70-ad69-fd8e83e9eea3.png#height=440&amp;amp;id=uf821016d&amp;amp;originHeight=880&amp;amp;originWidth=1539&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=96230&amp;amp;status=done&amp;amp;style=shadow&amp;amp;title=&amp;amp;width=769.5"&gt;
+我实际的部署方案如上图所示，用到了几个第三方服务，除了阿里云服务器，其他都是免费就能搞定。
+关键点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;借助名字叫做 Aid Learning 的安卓 App 作为服务器环境，在服务器内部署 Flask 项目，并用 Supervisor 保证服务运行的稳定性；&lt;/li&gt;
+&lt;li&gt;然后借助花生壳内网版作内网穿透，让服务支持外网访问；&lt;/li&gt;
+&lt;li&gt;由于公司网络禁用了花生壳的服务，需要借助SS服务作为正向代理，通过 SS 客户端将访问花生壳的服务转换为访问阿里云服务器。如果本地网络不禁用花生壳内网穿透服务，这一步可以省略，一分钱都不用花。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;配置「服务器」Aid Learning&lt;/h2&gt;
+&lt;p&gt;要 Android 变成服务器，我们需要借助一个叫做「Aid Learning」的 App（最新版已更名为 AidLux ，查找网络资料时两个关键词都可以试试），可以从&lt;a href="http://www.aidlearning.net/"&gt;官网&lt;/a&gt;下载。撰写本文时一开始想用&lt;a href="https://www.aidlux.com/apk/AidLux_1.0a.apk"&gt;1.0a&lt;/a&gt;，结果遇到各种坑，换回0.86b2f4版本（可以通过酷安下载历史版本）。&lt;/p&gt;
+&lt;p&gt;安装成功后参考教程进行一些&lt;a href="https://dontkillmyapp.com/xiaomi"&gt;设置&lt;/a&gt;，包括开启自动启动、常驻后台等，以确保App能持续在后台运行。&lt;/p&gt;
+&lt;p&gt;或者安装 &lt;a href="https://termux.com/"&gt;Termux&lt;/a&gt; App 也可以达到同样目的。Termux 的优点是环境干净，占用存储空间小，自己想装什么就自行安装；缺点是需要自行配置各种环境依赖，配置过程往往会碰到各种各样的依赖问题，掉进坑里的感觉会把人逼疯。可以把App理解为一台 Linux 服务器，两个 APP 好比是Ubuntu 和Arch Linux之别。
+&lt;img alt="20211121_222306.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1637505262582-a9c92bec-008a-47d0-9e18-c06c0f3ae0b2.png#height=439&amp;amp;id=fi2tX&amp;amp;originHeight=994&amp;amp;originWidth=462&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=1836966&amp;amp;status=done&amp;amp;style=stroke&amp;amp;title=&amp;amp;width=204"&gt; 
+上图：手机号登录，省得以后打开APP时老提示登录。当然这个步骤不是强制的，可以选择跳过。&lt;/p&gt;
+&lt;p&gt;首次运行APP 时，由于初始化任务的执行，会请求网络下载一些东西，速度比较慢，可能耗时数分钟。如果需要节省流量，记得在 WIFI 环境下操作。
+&lt;img alt="image.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1637505980097-2aa0a7c7-a21f-44d4-a55a-57dd84dd146b.png#height=440&amp;amp;id=ue7b0ca5b&amp;amp;originHeight=880&amp;amp;originWidth=396&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=150917&amp;amp;status=done&amp;amp;style=none&amp;amp;title=&amp;amp;width=198"&gt;
+默认登录的是 root 用户，未设置密码，可以设置一个 root 用户的密码：打开 APP 内的终端，切换到全屏模式，输入命令 &lt;code&gt;passwd root&lt;/code&gt;，按界面提示输入两次密码，设置成功。
+&lt;img alt="image.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1637506748306-153cc560-5584-4e71-a92f-4c6e276995e7.png#height=440&amp;amp;id=u401acc46&amp;amp;originHeight=880&amp;amp;originWidth=396&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=78958&amp;amp;status=done&amp;amp;style=none&amp;amp;title=&amp;amp;width=198"&gt;
+为方便输入命令行命令，可以通过电脑远程访问服务器(Aidlux)：打开服务器上的终端，输入命令 &lt;code&gt;ifconfig&lt;/code&gt; ，确认服务器的 ip 地址，如我的手机为 172.16.99.125。&lt;/p&gt;
+&lt;p&gt;保证手机与电脑在同一个WIFI 网络，通过电脑终端远程登录该服务器，注意端口为 &lt;strong&gt;9022&lt;/strong&gt;。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;demo&lt;/span&gt;&lt;span class="mf"&gt;@192.168.1.9&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;9022&lt;/span&gt;
+&lt;span class="cp"&gt;# 密码为demo&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;更新软件包列表，并安装一些常用工具，如 git 等。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt&lt;span class="w"&gt; &lt;/span&gt;update
+apt&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;部署项目&lt;/h2&gt;
+&lt;h3&gt;生成 ssh 密钥&lt;/h3&gt;
+&lt;p&gt;获取项目代码拉取权限&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 生成密钥 ssh-keygen&lt;/span&gt;
+ssh-keygen
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/root/.ssh
+&lt;span class="c1"&gt;# 复制 id_rsa.pub 文件中的字符。&lt;/span&gt;
+&lt;span class="c1"&gt;# 将公钥添加到 github.进入 https://github.com/settings/keys，&lt;/span&gt;
+&lt;span class="c1"&gt;# 创建新的 SSH key，填入刚才复制的公钥字符。 &lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;拉取项目代码&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 回到服务器，拉取项目代码&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/opt
+git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;git@github.com:hillerliao/RSSHub-python.git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;本地测试运行&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 进入项目文件夹&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/opt/RSSHub-python
+
+&lt;span class="c1"&gt;# 修改pip镜像源&lt;/span&gt;
+mkdir&lt;span class="w"&gt; &lt;/span&gt;~/.config/pip
+touch&lt;span class="w"&gt; &lt;/span&gt;~/.config/pip/pip.config
+
+&lt;span class="c1"&gt;# 修改 pip.config 内容为&lt;/span&gt;
+&lt;span class="sb"&gt;```&lt;/span&gt;pip.config内容
+&lt;span class="o"&gt;[&lt;/span&gt;global&lt;span class="o"&gt;]&lt;/span&gt;
+index-url&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;https://mirrors.aliyun.com/pypi/simple
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;安装 pipenv。也可以用 apt install pipenv 安装，但版本比较旧&lt;/h1&gt;
+&lt;p&gt;pip install pipenv &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# 安装
+whereis pipenv 
+# 得到 /usr/local/bin/pipenv
+# 创建软连接
+ln -s /usr/local/bin/pipenv /usr/bin/pipenv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;创建Python 虚拟环境。&lt;/h1&gt;
+&lt;h1&gt;我用Android 11的红米手机尝试会报错，用Android 6 的 OnePlus 2手机不报错&lt;/h1&gt;
+&lt;h1&gt;提示「OSError: Cannot find path to android app folder」&lt;/h1&gt;
+&lt;p&gt;cd /opt/RSSHub-python
+pipenv install&lt;/p&gt;
+&lt;h1&gt;记下虚拟环境位置，后续 uwsgi 配置文件里会用到&lt;/h1&gt;
+&lt;h1&gt;/root/User/demo/.local/share/virtualenvs/RSSHub-python-e4f4sLQi&lt;/h1&gt;
+&lt;h1&gt;验证本地运行是否正常&lt;/h1&gt;
+&lt;p&gt;flask run &lt;/p&gt;
+&lt;h1&gt;如果确实依赖包，就手动安装，如 dotenv&lt;/h1&gt;
+&lt;p&gt;pip install python-dotenv&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;## 配置 uwsgi 服务
+### 安装 uwsgi
+```bash
+# 需要在root用户下运行
+pip install uwsgi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;uwsgi 配置文件&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# uwsgi --ini {current_file_path_and_name}&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt;uwsgi&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="nv"&gt;http&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:5000
+&lt;span class="nv"&gt;processes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;
+&lt;span class="nv"&gt;threads&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;
+&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;plugins&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;python3
+&lt;span class="nv"&gt;master&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="c1"&gt;# 启动主进程，来管理其他进程，其它的uwsgi进程都是这个master进程的子进程，如果kill这个master进程，相当于重启所有的uwsgi进程。&lt;/span&gt;
+
+&lt;span class="nv"&gt;chdir&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/opt/RSSHub-python
+&lt;span class="c1"&gt;# 在app加载前切换到当前目录， 指定运行目录 &lt;/span&gt;
+
+wsgi-file&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;wsgi.py
+&lt;span class="c1"&gt;#virtualenv = /root/.local/share/virtualenvs/RSSHub-python-e4f4sLQi&lt;/span&gt;
+&lt;span class="nv"&gt;virtualenv&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/usr/bin/python
+&lt;span class="c1"&gt;# pythonpath = /opt/RSSHub-python&lt;/span&gt;
+&lt;span class="c1"&gt;#上面的pythonpath需要换成刚才你自己创建的应用的目录&lt;/span&gt;
+&lt;span class="c1"&gt;# module = rsshub&lt;/span&gt;
+&lt;span class="nv"&gt;callable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;app
+memory-report&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="c1"&gt;#py-autoreload = 1 ##监控python模块mtime来触发重载 (只在开发时使用)&lt;/span&gt;
+
+&lt;span class="c1"&gt;#daemonize = /var/log/uwsgi/rsshub-python.log&lt;/span&gt;
+&lt;span class="c1"&gt;# 使进程在后台运行，并将日志打到指定的日志文件或者udp服务器&lt;/span&gt;
+
+touch-reload&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/opt/RSSHub-python
+&lt;span class="c1"&gt;# 表示要监听的文件路径，当要监听的文件路径下的文件发生变化的时候自动重新加载服务。&lt;/span&gt;
+
+lazy-apps&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="c1"&gt;# 在每个worker而不是master中加载应用&lt;/span&gt;
+
+&lt;span class="nv"&gt;vacuum&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="c1"&gt;# 当服务退出的时候自动删除unix socket文件和pid文件。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;配置Nginx&lt;/h2&gt;
+&lt;h3&gt;安装Nginx&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt install nginx
+
+#查看Nginx状态
+service nginx status
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Nginx配置文件&lt;/h3&gt;
+&lt;p&gt;创建配置文件  &lt;code&gt;touch /etc/nginx/conf.d/rsshub.conf&lt;/code&gt;，通过 nano 命令编辑该文件。具体配置如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;server&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;listen&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;9080&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;server_name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;域名&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;location&lt;span class="w"&gt; &lt;/span&gt;/&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;include&lt;span class="w"&gt; &lt;/span&gt;uwsgi_params&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;&lt;span class="c1"&gt;#uwsgi_pass 127.0.0.1:5000;&lt;/span&gt;
+&lt;span class="w"&gt;                    &lt;/span&gt;proxy_pass&lt;span class="w"&gt; &lt;/span&gt;http://127.0.0.1:5000&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;              &lt;/span&gt;uwsgi_read_timeout&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;120&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;保存好配置文件，并进行测试  &lt;code&gt;service nginx -t&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;重新加载Nginx服务 &lt;code&gt;service nginx reload&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;开启Supervisor服务&lt;/h2&gt;
+&lt;h3&gt;安装supervisor&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# 安装supervisor
+apt install supervisor
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;Supervisor 配置文件&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 文件位置：/etc/supervisor/conf.d/rsshub.conf&lt;/span&gt;
+
+&lt;span class="o"&gt;[&lt;/span&gt;program:rsshub_python&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;span class="nv"&gt;command&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/home/lxf/.local/bin/uwsgi&lt;span class="w"&gt; &lt;/span&gt;--ini&lt;span class="w"&gt; &lt;/span&gt;/opt/RSSHub-python/uwsgi.ini
+&lt;span class="nv"&gt;user&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;lxf
+&lt;span class="nv"&gt;autorestart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="nv"&gt;autostart&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="nv"&gt;startretries&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
+&lt;span class="nv"&gt;redirect_stderr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="nv"&gt;startsecs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;
+&lt;span class="c1"&gt;#↓注意需要创建这个日志文件&lt;/span&gt;
+&lt;span class="nv"&gt;stdout_logfile&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/var/log/uwsgi/supervisor.log&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="nv"&gt;stopasgroup&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="nv"&gt;killasgroup&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+&lt;span class="nv"&gt;priority&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;999&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;启动Supersivor&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# 启动supervisor
+service supervisor start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;配置内网穿透&lt;/h2&gt;
+&lt;h3&gt;配置映射关系&lt;/h3&gt;
+&lt;p&gt;在花生壳内网穿透服务后台&lt;a href="https://console.hsk.oray.com/parts"&gt;配置中心&lt;/a&gt;开启 HTTP 映射服务；
+接着在内网穿透菜单填写配置信息，其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内网主机：为上文服务器内通过&lt;code&gt;ifconfig&lt;/code&gt; 命令获取到的ip；&lt;/li&gt;
+&lt;li&gt;内网端口：为9080（aid learning默认的http端口）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1638106924932-113da602-2430-419a-b4a5-3f84029e10de.png#height=275&amp;amp;id=uf78ea94b&amp;amp;originHeight=867&amp;amp;originWidth=1578&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=105038&amp;amp;status=done&amp;amp;style=shadow&amp;amp;title=&amp;amp;width=500"&gt;&lt;/p&gt;
+&lt;h3&gt;安装花生壳内网版 App&lt;/h3&gt;
+&lt;p&gt;apk文件可以通过&lt;a href="https://www.wandoujia.com/apps/7956016"&gt;豌豆荚&lt;/a&gt;下载，官网比较凌乱，没找到下载入口；
+安装后登录花生壳账号，诊断一下，预期是正常连接；
+访问花生壳内网穿透服务后台的外网域名，即可访问到Nginx默认页面：
+&lt;img alt="image.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1638149455953-acb7d41a-9f11-446a-9c6c-2fcffa63f3e8.png#clientId=u7beefe37-88dc-4&amp;amp;from=paste&amp;amp;height=144&amp;amp;id=u7770bb69&amp;amp;originHeight=287&amp;amp;originWidth=591&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=31776&amp;amp;status=done&amp;amp;style=shadow&amp;amp;taskId=ub24d638c-e9d2-430a-ab0c-ca3c8e6231c&amp;amp;title=&amp;amp;width=295.5"&gt;&lt;/p&gt;
+&lt;h2&gt;代理访问(非必须)&lt;/h2&gt;
+&lt;p&gt;有的公司网络监控会将花生壳、todesk等内网穿透性质的服务在域名层面进行封禁，所以可能需要正向代理来突破限制。&lt;/p&gt;
+&lt;p&gt;这里我们借助小火箭，在阿里云服务器上部署ss-server端。为简化部署，通过docker方式进行。考虑到安全问题，本文不详述部署过程。&lt;/p&gt;
+&lt;h2&gt;日常运维&lt;/h2&gt;
+&lt;h3&gt;重启服务&lt;/h3&gt;
+&lt;p&gt;手机没电了，重新充电，怎么重启服务？
+依次启动几个APP，包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开启代理软件 SS&lt;/li&gt;
+&lt;li&gt;开启内网穿透App“ 花生壳内网版”&lt;/li&gt;
+&lt;li&gt;重启‘服务器’&lt;/li&gt;
+&lt;li&gt;启动nginx &lt;code&gt;service nginx start&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;启动supervisor服务。此时会自动启动 uwsgi 服务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总体还算比较稳定，出现过一次花生壳内网版APP崩溃的情况。&lt;/p&gt;
+&lt;p&gt;首发在&lt;a href="https://www.yuque.com/hillerliao/zhihai.me/mtx53r"&gt;语雀&lt;/a&gt;&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>如何实现微信接收龙岩学院讲座提醒</title><link href="/ru-he-shi-xian-wei-xin-jie-shou-long-yan-xue-yuan-jiang-zuo-ti-xing.html" rel="alternate"></link><published>2020-11-05T19:57:57+08:00</published><updated>2020-11-05T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2020-11-05:/ru-he-shi-xian-wei-xin-jie-shou-long-yan-xue-yuan-jiang-zuo-ti-xing.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;编程
+categories:&lt;/li&gt;
+&lt;li&gt;编程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;产品概述&lt;/h1&gt;
+&lt;p&gt;微信扫描二维码码关注公众号「新消息服务」。方便用户跟踪龙岩学院官网发布的讲座动态，无人值守 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;编程
+categories:&lt;/li&gt;
+&lt;li&gt;编程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;产品概述&lt;/h1&gt;
+&lt;p&gt;微信扫描二维码码关注公众号「新消息服务」。方便用户跟踪龙岩学院官网发布的讲座动态，无人值守，有新讲座时自动推送到微信。&lt;/p&gt;
+&lt;h1&gt;实现步骤简述&lt;/h1&gt;
+&lt;p&gt;步骤说起来很简单，就两步：抓取数据、推送消息。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1、抓取龙岩学完首页的讲座信息；&lt;/li&gt;
+&lt;li&gt;2、设置自动监控任务，检查是否有抓取到新内容，如果有，则将新内容推送到微信。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果要自己写代码、买服务器，成本太高，本文介绍一种 no code 的方案，具体用到三个工具： Feed43、IFTTT、WxPusher。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;抓取信息采用 &lt;a href="https://feed43.com"&gt;Feed43&lt;/a&gt;，免费烧制静态网页 RSS 的工具，烧制 RSS 相当于将非标准化格式的数据转换成标准化的通用格式，方便在后续步骤中使用。；&lt;/li&gt;
+&lt;li&gt;自动监控任务采用  &lt;a href="https://ifttt.com"&gt;IFTTT&lt;/a&gt;，免费的自动化工具，自动监控 RSS 数据源是否有新内容；&lt;/li&gt;
+&lt;li&gt;消息提醒采用 &lt;a href="https://wxpusher.zjiecode.com"&gt;WxPusher&lt;/a&gt;，免费的微信推送服务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Feed43 → IFTTT → WxPusher&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面介绍主要步骤。&lt;/p&gt;
+&lt;h1&gt;生成 RSS 地址&lt;/h1&gt;
+&lt;p&gt;要利用免费烧制静态网页 RSS 的工具 Feed43 ，关键点在于找到所需数据在页面 HTML 源代码中的位置，需要一点 HTML 和 CSS 的知识。操作过程可参考 &lt;a href="https://zhuanlan.zhihu.com/p/26511654"&gt;RSS 入门篇：FEED43&amp;amp;FeedEx-为静态网页定制 RSS 源 - 知乎&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最终配置的抽取规则如下：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://cdn.nlark.com/yuque/0/2020/png/147312/1604579741891-1fd39115-3df0-4fe8-bf61-6a016ac6a5b3.png#align=left&amp;amp;display=inline&amp;amp;height=22&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image.png&amp;amp;originHeight=43&amp;amp;originWidth=811&amp;amp;size=4922&amp;amp;status=done&amp;amp;style=none&amp;amp;width=405.5#align=left&amp;amp;display=inline&amp;amp;height=43&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;originHeight=43&amp;amp;originWidth=811&amp;amp;status=done&amp;amp;style=none&amp;amp;width=811"&gt;&lt;/p&gt;
+&lt;h1&gt;设置监控任务&lt;/h1&gt;
+&lt;p&gt;利用免费服务 &lt;a href="https://ifttt.com"&gt;IFTTT&lt;/a&gt;，一个自动化工具，IFTTT = if this then that ，即，如果符合某个条件则做某件事情。如果没有使用过，则可以参考一些 IFTTT 教程，如 &lt;a href="https://sspai.com/post/25270"&gt;触发你的智能生活：IFTTT 入门&lt;/a&gt;。
+触发器(this) 我们选择  RSS，动作 (then) 我们选择 Webhook，具体步骤略过，最终配置如下图。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image.png" src="https://cdn.nlark.com/yuque/0/2020/png/147312/1604540219734-4dc16462-b9fe-495f-a021-56acd2111157.png#align=left&amp;amp;display=inline&amp;amp;height=504&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=image.png&amp;amp;originHeight=1007&amp;amp;originWidth=492&amp;amp;size=68906&amp;amp;status=done&amp;amp;style=shadow&amp;amp;width=246#align=left&amp;amp;display=inline&amp;amp;height=1007&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;originHeight=1007&amp;amp;originWidth=492&amp;amp;status=done&amp;amp;style=none&amp;amp;width=492"&gt;&lt;/p&gt;
+&lt;h1&gt;获得微信提醒&lt;/h1&gt;
+&lt;p&gt;要通过正常途径持续推送消息到微信，只有一条路，那就是服务号模板消息。开通服务号需要有企业资质，而注册一家企业的成本非常高。不用急，幸好已经有人注册了服务号并开发出一条消息通道供其他人免费使用，其产品的名字叫做「WxPusher」。官方是这么介绍的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;WxPusher (微信推送服务)是一个使用微信公众号作为通道的，实时信息推送平台，你可以通过调用 API 的方式，把信息推送到微信上，无需安装额外的软件，即可做到信息实时通知。 你可以使用 WxPusher 来做服务器报警通知、抢课通知、抢票通知，信息更新提示等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我们在其上创建一个应用「消息来了」，然后创建一个主题「龙院讲座」，获得订阅二维码。将二维码分享给朋友，对方只需要扫一扫，即可实现订阅。
+&lt;img alt="龙岩学院讲座提醒-二维码.jpg" src="https://cdn.nlark.com/yuque/0/2020/jpeg/147312/1604542059523-bbb8bdcc-f45f-4d8b-9c78-847fe87afb52.jpeg#align=left&amp;amp;display=inline&amp;amp;height=395&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92-%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg&amp;amp;originHeight=1304&amp;amp;originWidth=990&amp;amp;size=69543&amp;amp;status=done&amp;amp;style=stroke&amp;amp;width=300#align=left&amp;amp;display=inline&amp;amp;height=1304&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;originHeight=1304&amp;amp;originWidth=990&amp;amp;status=done&amp;amp;style=none&amp;amp;width=990"&gt;&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>天猫精灵智能音箱新闻收听体验报告</title><link href="/tian-mao-jing-ling-zhi-neng-yin-xiang-xin-wen-shou-ting-ti-yan-bao-gao.html" rel="alternate"></link><published>2020-10-22T19:57:57+08:00</published><updated>2020-10-22T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2020-10-22:/tian-mao-jing-ling-zhi-neng-yin-xiang-xin-wen-shou-ting-ti-yan-bao-gao.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;产品体验
+categories:&lt;/li&gt;
+&lt;li&gt;产品体验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;我主要用天猫精灵听新闻，基于这个需求，希望作出以下改进：&lt;/p&gt;
+&lt;h3&gt;一、优化体验&lt;/h3&gt;
+&lt;p&gt;目前天猫精灵的资讯由乐 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;产品体验
+categories:&lt;/li&gt;
+&lt;li&gt;产品体验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;我主要用天猫精灵听新闻，基于这个需求，希望作出以下改进：&lt;/p&gt;
+&lt;h3&gt;一、优化体验&lt;/h3&gt;
+&lt;p&gt;目前天猫精灵的资讯由乐天头条提供，这是什么机构？&lt;/p&gt;
+&lt;p&gt;1、记住用户偏好，实现智能推荐
+记住用户偏好，举例：如果用户每天都请求 日本新闻、福建新闻、新西兰新闻，那么可以多推荐这类新闻给该用户，而不仅仅是推荐用户所在地的本地新闻。&lt;/p&gt;
+&lt;p&gt;2、资讯排重
+出现资讯重复播放的问题，能否做到完整播放过的资讯，别再播放了。&lt;/p&gt;
+&lt;p&gt;3、更精准地记住播放位置
+相同节目，无法记住上一次播放的位置，比如连载评书三国演义，上一次听到第二章的第 15 分 35 秒，再次播放时只会从第二章的开头播放，无法从 15 分 35 秒处继续播放。&lt;/p&gt;
+&lt;h3&gt;二、提供更多资源&lt;/h3&gt;
+&lt;p&gt;特色爆款节目无法找到，如 新闻联播每日音频回放。
+缺少英语新闻。&lt;/p&gt;
+&lt;p&gt;可能的丰富音频资源的办法：&lt;/p&gt;
+&lt;p&gt;1、直接播放第三方音频
+希望能做到在天猫精灵 APP 内通过 webview 打开第三方网页，网页播放音频时，能选择将天猫精灵音箱作为外放。比如百度网盘里的音频，能将智能音箱作为外放。&lt;/p&gt;
+&lt;p&gt;2、搭建内容开放平台，PGC
+一些不错的公众号文章，会提供音频版，但散落在微信公众平台，并不能为天猫精灵所用。天猫精灵能否与自媒体合作，给他们方便的工具，将内容提交到开放平台。如 财经早餐、人民日报、十点读书等，在喜马拉雅更新不勤快，但公众号更新很勤快，导致天猫精灵无法使用。&lt;/p&gt;
+&lt;p&gt;3、让用户分享音频，UGC
+许多内容都是文字的，能否通过用户生产音频？比如用户可以念新闻，选择是否分享给其他用户。&lt;/p&gt;
+&lt;p&gt;当然我知道这个体验反馈估计不会引起天猫精灵的注意，因为资讯是第三方的乐天头条提供的。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>基于古诗词名言名篇应用需求分析</title><link href="/ji-yu-gu-shi-ci-ming-yan-ming-pian-ying-yong-xu-qiu-fen-xi.html" rel="alternate"></link><published>2019-02-25T19:57:57+08:00</published><updated>2019-02-25T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2019-02-25:/ji-yu-gu-shi-ci-ming-yan-ming-pian-ying-yong-xu-qiu-fen-xi.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;产品设计
+categories:&lt;/li&gt;
+&lt;li&gt;产品设计&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;「到此一游」小程序，让装逼来得更文艺些！问题来了，吹牛怎么变成现实？  &lt;/p&gt;
+&lt;h2&gt;场景举例&lt;/h2&gt;
+&lt;p&gt;昨天又和我娘子吹了 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;产品设计
+categories:&lt;/li&gt;
+&lt;li&gt;产品设计&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;「到此一游」小程序，让装逼来得更文艺些！问题来了，吹牛怎么变成现实？  &lt;/p&gt;
+&lt;h2&gt;场景举例&lt;/h2&gt;
+&lt;p&gt;昨天又和我娘子吹了一遍「到此一游」应用的构想，比如：  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;游庐山，拾级而上，为美景所吸引，想引用点知名诗句诗并配图发到朋友圈装逼，可记性不好死活想不起来？没关系，打开「到此一游」小程序，摇一摇，摇出毛主席写的与庐山有关的诗句，发到朋友圈，引来点赞无数。  &lt;/p&gt;
+&lt;p&gt;引用别人的没意思？没关系，花费 1 块钱，切换到 AI 写诗模式，程序自动基于位置，关联景点、美食、天气、用户昵称、已有的古诗词名言名篇等自动写诗。  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这个场景还让我想起了小学五年级一位老师兜售作文描写词典的往事。想看看名家怎么描写雪景？打开描写词典瞅瞅！现在应该通过互联网、大数据、APP、人工智能技术让让这种需求得到更好的满足！  &lt;/p&gt;
+&lt;p&gt;简而言之，「到此一游」小程序让古诗词、名人名言名篇在现实生活中得到应用，满足装逼犯的表现欲。手机版「描写词典」满足学生党掉书袋、写满分作文的需求。  &lt;/p&gt;
+&lt;h2&gt;需求证明&lt;/h2&gt;
+&lt;p&gt;通过常见检索证明有需求。比如百度搜索以下关键词：  &lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;关键词&lt;/th&gt;
+&lt;th&gt;索引量&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;关于XX的诗句&lt;/td&gt;
+&lt;td&gt;100万+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;描写XX的诗句&lt;/td&gt;
+&lt;td&gt;3200万+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;关于XX的名言&lt;/td&gt;
+&lt;td&gt;1500万+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;出自哪里&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;下一句是什么&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://www.baidu.com/s?wd=%E4%B8%8A%E4%B8%80%E5%8F%A5%E6%98%AF%E4%BB%80%E4%B9%88&amp;amp;ie=UTF-8"&gt;上一句是什么&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;商业前景&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2C，按服务收费，增值服务收费；  &lt;/li&gt;
+&lt;li&gt;2B，也可以输出技术能力给教育机构。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;问题&lt;/h2&gt;
+&lt;h3&gt;刚需吗？高频吗？&lt;/h3&gt;
+&lt;p&gt;学生提升古文考试成绩是刚需！安传东已经拿到投资了。  &lt;/p&gt;
+&lt;h3&gt;技术难度&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;诗词库、古文库、名言、名篇库；  &lt;/li&gt;
+&lt;li&gt;对诗词古文名篇打标签；  &lt;/li&gt;
+&lt;li&gt;匹配算法；  &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI写诗&lt;/strong&gt;；  &lt;/li&gt;
+&lt;li&gt;小程序开发。  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;竞品分析&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;产品名称&lt;/th&gt;
+&lt;th&gt;简介&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://www.jinrishici.com/"&gt;今日诗词&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;今日诗词是一个诗词实时智能推荐的网站。根据不同地点、时间、节日、季节、天气、景观、城市进行智能推荐。今日诗词提供今日诗词API，可以通过图片和 JSON 格式调用。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="http://www.xcz.im/"&gt;西窗烛&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;千万级下载量？&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="http://duilian.msra.cn/app/couplet.aspx"&gt;电脑对联&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;由微软亚洲研究院自然语言计算组研发的计算机自动对联系统。  技术看着不错！&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;偶得&lt;/td&gt;
+&lt;td&gt;IBM中国研究院基于回馈神经网络的深度学习模型，开发的诗歌自动写作应用系统。它巧妙地将语音学特征引入到诗词的算法当中，当输入“神策数据”四个字后，自动输出一首七言藏头诗：“神仙不得隐无踪，策杖长空水墨中，数点红莲开碧玉，据临万象搫金龙。”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;席读&lt;/td&gt;
+&lt;td&gt;创业名人安传东切入的市场&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="http://www.a-site.cn/article/805835.html"&gt;古诗文助手&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;还没怎么研究&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://poem.msxiaobing.com/"&gt;少女诗人小冰&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;微软小冰，看图创作现代诗&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href="https://jiuge.thunlp.cn/"&gt;九歌&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;清华大学，基于深度学习的中国古典诗歌自动生成系统。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;总体看，目前基于古诗词名篇的应用不太好玩，好玩才能让学生好学。机会是有的。  &lt;/p&gt;
+&lt;h2&gt;参考资料&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://baijiahao.baidu.com/s?id=1608115520173864534&amp;amp;wfr=spider&amp;amp;for=pc"&gt;用AI写歌的清华博士生宿涵：科技让音乐更美好&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zhuanlan.zhihu.com/p/38465195"&gt;AI智能文案一秒生成20000条创意，文案要失业了？&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://102.alibaba.com/detail/?id=180"&gt;“天猫精灵”如何为你写诗？人机共创的秘密在这儿&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.leiphone.com/news/201809/nkL0pOmRWT9yQhkr.html"&gt;清华大学矣晓沅：「九歌」——基于深度学习的中国古典诗歌自动生成系统&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.weibo.com/6347645237/GANze1NDr"&gt;九歌联合腾讯相册管家、中国国家地理，推出思乡写诗功能&lt;/a&gt;  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;反馈&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;属于 nice to have，不属于 must have 。  &lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>我理解的「离钱近」</title><link href="/wo-li-jie-de-chi-qian-jin.html" rel="alternate"></link><published>2019-02-22T19:57:57+08:00</published><updated>2019-02-22T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2019-02-22:/wo-li-jie-de-chi-qian-jin.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;商业思考
+categories:&lt;/li&gt;
+&lt;li&gt;商业思考&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;我对于「离钱近」的理解，其中一类场景的关键词是「账户」，比如银行等借贷平台、公募基金等资产管理公 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;商业思考
+categories:&lt;/li&gt;
+&lt;li&gt;商业思考&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;我对于「离钱近」的理解，其中一类场景的关键词是「账户」，比如银行等借贷平台、公募基金等资产管理公司。用户在这些公司创立账户，并把钱放进去，公司能动用这些钱，从中赚取价差、收取管理费或收益提成，非常爽。只要用户不走，就能持续收到钱。这类场景往往是牌照保护。&lt;/p&gt;
+&lt;p&gt;另一类场景的关键词是「交易」，比如淘宝上每天在进行各种交易，一手交钱一手交货。又比如外卖，每天发生上千万量级的交易，覆盖人群大，还高频，这也算是离钱近。&lt;/p&gt;
+&lt;p&gt;相对来说，媒体行业大家觉得离钱远，是因为媒体免费向用户提供内容，靠卖广告或软文收钱，不直接向用户收钱。知识付费稍微不同一点，直接像用户卖内容，一手交钱一手交货，离钱近。&lt;/p&gt;
+&lt;p&gt;以上这些都是建立在用户有需求的基础上，而产品服务提供者比同行更好地提供了用户需要的东西，就收到钱了。或者东西差不多，但效率更高，也行。&lt;/p&gt;
+&lt;p&gt;再看我们都了解的金融信息服务行业，它为金融行业从业者或投资者提供信息服务。如果是万得卖终端，一手交钱一手交货，属于交易场景，离钱近。至于后来者怎么切入，是另外一个问题。&lt;/p&gt;
+&lt;p&gt;金融信息服务业相比于借贷、资产管理、投行等我们通常理解的金融行业，它没有账户，没有资金沉淀，离钱又远一些了。&lt;/p&gt;
+&lt;p&gt;再看区块链行业，离交易近的环节，典型如一级市场投资、二级市场的交易所，是个好模式，尤其是交易所，等于是券商+交易所二合一。但目前看，给后来者似乎没什么机会了。&lt;/p&gt;
+&lt;p&gt;基于区块链的项目，愿景宏大，但吹牛居多，虚无缥缈。有些概念甚至违背经济学原理。&lt;/p&gt;
+&lt;p&gt;我最近几天在思考分布式商业有什么逻辑缺陷，我觉得它可能违背了分工提高效率的经济学原理。比如出行，打车的用户最关心的是怎么以合适的价格高效地找到出行服务提供者，除此之外，应该把精力花在他擅长的主业上，没必要去为出行服务平台拉用户，因为这样的机会成本很大。拉用户的事情，雇佣管理团队专职做就行了，专业的人才能做得更好。另外，有了基于通证的激励机制，就能解决管理层的道德风险问题吗？不见得，管理层该揩油的还是会揩油。&lt;/p&gt;
+&lt;p&gt;此外，如果是早期项目，呈现的是一级市场的投资场景，分布式商业的模式过早地让普通个人投资者参与其中并不适合，风险太高，否则传统金融领域就没必要设定私募门槛了。机构投资者可以同时投资多个项目，如果某个项目黄了，对机构整体的收益风险并不大，但对个人投资者而言，由于资金实力有限，无法通过同时投资多个项目而分散风险，在一个项目上踩雷，血本无归，在投资上恐怕难以再翻身了。&lt;/p&gt;
+&lt;p&gt;区块链是个好技术，在许多地方有它的价值，金融等行业也在尝试使用。但就像 AI ，没有场景、没有数据，一切都白搭，顶多为掌握了场景的甲方打工。庞大如百度，自动驾驶技术也得和车企合作。&lt;/p&gt;
+&lt;p&gt;所以，不一定要有「账户」才离钱近，有交易场景，用户愿意买单，就是离钱近。当然，如果交易基数大、频次高、客单价高，就更好了。&lt;/p&gt;
+&lt;p&gt;再具体到你的技术团队本身的优势，目前做的事情完全体现不出价值，机会成本太高了。好好挖掘实际需求、能利用自身优势做的事情，可能是更好的选择。可以暂时不全身心做主战场的事情，但可以花一部分精力去做主战场的事情，就好比
+Tushare 团队，兼职做、免费用，虽然暂时看不出什么大的前景，但慢慢积累用户，做出口碑，未来他们也许就可以拿到投资，全身心投入。现在已经开始搞积分了，token 的感觉，哈哈。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>旧电脑安装 Ubuntu 折腾记</title><link href="/jiu-dian-nao-an-zhuang-ubuntu-zhe-teng-ji.html" rel="alternate"></link><published>2019-02-13T19:57:57+08:00</published><updated>2019-02-13T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2019-02-13:/jiu-dian-nao-an-zhuang-ubuntu-zhe-teng-ji.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;电脑数码
+categories:&lt;/li&gt;
+&lt;li&gt;电脑数码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;家里只有一台 2012 年的 Mac 电脑，但常被被娘子占用，我自己如果没有带公司电脑回家，经常无电脑可用 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;电脑数码
+categories:&lt;/li&gt;
+&lt;li&gt;电脑数码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;家里只有一台 2012 年的 Mac 电脑，但常被被娘子占用，我自己如果没有带公司电脑回家，经常无电脑可用。书桌底下柜子里还躺着一台十多年前的惠普电脑，就想利用起来，不过安装的是 Windows XP 系统，作为编程开发环境不方便。遂打算改装系统，换成 Ubuntu，好专心用来码代码，避免出现 Windows 上各种奇怪的 Bug。&lt;/p&gt;
+&lt;p&gt;说起用 Windows 环境写代码这事儿来。就拿几个月前的一次经历来说吧。当时在 Windows 环境下修改了一个 Python 脚本，本地测试一切正常，但更新到 Ubuntu 服务器之后脚本无法正常运行，费好大劲才定位到问题所在，原来是 file format 从 unix 变成 dos 了。&lt;/p&gt;
+&lt;p&gt;回归正题，那就开始折腾吧。没想到折腾了三个晚上才搞定，中途最大的麻烦就是无线网卡驱动的安装问题。 我的老古董接网线也无法上网，只能通过离线安装，无形中增加了难度。找半天幸好找到了离线安装的办法。&lt;/p&gt;
+&lt;p&gt;主要过程如下：
+安装 Ubuntu 14，64 位，可以安装无线网卡驱动，但运行太慢，操作很卡。有人建议那么老的电脑别安装 64 位系统；
+改成 Ubuntu 14，32 位，无法安装无线网卡驱动；
+改成 Ubuntu 16，32 位，无法安装无线网卡驱动；
+改成 LUbuntu 18, 32 位，无法正常启动，黑屏，也不报啥错误信息。而且安装过程也不够傻瓜，得自己配置分区，对我来说折腾过多次依然害怕；
+改成 Puppy Linux，竟然无需自己折腾无线网卡驱动，能联网！问题是无法正常显示中文，而且界面也奇丑无比；
+改成 Ubuntu 12，32 位，成功安装无线网卡驱动。&lt;/p&gt;
+&lt;p&gt;按照提示 update 系统，结果所有界面都出现这样的问题，找不到窗口的菜单栏，无法关闭，终端也无法敲入命令，废了。&lt;/p&gt;
+&lt;p&gt;重新安装 Ubuntu 12，32 位，回退到更新前的状态，重新安装驱动，重复做相同的事情，时间就这样浪费了。&lt;/p&gt;
+&lt;p&gt;总算可以松一口气，老古董能正常使用了。希望以后别再乱升级，能正常运行就不错了，保证偶尔能应急用一下。&lt;/p&gt;
+&lt;p&gt;折腾中途曾经想放弃，但不能让电脑正常使用让我很不甘心，最终还是坚持下来了。&lt;/p&gt;
+&lt;p&gt;题外话，每天都要使用的东西，高频，应该买好用的，避免折腾，因为时间才是最贵的，应该把时间用来做更有价值的事情，而不是用在重复造轮子上。&lt;/p&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://mirrors.163.com/ubuntu-releases/12.04.5/"&gt;Ubuntu 12 系统 iso 文件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://jingyan.baidu.com/article/ce4366494448fd3773afd306.html"&gt;利用 Rufus 制作 U 盘启动盘&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.csdn.net/ifmvo/article/details/54023628"&gt;Ubuntu 离线安装网卡驱动&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.cnbeta.com/articles/tech/417919.htm"&gt;7 款适用老旧设备并对初学者非常友好的轻量级 Linux 发行版&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>财报牛牛「个股群」入群指南</title><link href="/cai-bao-niu-niu-ge-gu-qun-ru-qun-zhi-nan.html" rel="alternate"></link><published>2019-01-05T19:06:00+08:00</published><updated>2019-01-05T19:06:00+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2019-01-05:/cai-bao-niu-niu-ge-gu-qun-ru-qun-zhi-nan.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;项目
+categories:&lt;/li&gt;
+&lt;li&gt;项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;作为投资者，需要阅读大量信息，并与其他投资者一起交流，以增进对投资标的的认识。但如何高效获取信息、找 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;项目
+categories:&lt;/li&gt;
+&lt;li&gt;项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;作为投资者，需要阅读大量信息，并与其他投资者一起交流，以增进对投资标的的认识。但如何高效获取信息、找到值得交流的投资者，一直是个难题。&lt;/p&gt;
+&lt;p&gt;为此，财报牛牛作了一些探索，具体的解决方案，我们称之为微信「个股群」。下图的拼多多群讨论片段就是一个典型案例：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cbnn-wechat-group.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;该群和其他微信群最大的不同在于，它为你定制了一个智能机器人「小黄牛」。小黄牛由「财报牛牛」研发，到处采集个股重要信息，并第一时间发送到群里。这些信息包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;公司新闻&lt;/strong&gt;：最新公告、财报预告 、财报结果等；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;经营动态&lt;/strong&gt;：招聘动向、APP/小程序更新日志和排名变化等；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;高管跟踪&lt;/strong&gt;：高管行为、言论、社会评价等；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;热门讨论&lt;/strong&gt;：来自雪球、知乎等社区的精选话题；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;其他内容&lt;/strong&gt;：分析、研报等其他相关信息。  &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;除了「小黄牛」，群里还有和你一样共同关注个股的投资者，当你对股票动态发表观点时，说不定就能引发他们的干货发言。&lt;/p&gt;
+&lt;p&gt;财报牛牛目前已创建包括陌陌、拼多多和分众传媒在内的3个个股群，更多个股群还在陆续创建中。&lt;/p&gt;
+&lt;p&gt;心动了吗？那就点击「好看」后联系牛牛提交申请吧！申请时请注明你想加入的群。为保证交流质量，牛牛会对申请进行审核，届时需要你配合回答一些问题。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cbnn-wechat-account-qrcode.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;长按或保存二维码，联系牛牛(微信号：cbnn2018)&lt;/p&gt;
+&lt;p&gt;如果你想要其他个股群，也欢迎反馈，并提供你觉得不错的个股信息源。&lt;/p&gt;
+&lt;p&gt;「个股群」服务目前免费。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>如何将网站的内容发送到微信群</title><link href="/ru-he-jiang-wang-zhan-de-nei-rong-fa-song-dao-wei-xin-qun.html" rel="alternate"></link><published>2018-10-15T19:57:57+08:00</published><updated>2018-10-15T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2018-10-15:/ru-he-jiang-wang-zhan-de-nei-rong-fa-song-dao-wei-xin-qun.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;编程
+categories:&lt;/li&gt;
+&lt;li&gt;编程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;过程简述&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;雪球等 --&amp;gt; rsshub_rss / Huginn_rss --&amp;gt; inoreader_rss聚合 --&amp;gt; web_wechat_api --&amp;gt; 微信&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;过程分述&lt;/h3&gt;
+&lt;p&gt;目前的推送过程是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过开源的 Rsshub / Huginn 作为数据抓取工具，生成 rss 格式 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;编程
+categories:&lt;/li&gt;
+&lt;li&gt;编程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;过程简述&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;雪球等 --&amp;gt; rsshub_rss / Huginn_rss --&amp;gt; inoreader_rss聚合 --&amp;gt; web_wechat_api --&amp;gt; 微信&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;过程分述&lt;/h3&gt;
+&lt;p&gt;目前的推送过程是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过开源的 Rsshub / Huginn 作为数据抓取工具，生成 rss 格式数据；&lt;/li&gt;
+&lt;li&gt;inoreader 订阅多个 rsshub 生成的 rss 数据，形成 rss 组；&lt;/li&gt;
+&lt;li&gt;rss 组自身有又可以额外生成一个新 rss，这个新 rss 包括了多个子 rss ；&lt;/li&gt;
+&lt;li&gt;VPS 上创建定时任务检查 rss 更新，then 通过 webhook 发一条消息到微信群。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;最后一步的 webhook 是关键，涉及到打通外部网络与微信群的通路，靠的是一个开源的项目 &lt;a href="https://github.com/joeeeeey/web_wechat_api"&gt;web_wechat_api&lt;/a&gt;，它将微信个人号发送消息等接口封装成 web api ，方便外部系统调用。目前我稍微改造了一下，通过 Docker 部署在 VPS 上，省去部署程序的痛苦。&lt;/p&gt;
+&lt;p&gt;其次，这一步可能会漏消息，没搞明白什么原因。目前的解决方案是，如果发送结果为失败，则继续尝试重新发送。&lt;/p&gt;
+&lt;p&gt;再者，基于个人微信号搭建的微信机器人，不太稳定，为此，我每隔一个小时给指定的小群发送一个托福单词，如果发送间断，说明通道服务挂了，需要登录 VPS 及时重启。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>财报牛牛能为你做什么</title><link href="/cai-bao-niu-niu-neng-wei-ni-zuo-shi-yao.html" rel="alternate"></link><published>2018-08-13T23:53:00+08:00</published><updated>2018-08-13T23:53:00+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2018-08-13:/cai-bao-niu-niu-neng-wei-ni-zuo-shi-yao.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;项目
+categories:&lt;/li&gt;
+&lt;li&gt;项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;财报牛牛能为你做什么？&lt;/h1&gt;
+&lt;p&gt;牛牛  光子财经  &lt;em&gt;2018-08-13 23:53&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;“某某股票什么时候发财报？”牛牛在逛一些投资交流平台时，总能 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;项目
+categories:&lt;/li&gt;
+&lt;li&gt;项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;财报牛牛能为你做什么？&lt;/h1&gt;
+&lt;p&gt;牛牛  光子财经  &lt;em&gt;2018-08-13 23:53&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;“某某股票什么时候发财报？”牛牛在逛一些投资交流平台时，总能看到这类问题。  &lt;/p&gt;
+&lt;p&gt;这确实是投资者的基本需求之一。众所周知，财报是上市公司定期披露的业绩报告，是研究公司基本面的第一手材料。任何对投资决策负责的投资者，都不会忽视它的价值。&lt;/p&gt;
+&lt;p&gt;但是财报提醒需求被很好地满足了吗？虽然目前市场上不乏此类服务提供者，但投资者还是感觉相当“不爽”：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;投资交流平台功能太多，财报提醒入口很难找；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;千辛万苦找到了入口，却发现历史数据杂乱又零散；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;没有财报结果提醒，如果不主动查询，发了财报根本就不知道；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;就算有提醒，也是夹杂在各类消息中，一不小心就看漏了。  &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其实，投资者的需求很简单，但目前市场上的实现方案却过于复杂。为了让投资者更“爽”，牛牛为投资者准备了新的解决方案：&lt;strong&gt;只需要关注微信公众号「财报牛牛」，在财报日历中添加股票，剩下的工作就交给牛牛了。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cbnn-mystocks.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;在财报日历中添加股票，即可查看股票最新财报的发布日期、预期EPS和实际EPS。  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cbnn-receive-notification-in-wechat.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;关注微信公众号「财报牛牛」，即可自动接收财报预告。  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cnbb-result-notification.jpeg"&gt;&lt;/p&gt;
+&lt;p&gt;自选股财报结果发布后，第一时间通知你。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cnbb-result-detail.jpeg"&gt;  &lt;/p&gt;
+&lt;p&gt;你还可以在「财报牛牛」的个股详情页里，获得财报公告和电话会议链接，省去从纷繁复杂的信息海洋中搜寻这些材料的烦恼。  &lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cnbb-search.jpeg"&gt;  &lt;/p&gt;
+&lt;p&gt;此外，如果你想查阅某个股票最新的财报信息，只需在「财报牛牛」公众号内输入股票代码或股票名称，即可获得你想要的结果。  &lt;/p&gt;
+&lt;p&gt;好了，今天牛牛就为你介绍到这里啦。如果你还有其他“不爽”，记得给牛牛留言。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>利用类Slack软件背单词</title><link href="/li-yong-lei-slackruan-jian-bei-dan-ci.html" rel="alternate"></link><published>2017-11-14T19:57:57+08:00</published><updated>2017-11-14T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2017-11-14:/li-yong-lei-slackruan-jian-bei-dan-ci.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;编程
+categories:&lt;/li&gt;
+&lt;li&gt;编程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;出发点&lt;/h3&gt;
+&lt;p&gt;我认为英语单词需要天天背诵，重复重复再重复，是不是在眼前露个脸，加深记忆。&lt;/p&gt;
+&lt;h3&gt;怎么做到？&lt;/h3&gt;
+&lt;p&gt;但是，问题来 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;编程
+categories:&lt;/li&gt;
+&lt;li&gt;编程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;出发点&lt;/h3&gt;
+&lt;p&gt;我认为英语单词需要天天背诵，重复重复再重复，是不是在眼前露个脸，加深记忆。&lt;/p&gt;
+&lt;h3&gt;怎么做到？&lt;/h3&gt;
+&lt;p&gt;但是，问题来了，每天工作太忙，又有智能手机占用太多时间，哪有功夫去背单词？&lt;/p&gt;
+&lt;p&gt;我的答案是：利用零碎时间。&lt;/p&gt;
+&lt;p&gt;怎么利用？利用工具，通过定时发条消息到手机上的方式来实现。&lt;/p&gt;
+&lt;h3&gt;最终效果预览&lt;/h3&gt;
+&lt;p&gt;提醒自己喝水，消息附带一个单词。&lt;/p&gt;
+&lt;h3&gt;方案架构&lt;/h3&gt;
+&lt;p&gt;通过云服务器定时往类 Slack 软件 BearyChat 发送一条消息。具体如下：&lt;/p&gt;
+&lt;h4&gt;触发器&lt;/h4&gt;
+&lt;p&gt;在服务器上设一个定时任务&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;服务器。 购买便宜的 VPS 作为服务器，每个月 2.5 美元，选择 Ubuntu 系统，方便设置定时任务。&lt;/li&gt;
+&lt;li&gt;域名。在万网上购买 &lt;code&gt;zhihai.me&lt;/code&gt; ，便宜，一年十几块钱。没有对比 godaddy 一年多少钱。&lt;/li&gt;
+&lt;li&gt;WEB 服务。部署基于 Django 的 Mezzanine ，省得自己折腾。为了学这个花了不少时间，顺便部署了一个 &lt;a href="http://zhihai.me"&gt;博客&lt;/a&gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;接收器&lt;/h4&gt;
+&lt;p&gt;该 BearyChat 出场了。在客户端，以 BearyChat 作为消息接收工具。BearyChat 提供了 Ingoing 这个好用的工具。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>今日参考盈亏该如何计算</title><link href="/jin-ri-can-kao-ying-yu-gai-ru-he-ji-suan.html" rel="alternate"></link><published>2017-11-03T19:57:57+08:00</published><updated>2017-11-03T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2017-11-03:/jin-ri-can-kao-ying-yu-gai-ru-he-ji-suan.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;证券
+categories:&lt;/li&gt;
+&lt;li&gt;证券&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;所需工具&lt;/h2&gt;
+&lt;p&gt;今日参考盈亏该如何计算&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;算法一：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;今日参考盈亏额 ＝&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（现价-昨日收盘价格）* (当前持股量-今日买入数量) //存 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;证券
+categories:&lt;/li&gt;
+&lt;li&gt;证券&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;所需工具&lt;/h2&gt;
+&lt;p&gt;今日参考盈亏该如何计算&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;算法一：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;今日参考盈亏额 ＝&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;（现价-昨日收盘价格）* (当前持股量-今日买入数量) //存量部分&lt;/li&gt;
+&lt;li&gt;买入数量 * 现价 - 买入发生金额 //增量部分：买入&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;卖出金额 - 昨收价 * 卖出数量 // 卖出&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;算法二：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>开通工银亚洲账户的经历</title><link href="/kai-tong-gong-yin-ya-zhou-zhang-hu-de-jing-li.html" rel="alternate"></link><published>2017-09-01T19:57:57+08:00</published><updated>2017-09-01T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2017-09-01:/kai-tong-gong-yin-ya-zhou-zhang-hu-de-jing-li.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;琐事
+categories:&lt;/li&gt;
+&lt;li&gt;琐事&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;富途证券通过支付宝上银汇款入金被拒。顺便想到出金问题。富途证券建议用境外银行卡，从境外卡汇款到境 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;琐事
+categories:&lt;/li&gt;
+&lt;li&gt;琐事&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;富途证券通过支付宝上银汇款入金被拒。顺便想到出金问题。富途证券建议用境外银行卡，从境外卡汇款到境内同名卡。因为境外机构账户往境内账号汇款容易失败，而个人同名卡之间汇款成功率高。&lt;/p&gt;
+&lt;p&gt;该开通什么银行的账户？看到帖子《&lt;a href="https://xueqiu.com/4043855103/75461122"&gt;吐血整理！内地办理香港银行卡最强攻略！&lt;/a&gt;》&lt;/p&gt;
+&lt;p&gt;联系招行信用卡客服索要最近三个月的纸质账单，收件地址为我的住所地址。这个用来证明居住地址的。不过后来才知道有办法不需要这个材料。&lt;/p&gt;
+&lt;p&gt;打开工银亚洲网站，线上填写开户申请资料，打印申请表，确认可以线下见证的营业厅。&lt;/p&gt;
+&lt;p&gt;拿着用公司打印机彩色打印的工银亚洲开户申请表，找附近支持工银亚洲线下见证的工行北京惠新支行。还没到银行开门我就已经在门口等候了。到了营业厅问询台，工作人员却告知办理工银亚洲线下见证的预约排队已经排到 2018 年 11 月！如果需要，我可以先做个预约，什么时候轮到我，就等电话通知吧？我说等明年 11 月，我都可能已经移民火星了。&lt;/p&gt;
+&lt;p&gt;十分气愤，我反复质疑怎么可能要那么久，大声疾呼“不科学！让我预约是没有问题的，但要等一年多不科学。把排队名单给我看，不然我怎么相信你真的需要这么久？！”没有预约觉得理亏，我退一步：当天如果有人预约了没来，把这个空缺让给我，让我办理，不能让我那么辛苦专门请假白来一趟。必须告诉我今天是否有预约者无法前来办理。&lt;/p&gt;
+&lt;p&gt;工作人员还算客气，给我去里面的办公室查了，过了一阵子，回来跟我说当天真的没有，都会来办理，第二天有人不来，我可以早点到，找工作人员要一个号，给我办理。我收行，病赔礼道歉，我态度不好，过于着急云云，并告诉她我开户的真实目的是投资境外股市。她很认真地指导我把能先填写签字的表格先填好，签名，除了日期留着办理当天再填写。相比线上工银亚洲公开的填写指引，她告诉我几个重要的修改：居住地址可以选择和身份证地址一样，如此一来就无需住址证明了；开户用途不要勾选发工资之类的，少填写为好，只需勾选两个，具体哪两个我已经忘记了。这两个地方真是潜规则呀，不去现场还不容易知道，害得我事先傻傻地找招行信用卡客服要最近三个月的纸质账单。&lt;/p&gt;
+&lt;p&gt;离开银行回公司上班的路上，我顺便打电话咨询工商银行北辰支行，接电话的人告诉我，不支持护照办理，必须是签注有效期在三个月内的港澳台通行证才可以办理。预约队伍也排到了 2018 年的 7 月份。&lt;/p&gt;
+&lt;p&gt;第二天一大早，带着已经准备好的材料再次前往工商银行惠新支行。40 分钟左右就办好了，给我一个保密信函和一个电子密码器。工作人员说我这次线下见证真是快。我说多亏了头一天她的同事亲自指导，少走了弯路。无需上传住址证明，确实让办理流程加快了不少。&lt;/p&gt;
+&lt;p&gt;2017-08-30：工银亚洲来电话和我确认个人信息、收件地址等。提醒我注意汇入资金激活账户。&lt;/p&gt;
+&lt;p&gt;2017 年 9 月 1 日，短信通知：&lt;em&gt;【工银亚洲】您的账户及银行服务已开通，请存入同名存款激活相关账户及银行服务。账户激活前一概拒纳收取任何非同名存款。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;对了，此时我该如何存款呢？账号在哪里？一会儿找客服确认。&lt;/p&gt;
+&lt;p&gt;先分享到这里，若有错别字我再改。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>产品设计之列表设计要点</title><link href="/chan-pin-she-ji-zhi-lie-biao-she-ji-yao-dian.html" rel="alternate"></link><published>2017-08-30T19:57:57+08:00</published><updated>2017-08-30T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2017-08-30:/chan-pin-she-ji-zhi-lie-biao-she-ji-yao-dian.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;产品设计
+categories:&lt;/li&gt;
+&lt;li&gt;产品设计&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;以交易记录列表为例，需要考虑一下几个地方：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;访问授权。
+  是否需要登录才能访问。&lt;/li&gt;
+&lt;li&gt;初始状态。
+  为空时界 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;产品设计
+categories:&lt;/li&gt;
+&lt;li&gt;产品设计&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;以交易记录列表为例，需要考虑一下几个地方：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;访问授权。
+  是否需要登录才能访问。&lt;/li&gt;
+&lt;li&gt;初始状态。
+  为空时界面显示文案“该时段暂无记录”。&lt;/li&gt;
+&lt;li&gt;翻页。
+  每页显示 30 条记录。&lt;/li&gt;
+&lt;li&gt;排序。&lt;/li&gt;
+&lt;li&gt;按成交时间倒序；&lt;/li&gt;
+&lt;li&gt;切换排序，是否可以按其他字段排序，正序与倒序。&lt;/li&gt;
+&lt;li&gt;刷新。&lt;/li&gt;
+&lt;li&gt;打开时刷新一次；&lt;/li&gt;
+&lt;li&gt;3s 自动刷新一次；&lt;/li&gt;
+&lt;li&gt;下拉刷新。&lt;/li&gt;
+&lt;li&gt;缓存。
+  客户端是否提供缓存，以提升体验，避免等待请求时页面为空。&lt;/li&gt;
+&lt;li&gt;时间范围。
+  默认显示当月的记录，可选择其他月份。&lt;/li&gt;
+&lt;li&gt;显示字段。
+  每条记录显示：股票名称、股票代码、市场、交易方向、成交价格、成交数量、成交时间。&lt;/li&gt;
+&lt;li&gt;操作按钮。
+  点击各行是否提供操作菜单。&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>如何通过IB模拟账号体验程序化交易</title><link href="/ru-he-tong-guo-ibmo-ni-zhang-hao-ti-yan-cheng-xu-hua-jiao-yi.html" rel="alternate"></link><published>2017-08-24T19:57:57+08:00</published><updated>2017-08-24T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2017-08-24:/ru-he-tong-guo-ibmo-ni-zhang-hao-ti-yan-cheng-xu-hua-jiao-yi.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;证券
+categories:&lt;/li&gt;
+&lt;li&gt;证券&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;所需工具&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;IB 账号信息&lt;/li&gt;
+&lt;li&gt;通过老虎证券获取 IB 账号和密码&lt;/li&gt;
+&lt;li&gt;登录 IB 后台，申请 &lt;a href="https://www.interactivebrokers.com/en/software/allocationfunds/topics/papertrader.htm"&gt;IB 模拟交易账号&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;抓包&lt;/li&gt;
+&lt;li&gt;安卓本地抓包 …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;证券
+categories:&lt;/li&gt;
+&lt;li&gt;证券&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;所需工具&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;IB 账号信息&lt;/li&gt;
+&lt;li&gt;通过老虎证券获取 IB 账号和密码&lt;/li&gt;
+&lt;li&gt;登录 IB 后台，申请 &lt;a href="https://www.interactivebrokers.com/en/software/allocationfunds/topics/papertrader.htm"&gt;IB 模拟交易账号&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;抓包&lt;/li&gt;
+&lt;li&gt;安卓本地抓包工具 &lt;a href="https://github.com/JZ-Darkal/AndroidHttpCapture"&gt;HttpCapture&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;包文件解析工具 &lt;a href="http://www.telerik.com/download/fiddler"&gt;Fiddler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;IB API for Python&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://interactivebrokers.github.io/tws-api/classIBApi_1_1Contract.html#gsc.tab=0"&gt;IB 官方 API 文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/blampe/IbPy"&gt;IbPy 第三方 Python API&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://valiant-falstaff.github.io/IbPy-Getting-Started/"&gt;入门教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.quantstart.com/articles/Using-Python-IBPy-and-the-Interactive-Brokers-API-to-Automate-Trades"&gt;下单 DEMO&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;其他信息&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.interactivebrokers.com/en/index.php?f=16040"&gt;TWS 下载地址&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/getlantern/forum/issues/833"&gt;科学上网&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>ibpy-tutorial</title><link href="/ibpy-tutorial.html" rel="alternate"></link><published>2017-08-23T19:57:57+08:00</published><updated>2017-08-23T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2017-08-23:/ibpy-tutorial.html</id><content type="html">&lt;ul&gt;
+&lt;li&gt;证券
+categories:&lt;/li&gt;
+&lt;li&gt;证券&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href="https://valiant-falstaff.github.io/IbPy-Getting-Started/"&gt;IbPy Tutorial&lt;/a&gt;，流畅的行文，让我夜不能寐！希望能把它翻译成中文。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>我是如何复习迎考 Series 65 的</title><link href="/wo-shi-ru-he-fu-xi-ying-kao-series-65-de.html" rel="alternate"></link><published>2014-11-26T19:57:57+08:00</published><updated>2014-11-26T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2014-11-26:/wo-shi-ru-he-fu-xi-ying-kao-series-65-de.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;琐事
+categories:&lt;/li&gt;
+&lt;li&gt;琐事&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;题记：这是 2014 年最后一天回顾当时的考试经历，可作为复习建议给后来者。原文首发于&lt;a href="https://xueqiu.com/1880228584/34685622"&gt;雪球&lt;/a&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;我是如何复习迎考 …&lt;/h2&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;琐事
+categories:&lt;/li&gt;
+&lt;li&gt;琐事&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;题记：这是 2014 年最后一天回顾当时的考试经历，可作为复习建议给后来者。原文首发于&lt;a href="https://xueqiu.com/1880228584/34685622"&gt;雪球&lt;/a&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;我是如何复习迎考 Series 65 的&lt;/h2&gt;
+&lt;p&gt;2014 年底的 12 月 26 日，再战，终于通过 series 65 考试，得分 76%，比及格线高出 4 分，130 道题里做对了 99 道题，十分幸运。&lt;/p&gt;
+&lt;h3&gt;初战失利&lt;/h3&gt;
+&lt;p&gt;9 月份第一次考试前，也复习了一次，但完全不得要领。&lt;/p&gt;
+&lt;p&gt;先把 wiley 的教材通读了一遍。看的时候就发现知识点之间的层级关系标注得非常乱，还不如 investopedia 里的编排来得清晰。但后者也有缺点，太简洁，解释不够详细。&lt;/p&gt;
+&lt;p&gt;不像中国的考试，series65 在网上的资料非常少，基本没找到什么题目，也不知道题型是什么样的，国内考试经典的题海战术也无从发挥。好不容易从 quizlet 里找到一份开普兰的模拟题，做了一遍，大部分都做错。&lt;/p&gt;
+&lt;p&gt;考前一个星期，突然醒悟过来，应该按照官方提供的考试大纲来复习，没提到的知识点不再纠结。比如教材花了一整章介绍期权知识，大纲里只要求理解期权的定义，并不要求灵活运用。此前看教材花了好多时间在该章节，对考试来说等于无用功。&lt;/p&gt;
+&lt;p&gt;事已至此，只好硬着头皮上场，就像买彩票从来不中一样，整整差 10 道题。出考场，竟然下雨了。&lt;/p&gt;
+&lt;p&gt;简单总结初战失败之因：&lt;/p&gt;
+&lt;p&gt;思想上不够重视，以为不会比国内的类似考试更难。殊不知，美国的法律、监管结构、证券市场结构和国内有很大差别，仅凭土鳖的常识只能做对很小的一部分题目；&lt;/p&gt;
+&lt;p&gt;语言障碍。有的句子，竟然单词意思都搞错，这个没什么好说的，英语要是好一点，至少看题目与选项也会快一些；&lt;/p&gt;
+&lt;p&gt;教材没选好，wiley 没有严格按照大纲来编排教材，有的知识点有遗漏，有的讲得不够深入。&lt;/p&gt;
+&lt;p&gt;没有按照大纲来复习。如对冲基金、遗产税等并没有深入理解透彻。&lt;/p&gt;
+&lt;p&gt;做的题目不够多。&lt;/p&gt;
+&lt;h3&gt;再战告捷&lt;/h3&gt;
+&lt;p&gt;第二次考试，时间依然也比较紧迫。从 11 月底开始准备，在复习方法上作了调整：&lt;/p&gt;
+&lt;p&gt;严格根据官方大纲复习，把每个知识点都了解清楚，根据 investopedia、wiley 教材、错题、中文资料、bing 搜出来的英文资料、法案原文，结合自己的理解，整理到 evernote 上，几乎是重新编排了一遍教材。如信托、遗产税、AMT、员工期权计划等知识点，专门找了一些中文资料来帮助理解。&lt;/p&gt;
+&lt;p&gt;找到复习伙伴，复习路上不孤单。上述重编教材的工作，是我和考友一起通过 evernote 协作完成的。另外，我们还互相分享错题、难题，探讨不理解的地方。发现这样的方法很有效，讲解的过程也是再次理解的过程，如果对方不会的知识点，我能比较完整顺畅地说清楚，说明我已经理解了。&lt;/p&gt;
+&lt;p&gt;做题，把能找到的题目，都做了一遍。主要有 quizlet 里开普兰的模拟题、investopedia 里的模拟题、wiley 里的题库，算下来估计有 800 百道题。&lt;/p&gt;
+&lt;p&gt;通读法律法规。iaa、usa、model rule 打印出来翻一遍，增加感性认识。法律法规很枯燥，有的句子，从句一大堆，理解起来很费劲，需要耐心。&lt;/p&gt;
+&lt;p&gt;把需要死记硬背的可能考点，单独记录，考前强化记忆。&lt;/p&gt;
+&lt;h3&gt;用到的资料与工具&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;分类&lt;/th&gt;
+&lt;th&gt;资源地址&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;官方大纲&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://www.nasaa.org/wp-content/uploads/2011/08/Series-65-Exam-Specification.pdf"&gt;Official Guidance&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;严格按照大纲来复习，多 Google，不要有遗漏，提到的知识点，基本上都会考到。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;法律法规&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://www.sec.gov/about/laws/iaa40.pdf"&gt;Iaa&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://www.nasaa.org/wp-content/uploads/2011/08/UniformSecuritesAct1956withcomments.pdf"&gt;Usa&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://www.nasaa.org/wp-content/uploads/2011/07/IA-Model-Rule-Definition-Under-2002-Act.pdf"&gt;Model Rule&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;教材&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://www.investopedia.com/exam-guide/series-65/"&gt;Investopedia&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;在线电子版，有些法律法规涉及到金额的可能会有些旧。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://www.securitiesexam.com/products/series65.html"&gt;securitiesexam.com&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://as.wiley.com/WileyCDA/WileyTitle/productCd-1119379741.html"&gt;Wiely&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;教材编排得凌乱。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;练习题&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://www.investopedia.com/quizzer/series65/"&gt;Investopedia&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="http://quizlet.com/subject/series-65/"&gt;Quizlet&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;有 App，可随时随地刷题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Wiely 习题&lt;/td&gt;
+&lt;td&gt;有光盘，不过现在电脑都不带光驱了，没用到&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content><category term="blog"></category></entry><entry><title>玩转四方sybian s60v3体验报告</title><link href="/wan-zhuan-si-fang-sybian-s60v3ti-yan-bao-gao.html" rel="alternate"></link><published>2010-06-27T19:57:57+08:00</published><updated>2010-06-27T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:None,2010-06-27:/wan-zhuan-si-fang-sybian-s60v3ti-yan-bao-gao.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;产品体验
+categories:&lt;/li&gt;
+&lt;li&gt;产品体验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;安装&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1 首次接入点设置&lt;/p&gt;
+&lt;p&gt;首次安装后提示选择接入点，选好后进入登录/注册界面，由于我已经在 iphone 上 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;产品体验
+categories:&lt;/li&gt;
+&lt;li&gt;产品体验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;安装&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1 首次接入点设置&lt;/p&gt;
+&lt;p&gt;首次安装后提示选择接入点，选好后进入登录/注册界面，由于我已经在 iphone 上注册过，遂填写用户名与密码，点击登录。此时出现一个问题，界面提示“接入点错误，请重新选择”，可是，这个提示界面软键没有相应的菜单功能，也就不知道该去哪里操作接入点切换了就这个登录过程，重复了好几次，最终只好把软件卸载（如果我嫌麻烦不回头，就流失了一个用户，并且很可能我会告诉别人这个软件很垃圾），重新安装。&lt;/p&gt;
+&lt;p&gt;可能的解决办法：&lt;/p&gt;
+&lt;p&gt;办法 1：利用硬件功能。出错提示界面可以让用户通过左右软键激活菜单，从而可以选择接入点切换。&lt;/p&gt;
+&lt;p&gt;办法 2:改变流程。就像注册流程的设计一样，等用户填写好了表单，点击提交（注册或登录按键）之后再提示用户选择接入点，这样，哪怕接入点一直出错，用户根据这个流程照样可以通过排除的办法，选择另一个接入点，直到正确为止。&lt;/p&gt;
+&lt;p&gt;（后来陆续重装过几次，情况有变化：点击左软键，可出现接入点列表,供用户切换。第一次的体验还是挺重要的，可能会影响用户流失率）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;功能：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2、&lt;strong&gt;注册、登录、注销&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;注册无需填写多少个文本域，尤其不需要验证码，也不需立即邮件激活，注册流程比较顺畅；&lt;/p&gt;
+&lt;p&gt;注册界面输入域的输入类型控制，对搜狗拼音等智能拼音输入法不友好。（图）&lt;/p&gt;
+&lt;p&gt;邮箱与密码输入框，不支持“En 智能英文”，自造的词（比如邮箱）没法用上，导致又要重复繁琐的邮箱输入，而手机上输入时最麻烦的事情之一。&lt;/p&gt;
+&lt;p&gt;鉴于手机的特殊性，可以考虑让用户用手机号码登录。好处是：自己的手机号码容易记住，其次手机号码输入方便，不必像输入邮箱一样，在字母、数字、符号之间来回切换。当然，需要注意保护用户隐私，对外显示有另外的 id 替代手机号。&lt;/p&gt;
+&lt;p&gt;注册时提示用户输入手机号，并注有“可选”字眼。作为软件提供商，获取用户手机号的目的是什么呢？能否明确告诉用户？毕竟手机号码是很重的隐私，而且常常容易被泄露，导致垃圾短信不断。如果想鼓励用户填写手机号，在信息设计上是否可以显示一些鼓励用户填写的文字，比如填写之后能获得什么好处？在减少用户隐私泄露之顾虑的同时，又能更多地收集到手机号码。&lt;/p&gt;
+&lt;p&gt;然现在玩转四方没有让用户选择是否自动登录，直接自动登录，比较理想的是，考虑安全性，让用户选择是否自动登录。在有自动登录的情况下，可以考虑增加“记忆功能”，能够记住用户的输入历史，从而在用户输入帐号时，能够自动补全，减少输入的操作。&lt;/p&gt;
+&lt;p&gt;”注销“在玩转四方是”切换用户“的表述，在菜单中的位置可以考虑紧邻“退出"，注销和退出时一组并列功能，符合用户的习惯。&lt;/p&gt;
+&lt;p&gt;3、&lt;strong&gt;定位&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;定位比较准，但地图只是一个截屏，暂时不能实现缩放、移动等操作；&lt;/p&gt;
+&lt;p&gt;附近地点、猜你喜欢；&lt;/p&gt;
+&lt;p&gt;地图不可移动；当位置不准确时，无法手动调整。&lt;/p&gt;
+&lt;p&gt;4、&lt;strong&gt;sns 常用功能有待提升&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;无法对好友动态与 tips 作点评；&lt;/p&gt;
+&lt;p&gt;无法添加好友的好友为好友；&lt;/p&gt;
+&lt;p&gt;无法点击”@XXX“查看朋友所 checkin 的地点；&lt;/p&gt;
+&lt;p&gt;5、界面：&lt;/p&gt;
+&lt;p&gt;挺照顾该系统的常用手机屏幕大小，设计上体现出节约空间的考虑，比如将标签切换放置于类似于窗口栏的位置。当然也可以考虑采取九宫格的设计。&lt;/p&gt;
+&lt;p&gt;字体大小不能自定义，默认的文字显得有点小。&lt;/p&gt;
+&lt;p&gt;6、交互：出错提示与解决办法；标签切换的一致性；退出无提示&lt;/p&gt;
+&lt;p&gt;7、用户激励&lt;/p&gt;
+&lt;p&gt;用户如何愿意发表观点、分享有价值的信息。可作一些提示与引导，类似“行吟诗人”的思路。&lt;/p&gt;
+&lt;p&gt;8、反馈：没有反馈意见的入口 ，可通过让触发邮件程序，收集用户意见；mobile web 提交表单等其他方式。&lt;/p&gt;
+&lt;p&gt;改进：鼓励用户发表体会的办法，激励机制；好友动态推送；活动推广信息&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;融合有关 LBS 的介绍&lt;/p&gt;
+&lt;p&gt;等待界面&lt;/p&gt;
+&lt;p&gt;*注册流程对比。可以考虑自动获取用户手机号，生成一个数字 id，eg 贝多；&lt;/p&gt;</content><category term="blog"></category></entry></feed>

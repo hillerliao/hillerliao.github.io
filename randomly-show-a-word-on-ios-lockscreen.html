@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="免装单词App，在 iPhone 锁屏随机显示单词" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="/randomly-show-a-word-on-ios-lockscreen.html" />
+		<meta property="og:image" content="/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>免装单词App，在 iPhone 锁屏随机显示单词 - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/poole.css" />
+		<link rel="stylesheet" href="/theme/css/hyde.css" />
+		<link rel="stylesheet" href="/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">免装单词App，在 iPhone 锁屏随机显示单词</h1>
+	<span class="post-date">Thu 17 October 2024</span>
+	<p>亲爱的朋友们，你是否曾经为背单词而烦恼？是否觉得用手机时有很多零碎时间没有利用上？</p>
+<p>今天，我要给大家带来一个神奇的方法——免装单词App，在iPhone锁屏随机显示单词！这样，你每天解锁手机的时候，都能顺便瞟一眼单词，日积月累，词汇量自然水涨船高！</p>
+<p>有些背单词软件可能有提供这种功能，但通常有一些问题：单词列表不受自己控制，显示的内容无法自定义，搞不好还收费。</p>
+<p>今天我就来给大家介绍一种免费实现自定义锁屏单词小组件的办法。</p>
+<h2>需要的工具</h2>
+<ul>
+<li>iPhone；</li>
+<li>Scriptable</li>
+</ul>
+<p>Scriptable是一款iOS应用程序，允许用户使用JavaScript自动化构建和自定义桌面或锁屏小部件。</p>
+<p>得益于优秀的 Scriptable（苹果应用商店的开发者工具类排名前十），我们只需要写一点简单的基于JavaScript的脚本，就能干很多事情。</p>
+<h2>脚本代码</h2>
+<p>借助ChatGPT，把需求描述一番，很快就有了如下脚本：</p>
+<div class="highlight"><pre><span></span><code><span class="o">//</span><span class="w"> </span><span class="err">指定</span><span class="n">RSS源的URL</span>
+<span class="k">const</span><span class="w"> </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://politepol.com/fd/f1NYOd8OAcsA.xml&quot;</span><span class="p">;</span>
+
+<span class="o">//</span><span class="w"> </span><span class="err">使用</span><span class="n">fetch来获取RSS数据</span>
+<span class="n">let</span><span class="w"> </span><span class="n">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+<span class="n">let</span><span class="w"> </span><span class="n">rssData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">await</span><span class="w"> </span><span class="n">req</span><span class="o">.</span><span class="n">loadString</span><span class="p">();</span>
+
+<span class="o">//</span><span class="w"> </span><span class="err">输出</span><span class="n">RSS数据到日志</span>
+<span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rssData</span><span class="p">);</span>
+
+<span class="o">//</span><span class="w"> </span><span class="err">使用正则表达式解析</span><span class="n">RSS中的内容</span><span class="err">，</span><span class="n">ChatGPT给的参考代码中变量名为title</span><span class="err">，这里实际选择读取摘要。</span>
+<span class="n">let</span><span class="w"> </span><span class="n">titles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="n">let</span><span class="w"> </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/&lt;</span><span class="n">description</span><span class="o">&gt;</span><span class="p">(</span><span class="o">.*</span><span class="err">?</span><span class="p">)</span><span class="o">&lt;</span>\<span class="o">/</span><span class="n">description</span><span class="o">&gt;/</span><span class="n">g</span><span class="p">;</span>
+<span class="n">let</span><span class="w"> </span><span class="k">match</span><span class="p">;</span>
+<span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="k">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">regex</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="n">rssData</span><span class="p">))</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="nb nb-Type">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">titles</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="k">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="o">//</span><span class="w"> </span><span class="err">创建一个</span><span class="n">Widget展示RSS摘要</span>
+<span class="n">let</span><span class="w"> </span><span class="n">widget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">ListWidget</span><span class="p">();</span>
+<span class="n">widget</span><span class="o">.</span><span class="n">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="p">(</span><span class="s2">&quot;#1a1a1a&quot;</span><span class="p">);</span>
+
+<span class="o">//</span><span class="w"> </span><span class="err">如果解析到的摘要为空，显示占位符</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">titles</span><span class="o">.</span><span class="n">length</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">let</span><span class="w"> </span><span class="n">placeholder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">widget</span><span class="o">.</span><span class="n">addText</span><span class="p">(</span><span class="s2">&quot;No RSS data available&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">placeholder</span><span class="o">.</span><span class="n">textColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">white</span><span class="p">();</span>
+<span class="w">    </span><span class="n">placeholder</span><span class="o">.</span><span class="n">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Font</span><span class="o">.</span><span class="n">systemFont</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="err">添加</span><span class="n">RSS摘要到Widget</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">let</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Math</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">titles</span><span class="o">.</span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">let</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titles</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="w">        </span><span class="n">let</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">widget</span><span class="o">.</span><span class="n">addText</span><span class="p">(</span><span class="n">title</span><span class="p">);</span>
+<span class="w">        </span><span class="n">text</span><span class="o">.</span><span class="n">textColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">white</span><span class="p">();</span>
+<span class="w">        </span><span class="n">text</span><span class="o">.</span><span class="n">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Font</span><span class="o">.</span><span class="n">systemFont</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+<span class="w">        </span><span class="n">widget</span><span class="o">.</span><span class="n">addSpacer</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="o">//</span><span class="w"> </span><span class="err">设置</span><span class="n">Widget定期刷新</span><span class="err">，设为</span><span class="mi">30</span><span class="err">分钟。</span>
+<span class="n">widget</span><span class="o">.</span><span class="n">refreshAfterDate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">new</span><span class="w"> </span><span class="n">Date</span><span class="p">(</span><span class="n">Date</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+
+<span class="o">//</span><span class="w"> </span><span class="err">预览</span><span class="n">Widget</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">runsInWidget</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Script</span><span class="o">.</span><span class="n">setWidget</span><span class="p">(</span><span class="n">widget</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">widget</span><span class="o">.</span><span class="n">presentMedium</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">Script</span><span class="o">.</span><span class="n">complete</span><span class="p">();</span>
+</code></pre></div>
+
+<p>具体代码是什么意思，我们就不用管太多了，只需要注意替换数据源地址就行。上述示例的 RSS 地址 <code>https://politepol.com/fd/f1NYOd8OAcsA.xml</code> 系通过名为 <a href="https://politepol.com/">politepol</a> 的网页生成RSS服务将 <code>https://pyrss.vercel.app/word/jlpt2</code>页面的日语N2单词转换而成。如果想要英文单词，请联系我。</p>
+<p>你可以在Scriptable上先运行脚本以验证数据是否获取成功，然后再进行下一步的设置。</p>
+<h2>设置为锁屏组件</h2>
+<p>接下来，开始编辑锁屏界面。添加 Scriptable 小组件，并选取刚才添加到 Scriptable 的脚本，即告完成。</p>
+<p><img alt="" src="https://fastly.jsdelivr.net/gh/henrylovemiller/img@main/1727536737513%E9%94%81%E5%B1%8F%E5%8D%95%E8%AF%8D.png"></p>
+<h2>更多可能</h2>
+<p>也可以把小组件钉在手机桌面上。相比锁屏界面，桌面组件效果对样式要求更高，可以通过修改脚本中的样式代码让桌面小组件变得更加漂亮。</p>
+<p>此外，不仅仅是单词，天气、热搜、格言、倒数日之类的小组件，都可以借助Scriptable实现，核心就是换个数据和显示样式，本质都一样。只要你有想法，借助ChatGPT大概率能实现，一次不行，再试一次。</p>
+<p>如果觉得这篇文章有意思，对你有启发，欢迎点个赞。</p>
+
+		<span class="post-tags">
+			Tags:
+			<ul>
+					<li><a href="/tag/xiao-gong-ju.html">小工具</a></li>
+			</ul>
+		</span>
+
+</div>
+		</div>
+	</body>
+</html>

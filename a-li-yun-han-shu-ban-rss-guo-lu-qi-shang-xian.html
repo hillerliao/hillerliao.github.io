@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="阿里云函数版 RSS 过滤器上线" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="/a-li-yun-han-shu-ban-rss-guo-lu-qi-shang-xian.html" />
+		<meta property="og:image" content="/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>阿里云函数版 RSS 过滤器上线 - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/poole.css" />
+		<link rel="stylesheet" href="/theme/css/hyde.css" />
+		<link rel="stylesheet" href="/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">阿里云函数版 RSS 过滤器上线</h1>
+	<span class="post-date">Sun 18 September 2022</span>
+	<ul>
+<li>产品体验
+categories:</li>
+<li>产品体验</li>
+</ul>
+<hr>
+<p>为方便薅阿里云函数计算的羊毛，将 <a href="https://github.com/hillerliao/RSSHub-python">RSSHub-Python</a> 项目里的 <a href="https://pyrsshub.vercel.app/feeds">RSS 过滤器</a>功能独立出来，做成阿里云函数计算的版本。</p>
+<p>项目地址：<code>https://github.com/hillerliao/RssFilter</code></p>
+<p>部署方法记录如下：</p>
+<h2>一、创建服务</h2>
+<p>1、进入<a href="https://fcnext.console.aliyun.com/overview">阿里云函数计算</a>后台，点击创建服务。</p>
+<p><img alt="阿里云函数计算概览" src="https://github.com/easychen/wecomchan/raw/main/python-aliyunfc/pic/image-20220205142747826.png"></p>
+<p>2、填入服务名称，比如 <code>RssFilter</code>，点击确定。</p>
+<p><img alt="阿里云函数计算-创建服务" src="https://raw.githubusercontent.com/hillerliao/img/main/20220918133712.png"></p>
+<h2>二、配置函数</h2>
+<p>3、配置函数。</p>
+<p>3.1 进入刚创建的服务，点击<code>创建函数</code>；<br>
+3.2 选择<code>使用自定义运行时创建</code>，填写函数名称，如<code>main</code>；<br>
+3.3 代码上传方式选择<code>通过 ZIP 包上传代码</code>，将本项目仓库中的<a href="https://github.com/hillerliao/RssFilter/blob/main/func-code-4-RSSFilter.zip">过滤器zip代码包</a><code>func-code-4-RSSFilter.zip</code>下载后上传；<br>
+3.4 启动命令填入<code>python app.py</code>；  </p>
+<p>点击 <code>创建</code>。</p>
+<p><img alt="阿里云函数计算-配置函数" src="https://raw.githubusercontent.com/hillerliao/img/main/20220918134114.png"></p>
+<h2>三、获取地址</h2>
+<p>4、获得测试地址，带上路径和参数，如 <code>/filter?feed=&lt;rss 地址&gt;&amp;include_title=&lt;过滤词&gt;</code> 支持的参数同 RSSHub-Python 的 <a href="https://pyrsshub.vercel.app/feeds">RSS Filter参数</a></p>
+<p><img alt="阿里云函数计算-获取函数公网地址" src="https://raw.githubusercontent.com/hillerliao/img/main/20220918134337.png"></p>
+<p>示例：</p>
+<p><code>http://&lt;testing sub domain for fc&gt;.cn-beijing.functioncompute.com/filter?feed=https://sspai.com/feed&amp;include_title=派评</code></p>
+<p>5、测试验证通过后，点击 <code>部署代码</code>，部署完成。</p>
+<p><img alt="阿里云函数计算-在线编辑器" src="https://raw.githubusercontent.com/hillerliao/img/main/20220918134819.png"></p>
+<h2>四、制作 RSS 过滤器的初衷</h2>
+<p>回顾我作 RSS 过滤器的初心：提高信息获取效率。</p>
+<p>比如，有些 RSS，我只关心带有特定关键词的内容；另一些 RSS，我不想看到含有特定关键词的广告内容。有了 RSS 过滤器，这些需求都能得到满足。</p>
+<p>好了，如果你觉得本项目对你有用，不妨请我喝杯咖啡。</p>
+<p><img alt="个人微信收款码-智海" src="https://raw.githubusercontent.com/hillerliao/img/main/IMG_0096%20copy.jpg"></p>
+<p>如果有改进建议，欢迎交流。微信： <code>hillerliao</code>。</p>
+
+
+</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="部署Flask项目到手机上 并供外网访问" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="/bu-shu-flaskxiang-mu-dao-shou-ji-shang-bing-gong-wai-wang-fang-wen.html" />
+		<meta property="og:image" content="/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>部署Flask项目到手机上 并供外网访问 - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="/theme/css/poole.css" />
+		<link rel="stylesheet" href="/theme/css/hyde.css" />
+		<link rel="stylesheet" href="/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="/">
+					<img class="profile-picture" src="/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">部署Flask项目到手机上 并供外网访问</h1>
+	<span class="post-date">Mon 29 November 2021</span>
+	<ul>
+<li>教程
+categories:</li>
+<li>教程</li>
+</ul>
+<hr>
+<p><em>为什么写这篇文章？本需求的实现将之前折腾的几个服务综合起来，链条比较长，记录之，备忘。</em></p>
+<h2>需求缘起</h2>
+<p>有一个抓取微信公众号文章生成 RSS 地址的 Flask 项目RSSHub-python，本地运行没什么问题，一旦部署到服务器上，秒秒钟被数据源网站搜狗给封杀了。</p>
+<p>从两种环境的不同结果来看，本地运行没有问题可能是因为本地出口 IP 没有被封杀。顺着这个思路，如果把服务部署在本地，并保证持续不断地运行，即可避免被封杀的悲剧。</p>
+<p>但本地化部署需要解决被外网访问的问题。电脑不适合一直开着，购买树莓派之类的硬件设备需要花钱，而且过往经历告诉我，树莓派大部分时候只是用来吃灰。综合考虑，我决定用闲置的安卓机OnePlus 2作为服务器运行服务，还能省省电。而要让外网能访问，可以借助内网穿透来实现。</p>
+<p>简单说，需要准备一台OS版本至少在6.0以上的Android手机。本文以 Android 版本为 10的Redmi 10X 为例进行介绍。</p>
+<h2>部署方案</h2>
+<p><img alt="image.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1637474979948-88ed5582-7cad-4b70-ad69-fd8e83e9eea3.png#height=440&amp;id=uf821016d&amp;originHeight=880&amp;originWidth=1539&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=96230&amp;status=done&amp;style=shadow&amp;title=&amp;width=769.5">
+我实际的部署方案如上图所示，用到了几个第三方服务，除了阿里云服务器，其他都是免费就能搞定。
+关键点：</p>
+<ul>
+<li>借助名字叫做 Aid Learning 的安卓 App 作为服务器环境，在服务器内部署 Flask 项目，并用 Supervisor 保证服务运行的稳定性；</li>
+<li>然后借助花生壳内网版作内网穿透，让服务支持外网访问；</li>
+<li>由于公司网络禁用了花生壳的服务，需要借助SS服务作为正向代理，通过 SS 客户端将访问花生壳的服务转换为访问阿里云服务器。如果本地网络不禁用花生壳内网穿透服务，这一步可以省略，一分钱都不用花。</li>
+</ul>
+<h2>配置「服务器」Aid Learning</h2>
+<p>要 Android 变成服务器，我们需要借助一个叫做「Aid Learning」的 App（最新版已更名为 AidLux ，查找网络资料时两个关键词都可以试试），可以从<a href="http://www.aidlearning.net/">官网</a>下载。撰写本文时一开始想用<a href="https://www.aidlux.com/apk/AidLux_1.0a.apk">1.0a</a>，结果遇到各种坑，换回0.86b2f4版本（可以通过酷安下载历史版本）。</p>
+<p>安装成功后参考教程进行一些<a href="https://dontkillmyapp.com/xiaomi">设置</a>，包括开启自动启动、常驻后台等，以确保App能持续在后台运行。</p>
+<p>或者安装 <a href="https://termux.com/">Termux</a> App 也可以达到同样目的。Termux 的优点是环境干净，占用存储空间小，自己想装什么就自行安装；缺点是需要自行配置各种环境依赖，配置过程往往会碰到各种各样的依赖问题，掉进坑里的感觉会把人逼疯。可以把App理解为一台 Linux 服务器，两个 APP 好比是Ubuntu 和Arch Linux之别。
+<img alt="20211121_222306.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1637505262582-a9c92bec-008a-47d0-9e18-c06c0f3ae0b2.png#height=439&amp;id=fi2tX&amp;originHeight=994&amp;originWidth=462&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=1836966&amp;status=done&amp;style=stroke&amp;title=&amp;width=204"> 
+上图：手机号登录，省得以后打开APP时老提示登录。当然这个步骤不是强制的，可以选择跳过。</p>
+<p>首次运行APP 时，由于初始化任务的执行，会请求网络下载一些东西，速度比较慢，可能耗时数分钟。如果需要节省流量，记得在 WIFI 环境下操作。
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1637505980097-2aa0a7c7-a21f-44d4-a55a-57dd84dd146b.png#height=440&amp;id=ue7b0ca5b&amp;originHeight=880&amp;originWidth=396&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=150917&amp;status=done&amp;style=none&amp;title=&amp;width=198">
+默认登录的是 root 用户，未设置密码，可以设置一个 root 用户的密码：打开 APP 内的终端，切换到全屏模式，输入命令 <code>passwd root</code>，按界面提示输入两次密码，设置成功。
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1637506748306-153cc560-5584-4e71-a92f-4c6e276995e7.png#height=440&amp;id=u401acc46&amp;originHeight=880&amp;originWidth=396&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=78958&amp;status=done&amp;style=none&amp;title=&amp;width=198">
+为方便输入命令行命令，可以通过电脑远程访问服务器(Aidlux)：打开服务器上的终端，输入命令 <code>ifconfig</code> ，确认服务器的 ip 地址，如我的手机为 172.16.99.125。</p>
+<p>保证手机与电脑在同一个WIFI 网络，通过电脑终端远程登录该服务器，注意端口为 <strong>9022</strong>。</p>
+<div class="highlight"><pre><span></span><code><span class="n">ssh</span><span class="w"> </span><span class="n">demo</span><span class="mf">@192.168.1.9</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">9022</span>
+<span class="cp"># 密码为demo</span>
+</code></pre></div>
+
+<p>更新软件包列表，并安装一些常用工具，如 git 等。</p>
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>update
+apt<span class="w"> </span>install<span class="w"> </span>git
+</code></pre></div>
+
+<h2>部署项目</h2>
+<h3>生成 ssh 密钥</h3>
+<p>获取项目代码拉取权限</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 生成密钥 ssh-keygen</span>
+ssh-keygen
+<span class="nb">cd</span><span class="w"> </span>/root/.ssh
+<span class="c1"># 复制 id_rsa.pub 文件中的字符。</span>
+<span class="c1"># 将公钥添加到 github.进入 https://github.com/settings/keys，</span>
+<span class="c1"># 创建新的 SSH key，填入刚才复制的公钥字符。 </span>
+</code></pre></div>
+
+<h3>拉取项目代码</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 回到服务器，拉取项目代码</span>
+<span class="nb">cd</span><span class="w"> </span>/opt
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:hillerliao/RSSHub-python.git
+</code></pre></div>
+
+<h3>本地测试运行</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 进入项目文件夹</span>
+<span class="nb">cd</span><span class="w"> </span>/opt/RSSHub-python
+
+<span class="c1"># 修改pip镜像源</span>
+mkdir<span class="w"> </span>~/.config/pip
+touch<span class="w"> </span>~/.config/pip/pip.config
+
+<span class="c1"># 修改 pip.config 内容为</span>
+<span class="sb">```</span>pip.config内容
+<span class="o">[</span>global<span class="o">]</span>
+index-url<span class="w"> </span><span class="o">=</span><span class="w"> </span>https://mirrors.aliyun.com/pypi/simple
+</code></pre></div>
+
+<h1>安装 pipenv。也可以用 apt install pipenv 安装，但版本比较旧</h1>
+<p>pip install pipenv </p>
+<div class="highlight"><pre><span></span><code># 安装
+whereis pipenv 
+# 得到 /usr/local/bin/pipenv
+# 创建软连接
+ln -s /usr/local/bin/pipenv /usr/bin/pipenv
+</code></pre></div>
+
+<h1>创建Python 虚拟环境。</h1>
+<h1>我用Android 11的红米手机尝试会报错，用Android 6 的 OnePlus 2手机不报错</h1>
+<h1>提示「OSError: Cannot find path to android app folder」</h1>
+<p>cd /opt/RSSHub-python
+pipenv install</p>
+<h1>记下虚拟环境位置，后续 uwsgi 配置文件里会用到</h1>
+<h1>/root/User/demo/.local/share/virtualenvs/RSSHub-python-e4f4sLQi</h1>
+<h1>验证本地运行是否正常</h1>
+<p>flask run </p>
+<h1>如果确实依赖包，就手动安装，如 dotenv</h1>
+<p>pip install python-dotenv</p>
+<div class="highlight"><pre><span></span><code>## 配置 uwsgi 服务
+### 安装 uwsgi
+```bash
+# 需要在root用户下运行
+pip install uwsgi
+</code></pre></div>
+
+<h3>uwsgi 配置文件</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># uwsgi --ini {current_file_path_and_name}</span>
+<span class="o">[</span>uwsgi<span class="o">]</span>
+<span class="nv">http</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">127</span>.0.0.1:5000
+<span class="nv">processes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span>
+<span class="nv">threads</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="p">;</span><span class="w"> </span><span class="nv">plugins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>python3
+<span class="nv">master</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="c1"># 启动主进程，来管理其他进程，其它的uwsgi进程都是这个master进程的子进程，如果kill这个master进程，相当于重启所有的uwsgi进程。</span>
+
+<span class="nv">chdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/opt/RSSHub-python
+<span class="c1"># 在app加载前切换到当前目录， 指定运行目录 </span>
+
+wsgi-file<span class="w"> </span><span class="o">=</span><span class="w"> </span>wsgi.py
+<span class="c1">#virtualenv = /root/.local/share/virtualenvs/RSSHub-python-e4f4sLQi</span>
+<span class="nv">virtualenv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/usr/bin/python
+<span class="c1"># pythonpath = /opt/RSSHub-python</span>
+<span class="c1">#上面的pythonpath需要换成刚才你自己创建的应用的目录</span>
+<span class="c1"># module = rsshub</span>
+<span class="nv">callable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>app
+memory-report<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="c1">#py-autoreload = 1 ##监控python模块mtime来触发重载 (只在开发时使用)</span>
+
+<span class="c1">#daemonize = /var/log/uwsgi/rsshub-python.log</span>
+<span class="c1"># 使进程在后台运行，并将日志打到指定的日志文件或者udp服务器</span>
+
+touch-reload<span class="w"> </span><span class="o">=</span><span class="w"> </span>/opt/RSSHub-python
+<span class="c1"># 表示要监听的文件路径，当要监听的文件路径下的文件发生变化的时候自动重新加载服务。</span>
+
+lazy-apps<span class="o">=</span><span class="nb">true</span>
+<span class="c1"># 在每个worker而不是master中加载应用</span>
+
+<span class="nv">vacuum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="c1"># 当服务退出的时候自动删除unix socket文件和pid文件。</span>
+</code></pre></div>
+
+<h2>配置Nginx</h2>
+<h3>安装Nginx</h3>
+<div class="highlight"><pre><span></span><code>apt install nginx
+
+#查看Nginx状态
+service nginx status
+</code></pre></div>
+
+<h3>Nginx配置文件</h3>
+<p>创建配置文件  <code>touch /etc/nginx/conf.d/rsshub.conf</code>，通过 nano 命令编辑该文件。具体配置如下：</p>
+<div class="highlight"><pre><span></span><code>server<span class="w"> </span><span class="o">{</span>
+<span class="w">      </span>listen<span class="w"> </span><span class="m">9080</span><span class="p">;</span>
+<span class="w">      </span>server_name<span class="w"> </span><span class="o">[</span>域名<span class="o">]</span><span class="p">;</span>
+<span class="w">      </span>location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span>
+<span class="w">              </span>include<span class="w"> </span>uwsgi_params<span class="p">;</span>
+<span class="w">              </span><span class="c1">#uwsgi_pass 127.0.0.1:5000;</span>
+<span class="w">                    </span>proxy_pass<span class="w"> </span>http://127.0.0.1:5000<span class="p">;</span>
+<span class="w">              </span>uwsgi_read_timeout<span class="w"> </span><span class="m">120</span><span class="p">;</span>
+<span class="w">      </span><span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+
+<p>保存好配置文件，并进行测试  <code>service nginx -t</code></p>
+<p>重新加载Nginx服务 <code>service nginx reload</code></p>
+<h2>开启Supervisor服务</h2>
+<h3>安装supervisor</h3>
+<div class="highlight"><pre><span></span><code># 安装supervisor
+apt install supervisor
+</code></pre></div>
+
+<h3>Supervisor 配置文件</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 文件位置：/etc/supervisor/conf.d/rsshub.conf</span>
+
+<span class="o">[</span>program:rsshub_python<span class="o">]</span>
+<span class="nv">command</span><span class="o">=</span>/home/lxf/.local/bin/uwsgi<span class="w"> </span>--ini<span class="w"> </span>/opt/RSSHub-python/uwsgi.ini
+<span class="nv">user</span><span class="o">=</span>lxf
+<span class="nv">autorestart</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">autostart</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">startretries</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">redirect_stderr</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">startsecs</span><span class="o">=</span><span class="m">5</span>
+<span class="c1">#↓注意需要创建这个日志文件</span>
+<span class="nv">stdout_logfile</span><span class="o">=</span>/var/log/uwsgi/supervisor.log<span class="w"> </span>
+<span class="nv">stopasgroup</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">killasgroup</span><span class="o">=</span><span class="nb">true</span>
+<span class="nv">priority</span><span class="o">=</span><span class="m">999</span>
+</code></pre></div>
+
+<h3>启动Supersivor</h3>
+<div class="highlight"><pre><span></span><code># 启动supervisor
+service supervisor start
+</code></pre></div>
+
+<h2>配置内网穿透</h2>
+<h3>配置映射关系</h3>
+<p>在花生壳内网穿透服务后台<a href="https://console.hsk.oray.com/parts">配置中心</a>开启 HTTP 映射服务；
+接着在内网穿透菜单填写配置信息，其中：</p>
+<ul>
+<li>内网主机：为上文服务器内通过<code>ifconfig</code> 命令获取到的ip；</li>
+<li>内网端口：为9080（aid learning默认的http端口）。</li>
+</ul>
+<p><img alt="image.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1638106924932-113da602-2430-419a-b4a5-3f84029e10de.png#height=275&amp;id=uf78ea94b&amp;originHeight=867&amp;originWidth=1578&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=105038&amp;status=done&amp;style=shadow&amp;title=&amp;width=500"></p>
+<h3>安装花生壳内网版 App</h3>
+<p>apk文件可以通过<a href="https://www.wandoujia.com/apps/7956016">豌豆荚</a>下载，官网比较凌乱，没找到下载入口；
+安装后登录花生壳账号，诊断一下，预期是正常连接；
+访问花生壳内网穿透服务后台的外网域名，即可访问到Nginx默认页面：
+<img alt="image.png" src="https://cdn.nlark.com/yuque/0/2021/png/147312/1638149455953-acb7d41a-9f11-446a-9c6c-2fcffa63f3e8.png#clientId=u7beefe37-88dc-4&amp;from=paste&amp;height=144&amp;id=u7770bb69&amp;originHeight=287&amp;originWidth=591&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=31776&amp;status=done&amp;style=shadow&amp;taskId=ub24d638c-e9d2-430a-ab0c-ca3c8e6231c&amp;title=&amp;width=295.5"></p>
+<h2>代理访问(非必须)</h2>
+<p>有的公司网络监控会将花生壳、todesk等内网穿透性质的服务在域名层面进行封禁，所以可能需要正向代理来突破限制。</p>
+<p>这里我们借助小火箭，在阿里云服务器上部署ss-server端。为简化部署，通过docker方式进行。考虑到安全问题，本文不详述部署过程。</p>
+<h2>日常运维</h2>
+<h3>重启服务</h3>
+<p>手机没电了，重新充电，怎么重启服务？
+依次启动几个APP，包括：</p>
+<ul>
+<li>开启代理软件 SS</li>
+<li>开启内网穿透App“ 花生壳内网版”</li>
+<li>重启‘服务器’</li>
+<li>启动nginx <code>service nginx start</code></li>
+<li>启动supervisor服务。此时会自动启动 uwsgi 服务。</li>
+</ul>
+<p>总体还算比较稳定，出现过一次花生壳内网版APP崩溃的情况。</p>
+<p>首发在<a href="https://www.yuque.com/hillerliao/zhihai.me/mtx53r">语雀</a></p>
+
+
+</div>
+		</div>
+	</body>
+</html>
