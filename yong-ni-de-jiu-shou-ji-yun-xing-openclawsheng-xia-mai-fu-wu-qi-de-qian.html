@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="记录了如何使用 Termux 在旧手机上运行 OpenClaw 的完整过程，包括技术选型、问题解决、脚本架构设计等开发经验。">
+	<meta property="og:description" content="记录了如何使用 Termux 在旧手机上运行 OpenClaw 的完整过程，包括技术选型、问题解决、脚本架构设计等开发经验。">
+	<meta property="og:title" content="用你的旧手机运行 OpenClaw，省下买服务器的钱" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://hillerliao.github.io/yong-ni-de-jiu-shou-ji-yun-xing-openclawsheng-xia-mai-fu-wu-qi-de-qian.html" />
+		<meta property="og:image" content="https://hillerliao.github.io/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>用你的旧手机运行 OpenClaw，省下买服务器的钱 - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/poole.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/hyde.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="https://hillerliao.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="https://hillerliao.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+<link href="https://hillerliao.github.io/feeds/md_in_obsidian.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Categories Atom Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="https://hillerliao.github.io/">
+					<img class="profile-picture" src="https://hillerliao.github.io/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="https://hillerliao.github.io/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">用你的旧手机运行 OpenClaw，省下买服务器的钱</h1>
+	<span class="post-date">Mon 03 February 2025</span>
+	<p>![[Pasted image 20260203103854.png]]</p>
+<h2>需求背景</h2>
+<p>最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然部署过程十分艰辛，但跑起来之后，发现确实很好用，能当个全天候的 AI 助手。</p>
+<p>但问题来了：要 24 小时在线，就得有台机器一直开着。有时候出门去，电脑休眠了，助手就连不上了。</p>
+<p>我看了一眼书桌上尘封已久的旧手机，突然冒出一个想法：既然网上教程都说最低 2G 2 核的机器就能运行 OpenClaw，那现在的安卓机配置那么高，<strong>是不是可以让 OpenClaw 跑在旧手机上？</strong></p>
+<p>一开始想找现成的方案，但失败了。最麻烦的就是包依赖的问题，看到那些报错，网上信息也不多，很头疼。不过带着报错信息，在多个大模型之间来回穿梭，终于比较圆满地解决了。</p>
+<p>不多说，直接上过程。</p>
+<hr>
+<h2>前置条件</h2>
+<p>开始之前，请确认你准备好以下条件：</p>
+<ul>
+<li>一部能正常使用的<strong>安卓旧手机</strong>（配置要求不高，普通旧手机就行）</li>
+<li>手机能正常访问<strong>互联网</strong>（下载和安装需要）</li>
+<li>⚠️ 网络环境可能需要<strong>魔法上网</strong>，如果下载失败请注意这一点</li>
+<li>最重要的是要有<strong>信心和耐心</strong>，跟着一步步来，没问题！</li>
+</ul>
+<h2>下载和安装 Termux</h2>
+<p>首先，我们需要下载 Termux 应用。</p>
+<p><strong>什么是 Termux？</strong>简单说，它是一个能在安卓手机上运行命令行工具的软件，相当于给手机装了个简易的 Linux 系统。</p>
+<h3>如何下载</h3>
+<p>由于国内应用市场无法直接下载，你需要通过以下方式之一获取：</p>
+<p><strong>推荐方式：</strong>
+- <a href="https://f-droid.org/en/packages/com.termux/">F-Droid</a> - 官方下载渠道，最安全</p>
+<p><strong>其他方式（如上面的打不开）：</strong>
+- <a href="https://github.com/termux/termux-app/releases">GitHub 官方发布页</a> - 需要魔法上网
+- <a href="https://play.google.com/store/apps/details?id=com.termux">Google Play</a>
+- 第三方应用商店（如 ApkPure 等）- 注意选择正规来源</p>
+<blockquote>
+<p>💡 <strong>小贴士</strong>：下载时请认准官方来源，避免下载不安全的第三方应用。</p>
+</blockquote>
+<h3>安装</h3>
+<p>下载好后，直接安装。安装完成后：</p>
+<ol>
+<li><strong>打开 Termux 应用</strong></li>
+<li>你会看到一个黑色屏幕，这就是命令行终端界面</li>
+<li>长按屏幕可以粘贴内容，点击屏幕可以输入</li>
+</ol>
+<h2>🦞 运行安装脚本</h2>
+<p>接下来，复制下面的命令，粘贴到终端界面：</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sL<span class="w"> </span>https://s.zhihai.me/openclaw<span class="w"> </span>&gt;<span class="w"> </span>openclaw-install.sh
+chmod<span class="w"> </span>+x<span class="w"> </span>openclaw-install.sh
+./openclaw-install.sh
+</code></pre></div>
+
+<p>或者整行复制 <code>curl -sL https://s.zhihai.me/openclaw &gt; openclaw-install.sh &amp;&amp; chmod +x openclaw-install.sh &amp;&amp; ./openclaw-install.sh</code></p>
+<p>注意记住你输入或随机生成的 token 。</p>
+<h2>初始化</h2>
+<h3>方法一</h3>
+<p>如果顺利安装完成，接着：</p>
+<p>1) 运行 <code>oclog</code> 命令，查看运行状态。
+2) 新开一个终端窗口（屏幕左滑，点击 New Session），运行 <code>openclaw setup</code> 命令 。
+3) 运行 <code>openclaw onboard</code> 启动服务。这个就和常见的初始化教程说得一样了。不多说，最后一步提示 gateway 启动失败，可以不管，Termux 不支持这个，但前面 <code>oclog</code> 能看到服务已经启动了。</p>
+<h3>方法二</h3>
+<p>如果上面这个看不懂，直接杀掉应用，重启 Termux 应用，再次进入终端界面。</p>
+<p>运行 <code>ocr</code> 命令（OpenClaw Restart），接着运行 <code>oenclaw setup</code>。</p>
+<p>![[7a766f2f9e5ce50840dad1267374e815.png]]
+运行 ocr 命令后，过一段时间看到的效果（来自 2016年的 OnePlus 2 手机）</p>
+<h2>可能的问题与局限</h2>
+<p>OpenClaw还在快速更新，不保证脚本针对新版本还能成功运行，届时可能需要相应调整。</p>
+<p>相比标准的 OpenClaw 运行环境，使用 Termux 运行 OpenClaw 有一些局限：</p>
+<ol>
+<li><strong>性能限制</strong>：安卓设备的硬件资源可能不如 PC，影响 OpenClaw 的运行效率。</li>
+<li><strong>稳定性</strong>：Termux 环境可能不如正式的 Linux 发行版稳定，偶尔会出现兼容性问题。</li>
+<li><strong>功能缺失</strong>：某些高级功能可能需要额外配置或不被支持。</li>
+</ol>
+<p>![[74590364992b496b8dbbfaf93d907f96.png]]</p>
+<p>但就尝鲜和玩耍来说，这些限制是可以接受的。更何况，让旧手机变废为宝，不失为一件让人开心的事情。</p>
+<h2>更多可能的玩法</h2>
+<ol>
+<li><strong>定时任务</strong>：可以设置定时任务，让手机在特定时间自动执行某些任务。</li>
+<li><strong>远程控制</strong>：通过网络远程控制手机（安装 <code>Termux-API</code> ），实现远程操作。</li>
+<li><strong>智能家居集成</strong>：将手机作为智能家居中心的一部分，实现语音控制等。</li>
+</ol>
+<h2>总结</h2>
+<p>驱动 AI 写这个脚本花了我大个晚上时间，大部分时间都在解决 Android 兼容性问题。</p>
+<p><strong>核心思路总结为这几句话：</strong>
+1. 用 Termux 提供 Linux 环境
+2. 修复 OpenClaw 的平台兼容性问题
+3. 用 tmux 守护进程，确保服务持续运行
+4. 用 termux-wake-lock 防止手机休眠</p>
+<p>安装成功之后，记住几个命令就行：
+- <code>ocr</code> - 重启 OpenClaw 服务
+- <code>oclog</code> - 查看 OpenClaw 服务状态
+- <code>ockill</code> - 停止 OpenClaw 服务</p>
+<p>如果你有旧手机，不妨让它 Great Again 。👏</p>
+<p>安装过程中如果遇到问题，或有改进建议，欢迎反馈。</p>
+<p>也可以扫码进群交流：</p>
+<p>![[a416b9ca688bec9e83693414c4075eb3.png]]</p>
+
+
+</div>
+		</div>
+	</body>
+</html>

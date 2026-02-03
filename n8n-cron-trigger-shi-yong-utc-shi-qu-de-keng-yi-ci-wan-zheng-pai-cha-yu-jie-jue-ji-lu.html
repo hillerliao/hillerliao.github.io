@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="详细记录了 n8n Cron Trigger 升级后使用 UTC 时区导致日期错位问题的完整排查过程，包括容器时区确认、Code node 测试、以及最终的三种解决方案。">
+	<meta property="og:description" content="详细记录了 n8n Cron Trigger 升级后使用 UTC 时区导致日期错位问题的完整排查过程，包括容器时区确认、Code node 测试、以及最终的三种解决方案。">
+	<meta property="og:title" content="n8n Cron Trigger 使用 UTC 时区的坑：一次完整排查与解决记录" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://hillerliao.github.io/n8n-cron-trigger-shi-yong-utc-shi-qu-de-keng-yi-ci-wan-zheng-pai-cha-yu-jie-jue-ji-lu.html" />
+		<meta property="og:image" content="https://hillerliao.github.io/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>n8n Cron Trigger 使用 UTC 时区的坑：一次完整排查与解决记录 - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/poole.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/hyde.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="https://hillerliao.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="https://hillerliao.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+<link href="https://hillerliao.github.io/feeds/md_in_obsidian.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Categories Atom Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="https://hillerliao.github.io/">
+					<img class="profile-picture" src="https://hillerliao.github.io/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="https://hillerliao.github.io/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">n8n Cron Trigger 使用 UTC 时区的坑：一次完整排查与解决记录</h1>
+	<span class="post-date">Sun 18 January 2026</span>
+	<h2>问题背景</h2>
+<p>我使用 n8n 做自动化，通过 Cron Trigger，每天<strong>早上 7 点</strong>自动执行一个工作流：
+- 抓取 <strong>当天天气预报</strong>
+- 获取 <strong>农历日</strong>
+- 组合成消息，推送到微信 / 企业微信</p>
+<p>N8N 容器启动时已经明确设置：
+- <code>TZ=Asia/Shanghai</code>
+- <code>GENERIC_TIMEZONE=Asia/Shanghai</code></p>
+<p>运行多年都没问题。但最近<strong>升级了n8n</strong>之后，出现问题：获取到的是头一天的日期和农历。</p>
+<h2>原因排查</h2>
+<p>我第一反应是容器的时区没有指定为东八区，</p>
+<h3>Code node 中生成的日期慢了一天</h3>
+<p>工作流中有一个 Code node，用来生成当天日期，后续用这个日期去查农历：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">currentDateTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">currentDateTime</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">currentDateTime</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">currentDateTime</span><span class="p">.</span><span class="nx">getDate</span><span class="p">().</span><span class="nx">toString</span><span class="p">().</span><span class="nx">padStart</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="p">);</span>
+
+<span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">currentDate</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">year</span><span class="si">}${</span><span class="nx">month</span><span class="si">}${</span><span class="nx">day</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+
+<p>在 <strong>1 月 18 日早上 7 点（中国时间）</strong> 执行时，得到的却是：</p>
+<div class="highlight"><pre><span></span><code><span class="mf">20260117</span>
+</code></pre></div>
+
+<p>直接导致日期、农历错位。</p>
+<h2>二、排查过程</h2>
+<h3>✅ 第一步：确认容器时区是否正确</h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>n8n<span class="w"> </span>date
+</code></pre></div>
+
+<p>输出：</p>
+<div class="highlight"><pre><span></span><code>Sun Jan 18 22:48:54 CST 2026
+</code></pre></div>
+
+<p>结论：</p>
+<p>✔ Docker 容器时区 <strong>完全正确</strong></p>
+<hr>
+<h3>❌ 第二步：怀疑 TZ / localtime 是否未生效</h3>
+<p>尝试过：</p>
+<ul>
+<li>
+<p>设置 <code>TZ=Asia/Shanghai</code></p>
+</li>
+<li>
+<p>设置 <code>GENERIC_TIMEZONE=Asia/Shanghai</code></p>
+</li>
+<li>
+<p>挂载 <code>/etc/localtime</code></p>
+</li>
+</ul>
+<p>结果：</p>
+<blockquote>
+<p><strong>Cron Trigger 仍然使用 UTC</strong></p>
+</blockquote>
+<p>说明这不是 Docker / Linux 层面的问题。</p>
+<hr>
+<h3>❌ 第三步：怀疑是 n8n Code node 的 bug</h3>
+<p>测试代码：</p>
+<div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">now</span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toISOString</span><span class="p">()</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+
+<p>输出：</p>
+<div class="highlight"><pre><span></span><code><span class="mf">2026</span><span class="o">-</span><span class="mf">01</span><span class="o">-</span><span class="mf">18</span><span class="n">T14</span><span class="p">:</span><span class="mf">45</span><span class="p">:</span><span class="mf">18.537</span><span class="n">Z</span>
+</code></pre></div>
+
+<p>看起来像是 UTC，但这一步反而帮我确认了关键事实。</p>
+<hr>
+<h2>四、真相：这是 n8n 的“设计行为”，不是 Bug</h2>
+<h3>⚠️ 核心结论</h3>
+<blockquote>
+<p><strong>n8n 的 Cron Trigger 永远使用 UTC 进行调度</strong></p>
+</blockquote>
+<p>这是官方设计选择，原因包括：</p>
+<ul>
+<li>
+<p>保证工作流在不同时区、不同服务器上行为一致</p>
+</li>
+<li>
+<p>避免夏令时（DST）导致的歧义</p>
+</li>
+<li>
+<p>方便在数据库中统一存储时间</p>
+</li>
+</ul>
+<h3>同时要明确三点：</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>是否受 TZ / GENERIC_TIMEZONE 影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker 容器时间</td>
+<td>✅ 是</td>
+</tr>
+<tr>
+<td>Code node <code>Date()</code></td>
+<td>❌ 默认 UTC</td>
+</tr>
+<tr>
+<td><strong>Cron Trigger</strong></td>
+<td>❌ 永远 UTC</td>
+</tr>
+</tbody>
+</table>
+<p>也就是说：</p>
+<blockquote>
+<p><strong>Cron ≠ 系统时间 ≠ Code node 本地时间</strong></p>
+</blockquote>
+<p>这是大多数人第一次踩坑的根源。</p>
+<hr>
+<h2>五、正确的解决方案</h2>
+<h3>✅ 方案一：Cron 时间手动减 8 小时（最推荐）</h3>
+<p>如果你希望：</p>
+<blockquote>
+<p><strong>每天 22:00（中国时间）执行</strong></p>
+</blockquote>
+<p>Cron 应该写成：</p>
+<div class="highlight"><pre><span></span><code><span class="mi">14</span><span class="o">:</span><span class="mi">00</span><span class="w"> </span><span class="n">UTC</span>
+</code></pre></div>
+
+<p>即：</p>
+<div class="highlight"><pre><span></span><code><span class="mf">0</span><span class="w"> </span><span class="mf">14</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span>
+</code></pre></div>
+
+<h4>常用对照表：</h4>
+<table>
+<thead>
+<tr>
+<th>中国时间</th>
+<th>Cron（UTC）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>08:00</td>
+<td>00:00</td>
+</tr>
+<tr>
+<td>09:30</td>
+<td>01:30</td>
+</tr>
+<tr>
+<td>12:00</td>
+<td>04:00</td>
+</tr>
+<tr>
+<td>22:00</td>
+<td>14:00</td>
+</tr>
+</tbody>
+</table>
+<p>这是 <strong>生产环境最稳妥的做法</strong>。</p>
+<hr>
+<h3>✅ 方案二：Code node 中显式指定时区（处理日期）</h3>
+<p>在 Code node 中，<strong>永远不要</strong>直接用：</p>
+<div class="highlight"><pre><span></span><code><span class="nx">getFullYear</span><span class="p">()</span>
+<span class="nx">getMonth</span><span class="p">()</span>
+<span class="nx">getDate</span><span class="p">()</span>
+</code></pre></div>
+
+<p>正确写法：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">tz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Asia/Shanghai&#39;</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">();</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">parts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Intl</span><span class="p">.</span><span class="nx">DateTimeFormat</span><span class="p">(</span><span class="s1">&#39;en-CA&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">timeZone</span><span class="o">:</span><span class="w"> </span><span class="nx">tz</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">year</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;numeric&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">month</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2-digit&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">day</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2-digit&#39;</span><span class="p">,</span>
+<span class="p">}).</span><span class="nx">formatToParts</span><span class="p">(</span><span class="nx">now</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">map</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Object</span><span class="p">.</span><span class="nx">fromEntries</span><span class="p">(</span><span class="nx">parts</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">p</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="nx">p</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">value</span><span class="p">]));</span>
+
+<span class="k">return</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">currentDate</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">map</span><span class="p">.</span><span class="nx">year</span><span class="si">}${</span><span class="nx">map</span><span class="p">.</span><span class="nx">month</span><span class="si">}${</span><span class="nx">map</span><span class="p">.</span><span class="nx">day</span><span class="si">}</span><span class="sb">`</span>
+<span class="p">};</span>
+</code></pre></div>
+
+<h3>输出：</h3>
+<div class="highlight"><pre><span></span><code><span class="mf">20260118</span>
+</code></pre></div>
+
+<hr>
+<h3>✅ 方案三：Cron 高频触发 + 本地时间判断（进阶）</h3>
+<p>如果你不想心算 UTC：</p>
+<ul>
+<li>
+<p>Cron：每 5 分钟 / 每 10 分钟</p>
+</li>
+<li>
+<p>Code node 判断 <strong>中国时间是否满足条件</strong></p>
+</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span>
+<span class="w">  </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">toLocaleString</span><span class="p">(</span><span class="s1">&#39;en-US&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">timeZone</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Asia/Shanghai&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">hour</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2-digit&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">hour12</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">);</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">hour</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">22</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">run</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}];</span>
+<span class="p">}</span>
+
+<span class="k">return</span><span class="w"> </span><span class="p">[];</span>
+</code></pre></div>
+
+<p>适合复杂条件调度，但不适合简单定时。</p>
+<hr>
+<h2>六、强烈不建议的做法</h2>
+<p>❌ 依赖容器时区影响 Cron<br>
+❌ 使用 <code>toISOString()</code> 生成业务日期<br>
+❌ 在 Code node 中假设 <code>Date()</code> 是本地时间<br>
+❌ 试图“修复” n8n 的 Cron 行为</p>
+<p>这些都会让问题在将来再次出现。</p>
+<hr>
+<h2>七、最佳实践总结（TL;DR）</h2>
+<ul>
+<li>
+<p><strong>Cron Trigger：永远按 UTC 思考</strong></p>
+</li>
+<li>
+<p><strong>时间展示 / 业务日期：必须显式指定 Asia/Shanghai</strong></p>
+</li>
+<li>
+<p><strong>不要相信默认行为</strong></p>
+</li>
+<li>
+<p>把“时区”当成显式参数，而不是隐含前提</p>
+</li>
+</ul>
+<p>如果你的自动化流程：</p>
+<ul>
+<li>
+<p>涉及日期边界</p>
+</li>
+<li>
+<p>涉及每日任务</p>
+</li>
+<li>
+<p>涉及财务 / 日志 / 报表</p>
+</li>
+</ul>
+<p>那么这个问题 <strong>迟早会踩</strong>。</p>
+<p>早点理解，少掉几个坑。</p>
+<hr>
+<h2>八、延伸</h2>
+<p>后续可以继续深入的点包括：</p>
+<ul>
+<li>
+<p>n8n 内部是如何存储 Cron 的</p>
+</li>
+<li>
+<p><code>$now</code> / Expression 的时区规则</p>
+</li>
+<li>
+<p>多时区任务如何设计更安全</p>
+</li>
+</ul>
+<p>如果你也踩过这个坑，希望这篇记录能帮你节省几个小时的排查时间。</p>
+
+
+</div>
+		</div>
+	</body>
+</html>
