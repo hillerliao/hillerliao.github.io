@@ -1,6 +1,6 @@
 ---
 title: n8n Cron Trigger 使用 UTC 时区的坑：一次完整排查与解决记录
-urlname: n8n-cron-trigger-utc-timezone-issue
+slug: n8n-cron-trigger-utc-timezone-issue
 date: 2026-01-18
 description: 详细记录了 n8n Cron Trigger 升级后使用 UTC 时区导致日期错位问题的完整排查过程，包括容器时区确认、Code node 测试、以及最终的三种解决方案。
 tags:

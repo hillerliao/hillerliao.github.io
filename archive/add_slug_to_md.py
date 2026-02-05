@@ -3,7 +3,7 @@
 """
 为所有Markdown文章添加slug字段
 如果文件已有slug字段，保持不变
-如果文件有urlname字段，转换为slug字段
+如果文件有slug字段，转换为slug字段
 如果文件没有slug字段，从title生成slug
 """
 
@@ -104,8 +104,8 @@ def update_frontmatter(metadata, body, new_slug=None):
     for key, value in metadata.items():
         if key == 'slug' and new_slug:
             lines.append(f'slug: {new_slug}')
-        elif key == 'urlname':
-            # 将urlname转换为slug
+        elif key == 'slug':
+            # 将slug转换为slug
             if new_slug:
                 lines.append(f'slug: {new_slug}')
             else:
@@ -117,8 +117,8 @@ def update_frontmatter(metadata, body, new_slug=None):
     if 'slug' not in metadata and new_slug:
         lines.append(f'slug: {new_slug}')
 
-    # 如果有urlname但没有slug，需要移除urlname或转换
-    if 'urlname' in metadata and 'slug' not in metadata:
+    # 如果有slug但没有slug，需要移除slug或转换
+    if 'slug' in metadata and 'slug' not in metadata:
         # 已经在上面处理了
         pass
 
@@ -145,17 +145,17 @@ def process_file(filepath):
     # 确定要使用的slug
     new_slug = None
 
-    if 'urlname' in metadata:
-        # 从urlname转换
-        new_slug = metadata['urlname']
-        print(f"处理 {filepath} - 从urlname转换: {new_slug}")
+    if 'slug' in metadata:
+        # 从slug转换
+        new_slug = metadata['slug']
+        print(f"处理 {filepath} - 从slug转换: {new_slug}")
     elif 'title' in metadata:
         # 从title生成
         title = metadata['title']
         new_slug = slugify(title)
         print(f"处理 {filepath} - 从title生成: {title} -> {new_slug}")
     else:
-        print(f"跳过 {filepath} - 没有title或urlname")
+        print(f"跳过 {filepath} - 没有title或slug")
         return False
 
     # 更新文件内容

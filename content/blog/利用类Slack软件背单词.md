@@ -1,6 +1,6 @@
 ---
 title: 利用类Slack软件背单词
-urlname: xs32su
+slug: xs32su
 date: '2017-11-14 19:57:57 +0800'
 tags:
   - 编程

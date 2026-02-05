@@ -1,6 +1,6 @@
 ---
 title: 我是如何复习迎考 Series 65 的
-urlname: hr3mpx
+slug: hr3mpx
 date: '2014-11-26 19:57:57 +0800'
 tags:
   - 琐事

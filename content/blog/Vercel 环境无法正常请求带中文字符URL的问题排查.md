@@ -1,6 +1,6 @@
 ---
 title: Vercel 环境无法正常请求带中文字符URL的问题排查
-urlname: fix-chinese-characters-included-url-bug-in-vercel
+slug: fix-chinese-characters-included-url-bug-in-vercel
 date: '2022-8-11 21:12:57 +0800'
 tags:
   - 运维

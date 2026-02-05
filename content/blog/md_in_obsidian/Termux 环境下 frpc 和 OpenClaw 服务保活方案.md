@@ -12,7 +12,7 @@ tags:
     - tmux
     - cron
     - termux:boot
-urlname: termux-frpc-openclaw-service-survival   
+slug: termux-frpc-openclaw-service-survival   
 ---
 
 ## 背景与痛点

@@ -1,6 +1,6 @@
 ---
 title: 旧电脑安装 Ubuntu 折腾记
-urlname: rcgvbw
+slug: rcgvbw
 date: '2019-02-13 19:57:57 +0800'
 tags:
   - 电脑数码

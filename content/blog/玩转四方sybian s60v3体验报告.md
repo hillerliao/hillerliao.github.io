@@ -1,6 +1,6 @@
 ---
 title: 玩转四方sybian s60v3体验报告
-urlname: aqhic9
+slug: aqhic9
 date: '2010-06-27 19:57:57 +0800'
 tags:
   - 产品体验

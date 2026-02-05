@@ -73,8 +73,8 @@ def convert_to_wordpress_xml(md_files, output_file):
             ET.SubElement(item, 'title').text = title
             
             # 链接 - 使用相对路径
-            # 优先从 metadata 获取 slug 或 urlname
-            slug = metadata.get('slug', metadata.get('urlname'))
+            # 优先从 metadata 获取 slug 或 slug
+            slug = metadata.get('slug', metadata.get('slug'))
             if not slug:
                 # 如果都没有，使用文件名
                 slug = os.path.basename(md_file).replace('.md', '')

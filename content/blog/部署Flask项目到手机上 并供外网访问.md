@@ -1,6 +1,6 @@
 ---
 title: 部署Flask项目到手机上 并供外网访问
-urlname: deploy-flask-project-on-android
+slug: deploy-flask-project-on-android
 date: '2021-11-29 21:03:57 +0800'
 tags:
   -  教程

@@ -1,6 +1,6 @@
 ---
 title: 用你的旧手机运行 OpenClaw，省下买服务器的钱
-urlname: install-openclaw-on-old-phone-with-termux
+slug: install-openclaw-on-old-phone-with-termux
 date: 2026-02-03
 description: 记录了如何使用 Termux 在旧手机上运行 OpenClaw 的完整过程，包括技术选型、问题解决、脚本架构设计等开发经验。
 tags:

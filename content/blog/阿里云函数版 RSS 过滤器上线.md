@@ -1,6 +1,6 @@
 ---
 title: 阿里云函数版 RSS 过滤器上线
-urlname: rssfilter-on-aliyun-cf
+slug: rssfilter-on-aliyun-cf
 date: '2022-9-18 10:57:57 +0800'
 tags:
   - 产品体验

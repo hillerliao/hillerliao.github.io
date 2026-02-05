@@ -1,6 +1,6 @@
 ---
 title: 一个简单脚本，让我抛弃笔记软件flomo
-urlname: blog20231219
+slug: blog20231219
 date: '2023-12-19 21:39:57 +0800'
 tags:
   - 笔记软件

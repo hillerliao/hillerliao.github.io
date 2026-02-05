@@ -1,6 +1,6 @@
 ---
 title: ibpy-tutorial
-urlname: rmgp29
+slug: rmgp29
 date: '2017-08-23 19:57:57 +0800'
 tags:
   - 证券

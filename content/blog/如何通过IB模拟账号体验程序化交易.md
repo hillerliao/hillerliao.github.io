@@ -1,6 +1,6 @@
 ---
 title: 如何通过IB模拟账号体验程序化交易
-urlname: gc9osg
+slug: gc9osg
 date: '2017-08-24 19:57:57 +0800'
 tags:
   - 证券
