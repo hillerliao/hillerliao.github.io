@@ -5,3 +5,4 @@ __pycache__/
 Makefile
 tasks.py
 publish.sh
+.venv*

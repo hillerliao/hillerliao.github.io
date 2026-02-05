@@ -4,6 +4,10 @@ SITESUBTITLE = '互联网产品折腾师'
 SITEURL = ''
 
 PATH = 'content'
+PATH_METADATA = 'content/blog/md_in_obsidian/(?P<slug>.*)\.md'
+
+# Follow symlinks
+FOLLOW_SYMLINKS = True
 
 TIMEZONE = 'Asia/Shanghai'
 
