@@ -45,11 +45,3 @@ DEFAULT_PAGINATION = False
 
 # 自定义页面
 TEMPLATE_PAGES = {"talk.html": "talk/index.html"}
-
-# webring（你原来的配置）
-WEBRING_FEED_URLS = [
-    "https://rsshub.app/telegram/channel/JapanCoder"
-]
-WEBRING_ARTICLES_PER_FEED = 3000
-WEBRING_MAX_ARTICLES = 6000
-WEBRING_SUMMARY_WORDS = 250
