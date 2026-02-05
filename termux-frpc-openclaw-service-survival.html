@@ -30,7 +30,7 @@
 		<!-- Feeds -->
 <link href="https://hillerliao.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
 <link href="https://hillerliao.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
-<link href="https://hillerliao.github.io/feeds/md_in_obsidian.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Categories Atom Feed" />
+<link href="https://hillerliao.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Categories Atom Feed" />
 
 		<!-- Analytics -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -117,6 +117,10 @@
 <td>开机时自动执行脚本</td>
 </tr>
 <tr>
+<td><strong>termux-wake-lock</strong></td>
+<td>防止系统休眠杀死进程</td>
+</tr>
+<tr>
 <td><strong>tmux</strong></td>
 <td>会话管理（保持进程运行、方便查看日志）</td>
 </tr>
@@ -132,8 +136,8 @@
 │  ┌─────────────────────────────────────────────────────┐   │
 │  │                  Termux 环境                         │   │
 │  │  ┌─────────────┐  ┌─────────────┐  ┌──────────────┐ │   │
-│  │  │ termux:boot │→ │   tmux      │→ │ frpc        │ │   │
-│  │  │ (开机执行)   │  │ (会话管理)   │  │ openclaw    │ │   │
+│  │  │ termux:boot │→ │ frpc-start │→ │ frpc        │ │   │
+│  │  │ (开机执行)   │→ │ (wake lock) │  │ openclaw    │ │   │
 │  │  └─────────────┘  └─────────────┘  └──────────────┘ │   │
 │  │                                                  │     │   │
 │  │  ┌─────────────┐  ┌────────────────────────────┐  │     │   │
@@ -152,16 +156,29 @@ pkg<span class="w"> </span>install<span class="w"> </span>tmux
 <span class="c1"># 安装 cron（定时任务）</span>
 pkg<span class="w"> </span>install<span class="w"> </span>crontab
 
-<span class="c1"># 启动 cron 服务</span>
-crond
-
 <span class="c1"># 安装 termux:boot（开机自启）</span>
 pkg<span class="w"> </span>install<span class="w"> </span>termux-boot
 </code></pre></div>
 
 <blockquote>
-<p><strong>termux:boot 安装后需要在 Android 设置中授权自启动权限（忽略电池优化）</strong></p>
+<p><strong>termux:boot 安装后需要在 Android 设置中授权自启动权限</strong></p>
 </blockquote>
+<hr>
+<h2>⚠️ 关键经验教训</h2>
+<ol>
+<li><strong>termux:boot 只在开机时执行一次</strong>，杀进程后不会自动重启</li>
+<li><strong>boot 脚本不能用环境变量</strong>，必须硬编码 token 和 port</li>
+<li><strong>crond 必须加入 boot 脚本</strong>，否则进程监控不生效</li>
+<li><strong>monitor.sh 用绝对路径</strong>，cron 环境下 $PREFIX 不生效</li>
+<li><strong>frpc 用 exec 启动</strong>，确保 wake lock 正确持有，防止休眠被杀死</li>
+<li><strong>monitor.sh 添加日志</strong>，便于追踪重启历史和调试</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nv">LOG_FILE</span><span class="o">=</span><span class="nv">$HOME</span>/monitor.log
+log<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">] </span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+</code></pre></div>
+
 <hr>
 <h2>脚本内容</h2>
 <h3>1. OpenClaw 启动脚本 (<code>~/openclaw-run.sh</code>)</h3>
@@ -187,12 +204,15 @@ tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> 
 </code></pre></div>
 
 <h3>2. 开机启动脚本 (<code>~/.termux/boot/services.sh</code>)</h3>
-<p>手机开机时自动启动 frpc 和 OpenClaw：</p>
+<p>手机开机时自动启动 crond、frpc 和 OpenClaw：</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/data/data/com.termux/files/usr/bin/bash</span>
-<span class="c1"># termux:boot services - 开机自启动脚本</span>
+<span class="c1"># termux:boot services - 开机会话启动</span>
 
-<span class="c1"># 启动 frpc</span>
-tmux<span class="w"> </span>new-session<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>frpc<span class="w"> </span><span class="s2">&quot;frpc -c </span><span class="nv">$PREFIX</span><span class="s2">/etc/frp/frpc.ini&quot;</span>
+<span class="c1"># 启动 crond（关键）</span>
+crond
+
+<span class="c1"># 启动 frpc（使用独立脚本，包含 wake lock）</span>
+bash<span class="w"> </span>~/.termux/boot/frpc-start.sh<span class="w"> </span><span class="p">&amp;</span>
 
 <span class="c1"># 清理旧 OpenClaw 进程后启动</span>
 pkill<span class="w"> </span>-9<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;openclaw&#39;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null
@@ -200,26 +220,67 @@ tmux<span class="w"> </span>kill-session<span class="w"> </span>-t<span class="w
 sleep<span class="w"> </span><span class="m">1</span>
 tmux<span class="w"> </span>new<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>openclaw
 sleep<span class="w"> </span><span class="m">1</span>
-tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>openclaw<span class="w"> </span><span class="s2">&quot;export PATH=</span><span class="nv">$NPM_BIN</span><span class="s2">:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=</span><span class="nv">$TOKEN</span><span class="s2">; openclaw gateway --bind lan --port </span><span class="nv">$PORT</span><span class="s2"> --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&quot;</span><span class="w"> </span>C-m
+<span class="c1"># 注意：这里必须用硬编码的参数，不能用环境变量</span>
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>openclaw<span class="w"> </span><span class="s2">&quot;export PATH=/data/data/com.termux/files/home/.npm-global/bin:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=tokenac27a3d5; openclaw gateway --bind lan --port 18789 --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&quot;</span><span class="w"> </span>C-m
 </code></pre></div>
 
-<h3>3. 进程监控脚本 (<code>~/monitor.sh</code>)</h3>
+<h3>3. frpc 启动脚本 (<code>~/.termux/boot/frpc-start.sh</code>)</h3>
+<p>负责启动 frpc 并持有 wake lock，防止系统休眠导致进程被杀死：</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/data/data/com.termux/files/usr/bin/bash</span>
+termux-wake-lock
+/data/data/com.termux/files/usr/bin/frpc<span class="w"> </span>-c<span class="w"> </span>/data/data/com.termux/files/usr/etc/frp/frpc.ini
+</code></pre></div>
+
+<h3>4. 进程监控脚本 (<code>~/monitor.sh</code>)</h3>
 <p>每5分钟检测一次，崩溃则重启：</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/data/data/com.termux/files/usr/bin/bash</span>
 <span class="c1"># 进程监控脚本 - 每5分钟检测并重启崩溃的服务</span>
 
+<span class="nv">LOG_FILE</span><span class="o">=</span><span class="nv">$HOME</span>/monitor.log
+<span class="nv">MAX_LOG_LINES</span><span class="o">=</span><span class="m">1000</span><span class="w">  </span><span class="c1"># 日志最大行数</span>
+
+log<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="k">$(</span>date<span class="w"> </span><span class="s1">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span class="k">)</span><span class="s2">] </span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span>
+<span class="o">}</span>
+
+trim_log<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="c1"># 保留最后 MAX_LOG_LINES 行</span>
+<span class="w">    </span><span class="nb">local</span><span class="w"> </span><span class="nv">lines</span><span class="o">=</span><span class="k">$(</span>wc<span class="w"> </span>-l<span class="w"> </span>&lt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="k">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$lines</span><span class="s2">&quot;</span><span class="w"> </span>-gt<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$MAX_LOG_LINES</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">        </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$MAX_LOG_LINES</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">.tmp&quot;</span>
+<span class="w">        </span>mv<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">.tmp&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$LOG_FILE</span><span class="s2">&quot;</span>
+<span class="w">    </span><span class="k">fi</span>
+<span class="o">}</span>
+
+log<span class="w"> </span><span class="s2">&quot;========== Monitor started ==========&quot;</span>
+
 <span class="c1"># frpc 检测</span>
 <span class="k">if</span><span class="w"> </span>!<span class="w"> </span>pgrep<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;frpc&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">] frpc 崩溃，重启中...&quot;</span>
-<span class="w">    </span>tmux<span class="w"> </span>new-session<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>frpc<span class="w"> </span><span class="s2">&quot;frpc -c </span><span class="nv">$PREFIX</span><span class="s2">/etc/frp/frpc.ini&quot;</span>
+<span class="w">    </span>log<span class="w"> </span><span class="s2">&quot;frpc 进程不存在，准备重启...&quot;</span>
+<span class="w">    </span>tmux<span class="w"> </span>kill-session<span class="w"> </span>-t<span class="w"> </span>frpc<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+<span class="w">    </span>sleep<span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="c1"># 用 exec 确保 wake lock 正确持有</span>
+<span class="w">    </span>tmux<span class="w"> </span>new-session<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>frpc<span class="w"> </span><span class="s2">&quot;exec /data/data/com.termux/files/usr/bin/frpc -c /data/data/com.termux/files/usr/etc/frp/frpc.ini&quot;</span>
+<span class="w">    </span>log<span class="w"> </span><span class="s2">&quot;frpc 重启命令已发送&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span>log<span class="w"> </span><span class="s2">&quot;frpc 运行正常&quot;</span>
 <span class="k">fi</span>
 
 <span class="c1"># OpenClaw 检测</span>
 <span class="k">if</span><span class="w"> </span>!<span class="w"> </span>pgrep<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;openclaw.*gateway&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;[</span><span class="k">$(</span>date<span class="k">)</span><span class="s2">] OpenClaw 崩溃，重启中...&quot;</span>
+<span class="w">    </span>log<span class="w"> </span><span class="s2">&quot;OpenClaw 进程不存在，准备重启...&quot;</span>
 <span class="w">    </span>tmux<span class="w"> </span>kill-session<span class="w"> </span>-t<span class="w"> </span>openclaw<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+<span class="w">    </span>sleep<span class="w"> </span><span class="m">2</span><span class="w">  </span><span class="c1"># 等待端口释放</span>
 <span class="w">    </span>bash<span class="w"> </span>~/openclaw-run.sh
+<span class="w">    </span>log<span class="w"> </span><span class="s2">&quot;OpenClaw 重启命令已发送&quot;</span>
+<span class="k">else</span>
+<span class="w">    </span>log<span class="w"> </span><span class="s2">&quot;OpenClaw 运行正常&quot;</span>
 <span class="k">fi</span>
+
+<span class="c1"># 清理日志</span>
+trim_log
+
+log<span class="w"> </span><span class="s2">&quot;========== Monitor finished ==========&quot;</span>
 </code></pre></div>
 
 <hr>
@@ -235,36 +296,67 @@ crond
 </code></pre></div>
 
 <h4>创建 <code>~/openclaw-run.sh</code></h4>
-<p>（将下方内容写入文件）</p>
+<p>（将下方内容写入文件，<strong>注意：参数必须硬编码</strong>）</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/data/data/com.termux/files/usr/bin/bash</span>
+<span class="c1"># OpenClaw 启动脚本 - 硬编码参数</span>
+
+<span class="c1"># 杀掉旧进程</span>
 pkill<span class="w"> </span>-9<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;openclaw&#39;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null
 tmux<span class="w"> </span>kill-session<span class="w"> </span>-t<span class="w"> </span>openclaw<span class="w"> </span><span class="m">2</span>&gt;/dev/null
-sleep<span class="w"> </span><span class="m">1</span>
+
+<span class="c1"># 等待资源释放（增加等待时间）</span>
+sleep<span class="w"> </span><span class="m">2</span>
+
+<span class="c1"># 创建新 tmux 会话</span>
 tmux<span class="w"> </span>new<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>openclaw
+
+<span class="c1"># 等待会话就绪</span>
 sleep<span class="w"> </span><span class="m">1</span>
-tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>openclaw<span class="w"> </span><span class="s2">&quot;export PATH=</span><span class="nv">$NPM_BIN</span><span class="s2">:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=</span><span class="nv">$TOKEN</span><span class="s2">; openclaw gateway --bind lan --port </span><span class="nv">$PORT</span><span class="s2"> --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&quot;</span><span class="w"> </span>C-m
+
+<span class="c1"># 发送启动命令（硬编码所有参数）</span>
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>openclaw<span class="w"> </span><span class="s2">&quot;export PATH=/data/data/com.termux/files/home/.npm-global/bin:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=tokenac27a3d5; openclaw gateway --bind lan --port 18789 --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&quot;</span><span class="w"> </span>C-m
 </code></pre></div>
 
 <h4>创建 <code>~/.termux/boot/services.sh</code></h4>
-<p>（将下方内容写入文件）</p>
+<p>（将下方内容写入文件，<strong>注意：参数必须硬编码</strong>）</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/data/data/com.termux/files/usr/bin/bash</span>
-tmux<span class="w"> </span>new-session<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>frpc<span class="w"> </span><span class="s2">&quot;frpc -c </span><span class="nv">$PREFIX</span><span class="s2">/etc/frp/frpc.ini&quot;</span>
+<span class="c1"># termux:boot services - 开机会话启动</span>
 
-pkill<span class="w"> </span>-9<span class="w"> </span>-f<span class="w"> </span><span class="s1">&#39;openclaw&#39;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null
+<span class="c1"># 1. 清理旧会话</span>
+tmux<span class="w"> </span>kill-session<span class="w"> </span>-t<span class="w"> </span>frpc<span class="w"> </span><span class="m">2</span>&gt;/dev/null
 tmux<span class="w"> </span>kill-session<span class="w"> </span>-t<span class="w"> </span>openclaw<span class="w"> </span><span class="m">2</span>&gt;/dev/null
 sleep<span class="w"> </span><span class="m">1</span>
+
+<span class="c1"># 2. 启动 crond（关键）</span>
+crond
+
+<span class="c1"># 3. 启动 frpc（持有 wake lock）</span>
+tmux<span class="w"> </span>new-session<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>frpc<span class="w"> </span><span class="s2">&quot;exec /data/data/com.termux/files/usr/bin/frpc -c /data/data/com.termux/files/usr/etc/frp/frpc.ini&quot;</span>
+
+<span class="c1"># 4. 启动 OpenClaw</span>
 tmux<span class="w"> </span>new<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>openclaw
 sleep<span class="w"> </span><span class="m">1</span>
-tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>openclaw<span class="w"> </span><span class="s2">&quot;export PATH=</span><span class="nv">$NPM_BIN</span><span class="s2">:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=</span><span class="nv">$TOKEN</span><span class="s2">; openclaw gateway --bind lan --port </span><span class="nv">$PORT</span><span class="s2"> --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&quot;</span><span class="w"> </span>C-m
+tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> </span>openclaw<span class="w"> </span><span class="s2">&quot;export PATH=/data/data/com.termux/files/home/.npm-global/bin:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=tokenac27a3d5; openclaw gateway --bind lan --port 18789 --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&quot;</span><span class="w"> </span>C-m
+
+log<span class="w"> </span><span class="s2">&quot;Services started at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/boot.log<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+
+<h4>创建 <code>~/.termux/boot/frpc-start.sh</code></h4>
+<p>（将下方内容写入文件，包含 wake lock 防止休眠）</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/data/data/com.termux/files/usr/bin/bash</span>
+termux-wake-lock
+/data/data/com.termux/files/usr/bin/frpc<span class="w"> </span>-c<span class="w"> </span>/data/data/com.termux/files/usr/etc/frp/frpc.ini
 </code></pre></div>
 
 <h4>创建 <code>~/monitor.sh</code></h4>
-<p>（将下方内容写入文件）</p>
+<p>（将下方内容写入文件，<strong>注意：用 tmux 管理 frpc</strong>）</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/data/data/com.termux/files/usr/bin/bash</span>
+<span class="c1"># frpc 检测</span>
 <span class="k">if</span><span class="w"> </span>!<span class="w"> </span>pgrep<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;frpc&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<span class="w">    </span>tmux<span class="w"> </span>new-session<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>frpc<span class="w"> </span><span class="s2">&quot;frpc -c </span><span class="nv">$PREFIX</span><span class="s2">/etc/frp/frpc.ini&quot;</span>
+<span class="w">    </span>tmux<span class="w"> </span>new-session<span class="w"> </span>-d<span class="w"> </span>-s<span class="w"> </span>frpc<span class="w"> </span><span class="s2">&quot;frpc -c /data/data/com.termux/files/usr/etc/frp/frpc.ini&quot;</span>
 <span class="k">fi</span>
 
+<span class="c1"># OpenClaw 检测</span>
 <span class="k">if</span><span class="w"> </span>!<span class="w"> </span>pgrep<span class="w"> </span>-f<span class="w"> </span><span class="s2">&quot;openclaw.*gateway&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">    </span>tmux<span class="w"> </span>kill-session<span class="w"> </span>-t<span class="w"> </span>openclaw<span class="w"> </span><span class="m">2</span>&gt;/dev/null
 <span class="w">    </span>bash<span class="w"> </span>~/openclaw-run.sh
@@ -272,7 +364,7 @@ tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> 
 </code></pre></div>
 
 <h3>第三步：设置权限</h3>
-<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>~/.termux/boot/services.sh<span class="w"> </span>~/openclaw-run.sh<span class="w"> </span>~/monitor.sh
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>~/.termux/boot/services.sh<span class="w"> </span>~/.termux/boot/frpc-start.sh<span class="w"> </span>~/openclaw-run.sh<span class="w"> </span>~/monitor.sh
 </code></pre></div>
 
 <h3>第四步：配置 cron</h3>
@@ -280,24 +372,36 @@ tmux<span class="w"> </span>send-keys<span class="w"> </span>-t<span class="w"> 
 crontab<span class="w"> </span>-e
 
 <span class="c1"># 添加以下内容（每5分钟检测一次）</span>
-*/5<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>~/monitor.sh
+*/5<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>/data/data/com.termux/files/home/monitor.sh
+
+<span class="c1"># 保存退出后，启动 cron 服务（这一步也可以放到 boot 脚本里自动执行）</span>
+crond
 </code></pre></div>
 
 <h3>第五步：测试</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># 手动启动服务</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 手动启动 boot 脚本测试</span>
 bash<span class="w"> </span>~/.termux/boot/services.sh
 
 <span class="c1"># 查看 tmux 会话</span>
 tmux<span class="w"> </span>ls
 
-<span class="c1"># 查看 frpc 日志</span>
-tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>frpc
+<span class="c1"># 查看进程是否运行</span>
+ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;crond|frpc|openclaw&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>grep
 
-<span class="c1"># 查看 OpenClaw 日志</span>
-tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>openclaw
+<span class="c1"># 查看 crond 是否运行（验证 boot 脚本是否成功执行）</span>
+ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>crond<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>grep
 
 <span class="c1"># 手动测试检测脚本</span>
 bash<span class="w"> </span>~/monitor.sh
+</code></pre></div>
+
+<h3>第六步：验证开机自启动</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 重启手机，验证以下进程是否自动启动：</span>
+<span class="c1"># 1. crond - 进程监控依赖它</span>
+<span class="c1"># 2. frpc - 内网穿透</span>
+<span class="c1"># 3. OpenClaw - 主服务</span>
+
+ps<span class="w"> </span>aux<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;crond|frpc|openclaw&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>grep
 </code></pre></div>
 
 <hr>
@@ -332,7 +436,15 @@ bash<span class="w"> </span>~/monitor.sh
 </tr>
 <tr>
 <td>手动执行检测</td>
-<td><code>bash ~/monitor.sh</code></td>
+<td><code>bash /data/data/com.termux/files/home/monitor.sh</code></td>
+</tr>
+<tr>
+<td>查看监控日志</td>
+<td><code>tail -f ~/monitor.log</code></td>
+</tr>
+<tr>
+<td>查看启动日志</td>
+<td><code>tail -f ~/boot.log</code></td>
 </tr>
 <tr>
 <td>查看 cron 日志</td>
@@ -354,24 +466,77 @@ bash<span class="w"> </span>~/monitor.sh
 <p>检查：
 1. Android 设置中允许 Termux 自启动
 2. 脚本权限正确（<code>chmod +x</code>）
-3. 脚本有执行权限</p>
-<h3>Q4: 如何调整检测频率？</h3>
+3. <strong>boot 脚本里用了硬编码的路径和参数？</strong>
+4. 重启手机测试，不只是重启 Termux app</p>
+<h3>Q4: 手机重启后 frpc/OpenClaw 没启动？</h3>
+<p>可能原因：
+1. <strong>crond 没在 boot 脚本里启动</strong> → monitor.sh 不会运行
+2. <strong>boot 脚本用了环境变量</strong> → 开机时 $TOKEN、$PORT 为空
+3. <strong>boot 脚本语法错误</strong> → 检查日志：<code>logcat -s termux:boot</code></p>
+<h3>Q5: 进程崩溃后没自动重启？</h3>
+<p>可能原因：
+1. <strong>crond 没运行</strong> → <code>ps aux | grep crond</code>
+2. <strong>monitor.sh 路径错误</strong> → crontab 里用绝对路径 <code>/data/data/com.termux/files/home/monitor.sh</code>
+3. <strong>monitor.sh 里用了 $PREFIX</strong> → 改成绝对路径</p>
+<h3>Q6: 如何调整检测频率？</h3>
 <p>编辑 crontab：</p>
 <div class="highlight"><pre><span></span><code>crontab<span class="w"> </span>-e
 </code></pre></div>
 
 <ul>
-<li>每1分钟：<code>* * * * * ~/monitor.sh</code></li>
-<li>每5分钟：<code>*/5 * * * * ~/monitor.sh</code></li>
-<li>每10分钟：<code>*/10 * * * * ~/monitor.sh</code></li>
+<li>每1分钟：<code>* * * * * /data/data/com.termux/files/home/monitor.sh</code></li>
+<li>每5分钟：<code>*/5 * * * * /data/data/com.termux/files/home/monitor.sh</code></li>
+<li>每10分钟：<code>*/10 * * * * /data/data/com.termux/files/home/monitor.sh</code></li>
 </ul>
+<h3>Q7: boot 脚本执行了但进程没起来？</h3>
+<p>调试方法：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 手动执行 boot 脚本看报错</span>
+bash<span class="w"> </span>-x<span class="w"> </span>~/.termux/boot/services.sh
+
+<span class="c1"># 查看 termux:boot 日志</span>
+logcat<span class="w"> </span>-s<span class="w"> </span>termux:boot
+
+<span class="c1"># 检查环境变量是否存在</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$TOKEN</span><span class="w"> </span><span class="nv">$PORT</span><span class="w"> </span><span class="nv">$PREFIX</span>
+</code></pre></div>
+
+<h3>Q8: 如何查看日志？</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># 查看监控日志（进程重启记录）</span>
+tail<span class="w"> </span>-f<span class="w"> </span>~/monitor.log
+
+<span class="c1"># 查看启动日志</span>
+tail<span class="w"> </span>-f<span class="w"> </span>~/boot.log
+
+<span class="c1"># 查看 tmux 会话日志</span>
+tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>openclaw
+tmux<span class="w"> </span>attach<span class="w"> </span>-t<span class="w"> </span>frpc
+</code></pre></div>
+
 <hr>
 <h2>效果</h2>
 <ul>
-<li><strong>手机重启</strong> → frpc + OpenClaw 自动启动</li>
+<li><strong>手机重启</strong> → crond + frpc + OpenClaw <strong>全部自动启动</strong></li>
 <li><strong>进程崩溃</strong> → 5分钟内自动检测并重启</li>
-<li><strong>随时查看日志</strong> → <code>tmux attach -t frpc/openclaw</code></li>
+<li><strong>随时查看日志</strong> → <code>tmux attach -t openclaw</code></li>
 </ul>
+<hr>
+<h2>完整启动链路（手机开机后）</h2>
+<div class="highlight"><pre><span></span><code>手机开机
+    ↓
+termux:boot 自动触发
+    ↓
+services.sh 执行：
+  1. crond（关键！进程监控依赖它）
+  2. frpc-start.sh（持有 wake lock）
+  3. OpenClaw（主服务）
+    ↓
+frpc 持有 termux-wake-lock，防止系统休眠
+    ↓
+crond 每5分钟运行 monitor.sh
+    ↓
+检测到进程挂了 → 自动重启
+</code></pre></div>
+
 <hr>
 <h2>参考资源</h2>
 <ul>
