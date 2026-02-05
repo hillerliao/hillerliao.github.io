@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="zh" prefix="og: http://ogp.me/ns#">
 	<head>
 		<link href="http://gmpg.org/xfn/11" rel="profile">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
 	<meta property="og:description" content="">
 	<meta property="og:title" content="Vercel 环境无法正常请求带中文字符URL的问题排查" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://hillerliao.github.io/vercel-huan-jing-wu-fa-zheng-chang-qing-qiu-dai-zhong-wen-zi-fu-urlde-wen-ti-pai-cha.html" />
+	<meta property="og:url" content="https://hillerliao.github.io/fix-chinese-characters-included-url-bug-in-vercel.html" />
 		<meta property="og:image" content="https://hillerliao.github.io/images/avatar.jpg" />
 
 		<!-- Enable responsiveness on mobile devices-->
@@ -88,7 +88,7 @@ categories:</li>
 <h2>问题分析</h2>
 <p>根据第一版程序，请求<code>https://pyrsshub.vercel.app/aisixiang/search/author/%E9%83%91%E6%B0%B8%E5%B9%B4</code>得到的HTML 源码<code>&lt;title&gt;&lt;![CDATA[%E9%83%91%E6%B0%B8%E5%B9%B4 - author搜索 - 爱思想]]&gt;&lt;/title&gt;</code>可以看出，RSS 地址中的中文字符在 HTML 源码没有正常显示，还是 urlencode之后的状态。
 第一版本<a href="https://github.com/hillerliao/RSSHub-python/commit/cfcb04afa116941292a1bddab03cfbad4fde59da">程序</a>通过以下代码直接将URL 中的中文字符转换为为GBK编码的字符。</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">quote</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">quote</span>
 <span class="n">keywords_gbk</span> <span class="o">=</span> <span class="n">quote</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;gbk&#39;</span><span class="p">)</span>
 </code></pre></div>
 
@@ -104,13 +104,13 @@ categories:</li>
 <strong>编码</strong>：接着，将解码后的字符，按照目标网站指定的字符集进行编码（<code>urlencode</code>），可以用<code>quote</code>方法实现。
 具体到爱思想搜索结果列表页，为什么确定用的是gbk 字符来编码？<code>https://www.aisixiang.com/data/search.php?keyWords=%D1%D6%D1%A7%CD%A8&amp;searchfield=author</code> 属于其他页面搜索框的 Get 方法触发的请求，URL包含汉字，这时的URL编码方法由网页的编码决定，也就是由HTML源码中字符集的设定决定。 查看 HTML 源码 <code>&lt;meta http-equiv="Content-Type" content="text/html; charset=gbk" /&gt;</code>得知，所发请求必须是GBK 编码的 URL。
 <a href="https://github.com/hillerliao/RSSHub-python/commit/53e055637a85191cf88987740eeedb7bdb8204af">最终程序</a>修改为：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">quote</span><span class="p">,</span> <span class="n">unquote</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">quote</span><span class="p">,</span> <span class="n">unquote</span>
 <span class="n">keywords</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="c1"># 或者用 gbk 字符集解码</span>
 <span class="n">keywords_gbk</span> <span class="o">=</span> <span class="n">quote</span><span class="p">(</span><span class="n">keywords</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;gbk&#39;</span><span class="p">)</span>
 </code></pre></div>
 
 <p>以字符<code>郑永年</code>为例：</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">quote</span><span class="p">,</span> <span class="n">unquote</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">quote</span><span class="p">,</span> <span class="n">unquote</span>
 
 <span class="n">str_urlencoded</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%E</span><span class="s1">9</span><span class="si">%83%</span><span class="s1">91</span><span class="si">%E</span><span class="s1">6%B0%B8</span><span class="si">%E</span><span class="s1">5%B9%B4&#39;</span> 
 <span class="n">str_utf8_decoded</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">str_urlencoded</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>

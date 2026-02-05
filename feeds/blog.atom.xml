@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - blog</title><link href="https://hillerliao.github.io/" rel="alternate"/><link href="https://hillerliao.github.io/feeds/blog.atom.xml" rel="self"/><id>https://hillerliao.github.io/</id><updated>2025-02-15T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>SQL to CSV Converter：为产品或运营人员打造的数据格式转换利器</title><link href="https://hillerliao.github.io/sql-to-csv-converterwei-chan-pin-huo-yun-ying-ren-yuan-da-zao-de-shu-ju-ge-shi-zhuan-huan-li-qi.html" rel="alternate"/><published>2025-02-15T00:00:00+08:00</published><updated>2025-02-15T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2025-02-15:/sql-to-csv-converterwei-chan-pin-huo-yun-ying-ren-yuan-da-zao-de-shu-ju-ge-shi-zhuan-huan-li-qi.html</id><summary type="html">&lt;p&gt;在日常运营工作中，数据是决策的关键，但获取和处理数据的过程往往并不顺利。运营人员常常需要从数据团队获取用户 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;在日常运营工作中，数据是决策的关键，但获取和处理数据的过程往往并不顺利。运营人员常常需要从数据团队获取用户行为、市场反馈或业务指标等数据，但这些数据通常以SQL查询结果的形式提供。对于不熟悉SQL的运营人员来说，查看和分析这些数据无疑是一项挑战。幸运的是，&lt;strong&gt;SQL to CSV Converter&lt;/strong&gt; 这个工具的出现，为这一问题提供了完美的解决方案。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - blog</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2025-02-15T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>SQL to CSV Converter：为产品或运营人员打造的数据格式转换利器</title><link href="https://hillerliao.github.io/sql-to-csv-converterwei-chan-pin-huo-yun-ying-ren-yuan-da-zao-de-shu-ju-ge-shi-zhuan-huan-li-qi.html" rel="alternate"></link><published>2025-02-15T00:00:00+08:00</published><updated>2025-02-15T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2025-02-15:/sql-to-csv-converterwei-chan-pin-huo-yun-ying-ren-yuan-da-zao-de-shu-ju-ge-shi-zhuan-huan-li-qi.html</id><summary type="html">&lt;p&gt;在日常运营工作中，数据是决策的关键，但获取和处理数据的过程往往并不顺利。运营人员常常需要从数据团队获取用户 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;在日常运营工作中，数据是决策的关键，但获取和处理数据的过程往往并不顺利。运营人员常常需要从数据团队获取用户行为、市场反馈或业务指标等数据，但这些数据通常以SQL查询结果的形式提供。对于不熟悉SQL的运营人员来说，查看和分析这些数据无疑是一项挑战。幸运的是，&lt;strong&gt;SQL to CSV Converter&lt;/strong&gt; 这个工具的出现，为这一问题提供了完美的解决方案。&lt;/p&gt;
 &lt;h2&gt;什么是 SQL to CSV Converter？&lt;/h2&gt;
 &lt;p&gt;SQL to CSV Converter 是一个基于 Flask 框架开发的开源工具，能够将 SQL 查询结果轻松转换为 CSV 格式。它提供了一个简洁直观的 Web 界面，让运营人员无需复杂的操作即可完成数据格式的转换。项目代码完全开源，托管在 &lt;a href="https://github.com/hillerliao/sql2csv"&gt;GitHub&lt;/a&gt; 上，用户可以根据需要自行部署或使用其在线演示站点。&lt;/p&gt;
 &lt;h2&gt;运营人员的痛点与解决方案&lt;/h2&gt;
@@ -10,7 +10,7 @@
 &lt;p&gt;为了方便运营人员快速体验和使用，SQL to CSV Converter 提供了一个在线演示站点，访问 &lt;a href="https://sql2csv.vercel.app/"&gt;https://sql2csv.vercel.app/&lt;/a&gt; 即可使用。该站点支持直接上传 SQL 文件，并将其转换为 CSV 格式，无需任何复杂的配置或安装。&lt;/p&gt;
 &lt;p&gt;需要注意的是，为了确保服务的稳定性和安全性，演示站点对上传文件的大小进行了限制，&lt;strong&gt;单个文件的大小不得超过 4.5MB&lt;/strong&gt;。如果运营人员需要处理更大的文件，可以考虑将数据拆分后分别上传，或者在本地环境中部署该工具。&lt;/p&gt;
 &lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;SQL to CSV Converter 是一个专为运营人员设计的实用工具，它通过简单的操作，将复杂的 SQL 查询结果转换为易于查看和处理的 CSV 格式。无论是日常的数据分析，还是紧急的数据提取，这个工具都能帮助运营人员快速完成任务，节省时间和精力。如果你也经常面临类似的数据处理问题，不妨试试 SQL to CSV Converter，它可能会成为你工作中不可或缺的帮手。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>免装单词App，在 iPhone 锁屏随机显示单词</title><link href="https://hillerliao.github.io/randomly-show-a-word-on-ios-lockscreen.html" rel="alternate"/><published>2024-10-17T23:23:00+08:00</published><updated>2024-10-17T23:23:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2024-10-17:/randomly-show-a-word-on-ios-lockscreen.html</id><summary type="html">&lt;p&gt;免装单词App，在iPhone锁屏随机显示单词！这样，你每天解锁手机的时候，都能顺便瞟一眼单词，日积月累，词汇量自然水涨船高！&lt;/p&gt;</summary><content type="html">&lt;p&gt;亲爱的朋友们，你是否曾经为背单词而烦恼？是否觉得用手机时有很多零碎时间没有利用上？&lt;/p&gt;
+&lt;p&gt;SQL to CSV Converter 是一个专为运营人员设计的实用工具，它通过简单的操作，将复杂的 SQL 查询结果转换为易于查看和处理的 CSV 格式。无论是日常的数据分析，还是紧急的数据提取，这个工具都能帮助运营人员快速完成任务，节省时间和精力。如果你也经常面临类似的数据处理问题，不妨试试 SQL to CSV Converter，它可能会成为你工作中不可或缺的帮手。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>免装单词App，在 iPhone 锁屏随机显示单词</title><link href="https://hillerliao.github.io/randomly-show-a-word-on-ios-lockscreen.html" rel="alternate"></link><published>2024-10-17T23:23:00+08:00</published><updated>2024-10-17T23:23:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2024-10-17:/randomly-show-a-word-on-ios-lockscreen.html</id><summary type="html">&lt;p&gt;免装单词App，在iPhone锁屏随机显示单词！这样，你每天解锁手机的时候，都能顺便瞟一眼单词，日积月累，词汇量自然水涨船高！&lt;/p&gt;</summary><content type="html">&lt;p&gt;亲爱的朋友们，你是否曾经为背单词而烦恼？是否觉得用手机时有很多零碎时间没有利用上？&lt;/p&gt;
 &lt;p&gt;今天，我要给大家带来一个神奇的方法——免装单词App，在iPhone锁屏随机显示单词！这样，你每天解锁手机的时候，都能顺便瞟一眼单词，日积月累，词汇量自然水涨船高！&lt;/p&gt;
 &lt;p&gt;有些背单词软件可能有提供这种功能，但通常有一些问题：单词列表不受自己控制，显示的内容无法自定义，搞不好还收费。&lt;/p&gt;
 &lt;p&gt;今天我就来给大家介绍一种免费实现自定义锁屏单词小组件的办法。&lt;/p&gt;
@@ -82,7 +82,7 @@
 &lt;h2&gt;更多可能&lt;/h2&gt;
 &lt;p&gt;也可以把小组件钉在手机桌面上。相比锁屏界面，桌面组件效果对样式要求更高，可以通过修改脚本中的样式代码让桌面小组件变得更加漂亮。&lt;/p&gt;
 &lt;p&gt;此外，不仅仅是单词，天气、热搜、格言、倒数日之类的小组件，都可以借助Scriptable实现，核心就是换个数据和显示样式，本质都一样。只要你有想法，借助ChatGPT大概率能实现，一次不行，再试一次。&lt;/p&gt;
-&lt;p&gt;如果觉得这篇文章有意思，对你有启发，欢迎点个赞。&lt;/p&gt;</content><category term="blog"/><category term="小工具"/></entry><entry><title>让上网变得麻烦一点 效率就能提高一点</title><link href="https://hillerliao.github.io/control-wifi-to-raise-productivity.html" rel="alternate"/><published>2024-05-12T12:31:00+08:00</published><updated>2024-05-12T12:31:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2024-05-12:/control-wifi-to-raise-productivity.html</id><summary type="html">&lt;p&gt;电脑一断网，它就是非常棒的效率工具。能断则断，最好不过。如果不能，就设法减少联网次数。&lt;/p&gt;</summary><content type="html">&lt;p&gt;近来发现自己一打开电脑，效率就比较低下。于是，就开始琢磨，问题出在哪里？有什么提高效率的办法？今天简单记录针对这个问题的思考过程可尝试的解决方案。&lt;/p&gt;
+&lt;p&gt;如果觉得这篇文章有意思，对你有启发，欢迎点个赞。&lt;/p&gt;</content><category term="blog"></category><category term="小工具"></category></entry><entry><title>让上网变得麻烦一点 效率就能提高一点</title><link href="https://hillerliao.github.io/control-wifi-to-raise-productivity.html" rel="alternate"></link><published>2024-05-12T12:31:00+08:00</published><updated>2024-05-12T12:31:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2024-05-12:/control-wifi-to-raise-productivity.html</id><summary type="html">&lt;p&gt;电脑一断网，它就是非常棒的效率工具。能断则断，最好不过。如果不能，就设法减少联网次数。&lt;/p&gt;</summary><content type="html">&lt;p&gt;近来发现自己一打开电脑，效率就比较低下。于是，就开始琢磨，问题出在哪里？有什么提高效率的办法？今天简单记录针对这个问题的思考过程可尝试的解决方案。&lt;/p&gt;
 &lt;p&gt;主要结论是，上网太方便是效率杀手，减少信息输入，适当让上网变得不那么容易，可以提高效率。&lt;/p&gt;
 &lt;h2&gt;用电脑时都在干些什么&lt;/h2&gt;
 &lt;p&gt;大部分人为了记录金钱支出，会使用记账软件。但对时间支出，似乎没有详细记录过，只是能说出一天之内大概做了些什么。这种印象往往不准确。比如，大概知道花了不少时间看娱乐休闲网站，但到底是哪些网站、哪些页面吸引了自己，并不太清楚。&lt;/p&gt;
@@ -133,7 +133,7 @@
 &lt;p&gt;这个软件有几个地方还可以改进，其中之一是希望开启联网时支持注明联网目的。在进度条的位置展示目标，轻微提醒自己别跑题。其次，禁止联网时段希望能支持选择半点，现在只支持选择整点，不够灵活。比如，我想晚上十点半开始断网，但按照软件现在的设计，没法实现。&lt;/p&gt;
 &lt;h2&gt;结语&lt;/h2&gt;
 &lt;p&gt;总之，电脑一断网，它就是非常棒的效率工具。能断则断，最好不过。如果不能，就设法减少联网次数。日子一久，你会发现，以前迟迟无法写完的博客，不知不觉发表了；以前无法坚持的外语听写练习，已经积累20个小时了；以前在收藏夹里吃灰的视频教程，已经看完100集了；一直想背的单词，已经背了好几遍了。&lt;/p&gt;
-&lt;p&gt;有时候生活不需要太便利，不是吗？&lt;/p&gt;</content><category term="blog"/><category term="小工具"/></entry><entry><title>一个简单脚本，让我抛弃笔记软件flomo</title><link href="https://hillerliao.github.io/yi-ge-jian-dan-jiao-ben-rang-wo-pao-qi-bi-ji-ruan-jian-flomo.html" rel="alternate"/><published>2023-12-19T21:39:57+08:00</published><updated>2023-12-19T21:39:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2023-12-19:/yi-ge-jian-dan-jiao-ben-rang-wo-pao-qi-bi-ji-ruan-jian-flomo.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;有时候生活不需要太便利，不是吗？&lt;/p&gt;</content><category term="blog"></category><category term="小工具"></category></entry><entry><title>一个简单脚本，让我抛弃笔记软件flomo</title><link href="https://hillerliao.github.io/blog20231219.html" rel="alternate"></link><published>2023-12-19T21:39:57+08:00</published><updated>2023-12-19T21:39:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2023-12-19:/blog20231219.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;笔记软件
 categories:&lt;/li&gt;
 &lt;li&gt;工具&lt;/li&gt;
@@ -154,7 +154,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;最近狠下心来，借助 Chat GPT 用 Python 写了一个简单的脚本，连接 memos 的 SQLite 数据库，随机获取一条笔记内容，并推送到 Telegram 。为了增强体验，增加了简单的关键词过滤，比如排除掉带有“存档”字眼的笔记。 写好之后，在系统的定时任务里增加一条运行该脚本的任务。&lt;/p&gt;
 &lt;p&gt;试运行发现效果挺好，我就借助别人写的数据迁移工具，把 flomo上的数据导出后导入到 memos 中。&lt;/p&gt;
 &lt;p&gt;当然，自己搭建的服务，就怕不稳定，数据备份很重要。我在自己电脑的 Wsl 上、安卓手机的 Termux上分别设置定时任务，将 SQLite 数据库文件备份到本地。&lt;/p&gt;
-&lt;p&gt;到此，总算可以彻底告别 flomo 了。 meomos 加上简单的脚本，恢复了我的笔记回顾习惯，也帮我省了一笔 flomo 会员费，还避免了 VPS 吃灰，少花钱反而提升了体验，可谓是一举多得。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>尝试让 Pelican 博客的部分发布步骤自动化</title><link href="https://hillerliao.github.io/automated-pelican-publishment.html" rel="alternate"/><published>2023-06-22T20:33:00+08:00</published><updated>2023-06-22T20:33:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2023-06-22:/automated-pelican-publishment.html</id><summary type="html">&lt;p&gt;尝试让 pelican 发布博客自动化，为此折腾了一天，几点收货。&lt;/p&gt;</summary><content type="html">&lt;p&gt;个人独立博客上最新一篇文章出现烂图，严重影响站点形象，而且持续了好长一段时间没有修复。图床用的是腾讯的某个服务，后来不让我的站点引用了。我早就忘了具体通过哪个图床工具上传的。&lt;/p&gt;
+&lt;p&gt;到此，总算可以彻底告别 flomo 了。 meomos 加上简单的脚本，恢复了我的笔记回顾习惯，也帮我省了一笔 flomo 会员费，还避免了 VPS 吃灰，少花钱反而提升了体验，可谓是一举多得。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>尝试让 Pelican 博客的部分发布步骤自动化</title><link href="https://hillerliao.github.io/automated-pelican-publishment.html" rel="alternate"></link><published>2023-06-22T20:33:00+08:00</published><updated>2023-06-22T20:33:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2023-06-22:/automated-pelican-publishment.html</id><summary type="html">&lt;p&gt;尝试让 pelican 发布博客自动化，为此折腾了一天，几点收货。&lt;/p&gt;</summary><content type="html">&lt;p&gt;个人独立博客上最新一篇文章出现烂图，严重影响站点形象，而且持续了好长一段时间没有修复。图床用的是腾讯的某个服务，后来不让我的站点引用了。我早就忘了具体通过哪个图床工具上传的。&lt;/p&gt;
 &lt;h2&gt;操作繁琐 修改动力不足&lt;/h2&gt;
 &lt;p&gt;为什么迟迟不修复？ &lt;/p&gt;
 &lt;p&gt;我的个人博客用 Pelican 生成，静态文件托管在 Github Pages，操作过程大致为：&lt;/p&gt;
@@ -202,7 +202,7 @@ categories:&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;通过 &lt;a href="https://gist.github.com/JosefJezek/6053301"&gt;How to use Pelican on GitHub Pages Gittip&lt;/a&gt;  发现 &lt;code&gt;theme&lt;/code&gt; 配置项可以填入整个路径。&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://nekrasovp.github.io/pelican-github-script-automation.html"&gt;Move blog to github and automate deploying with git hooks - Data driven&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/><category term="pelican"/></entry><entry><title>E843，高效利用微信学英语、看新闻的小工具</title><link href="https://hillerliao.github.io/e843.html" rel="alternate"/><published>2022-11-06T16:54:00+08:00</published><updated>2022-11-06T16:54:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-11-06:/e843.html</id><summary type="html">&lt;p&gt;实时推送经济学人国际简讯到微信，碎片化时间享用高质量资讯。&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近半年断断续续利用业余时间自建了一个企业微信应用「E843」，用于推送经济学人 World in Brief 栏目发布的国际简讯到个人微信。 &lt;/p&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="pelican"></category></entry><entry><title>E843，高效利用微信学英语、看新闻的小工具</title><link href="https://hillerliao.github.io/e843.html" rel="alternate"></link><published>2022-11-06T16:54:00+08:00</published><updated>2022-11-06T16:54:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-11-06:/e843.html</id><summary type="html">&lt;p&gt;实时推送经济学人国际简讯到微信，碎片化时间享用高质量资讯。&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近半年断断续续利用业余时间自建了一个企业微信应用「E843」，用于推送经济学人 World in Brief 栏目发布的国际简讯到个人微信。 &lt;/p&gt;
 &lt;p&gt;&lt;img alt="企业微信自建应用 E843" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/wecom_E843_profile.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;应用名字来自经济学人的创办年份 1843 年，将数字 1 换成 Economist 的首字母 E 而成。E 也可以理解为 English 的首字母 E。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="E843界面预览" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/E843_preview.jpg"&gt;&lt;/p&gt;
@@ -230,7 +230,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;如果你也想要使用上述服务，可以申请加入我在企业微信创建的"企业"「智海」。由于该"企业"不是认证主体，有200人上限，加满之后将无法接纳新"员工"。&lt;/p&gt;
 &lt;p&gt;为让有限的名额给到真正需要的人，「E843」 需付费使用，50元一年。可以支付5元体验一个月。&lt;/p&gt;
 &lt;p&gt;扫码联系牛牛（微信：cbnn2018），备注「E843」。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="扫码加入 E843" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/wechat_cbnn_qrcode.jpg"&gt;&lt;/p&gt;</content><category term="blog"/><category term="小工具"/></entry><entry><title>每周五天英语学习法</title><link href="https://hillerliao.github.io/mei-zhou-wu-tian-ying-yu-xue-xi-fa.html" rel="alternate"/><published>2022-10-30T13:51:57+08:00</published><updated>2022-10-30T13:51:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-10-30:/mei-zhou-wu-tian-ying-yu-xue-xi-fa.html</id><summary type="html">&lt;p&gt;最近在油管看到一个介绍英语学习方法的视频「 &lt;a href="https://www.bilibili.com/video/BV1QJ411J7UG/"&gt;The Best Way To Learn English (In my humble opinion.)&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;img alt="扫码加入 E843" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/wechat_cbnn_qrcode.jpg"&gt;&lt;/p&gt;</content><category term="blog"></category><category term="小工具"></category></entry><entry><title>每周五天英语学习法</title><link href="https://hillerliao.github.io/mei-zhou-wu-tian-ying-yu-xue-xi-fa.html" rel="alternate"></link><published>2022-10-30T13:51:57+08:00</published><updated>2022-10-30T13:51:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-10-30:/mei-zhou-wu-tian-ying-yu-xue-xi-fa.html</id><summary type="html">&lt;p&gt;最近在油管看到一个介绍英语学习方法的视频「 &lt;a href="https://www.bilibili.com/video/BV1QJ411J7UG/"&gt;The Best Way To Learn English (In my humble opinion.)&lt;/a&gt;&lt;br&gt;
 」，播放量达到140多万次，讲得挺好，本文将其精华内容作个 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近在油管看到一个介绍英语学习方法的视频「 &lt;a href="https://www.bilibili.com/video/BV1QJ411J7UG/"&gt;The Best Way To Learn English (In my humble opinion.)&lt;/a&gt;&lt;br&gt;
 」，播放量达到140多万次，讲得挺好，本文将其精华内容作个整理。  &lt;/p&gt;
 &lt;p&gt;作者是来自加拿大的英语老师Bob，也学过法语。Bob基于自己的教学经验与学习经历，总结出这份英语学习计划。  &lt;/p&gt;
@@ -325,7 +325,7 @@ categories:&lt;/li&gt;
 &lt;li&gt;休息一下。  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;⌛ 请记住：视频观看三遍，节奏为：今天两次打开英文字幕，明天一次关闭英文字幕，以强化你学到的英语。  &lt;/p&gt;
-&lt;p&gt;以上就是 Bob 分享的英语学习计划。其实没有什么特别之处，重要的是能坚持实施。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>阿里云函数版 RSS 过滤器上线</title><link href="https://hillerliao.github.io/a-li-yun-han-shu-ban-rss-guo-lu-qi-shang-xian.html" rel="alternate"/><published>2022-09-18T10:57:57+08:00</published><updated>2022-09-18T10:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-09-18:/a-li-yun-han-shu-ban-rss-guo-lu-qi-shang-xian.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;以上就是 Bob 分享的英语学习计划。其实没有什么特别之处，重要的是能坚持实施。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>阿里云函数版 RSS 过滤器上线</title><link href="https://hillerliao.github.io/rssfilter-on-aliyun-cf.html" rel="alternate"></link><published>2022-09-18T10:57:57+08:00</published><updated>2022-09-18T10:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-09-18:/rssfilter-on-aliyun-cf.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;产品体验
 categories:&lt;/li&gt;
 &lt;li&gt;产品体验&lt;/li&gt;
@@ -365,7 +365,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;比如，有些 RSS，我只关心带有特定关键词的内容；另一些 RSS，我不想看到含有特定关键词的广告内容。有了 RSS 过滤器，这些需求都能得到满足。&lt;/p&gt;
 &lt;p&gt;好了，如果你觉得本项目对你有用，不妨请我喝杯咖啡。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="个人微信收款码-智海" src="https://raw.githubusercontent.com/hillerliao/img/main/IMG_0096%20copy.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;如果有改进建议，欢迎交流。微信： &lt;code&gt;hillerliao&lt;/code&gt;。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>如何训练你的大脑用英语思考</title><link href="https://hillerliao.github.io/ru-he-xun-lian-ni-de-da-nao-yong-ying-yu-si-kao.html" rel="alternate"/><published>2022-08-16T08:36:53+08:00</published><updated>2022-08-16T08:36:53+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-08-16:/ru-he-xun-lian-ni-de-da-nao-yong-ying-yu-si-kao.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;如果有改进建议，欢迎交流。微信： &lt;code&gt;hillerliao&lt;/code&gt;。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>如何训练你的大脑用英语思考</title><link href="https://hillerliao.github.io/how-to-practice-thinking-in-english.html" rel="alternate"></link><published>2022-08-16T08:36:53+08:00</published><updated>2022-08-16T08:36:53+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-08-16:/how-to-practice-thinking-in-english.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;学外语
 categories:&lt;/li&gt;
 &lt;li&gt;学外语&lt;/li&gt;
@@ -414,7 +414,7 @@ categories:&lt;/li&gt;
 &lt;h2&gt;每天练习&lt;/h2&gt;
 &lt;p&gt;那么，你应该花多少时间在这些练习上？每天做一点。
 当你每天都这样做时，一遍又一遍，一点一点地做，这就是&lt;strong&gt;关键&lt;/strong&gt;。
-当你把事情变成一种习惯时，它会突然出现在你的脑海中，而在你意识到之前，实际上，你是在用英语思考。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>Vercel 环境无法正常请求带中文字符URL的问题排查</title><link href="https://hillerliao.github.io/vercel-huan-jing-wu-fa-zheng-chang-qing-qiu-dai-zhong-wen-zi-fu-urlde-wen-ti-pai-cha.html" rel="alternate"/><published>2022-08-11T21:12:57+08:00</published><updated>2022-08-11T21:12:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-08-11:/vercel-huan-jing-wu-fa-zheng-chang-qing-qiu-dai-zhong-wen-zi-fu-urlde-wen-ti-pai-cha.html</id><summary type="html">&lt;ul&gt;
+当你把事情变成一种习惯时，它会突然出现在你的脑海中，而在你意识到之前，实际上，你是在用英语思考。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Vercel 环境无法正常请求带中文字符URL的问题排查</title><link href="https://hillerliao.github.io/fix-chinese-characters-included-url-bug-in-vercel.html" rel="alternate"></link><published>2022-08-11T21:12:57+08:00</published><updated>2022-08-11T21:12:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-08-11:/fix-chinese-characters-included-url-bug-in-vercel.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;运维
 categories:&lt;/li&gt;
 &lt;li&gt;运维&lt;/li&gt;
@@ -432,7 +432,7 @@ categories:&lt;/li&gt;
 &lt;h2&gt;问题分析&lt;/h2&gt;
 &lt;p&gt;根据第一版程序，请求&lt;code&gt;https://pyrsshub.vercel.app/aisixiang/search/author/%E9%83%91%E6%B0%B8%E5%B9%B4&lt;/code&gt;得到的HTML 源码&lt;code&gt;&amp;lt;title&amp;gt;&amp;lt;![CDATA[%E9%83%91%E6%B0%B8%E5%B9%B4 - author搜索 - 爱思想]]&amp;gt;&amp;lt;/title&amp;gt;&lt;/code&gt;可以看出，RSS 地址中的中文字符在 HTML 源码没有正常显示，还是 urlencode之后的状态。
 第一版本&lt;a href="https://github.com/hillerliao/RSSHub-python/commit/cfcb04afa116941292a1bddab03cfbad4fde59da"&gt;程序&lt;/a&gt;通过以下代码直接将URL 中的中文字符转换为为GBK编码的字符。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;urllib.parse&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;
 &lt;span class="n"&gt;keywords_gbk&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;gbk&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -448,13 +448,13 @@ categories:&lt;/li&gt;
 &lt;strong&gt;编码&lt;/strong&gt;：接着，将解码后的字符，按照目标网站指定的字符集进行编码（&lt;code&gt;urlencode&lt;/code&gt;），可以用&lt;code&gt;quote&lt;/code&gt;方法实现。
 具体到爱思想搜索结果列表页，为什么确定用的是gbk 字符来编码？&lt;code&gt;https://www.aisixiang.com/data/search.php?keyWords=%D1%D6%D1%A7%CD%A8&amp;amp;searchfield=author&lt;/code&gt; 属于其他页面搜索框的 Get 方法触发的请求，URL包含汉字，这时的URL编码方法由网页的编码决定，也就是由HTML源码中字符集的设定决定。 查看 HTML 源码 &lt;code&gt;&amp;lt;meta http-equiv="Content-Type" content="text/html; charset=gbk" /&amp;gt;&lt;/code&gt;得知，所发请求必须是GBK 编码的 URL。
 &lt;a href="https://github.com/hillerliao/RSSHub-python/commit/53e055637a85191cf88987740eeedb7bdb8204af"&gt;最终程序&lt;/a&gt;修改为：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;urllib.parse&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;
 &lt;span class="n"&gt;keywords&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 或者用 gbk 字符集解码&lt;/span&gt;
 &lt;span class="n"&gt;keywords_gbk&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;gbk&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;以字符&lt;code&gt;郑永年&lt;/code&gt;为例：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;urllib.parse&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;
 
 &lt;span class="n"&gt;str_urlencoded&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%E&lt;/span&gt;&lt;span class="s1"&gt;9&lt;/span&gt;&lt;span class="si"&gt;%83%&lt;/span&gt;&lt;span class="s1"&gt;91&lt;/span&gt;&lt;span class="si"&gt;%E&lt;/span&gt;&lt;span class="s1"&gt;6%B0%B8&lt;/span&gt;&lt;span class="si"&gt;%E&lt;/span&gt;&lt;span class="s1"&gt;5%B9%B4&amp;#39;&lt;/span&gt; 
 &lt;span class="n"&gt;str_utf8_decoded&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;str_urlencoded&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -478,7 +478,7 @@ categories:&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.ruanyifeng.com/blog/2010/02/url_encoding.html"&gt;关于URL编码 - 阮一峰的网络日志&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.csdn.net/a359680405/article/details/44857359"&gt;Python菜鸟晋级11----urlencode与unquote_翻滚吧挨踢男的博客-CSDN博客&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>如何发布 pelican 到 github pages</title><link href="https://hillerliao.github.io/publish-pelican-to-ghp.html" rel="alternate"/><published>2021-12-26T17:32:00+08:00</published><updated>2021-12-26T17:32:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2021-12-26:/publish-pelican-to-ghp.html</id><summary type="html">&lt;p&gt;Short version for index and feeds&lt;/p&gt;</summary><content type="html">&lt;p&gt;去年决定将静态博客的生成工具从 hexo 改成基于 Python 的 pelican，初次搬运之后就没在动过，以至于已经忘了该如何更新。&lt;/p&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>如何发布 pelican 到 github pages</title><link href="https://hillerliao.github.io/publish-pelican-to-ghp.html" rel="alternate"></link><published>2021-12-26T17:32:00+08:00</published><updated>2021-12-26T17:32:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2021-12-26:/publish-pelican-to-ghp.html</id><summary type="html">&lt;p&gt;Short version for index and feeds&lt;/p&gt;</summary><content type="html">&lt;p&gt;去年决定将静态博客的生成工具从 hexo 改成基于 Python 的 pelican，初次搬运之后就没在动过，以至于已经忘了该如何更新。&lt;/p&gt;
 &lt;p&gt;为避免再次遗忘，现决定将发布过程写下来。  &lt;/p&gt;
 &lt;h2&gt;第一次配置环境&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# 进入项目根目录  
@@ -497,9 +497,9 @@ git clone https://github.com/getpelican/pelican-themes.git
 
 &lt;span class="c1"&gt;# publish to github pages&lt;/span&gt;
 &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;import&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;2.1.0&lt;/span&gt;
-&lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;output&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
+&lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;output&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
 &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="blog"/><category term="pelican"/></entry><entry><title>部署Flask项目到手机上 并供外网访问</title><link href="https://hillerliao.github.io/bu-shu-flaskxiang-mu-dao-shou-ji-shang-bing-gong-wai-wang-fang-wen.html" rel="alternate"/><published>2021-11-29T21:03:57+08:00</published><updated>2021-11-29T21:03:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2021-11-29:/bu-shu-flaskxiang-mu-dao-shou-ji-shang-bing-gong-wai-wang-fang-wen.html</id><summary type="html">&lt;ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="blog"></category><category term="pelican"></category></entry><entry><title>部署Flask项目到手机上 并供外网访问</title><link href="https://hillerliao.github.io/deploy-flask-project-on-android.html" rel="alternate"></link><published>2021-11-29T21:03:57+08:00</published><updated>2021-11-29T21:03:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2021-11-29:/deploy-flask-project-on-android.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;教程
 categories:&lt;/li&gt;
 &lt;li&gt;教程&lt;/li&gt;
@@ -725,7 +725,7 @@ service supervisor start
 &lt;li&gt;启动supervisor服务。此时会自动启动 uwsgi 服务。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;总体还算比较稳定，出现过一次花生壳内网版APP崩溃的情况。&lt;/p&gt;
-&lt;p&gt;首发在&lt;a href="https://www.yuque.com/hillerliao/zhihai.me/mtx53r"&gt;语雀&lt;/a&gt;&lt;/p&gt;</content><category term="blog"/></entry><entry><title>如何实现微信接收龙岩学院讲座提醒</title><link href="https://hillerliao.github.io/ru-he-shi-xian-wei-xin-jie-shou-long-yan-xue-yuan-jiang-zuo-ti-xing.html" rel="alternate"/><published>2020-11-05T19:57:57+08:00</published><updated>2020-11-05T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2020-11-05:/ru-he-shi-xian-wei-xin-jie-shou-long-yan-xue-yuan-jiang-zuo-ti-xing.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;首发在&lt;a href="https://www.yuque.com/hillerliao/zhihai.me/mtx53r"&gt;语雀&lt;/a&gt;&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>如何实现微信接收龙岩学院讲座提醒</title><link href="https://hillerliao.github.io/qugakt.html" rel="alternate"></link><published>2020-11-05T19:57:57+08:00</published><updated>2020-11-05T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2020-11-05:/qugakt.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;编程
 categories:&lt;/li&gt;
 &lt;li&gt;编程&lt;/li&gt;
@@ -770,7 +770,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;WxPusher (微信推送服务)是一个使用微信公众号作为通道的，实时信息推送平台，你可以通过调用 API 的方式，把信息推送到微信上，无需安装额外的软件，即可做到信息实时通知。 你可以使用 WxPusher 来做服务器报警通知、抢课通知、抢票通知，信息更新提示等。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;我们在其上创建一个应用「消息来了」，然后创建一个主题「龙院讲座」，获得订阅二维码。将二维码分享给朋友，对方只需要扫一扫，即可实现订阅。
-&lt;img alt="龙岩学院讲座提醒-二维码.jpg" src="https://cdn.nlark.com/yuque/0/2020/jpeg/147312/1604542059523-bbb8bdcc-f45f-4d8b-9c78-847fe87afb52.jpeg#align=left&amp;amp;display=inline&amp;amp;height=395&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92-%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg&amp;amp;originHeight=1304&amp;amp;originWidth=990&amp;amp;size=69543&amp;amp;status=done&amp;amp;style=stroke&amp;amp;width=300#align=left&amp;amp;display=inline&amp;amp;height=1304&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;originHeight=1304&amp;amp;originWidth=990&amp;amp;status=done&amp;amp;style=none&amp;amp;width=990"&gt;&lt;/p&gt;</content><category term="blog"/></entry><entry><title>天猫精灵智能音箱新闻收听体验报告</title><link href="https://hillerliao.github.io/tian-mao-jing-ling-zhi-neng-yin-xiang-xin-wen-shou-ting-ti-yan-bao-gao.html" rel="alternate"/><published>2020-10-22T19:57:57+08:00</published><updated>2020-10-22T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2020-10-22:/tian-mao-jing-ling-zhi-neng-yin-xiang-xin-wen-shou-ting-ti-yan-bao-gao.html</id><summary type="html">&lt;ul&gt;
+&lt;img alt="龙岩学院讲座提醒-二维码.jpg" src="https://cdn.nlark.com/yuque/0/2020/jpeg/147312/1604542059523-bbb8bdcc-f45f-4d8b-9c78-847fe87afb52.jpeg#align=left&amp;amp;display=inline&amp;amp;height=395&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92-%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg&amp;amp;originHeight=1304&amp;amp;originWidth=990&amp;amp;size=69543&amp;amp;status=done&amp;amp;style=stroke&amp;amp;width=300#align=left&amp;amp;display=inline&amp;amp;height=1304&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;originHeight=1304&amp;amp;originWidth=990&amp;amp;status=done&amp;amp;style=none&amp;amp;width=990"&gt;&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>天猫精灵智能音箱新闻收听体验报告</title><link href="https://hillerliao.github.io/hxz52w.html" rel="alternate"></link><published>2020-10-22T19:57:57+08:00</published><updated>2020-10-22T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2020-10-22:/hxz52w.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;产品体验
 categories:&lt;/li&gt;
 &lt;li&gt;产品体验&lt;/li&gt;
@@ -803,7 +803,7 @@ categories:&lt;/li&gt;
 一些不错的公众号文章，会提供音频版，但散落在微信公众平台，并不能为天猫精灵所用。天猫精灵能否与自媒体合作，给他们方便的工具，将内容提交到开放平台。如 财经早餐、人民日报、十点读书等，在喜马拉雅更新不勤快，但公众号更新很勤快，导致天猫精灵无法使用。&lt;/p&gt;
 &lt;p&gt;3、让用户分享音频，UGC
 许多内容都是文字的，能否通过用户生产音频？比如用户可以念新闻，选择是否分享给其他用户。&lt;/p&gt;
-&lt;p&gt;当然我知道这个体验反馈估计不会引起天猫精灵的注意，因为资讯是第三方的乐天头条提供的。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>基于古诗词名言名篇应用需求分析</title><link href="https://hillerliao.github.io/ji-yu-gu-shi-ci-ming-yan-ming-pian-ying-yong-xu-qiu-fen-xi.html" rel="alternate"/><published>2019-02-25T19:57:57+08:00</published><updated>2019-02-25T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-25:/ji-yu-gu-shi-ci-ming-yan-ming-pian-ying-yong-xu-qiu-fen-xi.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;当然我知道这个体验反馈估计不会引起天猫精灵的注意，因为资讯是第三方的乐天头条提供的。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>基于古诗词名言名篇应用需求分析</title><link href="https://hillerliao.github.io/ji-yu-gu-shi-ci-ming-yan-ming-pian-ying-yong-xu-qiu-fen-xi.html" rel="alternate"></link><published>2019-02-25T19:57:57+08:00</published><updated>2019-02-25T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-25:/ji-yu-gu-shi-ci-ming-yan-ming-pian-ying-yong-xu-qiu-fen-xi.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;产品设计
 categories:&lt;/li&gt;
 &lt;li&gt;产品设计&lt;/li&gt;
@@ -933,7 +933,7 @@ categories:&lt;/li&gt;
 &lt;h2&gt;反馈&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;属于 nice to have，不属于 must have 。  &lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>我理解的「离钱近」</title><link href="https://hillerliao.github.io/wo-li-jie-de-chi-qian-jin.html" rel="alternate"/><published>2019-02-22T19:57:57+08:00</published><updated>2019-02-22T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-22:/wo-li-jie-de-chi-qian-jin.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>我理解的「离钱近」</title><link href="https://hillerliao.github.io/cvplkz.html" rel="alternate"></link><published>2019-02-22T19:57:57+08:00</published><updated>2019-02-22T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-22:/cvplkz.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;商业思考
 categories:&lt;/li&gt;
 &lt;li&gt;商业思考&lt;/li&gt;
@@ -958,7 +958,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;区块链是个好技术，在许多地方有它的价值，金融等行业也在尝试使用。但就像 AI ，没有场景、没有数据，一切都白搭，顶多为掌握了场景的甲方打工。庞大如百度，自动驾驶技术也得和车企合作。&lt;/p&gt;
 &lt;p&gt;所以，不一定要有「账户」才离钱近，有交易场景，用户愿意买单，就是离钱近。当然，如果交易基数大、频次高、客单价高，就更好了。&lt;/p&gt;
 &lt;p&gt;再具体到你的技术团队本身的优势，目前做的事情完全体现不出价值，机会成本太高了。好好挖掘实际需求、能利用自身优势做的事情，可能是更好的选择。可以暂时不全身心做主战场的事情，但可以花一部分精力去做主战场的事情，就好比
-Tushare 团队，兼职做、免费用，虽然暂时看不出什么大的前景，但慢慢积累用户，做出口碑，未来他们也许就可以拿到投资，全身心投入。现在已经开始搞积分了，token 的感觉，哈哈。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>旧电脑安装 Ubuntu 折腾记</title><link href="https://hillerliao.github.io/jiu-dian-nao-an-zhuang-ubuntu-zhe-teng-ji.html" rel="alternate"/><published>2019-02-13T19:57:57+08:00</published><updated>2019-02-13T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-13:/jiu-dian-nao-an-zhuang-ubuntu-zhe-teng-ji.html</id><summary type="html">&lt;ul&gt;
+Tushare 团队，兼职做、免费用，虽然暂时看不出什么大的前景，但慢慢积累用户，做出口碑，未来他们也许就可以拿到投资，全身心投入。现在已经开始搞积分了，token 的感觉，哈哈。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>旧电脑安装 Ubuntu 折腾记</title><link href="https://hillerliao.github.io/rcgvbw.html" rel="alternate"></link><published>2019-02-13T19:57:57+08:00</published><updated>2019-02-13T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-13:/rcgvbw.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;电脑数码
 categories:&lt;/li&gt;
 &lt;li&gt;电脑数码&lt;/li&gt;
@@ -991,7 +991,7 @@ categories:&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jingyan.baidu.com/article/ce4366494448fd3773afd306.html"&gt;利用 Rufus 制作 U 盘启动盘&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.csdn.net/ifmvo/article/details/54023628"&gt;Ubuntu 离线安装网卡驱动&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.cnbeta.com/articles/tech/417919.htm"&gt;7 款适用老旧设备并对初学者非常友好的轻量级 Linux 发行版&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>财报牛牛「个股群」入群指南</title><link href="https://hillerliao.github.io/cai-bao-niu-niu-ge-gu-qun-ru-qun-zhi-nan.html" rel="alternate"/><published>2019-01-05T19:06:00+08:00</published><updated>2019-01-05T19:06:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-01-05:/cai-bao-niu-niu-ge-gu-qun-ru-qun-zhi-nan.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>财报牛牛「个股群」入群指南</title><link href="https://hillerliao.github.io/guide-for-joining-cbnn-group.html" rel="alternate"></link><published>2019-01-05T19:06:00+08:00</published><updated>2019-01-05T19:06:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-01-05:/guide-for-joining-cbnn-group.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;项目
 categories:&lt;/li&gt;
 &lt;li&gt;项目&lt;/li&gt;
@@ -1030,7 +1030,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cbnn-wechat-account-qrcode.jpeg"&gt;&lt;/p&gt;
 &lt;p&gt;长按或保存二维码，联系牛牛(微信号：cbnn2018)&lt;/p&gt;
 &lt;p&gt;如果你想要其他个股群，也欢迎反馈，并提供你觉得不错的个股信息源。&lt;/p&gt;
-&lt;p&gt;「个股群」服务目前免费。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>如何将网站的内容发送到微信群</title><link href="https://hillerliao.github.io/ru-he-jiang-wang-zhan-de-nei-rong-fa-song-dao-wei-xin-qun.html" rel="alternate"/><published>2018-10-15T19:57:57+08:00</published><updated>2018-10-15T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2018-10-15:/ru-he-jiang-wang-zhan-de-nei-rong-fa-song-dao-wei-xin-qun.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;「个股群」服务目前免费。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>如何将网站的内容发送到微信群</title><link href="https://hillerliao.github.io/wbmnod.html" rel="alternate"></link><published>2018-10-15T19:57:57+08:00</published><updated>2018-10-15T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2018-10-15:/wbmnod.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;编程
 categories:&lt;/li&gt;
 &lt;li&gt;编程&lt;/li&gt;
@@ -1059,7 +1059,7 @@ categories:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;最后一步的 webhook 是关键，涉及到打通外部网络与微信群的通路，靠的是一个开源的项目 &lt;a href="https://github.com/joeeeeey/web_wechat_api"&gt;web_wechat_api&lt;/a&gt;，它将微信个人号发送消息等接口封装成 web api ，方便外部系统调用。目前我稍微改造了一下，通过 Docker 部署在 VPS 上，省去部署程序的痛苦。&lt;/p&gt;
 &lt;p&gt;其次，这一步可能会漏消息，没搞明白什么原因。目前的解决方案是，如果发送结果为失败，则继续尝试重新发送。&lt;/p&gt;
-&lt;p&gt;再者，基于个人微信号搭建的微信机器人，不太稳定，为此，我每隔一个小时给指定的小群发送一个托福单词，如果发送间断，说明通道服务挂了，需要登录 VPS 及时重启。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>财报牛牛能为你做什么</title><link href="https://hillerliao.github.io/cai-bao-niu-niu-neng-wei-ni-zuo-shi-yao.html" rel="alternate"/><published>2018-08-13T23:53:00+08:00</published><updated>2018-08-13T23:53:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2018-08-13:/cai-bao-niu-niu-neng-wei-ni-zuo-shi-yao.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;再者，基于个人微信号搭建的微信机器人，不太稳定，为此，我每隔一个小时给指定的小群发送一个托福单词，如果发送间断，说明通道服务挂了，需要登录 VPS 及时重启。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>财报牛牛能为你做什么</title><link href="https://hillerliao.github.io/what-is-cai-bao-niu-niu.html" rel="alternate"></link><published>2018-08-13T23:53:00+08:00</published><updated>2018-08-13T23:53:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2018-08-13:/what-is-cai-bao-niu-niu.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;项目
 categories:&lt;/li&gt;
 &lt;li&gt;项目&lt;/li&gt;
@@ -1103,7 +1103,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;你还可以在「财报牛牛」的个股详情页里，获得财报公告和电话会议链接，省去从纷繁复杂的信息海洋中搜寻这些材料的烦恼。  &lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cnbb-search.jpeg"&gt;  &lt;/p&gt;
 &lt;p&gt;此外，如果你想查阅某个股票最新的财报信息，只需在「财报牛牛」公众号内输入股票代码或股票名称，即可获得你想要的结果。  &lt;/p&gt;
-&lt;p&gt;好了，今天牛牛就为你介绍到这里啦。如果你还有其他“不爽”，记得给牛牛留言。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>利用类Slack软件背单词</title><link href="https://hillerliao.github.io/li-yong-lei-slackruan-jian-bei-dan-ci.html" rel="alternate"/><published>2017-11-14T19:57:57+08:00</published><updated>2017-11-14T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-11-14:/li-yong-lei-slackruan-jian-bei-dan-ci.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;好了，今天牛牛就为你介绍到这里啦。如果你还有其他“不爽”，记得给牛牛留言。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>利用类Slack软件背单词</title><link href="https://hillerliao.github.io/xs32su.html" rel="alternate"></link><published>2017-11-14T19:57:57+08:00</published><updated>2017-11-14T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-11-14:/xs32su.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;编程
 categories:&lt;/li&gt;
 &lt;li&gt;编程&lt;/li&gt;
@@ -1136,7 +1136,7 @@ categories:&lt;/li&gt;
 &lt;li&gt;WEB 服务。部署基于 Django 的 Mezzanine ，省得自己折腾。为了学这个花了不少时间，顺便部署了一个 &lt;a href="http://zhihai.me"&gt;博客&lt;/a&gt; 。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;接收器&lt;/h4&gt;
-&lt;p&gt;该 BearyChat 出场了。在客户端，以 BearyChat 作为消息接收工具。BearyChat 提供了 Ingoing 这个好用的工具。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>今日参考盈亏该如何计算</title><link href="https://hillerliao.github.io/jin-ri-can-kao-ying-yu-gai-ru-he-ji-suan.html" rel="alternate"/><published>2017-11-03T19:57:57+08:00</published><updated>2017-11-03T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-11-03:/jin-ri-can-kao-ying-yu-gai-ru-he-ji-suan.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;该 BearyChat 出场了。在客户端，以 BearyChat 作为消息接收工具。BearyChat 提供了 Ingoing 这个好用的工具。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>今日参考盈亏该如何计算</title><link href="https://hillerliao.github.io/dzpxkg.html" rel="alternate"></link><published>2017-11-03T19:57:57+08:00</published><updated>2017-11-03T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-11-03:/dzpxkg.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;证券
 categories:&lt;/li&gt;
 &lt;li&gt;证券&lt;/li&gt;
@@ -1170,7 +1170,7 @@ categories:&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;算法二：&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>开通工银亚洲账户的经历</title><link href="https://hillerliao.github.io/kai-tong-gong-yin-ya-zhou-zhang-hu-de-jing-li.html" rel="alternate"/><published>2017-09-01T19:57:57+08:00</published><updated>2017-09-01T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-09-01:/kai-tong-gong-yin-ya-zhou-zhang-hu-de-jing-li.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>开通工银亚洲账户的经历</title><link href="https://hillerliao.github.io/aoktqb.html" rel="alternate"></link><published>2017-09-01T19:57:57+08:00</published><updated>2017-09-01T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-09-01:/aoktqb.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;琐事
 categories:&lt;/li&gt;
 &lt;li&gt;琐事&lt;/li&gt;
@@ -1194,7 +1194,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;2017-08-30：工银亚洲来电话和我确认个人信息、收件地址等。提醒我注意汇入资金激活账户。&lt;/p&gt;
 &lt;p&gt;2017 年 9 月 1 日，短信通知：&lt;em&gt;【工银亚洲】您的账户及银行服务已开通，请存入同名存款激活相关账户及银行服务。账户激活前一概拒纳收取任何非同名存款。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;对了，此时我该如何存款呢？账号在哪里？一会儿找客服确认。&lt;/p&gt;
-&lt;p&gt;先分享到这里，若有错别字我再改。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>产品设计之列表设计要点</title><link href="https://hillerliao.github.io/chan-pin-she-ji-zhi-lie-biao-she-ji-yao-dian.html" rel="alternate"/><published>2017-08-30T19:57:57+08:00</published><updated>2017-08-30T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-30:/chan-pin-she-ji-zhi-lie-biao-she-ji-yao-dian.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;先分享到这里，若有错别字我再改。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>产品设计之列表设计要点</title><link href="https://hillerliao.github.io/urffxs.html" rel="alternate"></link><published>2017-08-30T19:57:57+08:00</published><updated>2017-08-30T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-30:/urffxs.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;产品设计
 categories:&lt;/li&gt;
 &lt;li&gt;产品设计&lt;/li&gt;
@@ -1234,7 +1234,7 @@ categories:&lt;/li&gt;
   每条记录显示：股票名称、股票代码、市场、交易方向、成交价格、成交数量、成交时间。&lt;/li&gt;
 &lt;li&gt;操作按钮。
   点击各行是否提供操作菜单。&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>如何通过IB模拟账号体验程序化交易</title><link href="https://hillerliao.github.io/ru-he-tong-guo-ibmo-ni-zhang-hao-ti-yan-cheng-xu-hua-jiao-yi.html" rel="alternate"/><published>2017-08-24T19:57:57+08:00</published><updated>2017-08-24T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-24:/ru-he-tong-guo-ibmo-ni-zhang-hao-ti-yan-cheng-xu-hua-jiao-yi.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>如何通过IB模拟账号体验程序化交易</title><link href="https://hillerliao.github.io/gc9osg.html" rel="alternate"></link><published>2017-08-24T19:57:57+08:00</published><updated>2017-08-24T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-24:/gc9osg.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;证券
 categories:&lt;/li&gt;
 &lt;li&gt;证券&lt;/li&gt;
@@ -1270,13 +1270,13 @@ categories:&lt;/li&gt;
 &lt;li&gt;其他信息&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.interactivebrokers.com/en/index.php?f=16040"&gt;TWS 下载地址&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/getlantern/forum/issues/833"&gt;科学上网&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>ibpy-tutorial</title><link href="https://hillerliao.github.io/ibpy-tutorial.html" rel="alternate"/><published>2017-08-23T19:57:57+08:00</published><updated>2017-08-23T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-23:/ibpy-tutorial.html</id><content type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>ibpy-tutorial</title><link href="https://hillerliao.github.io/rmgp29.html" rel="alternate"></link><published>2017-08-23T19:57:57+08:00</published><updated>2017-08-23T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-23:/rmgp29.html</id><content type="html">&lt;ul&gt;
 &lt;li&gt;证券
 categories:&lt;/li&gt;
 &lt;li&gt;证券&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;a href="https://valiant-falstaff.github.io/IbPy-Getting-Started/"&gt;IbPy Tutorial&lt;/a&gt;，流畅的行文，让我夜不能寐！希望能把它翻译成中文。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>我是如何复习迎考 Series 65 的</title><link href="https://hillerliao.github.io/wo-shi-ru-he-fu-xi-ying-kao-series-65-de.html" rel="alternate"/><published>2014-11-26T19:57:57+08:00</published><updated>2014-11-26T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2014-11-26:/wo-shi-ru-he-fu-xi-ying-kao-series-65-de.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;&lt;a href="https://valiant-falstaff.github.io/IbPy-Getting-Started/"&gt;IbPy Tutorial&lt;/a&gt;，流畅的行文，让我夜不能寐！希望能把它翻译成中文。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>我是如何复习迎考 Series 65 的</title><link href="https://hillerliao.github.io/hr3mpx.html" rel="alternate"></link><published>2014-11-26T19:57:57+08:00</published><updated>2014-11-26T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2014-11-26:/hr3mpx.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;琐事
 categories:&lt;/li&gt;
 &lt;li&gt;琐事&lt;/li&gt;
@@ -1372,7 +1372,7 @@ categories:&lt;/li&gt;
 &lt;td&gt;有光盘，不过现在电脑都不带光驱了，没用到&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content><category term="blog"/></entry><entry><title>玩转四方sybian s60v3体验报告</title><link href="https://hillerliao.github.io/wan-zhuan-si-fang-sybian-s60v3ti-yan-bao-gao.html" rel="alternate"/><published>2010-06-27T19:57:57+08:00</published><updated>2010-06-27T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2010-06-27:/wan-zhuan-si-fang-sybian-s60v3ti-yan-bao-gao.html</id><summary type="html">&lt;ul&gt;
+&lt;/table&gt;</content><category term="blog"></category></entry><entry><title>玩转四方sybian s60v3体验报告</title><link href="https://hillerliao.github.io/aqhic9.html" rel="alternate"></link><published>2010-06-27T19:57:57+08:00</published><updated>2010-06-27T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2010-06-27:/aqhic9.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;产品体验
 categories:&lt;/li&gt;
 &lt;li&gt;产品体验&lt;/li&gt;
@@ -1421,4 +1421,4 @@ categories:&lt;/li&gt;
 &lt;hr&gt;
 &lt;p&gt;融合有关 LBS 的介绍&lt;/p&gt;
 &lt;p&gt;等待界面&lt;/p&gt;
-&lt;p&gt;*注册流程对比。可以考虑自动获取用户手机号，生成一个数字 id，eg 贝多；&lt;/p&gt;</content><category term="blog"/></entry></feed>
+&lt;p&gt;*注册流程对比。可以考虑自动获取用户手机号，生成一个数字 id，eg 贝多；&lt;/p&gt;</content><category term="blog"></category></entry></feed>

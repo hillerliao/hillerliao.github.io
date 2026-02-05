@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="zh" prefix="og: http://ogp.me/ns#">
 	<head>
 		<link href="http://gmpg.org/xfn/11" rel="profile">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +8,15 @@
 		<!-- Metadata -->
 	<meta name="description" content="">
 	<meta property="og:description" content="">
-	<meta property="og:title" content="如何将网站的内容发送到微信群" />
+	<meta property="og:title" content="天猫精灵智能音箱新闻收听体验报告" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://hillerliao.github.io/ru-he-jiang-wang-zhan-de-nei-rong-fa-song-dao-wei-xin-qun.html" />
+	<meta property="og:url" content="https://hillerliao.github.io/hxz52w.html" />
 		<meta property="og:image" content="https://hillerliao.github.io/images/avatar.jpg" />
 
 		<!-- Enable responsiveness on mobile devices-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-		<title>如何将网站的内容发送到微信群 - 互联网产品折腾师</title>
+		<title>天猫精灵智能音箱新闻收听体验报告 - 互联网产品折腾师</title>
 
 		<!-- CSS -->
 		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
@@ -75,27 +75,34 @@
 	</div>
 </div>		<div class="content container">
 <div class="post">
-	<h1 class="post-title">如何将网站的内容发送到微信群</h1>
-	<span class="post-date">Mon 15 October 2018</span>
+	<h1 class="post-title">天猫精灵智能音箱新闻收听体验报告</h1>
+	<span class="post-date">Thu 22 October 2020</span>
 	<ul>
-<li>编程
+<li>产品体验
 categories:</li>
-<li>编程</li>
+<li>产品体验</li>
 </ul>
 <hr>
-<h3>过程简述</h3>
-<p><code>雪球等 --&gt; rsshub_rss / Huginn_rss --&gt; inoreader_rss聚合 --&gt; web_wechat_api --&gt; 微信</code></p>
-<h3>过程分述</h3>
-<p>目前的推送过程是：</p>
-<ul>
-<li>通过开源的 Rsshub / Huginn 作为数据抓取工具，生成 rss 格式数据；</li>
-<li>inoreader 订阅多个 rsshub 生成的 rss 数据，形成 rss 组；</li>
-<li>rss 组自身有又可以额外生成一个新 rss，这个新 rss 包括了多个子 rss ；</li>
-<li>VPS 上创建定时任务检查 rss 更新，then 通过 webhook 发一条消息到微信群。</li>
-</ul>
-<p>最后一步的 webhook 是关键，涉及到打通外部网络与微信群的通路，靠的是一个开源的项目 <a href="https://github.com/joeeeeey/web_wechat_api">web_wechat_api</a>，它将微信个人号发送消息等接口封装成 web api ，方便外部系统调用。目前我稍微改造了一下，通过 Docker 部署在 VPS 上，省去部署程序的痛苦。</p>
-<p>其次，这一步可能会漏消息，没搞明白什么原因。目前的解决方案是，如果发送结果为失败，则继续尝试重新发送。</p>
-<p>再者，基于个人微信号搭建的微信机器人，不太稳定，为此，我每隔一个小时给指定的小群发送一个托福单词，如果发送间断，说明通道服务挂了，需要登录 VPS 及时重启。</p>
+<p>我主要用天猫精灵听新闻，基于这个需求，希望作出以下改进：</p>
+<h3>一、优化体验</h3>
+<p>目前天猫精灵的资讯由乐天头条提供，这是什么机构？</p>
+<p>1、记住用户偏好，实现智能推荐
+记住用户偏好，举例：如果用户每天都请求 日本新闻、福建新闻、新西兰新闻，那么可以多推荐这类新闻给该用户，而不仅仅是推荐用户所在地的本地新闻。</p>
+<p>2、资讯排重
+出现资讯重复播放的问题，能否做到完整播放过的资讯，别再播放了。</p>
+<p>3、更精准地记住播放位置
+相同节目，无法记住上一次播放的位置，比如连载评书三国演义，上一次听到第二章的第 15 分 35 秒，再次播放时只会从第二章的开头播放，无法从 15 分 35 秒处继续播放。</p>
+<h3>二、提供更多资源</h3>
+<p>特色爆款节目无法找到，如 新闻联播每日音频回放。
+缺少英语新闻。</p>
+<p>可能的丰富音频资源的办法：</p>
+<p>1、直接播放第三方音频
+希望能做到在天猫精灵 APP 内通过 webview 打开第三方网页，网页播放音频时，能选择将天猫精灵音箱作为外放。比如百度网盘里的音频，能将智能音箱作为外放。</p>
+<p>2、搭建内容开放平台，PGC
+一些不错的公众号文章，会提供音频版，但散落在微信公众平台，并不能为天猫精灵所用。天猫精灵能否与自媒体合作，给他们方便的工具，将内容提交到开放平台。如 财经早餐、人民日报、十点读书等，在喜马拉雅更新不勤快，但公众号更新很勤快，导致天猫精灵无法使用。</p>
+<p>3、让用户分享音频，UGC
+许多内容都是文字的，能否通过用户生产音频？比如用户可以念新闻，选择是否分享给其他用户。</p>
+<p>当然我知道这个体验反馈估计不会引起天猫精灵的注意，因为资讯是第三方的乐天头条提供的。</p>
 
 
 </div>

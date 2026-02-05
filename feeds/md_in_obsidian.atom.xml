@@ -1,5 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - md_in_obsidian</title><link href="https://hillerliao.github.io/" rel="alternate"/><link href="https://hillerliao.github.io/feeds/md_in_obsidian.atom.xml" rel="self"/><id>https://hillerliao.github.io/</id><updated>2026-01-18T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>n8n Cron Trigger 使用 UTC 时区的坑：一次完整排查与解决记录</title><link href="https://hillerliao.github.io/n8n-cron-trigger-shi-yong-utc-shi-qu-de-keng-yi-ci-wan-zheng-pai-cha-yu-jie-jue-ji-lu.html" rel="alternate"/><published>2026-01-18T00:00:00+08:00</published><updated>2026-01-18T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-01-18:/n8n-cron-trigger-shi-yong-utc-shi-qu-de-keng-yi-ci-wan-zheng-pai-cha-yu-jie-jue-ji-lu.html</id><summary type="html">&lt;h2&gt;问题背景&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - md_in_obsidian</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/md_in_obsidian.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-02-03T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>用你的旧手机运行 OpenClaw，省下买服务器的钱</title><link href="https://hillerliao.github.io/install-openclaw-on-old-phone-with-termux.html" rel="alternate"></link><published>2026-02-03T00:00:00+08:00</published><updated>2026-02-03T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-02-03:/install-openclaw-on-old-phone-with-termux.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;OpenClaw&lt;/li&gt;
+&lt;li&gt;Termux&lt;/li&gt;
+&lt;li&gt;Android&lt;/li&gt;
+&lt;li&gt;Shell 脚本&lt;/li&gt;
+&lt;li&gt;AI 助手&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;![[Pasted image 20260203103854.png]]&lt;/p&gt;
+&lt;h2&gt;需求背景&lt;/h2&gt;
+&lt;p&gt;最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;OpenClaw&lt;/li&gt;
+&lt;li&gt;Termux&lt;/li&gt;
+&lt;li&gt;Android&lt;/li&gt;
+&lt;li&gt;Shell 脚本&lt;/li&gt;
+&lt;li&gt;AI 助手&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;![[Pasted image 20260203103854.png]]&lt;/p&gt;
+&lt;h2&gt;需求背景&lt;/h2&gt;
+&lt;p&gt;最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然部署过程十分艰辛，但跑起来之后，发现确实很好用，能当个全天候的 AI 助手。&lt;/p&gt;
+&lt;p&gt;但问题来了：要 24 小时在线，就得有台机器一直开着。有时候出门去，电脑休眠了，助手就连不上了。&lt;/p&gt;
+&lt;p&gt;我看了一眼书桌上尘封已久的旧手机，突然冒出一个想法：既然网上教程都说最低 2G 2 核的机器就能运行 OpenClaw，那现在的安卓机配置那么高，&lt;strong&gt;是不是可以让 OpenClaw 跑在旧手机上？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一开始想找现成的方案，但失败了。最麻烦的就是包依赖的问题，看到那些报错，网上信息也不多，很头疼。不过带着报错信息，在多个大模型之间来回穿梭，终于比较圆满地解决了。&lt;/p&gt;
+&lt;p&gt;不多说，直接上过程。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;前置条件&lt;/h2&gt;
+&lt;p&gt;开始之前，请确认你准备好以下条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一部能正常使用的&lt;strong&gt;安卓旧手机&lt;/strong&gt;（配置要求不高，普通旧手机就行）&lt;/li&gt;
+&lt;li&gt;手机能正常访问&lt;strong&gt;互联网&lt;/strong&gt;（下载和安装需要）&lt;/li&gt;
+&lt;li&gt;⚠️ 网络环境可能需要&lt;strong&gt;魔法上网&lt;/strong&gt;，如果下载失败请注意这一点&lt;/li&gt;
+&lt;li&gt;最重要的是要有&lt;strong&gt;信心和耐心&lt;/strong&gt;，跟着一步步来，没问题！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;下载和安装 Termux&lt;/h2&gt;
+&lt;p&gt;首先，我们需要下载 Termux 应用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;什么是 Termux？&lt;/strong&gt;简单说，它是一个能在安卓手机上运行命令行工具的软件，相当于给手机装了个简易的 Linux 系统。&lt;/p&gt;
+&lt;h3&gt;如何下载&lt;/h3&gt;
+&lt;p&gt;由于国内应用市场无法直接下载，你需要通过以下方式之一获取：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推荐方式：&lt;/strong&gt;
+- &lt;a href="https://f-droid.org/en/packages/com.termux/"&gt;F-Droid&lt;/a&gt; - 官方下载渠道，最安全&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;其他方式（如上面的打不开）：&lt;/strong&gt;
+- &lt;a href="https://github.com/termux/termux-app/releases"&gt;GitHub 官方发布页&lt;/a&gt; - 需要魔法上网
+- &lt;a href="https://play.google.com/store/apps/details?id=com.termux"&gt;Google Play&lt;/a&gt;
+- 第三方应用商店（如 ApkPure 等）- 注意选择正规来源&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;小贴士&lt;/strong&gt;：下载时请认准官方来源，避免下载不安全的第三方应用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;安装&lt;/h3&gt;
+&lt;p&gt;下载好后，直接安装。安装完成后：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;打开 Termux 应用&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;你会看到一个黑色屏幕，这就是命令行终端界面&lt;/li&gt;
+&lt;li&gt;长按屏幕可以粘贴内容，点击屏幕可以输入&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;🦞 运行安装脚本&lt;/h2&gt;
+&lt;p&gt;接下来，复制下面的命令，粘贴到终端界面：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-sL&lt;span class="w"&gt; &lt;/span&gt;https://s.zhihai.me/openclaw&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;openclaw-install.sh
+chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;openclaw-install.sh
+./openclaw-install.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;或者整行复制 &lt;code&gt;curl -sL https://s.zhihai.me/openclaw &amp;gt; openclaw-install.sh &amp;amp;&amp;amp; chmod +x openclaw-install.sh &amp;amp;&amp;amp; ./openclaw-install.sh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;注意记住你输入或随机生成的 token 。&lt;/p&gt;
+&lt;h2&gt;初始化&lt;/h2&gt;
+&lt;h3&gt;方法一&lt;/h3&gt;
+&lt;p&gt;如果顺利安装完成，接着：&lt;/p&gt;
+&lt;p&gt;1) 运行 &lt;code&gt;oclog&lt;/code&gt; 命令，查看运行状态。
+2) 新开一个终端窗口（屏幕左滑，点击 New Session），运行 &lt;code&gt;openclaw setup&lt;/code&gt; 命令 。
+3) 运行 &lt;code&gt;openclaw onboard&lt;/code&gt; 启动服务。这个就和常见的初始化教程说得一样了。不多说，最后一步提示 gateway 启动失败，可以不管，Termux 不支持这个，但前面 &lt;code&gt;oclog&lt;/code&gt; 能看到服务已经启动了。&lt;/p&gt;
+&lt;h3&gt;方法二&lt;/h3&gt;
+&lt;p&gt;如果上面这个看不懂，直接杀掉应用，重启 Termux 应用，再次进入终端界面。&lt;/p&gt;
+&lt;p&gt;运行 &lt;code&gt;ocr&lt;/code&gt; 命令（OpenClaw Restart），接着运行 &lt;code&gt;oenclaw setup&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;![[7a766f2f9e5ce50840dad1267374e815.png]]
+运行 ocr 命令后，过一段时间看到的效果（来自 2016年的 OnePlus 2 手机）&lt;/p&gt;
+&lt;h2&gt;可能的问题与局限&lt;/h2&gt;
+&lt;p&gt;OpenClaw还在快速更新，不保证脚本针对新版本还能成功运行，届时可能需要相应调整。&lt;/p&gt;
+&lt;p&gt;相比标准的 OpenClaw 运行环境，使用 Termux 运行 OpenClaw 有一些局限：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;性能限制&lt;/strong&gt;：安卓设备的硬件资源可能不如 PC，影响 OpenClaw 的运行效率。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;稳定性&lt;/strong&gt;：Termux 环境可能不如正式的 Linux 发行版稳定，偶尔会出现兼容性问题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;功能缺失&lt;/strong&gt;：某些高级功能可能需要额外配置或不被支持。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;![[74590364992b496b8dbbfaf93d907f96.png]]&lt;/p&gt;
+&lt;p&gt;但就尝鲜和玩耍来说，这些限制是可以接受的。更何况，让旧手机变废为宝，不失为一件让人开心的事情。&lt;/p&gt;
+&lt;h2&gt;更多可能的玩法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;定时任务&lt;/strong&gt;：可以设置定时任务，让手机在特定时间自动执行某些任务。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;远程控制&lt;/strong&gt;：通过网络远程控制手机（安装 &lt;code&gt;Termux-API&lt;/code&gt; ），实现远程操作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能家居集成&lt;/strong&gt;：将手机作为智能家居中心的一部分，实现语音控制等。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;驱动 AI 写这个脚本花了我两个晚上的时间，第一次失败了，本来想放弃。后来不死心，第二天晚上又重来一遍。大部分时间都在解决 Android 兼容性问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心思路总结为这几句话：&lt;/strong&gt;
+1. 用 Termux 提供 Linux 环境
+2. 修复 OpenClaw 的平台兼容性问题
+3. 用 tmux 守护进程，确保服务持续运行
+4. 用 termux-wake-lock 防止手机休眠&lt;/p&gt;
+&lt;p&gt;安装成功之后，记住几个命令就行：
+- &lt;code&gt;ocr&lt;/code&gt; - 重启 OpenClaw 服务
+- &lt;code&gt;oclog&lt;/code&gt; - 查看 OpenClaw 服务状态
+- &lt;code&gt;ockill&lt;/code&gt; - 停止 OpenClaw 服务&lt;/p&gt;
+&lt;p&gt;如果你有旧手机，不妨让它 Great Again 。👏&lt;/p&gt;
+&lt;p&gt;安装过程中如果遇到问题，或有改进建议，欢迎反馈。&lt;/p&gt;
+&lt;p&gt;也可以扫码进群交流：&lt;/p&gt;
+&lt;p&gt;![[a416b9ca688bec9e83693414c4075eb3.png]]&lt;/p&gt;</content><category term="md_in_obsidian"></category></entry><entry><title>n8n Cron Trigger 使用 UTC 时区的坑：一次完整排查与解决记录</title><link href="https://hillerliao.github.io/n8n-cron-trigger-utc-timezone-issue.html" rel="alternate"></link><published>2026-01-18T00:00:00+08:00</published><updated>2026-01-18T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-01-18:/n8n-cron-trigger-utc-timezone-issue.html</id><summary type="html">&lt;h2&gt;问题背景&lt;/h2&gt;
 &lt;p&gt;我使用 n8n 做自动化，通过 Cron Trigger，每天&lt;strong&gt;早上 7 点&lt;/strong&gt;自动执行一个工作流：
 - 抓取 &lt;strong&gt;当天天气预报&lt;/strong&gt;
 - 获取 &lt;strong&gt;农历日&lt;/strong&gt;
@@ -268,93 +373,311 @@
 &lt;p&gt;多时区任务如何设计更安全&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;如果你也踩过这个坑，希望这篇记录能帮你节省几个小时的排查时间。&lt;/p&gt;</content><category term="md_in_obsidian"/></entry><entry><title>用你的旧手机运行 OpenClaw，省下买服务器的钱</title><link href="https://hillerliao.github.io/yong-ni-de-jiu-shou-ji-yun-xing-openclawsheng-xia-mai-fu-wu-qi-de-qian.html" rel="alternate"/><published>2025-02-03T00:00:00+08:00</published><updated>2025-02-03T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2025-02-03:/yong-ni-de-jiu-shou-ji-yun-xing-openclawsheng-xia-mai-fu-wu-qi-de-qian.html</id><summary type="html">&lt;p&gt;![[Pasted image 20260203103854.png]]&lt;/p&gt;
-&lt;h2&gt;需求背景&lt;/h2&gt;
-&lt;p&gt;最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然部署过程十分艰辛，但 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;![[Pasted image 20260203103854.png]]&lt;/p&gt;
-&lt;h2&gt;需求背景&lt;/h2&gt;
-&lt;p&gt;最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然部署过程十分艰辛，但跑起来之后，发现确实很好用，能当个全天候的 AI 助手。&lt;/p&gt;
-&lt;p&gt;但问题来了：要 24 小时在线，就得有台机器一直开着。有时候出门去，电脑休眠了，助手就连不上了。&lt;/p&gt;
-&lt;p&gt;我看了一眼书桌上尘封已久的旧手机，突然冒出一个想法：既然网上教程都说最低 2G 2 核的机器就能运行 OpenClaw，那现在的安卓机配置那么高，&lt;strong&gt;是不是可以让 OpenClaw 跑在旧手机上？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;一开始想找现成的方案，但失败了。最麻烦的就是包依赖的问题，看到那些报错，网上信息也不多，很头疼。不过带着报错信息，在多个大模型之间来回穿梭，终于比较圆满地解决了。&lt;/p&gt;
-&lt;p&gt;不多说，直接上过程。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;前置条件&lt;/h2&gt;
-&lt;p&gt;开始之前，请确认你准备好以下条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一部能正常使用的&lt;strong&gt;安卓旧手机&lt;/strong&gt;（配置要求不高，普通旧手机就行）&lt;/li&gt;
-&lt;li&gt;手机能正常访问&lt;strong&gt;互联网&lt;/strong&gt;（下载和安装需要）&lt;/li&gt;
-&lt;li&gt;⚠️ 网络环境可能需要&lt;strong&gt;魔法上网&lt;/strong&gt;，如果下载失败请注意这一点&lt;/li&gt;
-&lt;li&gt;最重要的是要有&lt;strong&gt;信心和耐心&lt;/strong&gt;，跟着一步步来，没问题！&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;下载和安装 Termux&lt;/h2&gt;
-&lt;p&gt;首先，我们需要下载 Termux 应用。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;什么是 Termux？&lt;/strong&gt;简单说，它是一个能在安卓手机上运行命令行工具的软件，相当于给手机装了个简易的 Linux 系统。&lt;/p&gt;
-&lt;h3&gt;如何下载&lt;/h3&gt;
-&lt;p&gt;由于国内应用市场无法直接下载，你需要通过以下方式之一获取：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;推荐方式：&lt;/strong&gt;
-- &lt;a href="https://f-droid.org/en/packages/com.termux/"&gt;F-Droid&lt;/a&gt; - 官方下载渠道，最安全&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;其他方式（如上面的打不开）：&lt;/strong&gt;
-- &lt;a href="https://github.com/termux/termux-app/releases"&gt;GitHub 官方发布页&lt;/a&gt; - 需要魔法上网
-- &lt;a href="https://play.google.com/store/apps/details?id=com.termux"&gt;Google Play&lt;/a&gt;
-- 第三方应用商店（如 ApkPure 等）- 注意选择正规来源&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;💡 &lt;strong&gt;小贴士&lt;/strong&gt;：下载时请认准官方来源，避免下载不安全的第三方应用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;安装&lt;/h3&gt;
-&lt;p&gt;下载好后，直接安装。安装完成后：&lt;/p&gt;
+&lt;p&gt;如果你也踩过这个坑，希望这篇记录能帮你节省几个小时的排查时间。&lt;/p&gt;</content><category term="md_in_obsidian"></category></entry><entry><title>Termux 环境下 frpc 和 OpenClaw 服务保活方案</title><link href="https://hillerliao.github.io/termux-frpc-openclaw-service-survival.html" rel="alternate"></link><published>2022-05-10T16:00:00+08:00</published><updated>2022-05-10T16:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-05-10:/termux-frpc-openclaw-service-survival.html</id><summary type="html">&lt;h2&gt;背景与痛点&lt;/h2&gt;
+&lt;h3&gt;问题场景&lt;/h3&gt;
+&lt;p&gt;在 Android 设备上运行 frpc（内网穿透客户端）和 OpenClaw 时，面临以下挑战：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;打开 Termux 应用&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;你会看到一个黑色屏幕，这就是命令行终端界面&lt;/li&gt;
-&lt;li&gt;长按屏幕可以粘贴内容，点击屏幕可以输入&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;手机重启后服务不自动启动&lt;/strong&gt;&lt;br&gt;
+   Android 系统不会 …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2&gt;背景与痛点&lt;/h2&gt;
+&lt;h3&gt;问题场景&lt;/h3&gt;
+&lt;p&gt;在 Android 设备上运行 frpc（内网穿透客户端）和 OpenClaw 时，面临以下挑战：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;手机重启后服务不自动启动&lt;/strong&gt;&lt;br&gt;
+   Android 系统不会自动运行 Termux 中的后台服务&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;进程崩溃后不会重启&lt;/strong&gt;&lt;br&gt;
+   frpc 或 OpenClaw 可能因网络波动、内存不足等原因崩溃，需要手动介入&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;无法方便地查看日志&lt;/strong&gt;&lt;br&gt;
+   后台运行的进程没有会话管理，调试困难&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;🦞 运行安装脚本&lt;/h2&gt;
-&lt;p&gt;接下来，复制下面的命令，粘贴到终端界面：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-sL&lt;span class="w"&gt; &lt;/span&gt;https://s.zhihai.me/openclaw&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;openclaw-install.sh
-chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;openclaw-install.sh
-./openclaw-install.sh
+&lt;h3&gt;需求&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 手机开机后 frpc + OpenClaw 自动启动&lt;/li&gt;
+&lt;li&gt;✅ 进程崩溃后自动检测并重启&lt;/li&gt;
+&lt;li&gt;✅ 方便查看运行日志&lt;/li&gt;
+&lt;li&gt;✅ 低资源占用（不频繁检测）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;方案概述&lt;/h2&gt;
+&lt;p&gt;利用 Termux 生态中的三个工具组合：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;工具&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;termux:boot&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;开机时自动执行脚本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;tmux&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;会话管理（保持进程运行、方便查看日志）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;cron&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;定时任务（每5分钟检测进程存活）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;架构图&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────────┐
+│                        Android 系统                          │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                  Termux 环境                         │   │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌──────────────┐ │   │
+│  │  │ termux:boot │→ │   tmux      │→ │ frpc        │ │   │
+│  │  │ (开机执行)   │  │ (会话管理)   │  │ openclaw    │ │   │
+│  │  └─────────────┘  └─────────────┘  └──────────────┘ │   │
+│  │                                                  │     │   │
+│  │  ┌─────────────┐  ┌────────────────────────────┐  │     │   │
+│  │  │    cron     │→ │ monitor.sh (每5分钟执行)   │  │     │   │
+│  │  │ (定时检测)   │  │ 检测进程是否存在 → 重启    │  │     │   │
+│  │  └─────────────┘  └────────────────────────────┘  │     │   │
+│  └─────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;或者整行复制 &lt;code&gt;curl -sL https://s.zhihai.me/openclaw &amp;gt; openclaw-install.sh &amp;amp;&amp;amp; chmod +x openclaw-install.sh &amp;amp;&amp;amp; ./openclaw-install.sh&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;注意记住你输入或随机生成的 token 。&lt;/p&gt;
-&lt;h2&gt;初始化&lt;/h2&gt;
-&lt;h3&gt;方法一&lt;/h3&gt;
-&lt;p&gt;如果顺利安装完成，接着：&lt;/p&gt;
-&lt;p&gt;1) 运行 &lt;code&gt;oclog&lt;/code&gt; 命令，查看运行状态。
-2) 新开一个终端窗口（屏幕左滑，点击 New Session），运行 &lt;code&gt;openclaw setup&lt;/code&gt; 命令 。
-3) 运行 &lt;code&gt;openclaw onboard&lt;/code&gt; 启动服务。这个就和常见的初始化教程说得一样了。不多说，最后一步提示 gateway 启动失败，可以不管，Termux 不支持这个，但前面 &lt;code&gt;oclog&lt;/code&gt; 能看到服务已经启动了。&lt;/p&gt;
-&lt;h3&gt;方法二&lt;/h3&gt;
-&lt;p&gt;如果上面这个看不懂，直接杀掉应用，重启 Termux 应用，再次进入终端界面。&lt;/p&gt;
-&lt;p&gt;运行 &lt;code&gt;ocr&lt;/code&gt; 命令（OpenClaw Restart），接着运行 &lt;code&gt;oenclaw setup&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;![[7a766f2f9e5ce50840dad1267374e815.png]]
-运行 ocr 命令后，过一段时间看到的效果（来自 2016年的 OnePlus 2 手机）&lt;/p&gt;
-&lt;h2&gt;可能的问题与局限&lt;/h2&gt;
-&lt;p&gt;OpenClaw还在快速更新，不保证脚本针对新版本还能成功运行，届时可能需要相应调整。&lt;/p&gt;
-&lt;p&gt;相比标准的 OpenClaw 运行环境，使用 Termux 运行 OpenClaw 有一些局限：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;性能限制&lt;/strong&gt;：安卓设备的硬件资源可能不如 PC，影响 OpenClaw 的运行效率。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;稳定性&lt;/strong&gt;：Termux 环境可能不如正式的 Linux 发行版稳定，偶尔会出现兼容性问题。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;功能缺失&lt;/strong&gt;：某些高级功能可能需要额外配置或不被支持。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;![[74590364992b496b8dbbfaf93d907f96.png]]&lt;/p&gt;
-&lt;p&gt;但就尝鲜和玩耍来说，这些限制是可以接受的。更何况，让旧手机变废为宝，不失为一件让人开心的事情。&lt;/p&gt;
-&lt;h2&gt;更多可能的玩法&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;定时任务&lt;/strong&gt;：可以设置定时任务，让手机在特定时间自动执行某些任务。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;远程控制&lt;/strong&gt;：通过网络远程控制手机（安装 &lt;code&gt;Termux-API&lt;/code&gt; ），实现远程操作。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;智能家居集成&lt;/strong&gt;：将手机作为智能家居中心的一部分，实现语音控制等。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;驱动 AI 写这个脚本花了我大个晚上时间，大部分时间都在解决 Android 兼容性问题。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;核心思路总结为这几句话：&lt;/strong&gt;
-1. 用 Termux 提供 Linux 环境
-2. 修复 OpenClaw 的平台兼容性问题
-3. 用 tmux 守护进程，确保服务持续运行
-4. 用 termux-wake-lock 防止手机休眠&lt;/p&gt;
-&lt;p&gt;安装成功之后，记住几个命令就行：
-- &lt;code&gt;ocr&lt;/code&gt; - 重启 OpenClaw 服务
-- &lt;code&gt;oclog&lt;/code&gt; - 查看 OpenClaw 服务状态
-- &lt;code&gt;ockill&lt;/code&gt; - 停止 OpenClaw 服务&lt;/p&gt;
-&lt;p&gt;如果你有旧手机，不妨让它 Great Again 。👏&lt;/p&gt;
-&lt;p&gt;安装过程中如果遇到问题，或有改进建议，欢迎反馈。&lt;/p&gt;
-&lt;p&gt;也可以扫码进群交流：&lt;/p&gt;
-&lt;p&gt;![[a416b9ca688bec9e83693414c4075eb3.png]]&lt;/p&gt;</content><category term="md_in_obsidian"/></entry></feed>
+&lt;hr&gt;
+&lt;h2&gt;依赖安装&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安装 tmux（会话管理）&lt;/span&gt;
+pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;tmux
+
+&lt;span class="c1"&gt;# 安装 cron（定时任务）&lt;/span&gt;
+pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;crontab
+
+&lt;span class="c1"&gt;# 启动 cron 服务&lt;/span&gt;
+crond
+
+&lt;span class="c1"&gt;# 安装 termux:boot（开机自启）&lt;/span&gt;
+pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;termux-boot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;termux:boot 安装后需要在 Android 设置中授权自启动权限（忽略电池优化）&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;脚本内容&lt;/h2&gt;
+&lt;h3&gt;1. OpenClaw 启动脚本 (&lt;code&gt;~/openclaw-run.sh&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;负责清理旧进程、重新启动 OpenClaw：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+&lt;span class="c1"&gt;# OpenClaw 启动脚本&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 杀掉旧进程&lt;/span&gt;
+pkill&lt;span class="w"&gt; &lt;/span&gt;-9&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;openclaw&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+
+&lt;span class="c1"&gt;# 等待资源释放&lt;/span&gt;
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 创建新 tmux 会话&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;openclaw
+
+&lt;span class="c1"&gt;# 等待会话就绪&lt;/span&gt;
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 发送启动命令到 tmux 会话&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;send-keys&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;export PATH=&lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt;:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN&lt;/span&gt;&lt;span class="s2"&gt;; openclaw gateway --bind lan --port &lt;/span&gt;&lt;span class="nv"&gt;$PORT&lt;/span&gt;&lt;span class="s2"&gt; --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;C-m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;2. 开机启动脚本 (&lt;code&gt;~/.termux/boot/services.sh&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;手机开机时自动启动 frpc 和 OpenClaw：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+&lt;span class="c1"&gt;# termux:boot services - 开机自启动脚本&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 启动 frpc&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new-session&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc -c &lt;/span&gt;&lt;span class="nv"&gt;$PREFIX&lt;/span&gt;&lt;span class="s2"&gt;/etc/frp/frpc.ini&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 清理旧 OpenClaw 进程后启动&lt;/span&gt;
+pkill&lt;span class="w"&gt; &lt;/span&gt;-9&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;openclaw&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;openclaw
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;send-keys&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;export PATH=&lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt;:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN&lt;/span&gt;&lt;span class="s2"&gt;; openclaw gateway --bind lan --port &lt;/span&gt;&lt;span class="nv"&gt;$PORT&lt;/span&gt;&lt;span class="s2"&gt; --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;C-m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;3. 进程监控脚本 (&lt;code&gt;~/monitor.sh&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;每5分钟检测一次，崩溃则重启：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+&lt;span class="c1"&gt;# 进程监控脚本 - 每5分钟检测并重启崩溃的服务&lt;/span&gt;
+
+&lt;span class="c1"&gt;# frpc 检测&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] frpc 崩溃，重启中...&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;new-session&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc -c &lt;/span&gt;&lt;span class="nv"&gt;$PREFIX&lt;/span&gt;&lt;span class="s2"&gt;/etc/frp/frpc.ini&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="c1"&gt;# OpenClaw 检测&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;openclaw.*gateway&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] OpenClaw 崩溃，重启中...&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+&lt;span class="w"&gt;    &lt;/span&gt;bash&lt;span class="w"&gt; &lt;/span&gt;~/openclaw-run.sh
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2&gt;操作步骤&lt;/h2&gt;
+&lt;h3&gt;第一步：安装依赖&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pkg&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;crontab&lt;span class="w"&gt; &lt;/span&gt;termux-api
+crond
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;第二步：创建脚本文件&lt;/h3&gt;
+&lt;h4&gt;创建目录&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;~/.termux/boot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;创建 &lt;code&gt;~/openclaw-run.sh&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;（将下方内容写入文件）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+pkill&lt;span class="w"&gt; &lt;/span&gt;-9&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;openclaw&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;openclaw
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;send-keys&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;export PATH=&lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt;:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN&lt;/span&gt;&lt;span class="s2"&gt;; openclaw gateway --bind lan --port &lt;/span&gt;&lt;span class="nv"&gt;$PORT&lt;/span&gt;&lt;span class="s2"&gt; --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;C-m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;创建 &lt;code&gt;~/.termux/boot/services.sh&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;（将下方内容写入文件）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new-session&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc -c &lt;/span&gt;&lt;span class="nv"&gt;$PREFIX&lt;/span&gt;&lt;span class="s2"&gt;/etc/frp/frpc.ini&amp;quot;&lt;/span&gt;
+
+pkill&lt;span class="w"&gt; &lt;/span&gt;-9&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;openclaw&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;openclaw
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;send-keys&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;export PATH=&lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt;:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN&lt;/span&gt;&lt;span class="s2"&gt;; openclaw gateway --bind lan --port &lt;/span&gt;&lt;span class="nv"&gt;$PORT&lt;/span&gt;&lt;span class="s2"&gt; --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;C-m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;创建 &lt;code&gt;~/monitor.sh&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;（将下方内容写入文件）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;new-session&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc -c &lt;/span&gt;&lt;span class="nv"&gt;$PREFIX&lt;/span&gt;&lt;span class="s2"&gt;/etc/frp/frpc.ini&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;openclaw.*gateway&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+&lt;span class="w"&gt;    &lt;/span&gt;bash&lt;span class="w"&gt; &lt;/span&gt;~/openclaw-run.sh
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;第三步：设置权限&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;~/.termux/boot/services.sh&lt;span class="w"&gt; &lt;/span&gt;~/openclaw-run.sh&lt;span class="w"&gt; &lt;/span&gt;~/monitor.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;第四步：配置 cron&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 编辑 crontab&lt;/span&gt;
+crontab&lt;span class="w"&gt; &lt;/span&gt;-e
+
+&lt;span class="c1"&gt;# 添加以下内容（每5分钟检测一次）&lt;/span&gt;
+*/5&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;~/monitor.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;第五步：测试&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 手动启动服务&lt;/span&gt;
+bash&lt;span class="w"&gt; &lt;/span&gt;~/.termux/boot/services.sh
+
+&lt;span class="c1"&gt;# 查看 tmux 会话&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;ls
+
+&lt;span class="c1"&gt;# 查看 frpc 日志&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;attach&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;frpc
+
+&lt;span class="c1"&gt;# 查看 OpenClaw 日志&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;attach&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw
+
+&lt;span class="c1"&gt;# 手动测试检测脚本&lt;/span&gt;
+bash&lt;span class="w"&gt; &lt;/span&gt;~/monitor.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2&gt;常用命令&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作&lt;/th&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 tmux 会话&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux ls&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 frpc 日志&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux attach -t frpc&lt;/code&gt;（Ctrl+B 然后 D 退出）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 OpenClaw 日志&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux attach -t openclaw&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;强制退出日志视图&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+B 然后 D&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;杀掉 tmux 会话&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux kill-session -t frpc/openclaw&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;手动执行检测&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;bash ~/monitor.sh&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 cron 日志&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;logcat -s crond&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;常见问题&lt;/h2&gt;
+&lt;h3&gt;Q1: 检测频率会影响电池吗？&lt;/h3&gt;
+&lt;p&gt;不会。&lt;code&gt;pgrep&lt;/code&gt; 进程检查是非常轻量的系统调用，比手机待机功耗低几个数量级。每5分钟一次完全可接受。&lt;/p&gt;
+&lt;h3&gt;Q2: 为什么用 tmux 而不是 nohup？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;tmux 可以方便地查看实时日志&lt;/li&gt;
+&lt;li&gt;tmux 保持会话不中断&lt;/li&gt;
+&lt;li&gt;可以随时手动连接查看状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Q3: termux:boot 没生效？&lt;/h3&gt;
+&lt;p&gt;检查：
+1. Android 设置中允许 Termux 自启动
+2. 脚本权限正确（&lt;code&gt;chmod +x&lt;/code&gt;）
+3. 脚本有执行权限&lt;/p&gt;
+&lt;h3&gt;Q4: 如何调整检测频率？&lt;/h3&gt;
+&lt;p&gt;编辑 crontab：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crontab&lt;span class="w"&gt; &lt;/span&gt;-e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;每1分钟：&lt;code&gt;* * * * * ~/monitor.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;每5分钟：&lt;code&gt;*/5 * * * * ~/monitor.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;每10分钟：&lt;code&gt;*/10 * * * * ~/monitor.sh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;效果&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;手机重启&lt;/strong&gt; → frpc + OpenClaw 自动启动&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;进程崩溃&lt;/strong&gt; → 5分钟内自动检测并重启&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;随时查看日志&lt;/strong&gt; → &lt;code&gt;tmux attach -t frpc/openclaw&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;参考资源&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Termux:Boot"&gt;Termux Wiki - Boot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Cron"&gt;Termux Wiki - Cron&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tmuxcheatsheet.com/"&gt;Tmux 常用命令&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="md_in_obsidian"></category></entry></feed>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="zh" prefix="og: http://ogp.me/ns#">
 	<head>
 		<link href="http://gmpg.org/xfn/11" rel="profile">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +8,15 @@
 		<!-- Metadata -->
 	<meta name="description" content="">
 	<meta property="og:description" content="">
-	<meta property="og:title" content="利用类Slack软件背单词" />
+	<meta property="og:title" content="如何通过IB模拟账号体验程序化交易" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://hillerliao.github.io/li-yong-lei-slackruan-jian-bei-dan-ci.html" />
+	<meta property="og:url" content="https://hillerliao.github.io/gc9osg.html" />
 		<meta property="og:image" content="https://hillerliao.github.io/images/avatar.jpg" />
 
 		<!-- Enable responsiveness on mobile devices-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-		<title>利用类Slack软件背单词 - 互联网产品折腾师</title>
+		<title>如何通过IB模拟账号体验程序化交易 - 互联网产品折腾师</title>
 
 		<!-- CSS -->
 		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
@@ -75,33 +75,33 @@
 	</div>
 </div>		<div class="content container">
 <div class="post">
-	<h1 class="post-title">利用类Slack软件背单词</h1>
-	<span class="post-date">Tue 14 November 2017</span>
+	<h1 class="post-title">如何通过IB模拟账号体验程序化交易</h1>
+	<span class="post-date">Thu 24 August 2017</span>
 	<ul>
-<li>编程
+<li>证券
 categories:</li>
-<li>编程</li>
+<li>证券</li>
 </ul>
 <hr>
-<h3>出发点</h3>
-<p>我认为英语单词需要天天背诵，重复重复再重复，是不是在眼前露个脸，加深记忆。</p>
-<h3>怎么做到？</h3>
-<p>但是，问题来了，每天工作太忙，又有智能手机占用太多时间，哪有功夫去背单词？</p>
-<p>我的答案是：利用零碎时间。</p>
-<p>怎么利用？利用工具，通过定时发条消息到手机上的方式来实现。</p>
-<h3>最终效果预览</h3>
-<p>提醒自己喝水，消息附带一个单词。</p>
-<h3>方案架构</h3>
-<p>通过云服务器定时往类 Slack 软件 BearyChat 发送一条消息。具体如下：</p>
-<h4>触发器</h4>
-<p>在服务器上设一个定时任务</p>
+<h2>所需工具</h2>
 <ul>
-<li>服务器。 购买便宜的 VPS 作为服务器，每个月 2.5 美元，选择 Ubuntu 系统，方便设置定时任务。</li>
-<li>域名。在万网上购买 <code>zhihai.me</code> ，便宜，一年十几块钱。没有对比 godaddy 一年多少钱。</li>
-<li>WEB 服务。部署基于 Django 的 Mezzanine ，省得自己折腾。为了学这个花了不少时间，顺便部署了一个 <a href="http://zhihai.me">博客</a> 。</li>
+<li>IB 账号信息</li>
+<li>通过老虎证券获取 IB 账号和密码</li>
+<li>登录 IB 后台，申请 <a href="https://www.interactivebrokers.com/en/software/allocationfunds/topics/papertrader.htm">IB 模拟交易账号</a></li>
+<li>抓包</li>
+<li>安卓本地抓包工具 <a href="https://github.com/JZ-Darkal/AndroidHttpCapture">HttpCapture</a></li>
+<li>包文件解析工具 <a href="http://www.telerik.com/download/fiddler">Fiddler</a></li>
+<li>IB API for Python</li>
+<li><a href="https://interactivebrokers.github.io/tws-api/classIBApi_1_1Contract.html#gsc.tab=0">IB 官方 API 文档</a></li>
+<li><a href="https://github.com/blampe/IbPy">IbPy 第三方 Python API</a><ul>
+<li><a href="https://valiant-falstaff.github.io/IbPy-Getting-Started/">入门教程</a></li>
+<li><a href="https://www.quantstart.com/articles/Using-Python-IBPy-and-the-Interactive-Brokers-API-to-Automate-Trades">下单 DEMO</a></li>
 </ul>
-<h4>接收器</h4>
-<p>该 BearyChat 出场了。在客户端，以 BearyChat 作为消息接收工具。BearyChat 提供了 Ingoing 这个好用的工具。</p>
+</li>
+<li>其他信息</li>
+<li><a href="https://www.interactivebrokers.com/en/index.php?f=16040">TWS 下载地址</a></li>
+<li><a href="https://github.com/getlantern/forum/issues/833">科学上网</a></li>
+</ul>
 
 
 </div>

@@ -1,5 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海</title><link href="https://hillerliao.github.io/" rel="alternate"/><link href="https://hillerliao.github.io/feeds/all.atom.xml" rel="self"/><id>https://hillerliao.github.io/</id><updated>2026-01-18T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>n8n Cron Trigger 使用 UTC 时区的坑：一次完整排查与解决记录</title><link href="https://hillerliao.github.io/n8n-cron-trigger-shi-yong-utc-shi-qu-de-keng-yi-ci-wan-zheng-pai-cha-yu-jie-jue-ji-lu.html" rel="alternate"/><published>2026-01-18T00:00:00+08:00</published><updated>2026-01-18T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-01-18:/n8n-cron-trigger-shi-yong-utc-shi-qu-de-keng-yi-ci-wan-zheng-pai-cha-yu-jie-jue-ji-lu.html</id><summary type="html">&lt;h2&gt;问题背景&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/all.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-02-03T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>用你的旧手机运行 OpenClaw，省下买服务器的钱</title><link href="https://hillerliao.github.io/install-openclaw-on-old-phone-with-termux.html" rel="alternate"></link><published>2026-02-03T00:00:00+08:00</published><updated>2026-02-03T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-02-03:/install-openclaw-on-old-phone-with-termux.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;OpenClaw&lt;/li&gt;
+&lt;li&gt;Termux&lt;/li&gt;
+&lt;li&gt;Android&lt;/li&gt;
+&lt;li&gt;Shell 脚本&lt;/li&gt;
+&lt;li&gt;AI 助手&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;![[Pasted image 20260203103854.png]]&lt;/p&gt;
+&lt;h2&gt;需求背景&lt;/h2&gt;
+&lt;p&gt;最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;OpenClaw&lt;/li&gt;
+&lt;li&gt;Termux&lt;/li&gt;
+&lt;li&gt;Android&lt;/li&gt;
+&lt;li&gt;Shell 脚本&lt;/li&gt;
+&lt;li&gt;AI 助手&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;![[Pasted image 20260203103854.png]]&lt;/p&gt;
+&lt;h2&gt;需求背景&lt;/h2&gt;
+&lt;p&gt;最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然部署过程十分艰辛，但跑起来之后，发现确实很好用，能当个全天候的 AI 助手。&lt;/p&gt;
+&lt;p&gt;但问题来了：要 24 小时在线，就得有台机器一直开着。有时候出门去，电脑休眠了，助手就连不上了。&lt;/p&gt;
+&lt;p&gt;我看了一眼书桌上尘封已久的旧手机，突然冒出一个想法：既然网上教程都说最低 2G 2 核的机器就能运行 OpenClaw，那现在的安卓机配置那么高，&lt;strong&gt;是不是可以让 OpenClaw 跑在旧手机上？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一开始想找现成的方案，但失败了。最麻烦的就是包依赖的问题，看到那些报错，网上信息也不多，很头疼。不过带着报错信息，在多个大模型之间来回穿梭，终于比较圆满地解决了。&lt;/p&gt;
+&lt;p&gt;不多说，直接上过程。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;前置条件&lt;/h2&gt;
+&lt;p&gt;开始之前，请确认你准备好以下条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一部能正常使用的&lt;strong&gt;安卓旧手机&lt;/strong&gt;（配置要求不高，普通旧手机就行）&lt;/li&gt;
+&lt;li&gt;手机能正常访问&lt;strong&gt;互联网&lt;/strong&gt;（下载和安装需要）&lt;/li&gt;
+&lt;li&gt;⚠️ 网络环境可能需要&lt;strong&gt;魔法上网&lt;/strong&gt;，如果下载失败请注意这一点&lt;/li&gt;
+&lt;li&gt;最重要的是要有&lt;strong&gt;信心和耐心&lt;/strong&gt;，跟着一步步来，没问题！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;下载和安装 Termux&lt;/h2&gt;
+&lt;p&gt;首先，我们需要下载 Termux 应用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;什么是 Termux？&lt;/strong&gt;简单说，它是一个能在安卓手机上运行命令行工具的软件，相当于给手机装了个简易的 Linux 系统。&lt;/p&gt;
+&lt;h3&gt;如何下载&lt;/h3&gt;
+&lt;p&gt;由于国内应用市场无法直接下载，你需要通过以下方式之一获取：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推荐方式：&lt;/strong&gt;
+- &lt;a href="https://f-droid.org/en/packages/com.termux/"&gt;F-Droid&lt;/a&gt; - 官方下载渠道，最安全&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;其他方式（如上面的打不开）：&lt;/strong&gt;
+- &lt;a href="https://github.com/termux/termux-app/releases"&gt;GitHub 官方发布页&lt;/a&gt; - 需要魔法上网
+- &lt;a href="https://play.google.com/store/apps/details?id=com.termux"&gt;Google Play&lt;/a&gt;
+- 第三方应用商店（如 ApkPure 等）- 注意选择正规来源&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 &lt;strong&gt;小贴士&lt;/strong&gt;：下载时请认准官方来源，避免下载不安全的第三方应用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;安装&lt;/h3&gt;
+&lt;p&gt;下载好后，直接安装。安装完成后：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;打开 Termux 应用&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;你会看到一个黑色屏幕，这就是命令行终端界面&lt;/li&gt;
+&lt;li&gt;长按屏幕可以粘贴内容，点击屏幕可以输入&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;🦞 运行安装脚本&lt;/h2&gt;
+&lt;p&gt;接下来，复制下面的命令，粘贴到终端界面：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-sL&lt;span class="w"&gt; &lt;/span&gt;https://s.zhihai.me/openclaw&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;openclaw-install.sh
+chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;openclaw-install.sh
+./openclaw-install.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;或者整行复制 &lt;code&gt;curl -sL https://s.zhihai.me/openclaw &amp;gt; openclaw-install.sh &amp;amp;&amp;amp; chmod +x openclaw-install.sh &amp;amp;&amp;amp; ./openclaw-install.sh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;注意记住你输入或随机生成的 token 。&lt;/p&gt;
+&lt;h2&gt;初始化&lt;/h2&gt;
+&lt;h3&gt;方法一&lt;/h3&gt;
+&lt;p&gt;如果顺利安装完成，接着：&lt;/p&gt;
+&lt;p&gt;1) 运行 &lt;code&gt;oclog&lt;/code&gt; 命令，查看运行状态。
+2) 新开一个终端窗口（屏幕左滑，点击 New Session），运行 &lt;code&gt;openclaw setup&lt;/code&gt; 命令 。
+3) 运行 &lt;code&gt;openclaw onboard&lt;/code&gt; 启动服务。这个就和常见的初始化教程说得一样了。不多说，最后一步提示 gateway 启动失败，可以不管，Termux 不支持这个，但前面 &lt;code&gt;oclog&lt;/code&gt; 能看到服务已经启动了。&lt;/p&gt;
+&lt;h3&gt;方法二&lt;/h3&gt;
+&lt;p&gt;如果上面这个看不懂，直接杀掉应用，重启 Termux 应用，再次进入终端界面。&lt;/p&gt;
+&lt;p&gt;运行 &lt;code&gt;ocr&lt;/code&gt; 命令（OpenClaw Restart），接着运行 &lt;code&gt;oenclaw setup&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;![[7a766f2f9e5ce50840dad1267374e815.png]]
+运行 ocr 命令后，过一段时间看到的效果（来自 2016年的 OnePlus 2 手机）&lt;/p&gt;
+&lt;h2&gt;可能的问题与局限&lt;/h2&gt;
+&lt;p&gt;OpenClaw还在快速更新，不保证脚本针对新版本还能成功运行，届时可能需要相应调整。&lt;/p&gt;
+&lt;p&gt;相比标准的 OpenClaw 运行环境，使用 Termux 运行 OpenClaw 有一些局限：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;性能限制&lt;/strong&gt;：安卓设备的硬件资源可能不如 PC，影响 OpenClaw 的运行效率。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;稳定性&lt;/strong&gt;：Termux 环境可能不如正式的 Linux 发行版稳定，偶尔会出现兼容性问题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;功能缺失&lt;/strong&gt;：某些高级功能可能需要额外配置或不被支持。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;![[74590364992b496b8dbbfaf93d907f96.png]]&lt;/p&gt;
+&lt;p&gt;但就尝鲜和玩耍来说，这些限制是可以接受的。更何况，让旧手机变废为宝，不失为一件让人开心的事情。&lt;/p&gt;
+&lt;h2&gt;更多可能的玩法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;定时任务&lt;/strong&gt;：可以设置定时任务，让手机在特定时间自动执行某些任务。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;远程控制&lt;/strong&gt;：通过网络远程控制手机（安装 &lt;code&gt;Termux-API&lt;/code&gt; ），实现远程操作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能家居集成&lt;/strong&gt;：将手机作为智能家居中心的一部分，实现语音控制等。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;驱动 AI 写这个脚本花了我两个晚上的时间，第一次失败了，本来想放弃。后来不死心，第二天晚上又重来一遍。大部分时间都在解决 Android 兼容性问题。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心思路总结为这几句话：&lt;/strong&gt;
+1. 用 Termux 提供 Linux 环境
+2. 修复 OpenClaw 的平台兼容性问题
+3. 用 tmux 守护进程，确保服务持续运行
+4. 用 termux-wake-lock 防止手机休眠&lt;/p&gt;
+&lt;p&gt;安装成功之后，记住几个命令就行：
+- &lt;code&gt;ocr&lt;/code&gt; - 重启 OpenClaw 服务
+- &lt;code&gt;oclog&lt;/code&gt; - 查看 OpenClaw 服务状态
+- &lt;code&gt;ockill&lt;/code&gt; - 停止 OpenClaw 服务&lt;/p&gt;
+&lt;p&gt;如果你有旧手机，不妨让它 Great Again 。👏&lt;/p&gt;
+&lt;p&gt;安装过程中如果遇到问题，或有改进建议，欢迎反馈。&lt;/p&gt;
+&lt;p&gt;也可以扫码进群交流：&lt;/p&gt;
+&lt;p&gt;![[a416b9ca688bec9e83693414c4075eb3.png]]&lt;/p&gt;</content><category term="md_in_obsidian"></category></entry><entry><title>n8n Cron Trigger 使用 UTC 时区的坑：一次完整排查与解决记录</title><link href="https://hillerliao.github.io/n8n-cron-trigger-utc-timezone-issue.html" rel="alternate"></link><published>2026-01-18T00:00:00+08:00</published><updated>2026-01-18T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-01-18:/n8n-cron-trigger-utc-timezone-issue.html</id><summary type="html">&lt;h2&gt;问题背景&lt;/h2&gt;
 &lt;p&gt;我使用 n8n 做自动化，通过 Cron Trigger，每天&lt;strong&gt;早上 7 点&lt;/strong&gt;自动执行一个工作流：
 - 抓取 &lt;strong&gt;当天天气预报&lt;/strong&gt;
 - 获取 &lt;strong&gt;农历日&lt;/strong&gt;
@@ -268,7 +373,7 @@
 &lt;p&gt;多时区任务如何设计更安全&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;如果你也踩过这个坑，希望这篇记录能帮你节省几个小时的排查时间。&lt;/p&gt;</content><category term="md_in_obsidian"/></entry><entry><title>SQL to CSV Converter：为产品或运营人员打造的数据格式转换利器</title><link href="https://hillerliao.github.io/sql-to-csv-converterwei-chan-pin-huo-yun-ying-ren-yuan-da-zao-de-shu-ju-ge-shi-zhuan-huan-li-qi.html" rel="alternate"/><published>2025-02-15T00:00:00+08:00</published><updated>2025-02-15T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2025-02-15:/sql-to-csv-converterwei-chan-pin-huo-yun-ying-ren-yuan-da-zao-de-shu-ju-ge-shi-zhuan-huan-li-qi.html</id><summary type="html">&lt;p&gt;在日常运营工作中，数据是决策的关键，但获取和处理数据的过程往往并不顺利。运营人员常常需要从数据团队获取用户 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;在日常运营工作中，数据是决策的关键，但获取和处理数据的过程往往并不顺利。运营人员常常需要从数据团队获取用户行为、市场反馈或业务指标等数据，但这些数据通常以SQL查询结果的形式提供。对于不熟悉SQL的运营人员来说，查看和分析这些数据无疑是一项挑战。幸运的是，&lt;strong&gt;SQL to CSV Converter&lt;/strong&gt; 这个工具的出现，为这一问题提供了完美的解决方案。&lt;/p&gt;
+&lt;p&gt;如果你也踩过这个坑，希望这篇记录能帮你节省几个小时的排查时间。&lt;/p&gt;</content><category term="md_in_obsidian"></category></entry><entry><title>SQL to CSV Converter：为产品或运营人员打造的数据格式转换利器</title><link href="https://hillerliao.github.io/sql-to-csv-converterwei-chan-pin-huo-yun-ying-ren-yuan-da-zao-de-shu-ju-ge-shi-zhuan-huan-li-qi.html" rel="alternate"></link><published>2025-02-15T00:00:00+08:00</published><updated>2025-02-15T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2025-02-15:/sql-to-csv-converterwei-chan-pin-huo-yun-ying-ren-yuan-da-zao-de-shu-ju-ge-shi-zhuan-huan-li-qi.html</id><summary type="html">&lt;p&gt;在日常运营工作中，数据是决策的关键，但获取和处理数据的过程往往并不顺利。运营人员常常需要从数据团队获取用户 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;在日常运营工作中，数据是决策的关键，但获取和处理数据的过程往往并不顺利。运营人员常常需要从数据团队获取用户行为、市场反馈或业务指标等数据，但这些数据通常以SQL查询结果的形式提供。对于不熟悉SQL的运营人员来说，查看和分析这些数据无疑是一项挑战。幸运的是，&lt;strong&gt;SQL to CSV Converter&lt;/strong&gt; 这个工具的出现，为这一问题提供了完美的解决方案。&lt;/p&gt;
 &lt;h2&gt;什么是 SQL to CSV Converter？&lt;/h2&gt;
 &lt;p&gt;SQL to CSV Converter 是一个基于 Flask 框架开发的开源工具，能够将 SQL 查询结果轻松转换为 CSV 格式。它提供了一个简洁直观的 Web 界面，让运营人员无需复杂的操作即可完成数据格式的转换。项目代码完全开源，托管在 &lt;a href="https://github.com/hillerliao/sql2csv"&gt;GitHub&lt;/a&gt; 上，用户可以根据需要自行部署或使用其在线演示站点。&lt;/p&gt;
 &lt;h2&gt;运营人员的痛点与解决方案&lt;/h2&gt;
@@ -279,96 +384,7 @@
 &lt;p&gt;为了方便运营人员快速体验和使用，SQL to CSV Converter 提供了一个在线演示站点，访问 &lt;a href="https://sql2csv.vercel.app/"&gt;https://sql2csv.vercel.app/&lt;/a&gt; 即可使用。该站点支持直接上传 SQL 文件，并将其转换为 CSV 格式，无需任何复杂的配置或安装。&lt;/p&gt;
 &lt;p&gt;需要注意的是，为了确保服务的稳定性和安全性，演示站点对上传文件的大小进行了限制，&lt;strong&gt;单个文件的大小不得超过 4.5MB&lt;/strong&gt;。如果运营人员需要处理更大的文件，可以考虑将数据拆分后分别上传，或者在本地环境中部署该工具。&lt;/p&gt;
 &lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;SQL to CSV Converter 是一个专为运营人员设计的实用工具，它通过简单的操作，将复杂的 SQL 查询结果转换为易于查看和处理的 CSV 格式。无论是日常的数据分析，还是紧急的数据提取，这个工具都能帮助运营人员快速完成任务，节省时间和精力。如果你也经常面临类似的数据处理问题，不妨试试 SQL to CSV Converter，它可能会成为你工作中不可或缺的帮手。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>用你的旧手机运行 OpenClaw，省下买服务器的钱</title><link href="https://hillerliao.github.io/yong-ni-de-jiu-shou-ji-yun-xing-openclawsheng-xia-mai-fu-wu-qi-de-qian.html" rel="alternate"/><published>2025-02-03T00:00:00+08:00</published><updated>2025-02-03T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2025-02-03:/yong-ni-de-jiu-shou-ji-yun-xing-openclawsheng-xia-mai-fu-wu-qi-de-qian.html</id><summary type="html">&lt;p&gt;![[Pasted image 20260203103854.png]]&lt;/p&gt;
-&lt;h2&gt;需求背景&lt;/h2&gt;
-&lt;p&gt;最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然部署过程十分艰辛，但 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;![[Pasted image 20260203103854.png]]&lt;/p&gt;
-&lt;h2&gt;需求背景&lt;/h2&gt;
-&lt;p&gt;最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然部署过程十分艰辛，但跑起来之后，发现确实很好用，能当个全天候的 AI 助手。&lt;/p&gt;
-&lt;p&gt;但问题来了：要 24 小时在线，就得有台机器一直开着。有时候出门去，电脑休眠了，助手就连不上了。&lt;/p&gt;
-&lt;p&gt;我看了一眼书桌上尘封已久的旧手机，突然冒出一个想法：既然网上教程都说最低 2G 2 核的机器就能运行 OpenClaw，那现在的安卓机配置那么高，&lt;strong&gt;是不是可以让 OpenClaw 跑在旧手机上？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;一开始想找现成的方案，但失败了。最麻烦的就是包依赖的问题，看到那些报错，网上信息也不多，很头疼。不过带着报错信息，在多个大模型之间来回穿梭，终于比较圆满地解决了。&lt;/p&gt;
-&lt;p&gt;不多说，直接上过程。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2&gt;前置条件&lt;/h2&gt;
-&lt;p&gt;开始之前，请确认你准备好以下条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一部能正常使用的&lt;strong&gt;安卓旧手机&lt;/strong&gt;（配置要求不高，普通旧手机就行）&lt;/li&gt;
-&lt;li&gt;手机能正常访问&lt;strong&gt;互联网&lt;/strong&gt;（下载和安装需要）&lt;/li&gt;
-&lt;li&gt;⚠️ 网络环境可能需要&lt;strong&gt;魔法上网&lt;/strong&gt;，如果下载失败请注意这一点&lt;/li&gt;
-&lt;li&gt;最重要的是要有&lt;strong&gt;信心和耐心&lt;/strong&gt;，跟着一步步来，没问题！&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;下载和安装 Termux&lt;/h2&gt;
-&lt;p&gt;首先，我们需要下载 Termux 应用。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;什么是 Termux？&lt;/strong&gt;简单说，它是一个能在安卓手机上运行命令行工具的软件，相当于给手机装了个简易的 Linux 系统。&lt;/p&gt;
-&lt;h3&gt;如何下载&lt;/h3&gt;
-&lt;p&gt;由于国内应用市场无法直接下载，你需要通过以下方式之一获取：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;推荐方式：&lt;/strong&gt;
-- &lt;a href="https://f-droid.org/en/packages/com.termux/"&gt;F-Droid&lt;/a&gt; - 官方下载渠道，最安全&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;其他方式（如上面的打不开）：&lt;/strong&gt;
-- &lt;a href="https://github.com/termux/termux-app/releases"&gt;GitHub 官方发布页&lt;/a&gt; - 需要魔法上网
-- &lt;a href="https://play.google.com/store/apps/details?id=com.termux"&gt;Google Play&lt;/a&gt;
-- 第三方应用商店（如 ApkPure 等）- 注意选择正规来源&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;💡 &lt;strong&gt;小贴士&lt;/strong&gt;：下载时请认准官方来源，避免下载不安全的第三方应用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3&gt;安装&lt;/h3&gt;
-&lt;p&gt;下载好后，直接安装。安装完成后：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;打开 Termux 应用&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;你会看到一个黑色屏幕，这就是命令行终端界面&lt;/li&gt;
-&lt;li&gt;长按屏幕可以粘贴内容，点击屏幕可以输入&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;🦞 运行安装脚本&lt;/h2&gt;
-&lt;p&gt;接下来，复制下面的命令，粘贴到终端界面：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-sL&lt;span class="w"&gt; &lt;/span&gt;https://s.zhihai.me/openclaw&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;openclaw-install.sh
-chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;openclaw-install.sh
-./openclaw-install.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;或者整行复制 &lt;code&gt;curl -sL https://s.zhihai.me/openclaw &amp;gt; openclaw-install.sh &amp;amp;&amp;amp; chmod +x openclaw-install.sh &amp;amp;&amp;amp; ./openclaw-install.sh&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;注意记住你输入或随机生成的 token 。&lt;/p&gt;
-&lt;h2&gt;初始化&lt;/h2&gt;
-&lt;h3&gt;方法一&lt;/h3&gt;
-&lt;p&gt;如果顺利安装完成，接着：&lt;/p&gt;
-&lt;p&gt;1) 运行 &lt;code&gt;oclog&lt;/code&gt; 命令，查看运行状态。
-2) 新开一个终端窗口（屏幕左滑，点击 New Session），运行 &lt;code&gt;openclaw setup&lt;/code&gt; 命令 。
-3) 运行 &lt;code&gt;openclaw onboard&lt;/code&gt; 启动服务。这个就和常见的初始化教程说得一样了。不多说，最后一步提示 gateway 启动失败，可以不管，Termux 不支持这个，但前面 &lt;code&gt;oclog&lt;/code&gt; 能看到服务已经启动了。&lt;/p&gt;
-&lt;h3&gt;方法二&lt;/h3&gt;
-&lt;p&gt;如果上面这个看不懂，直接杀掉应用，重启 Termux 应用，再次进入终端界面。&lt;/p&gt;
-&lt;p&gt;运行 &lt;code&gt;ocr&lt;/code&gt; 命令（OpenClaw Restart），接着运行 &lt;code&gt;oenclaw setup&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;![[7a766f2f9e5ce50840dad1267374e815.png]]
-运行 ocr 命令后，过一段时间看到的效果（来自 2016年的 OnePlus 2 手机）&lt;/p&gt;
-&lt;h2&gt;可能的问题与局限&lt;/h2&gt;
-&lt;p&gt;OpenClaw还在快速更新，不保证脚本针对新版本还能成功运行，届时可能需要相应调整。&lt;/p&gt;
-&lt;p&gt;相比标准的 OpenClaw 运行环境，使用 Termux 运行 OpenClaw 有一些局限：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;性能限制&lt;/strong&gt;：安卓设备的硬件资源可能不如 PC，影响 OpenClaw 的运行效率。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;稳定性&lt;/strong&gt;：Termux 环境可能不如正式的 Linux 发行版稳定，偶尔会出现兼容性问题。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;功能缺失&lt;/strong&gt;：某些高级功能可能需要额外配置或不被支持。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;![[74590364992b496b8dbbfaf93d907f96.png]]&lt;/p&gt;
-&lt;p&gt;但就尝鲜和玩耍来说，这些限制是可以接受的。更何况，让旧手机变废为宝，不失为一件让人开心的事情。&lt;/p&gt;
-&lt;h2&gt;更多可能的玩法&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;定时任务&lt;/strong&gt;：可以设置定时任务，让手机在特定时间自动执行某些任务。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;远程控制&lt;/strong&gt;：通过网络远程控制手机（安装 &lt;code&gt;Termux-API&lt;/code&gt; ），实现远程操作。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;智能家居集成&lt;/strong&gt;：将手机作为智能家居中心的一部分，实现语音控制等。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;驱动 AI 写这个脚本花了我大个晚上时间，大部分时间都在解决 Android 兼容性问题。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;核心思路总结为这几句话：&lt;/strong&gt;
-1. 用 Termux 提供 Linux 环境
-2. 修复 OpenClaw 的平台兼容性问题
-3. 用 tmux 守护进程，确保服务持续运行
-4. 用 termux-wake-lock 防止手机休眠&lt;/p&gt;
-&lt;p&gt;安装成功之后，记住几个命令就行：
-- &lt;code&gt;ocr&lt;/code&gt; - 重启 OpenClaw 服务
-- &lt;code&gt;oclog&lt;/code&gt; - 查看 OpenClaw 服务状态
-- &lt;code&gt;ockill&lt;/code&gt; - 停止 OpenClaw 服务&lt;/p&gt;
-&lt;p&gt;如果你有旧手机，不妨让它 Great Again 。👏&lt;/p&gt;
-&lt;p&gt;安装过程中如果遇到问题，或有改进建议，欢迎反馈。&lt;/p&gt;
-&lt;p&gt;也可以扫码进群交流：&lt;/p&gt;
-&lt;p&gt;![[a416b9ca688bec9e83693414c4075eb3.png]]&lt;/p&gt;</content><category term="md_in_obsidian"/></entry><entry><title>免装单词App，在 iPhone 锁屏随机显示单词</title><link href="https://hillerliao.github.io/randomly-show-a-word-on-ios-lockscreen.html" rel="alternate"/><published>2024-10-17T23:23:00+08:00</published><updated>2024-10-17T23:23:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2024-10-17:/randomly-show-a-word-on-ios-lockscreen.html</id><summary type="html">&lt;p&gt;免装单词App，在iPhone锁屏随机显示单词！这样，你每天解锁手机的时候，都能顺便瞟一眼单词，日积月累，词汇量自然水涨船高！&lt;/p&gt;</summary><content type="html">&lt;p&gt;亲爱的朋友们，你是否曾经为背单词而烦恼？是否觉得用手机时有很多零碎时间没有利用上？&lt;/p&gt;
+&lt;p&gt;SQL to CSV Converter 是一个专为运营人员设计的实用工具，它通过简单的操作，将复杂的 SQL 查询结果转换为易于查看和处理的 CSV 格式。无论是日常的数据分析，还是紧急的数据提取，这个工具都能帮助运营人员快速完成任务，节省时间和精力。如果你也经常面临类似的数据处理问题，不妨试试 SQL to CSV Converter，它可能会成为你工作中不可或缺的帮手。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>免装单词App，在 iPhone 锁屏随机显示单词</title><link href="https://hillerliao.github.io/randomly-show-a-word-on-ios-lockscreen.html" rel="alternate"></link><published>2024-10-17T23:23:00+08:00</published><updated>2024-10-17T23:23:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2024-10-17:/randomly-show-a-word-on-ios-lockscreen.html</id><summary type="html">&lt;p&gt;免装单词App，在iPhone锁屏随机显示单词！这样，你每天解锁手机的时候，都能顺便瞟一眼单词，日积月累，词汇量自然水涨船高！&lt;/p&gt;</summary><content type="html">&lt;p&gt;亲爱的朋友们，你是否曾经为背单词而烦恼？是否觉得用手机时有很多零碎时间没有利用上？&lt;/p&gt;
 &lt;p&gt;今天，我要给大家带来一个神奇的方法——免装单词App，在iPhone锁屏随机显示单词！这样，你每天解锁手机的时候，都能顺便瞟一眼单词，日积月累，词汇量自然水涨船高！&lt;/p&gt;
 &lt;p&gt;有些背单词软件可能有提供这种功能，但通常有一些问题：单词列表不受自己控制，显示的内容无法自定义，搞不好还收费。&lt;/p&gt;
 &lt;p&gt;今天我就来给大家介绍一种免费实现自定义锁屏单词小组件的办法。&lt;/p&gt;
@@ -440,7 +456,7 @@ chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;o
 &lt;h2&gt;更多可能&lt;/h2&gt;
 &lt;p&gt;也可以把小组件钉在手机桌面上。相比锁屏界面，桌面组件效果对样式要求更高，可以通过修改脚本中的样式代码让桌面小组件变得更加漂亮。&lt;/p&gt;
 &lt;p&gt;此外，不仅仅是单词，天气、热搜、格言、倒数日之类的小组件，都可以借助Scriptable实现，核心就是换个数据和显示样式，本质都一样。只要你有想法，借助ChatGPT大概率能实现，一次不行，再试一次。&lt;/p&gt;
-&lt;p&gt;如果觉得这篇文章有意思，对你有启发，欢迎点个赞。&lt;/p&gt;</content><category term="blog"/><category term="小工具"/></entry><entry><title>让上网变得麻烦一点 效率就能提高一点</title><link href="https://hillerliao.github.io/control-wifi-to-raise-productivity.html" rel="alternate"/><published>2024-05-12T12:31:00+08:00</published><updated>2024-05-12T12:31:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2024-05-12:/control-wifi-to-raise-productivity.html</id><summary type="html">&lt;p&gt;电脑一断网，它就是非常棒的效率工具。能断则断，最好不过。如果不能，就设法减少联网次数。&lt;/p&gt;</summary><content type="html">&lt;p&gt;近来发现自己一打开电脑，效率就比较低下。于是，就开始琢磨，问题出在哪里？有什么提高效率的办法？今天简单记录针对这个问题的思考过程可尝试的解决方案。&lt;/p&gt;
+&lt;p&gt;如果觉得这篇文章有意思，对你有启发，欢迎点个赞。&lt;/p&gt;</content><category term="blog"></category><category term="小工具"></category></entry><entry><title>让上网变得麻烦一点 效率就能提高一点</title><link href="https://hillerliao.github.io/control-wifi-to-raise-productivity.html" rel="alternate"></link><published>2024-05-12T12:31:00+08:00</published><updated>2024-05-12T12:31:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2024-05-12:/control-wifi-to-raise-productivity.html</id><summary type="html">&lt;p&gt;电脑一断网，它就是非常棒的效率工具。能断则断，最好不过。如果不能，就设法减少联网次数。&lt;/p&gt;</summary><content type="html">&lt;p&gt;近来发现自己一打开电脑，效率就比较低下。于是，就开始琢磨，问题出在哪里？有什么提高效率的办法？今天简单记录针对这个问题的思考过程可尝试的解决方案。&lt;/p&gt;
 &lt;p&gt;主要结论是，上网太方便是效率杀手，减少信息输入，适当让上网变得不那么容易，可以提高效率。&lt;/p&gt;
 &lt;h2&gt;用电脑时都在干些什么&lt;/h2&gt;
 &lt;p&gt;大部分人为了记录金钱支出，会使用记账软件。但对时间支出，似乎没有详细记录过，只是能说出一天之内大概做了些什么。这种印象往往不准确。比如，大概知道花了不少时间看娱乐休闲网站，但到底是哪些网站、哪些页面吸引了自己，并不太清楚。&lt;/p&gt;
@@ -491,7 +507,7 @@ chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;o
 &lt;p&gt;这个软件有几个地方还可以改进，其中之一是希望开启联网时支持注明联网目的。在进度条的位置展示目标，轻微提醒自己别跑题。其次，禁止联网时段希望能支持选择半点，现在只支持选择整点，不够灵活。比如，我想晚上十点半开始断网，但按照软件现在的设计，没法实现。&lt;/p&gt;
 &lt;h2&gt;结语&lt;/h2&gt;
 &lt;p&gt;总之，电脑一断网，它就是非常棒的效率工具。能断则断，最好不过。如果不能，就设法减少联网次数。日子一久，你会发现，以前迟迟无法写完的博客，不知不觉发表了；以前无法坚持的外语听写练习，已经积累20个小时了；以前在收藏夹里吃灰的视频教程，已经看完100集了；一直想背的单词，已经背了好几遍了。&lt;/p&gt;
-&lt;p&gt;有时候生活不需要太便利，不是吗？&lt;/p&gt;</content><category term="blog"/><category term="小工具"/></entry><entry><title>一个简单脚本，让我抛弃笔记软件flomo</title><link href="https://hillerliao.github.io/yi-ge-jian-dan-jiao-ben-rang-wo-pao-qi-bi-ji-ruan-jian-flomo.html" rel="alternate"/><published>2023-12-19T21:39:57+08:00</published><updated>2023-12-19T21:39:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2023-12-19:/yi-ge-jian-dan-jiao-ben-rang-wo-pao-qi-bi-ji-ruan-jian-flomo.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;有时候生活不需要太便利，不是吗？&lt;/p&gt;</content><category term="blog"></category><category term="小工具"></category></entry><entry><title>一个简单脚本，让我抛弃笔记软件flomo</title><link href="https://hillerliao.github.io/blog20231219.html" rel="alternate"></link><published>2023-12-19T21:39:57+08:00</published><updated>2023-12-19T21:39:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2023-12-19:/blog20231219.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;笔记软件
 categories:&lt;/li&gt;
 &lt;li&gt;工具&lt;/li&gt;
@@ -512,7 +528,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;最近狠下心来，借助 Chat GPT 用 Python 写了一个简单的脚本，连接 memos 的 SQLite 数据库，随机获取一条笔记内容，并推送到 Telegram 。为了增强体验，增加了简单的关键词过滤，比如排除掉带有“存档”字眼的笔记。 写好之后，在系统的定时任务里增加一条运行该脚本的任务。&lt;/p&gt;
 &lt;p&gt;试运行发现效果挺好，我就借助别人写的数据迁移工具，把 flomo上的数据导出后导入到 memos 中。&lt;/p&gt;
 &lt;p&gt;当然，自己搭建的服务，就怕不稳定，数据备份很重要。我在自己电脑的 Wsl 上、安卓手机的 Termux上分别设置定时任务，将 SQLite 数据库文件备份到本地。&lt;/p&gt;
-&lt;p&gt;到此，总算可以彻底告别 flomo 了。 meomos 加上简单的脚本，恢复了我的笔记回顾习惯，也帮我省了一笔 flomo 会员费，还避免了 VPS 吃灰，少花钱反而提升了体验，可谓是一举多得。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>尝试让 Pelican 博客的部分发布步骤自动化</title><link href="https://hillerliao.github.io/automated-pelican-publishment.html" rel="alternate"/><published>2023-06-22T20:33:00+08:00</published><updated>2023-06-22T20:33:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2023-06-22:/automated-pelican-publishment.html</id><summary type="html">&lt;p&gt;尝试让 pelican 发布博客自动化，为此折腾了一天，几点收货。&lt;/p&gt;</summary><content type="html">&lt;p&gt;个人独立博客上最新一篇文章出现烂图，严重影响站点形象，而且持续了好长一段时间没有修复。图床用的是腾讯的某个服务，后来不让我的站点引用了。我早就忘了具体通过哪个图床工具上传的。&lt;/p&gt;
+&lt;p&gt;到此，总算可以彻底告别 flomo 了。 meomos 加上简单的脚本，恢复了我的笔记回顾习惯，也帮我省了一笔 flomo 会员费，还避免了 VPS 吃灰，少花钱反而提升了体验，可谓是一举多得。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>尝试让 Pelican 博客的部分发布步骤自动化</title><link href="https://hillerliao.github.io/automated-pelican-publishment.html" rel="alternate"></link><published>2023-06-22T20:33:00+08:00</published><updated>2023-06-22T20:33:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2023-06-22:/automated-pelican-publishment.html</id><summary type="html">&lt;p&gt;尝试让 pelican 发布博客自动化，为此折腾了一天，几点收货。&lt;/p&gt;</summary><content type="html">&lt;p&gt;个人独立博客上最新一篇文章出现烂图，严重影响站点形象，而且持续了好长一段时间没有修复。图床用的是腾讯的某个服务，后来不让我的站点引用了。我早就忘了具体通过哪个图床工具上传的。&lt;/p&gt;
 &lt;h2&gt;操作繁琐 修改动力不足&lt;/h2&gt;
 &lt;p&gt;为什么迟迟不修复？ &lt;/p&gt;
 &lt;p&gt;我的个人博客用 Pelican 生成，静态文件托管在 Github Pages，操作过程大致为：&lt;/p&gt;
@@ -560,7 +576,7 @@ categories:&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;通过 &lt;a href="https://gist.github.com/JosefJezek/6053301"&gt;How to use Pelican on GitHub Pages Gittip&lt;/a&gt;  发现 &lt;code&gt;theme&lt;/code&gt; 配置项可以填入整个路径。&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://nekrasovp.github.io/pelican-github-script-automation.html"&gt;Move blog to github and automate deploying with git hooks - Data driven&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/><category term="pelican"/></entry><entry><title>E843，高效利用微信学英语、看新闻的小工具</title><link href="https://hillerliao.github.io/e843.html" rel="alternate"/><published>2022-11-06T16:54:00+08:00</published><updated>2022-11-06T16:54:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-11-06:/e843.html</id><summary type="html">&lt;p&gt;实时推送经济学人国际简讯到微信，碎片化时间享用高质量资讯。&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近半年断断续续利用业余时间自建了一个企业微信应用「E843」，用于推送经济学人 World in Brief 栏目发布的国际简讯到个人微信。 &lt;/p&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="pelican"></category></entry><entry><title>E843，高效利用微信学英语、看新闻的小工具</title><link href="https://hillerliao.github.io/e843.html" rel="alternate"></link><published>2022-11-06T16:54:00+08:00</published><updated>2022-11-06T16:54:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-11-06:/e843.html</id><summary type="html">&lt;p&gt;实时推送经济学人国际简讯到微信，碎片化时间享用高质量资讯。&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近半年断断续续利用业余时间自建了一个企业微信应用「E843」，用于推送经济学人 World in Brief 栏目发布的国际简讯到个人微信。 &lt;/p&gt;
 &lt;p&gt;&lt;img alt="企业微信自建应用 E843" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/wecom_E843_profile.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;应用名字来自经济学人的创办年份 1843 年，将数字 1 换成 Economist 的首字母 E 而成。E 也可以理解为 English 的首字母 E。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="E843界面预览" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/E843_preview.jpg"&gt;&lt;/p&gt;
@@ -588,7 +604,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;如果你也想要使用上述服务，可以申请加入我在企业微信创建的"企业"「智海」。由于该"企业"不是认证主体，有200人上限，加满之后将无法接纳新"员工"。&lt;/p&gt;
 &lt;p&gt;为让有限的名额给到真正需要的人，「E843」 需付费使用，50元一年。可以支付5元体验一个月。&lt;/p&gt;
 &lt;p&gt;扫码联系牛牛（微信：cbnn2018），备注「E843」。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="扫码加入 E843" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/wechat_cbnn_qrcode.jpg"&gt;&lt;/p&gt;</content><category term="blog"/><category term="小工具"/></entry><entry><title>每周五天英语学习法</title><link href="https://hillerliao.github.io/mei-zhou-wu-tian-ying-yu-xue-xi-fa.html" rel="alternate"/><published>2022-10-30T13:51:57+08:00</published><updated>2022-10-30T13:51:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-10-30:/mei-zhou-wu-tian-ying-yu-xue-xi-fa.html</id><summary type="html">&lt;p&gt;最近在油管看到一个介绍英语学习方法的视频「 &lt;a href="https://www.bilibili.com/video/BV1QJ411J7UG/"&gt;The Best Way To Learn English (In my humble opinion.)&lt;/a&gt;&lt;br&gt;
+&lt;p&gt;&lt;img alt="扫码加入 E843" src="https://fastly.jsdelivr.net/gh/hillerliao/img@main/wechat_cbnn_qrcode.jpg"&gt;&lt;/p&gt;</content><category term="blog"></category><category term="小工具"></category></entry><entry><title>每周五天英语学习法</title><link href="https://hillerliao.github.io/mei-zhou-wu-tian-ying-yu-xue-xi-fa.html" rel="alternate"></link><published>2022-10-30T13:51:57+08:00</published><updated>2022-10-30T13:51:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-10-30:/mei-zhou-wu-tian-ying-yu-xue-xi-fa.html</id><summary type="html">&lt;p&gt;最近在油管看到一个介绍英语学习方法的视频「 &lt;a href="https://www.bilibili.com/video/BV1QJ411J7UG/"&gt;The Best Way To Learn English (In my humble opinion.)&lt;/a&gt;&lt;br&gt;
 」，播放量达到140多万次，讲得挺好，本文将其精华内容作个 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近在油管看到一个介绍英语学习方法的视频「 &lt;a href="https://www.bilibili.com/video/BV1QJ411J7UG/"&gt;The Best Way To Learn English (In my humble opinion.)&lt;/a&gt;&lt;br&gt;
 」，播放量达到140多万次，讲得挺好，本文将其精华内容作个整理。  &lt;/p&gt;
 &lt;p&gt;作者是来自加拿大的英语老师Bob，也学过法语。Bob基于自己的教学经验与学习经历，总结出这份英语学习计划。  &lt;/p&gt;
@@ -683,7 +699,7 @@ categories:&lt;/li&gt;
 &lt;li&gt;休息一下。  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;⌛ 请记住：视频观看三遍，节奏为：今天两次打开英文字幕，明天一次关闭英文字幕，以强化你学到的英语。  &lt;/p&gt;
-&lt;p&gt;以上就是 Bob 分享的英语学习计划。其实没有什么特别之处，重要的是能坚持实施。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>阿里云函数版 RSS 过滤器上线</title><link href="https://hillerliao.github.io/a-li-yun-han-shu-ban-rss-guo-lu-qi-shang-xian.html" rel="alternate"/><published>2022-09-18T10:57:57+08:00</published><updated>2022-09-18T10:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-09-18:/a-li-yun-han-shu-ban-rss-guo-lu-qi-shang-xian.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;以上就是 Bob 分享的英语学习计划。其实没有什么特别之处，重要的是能坚持实施。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>阿里云函数版 RSS 过滤器上线</title><link href="https://hillerliao.github.io/rssfilter-on-aliyun-cf.html" rel="alternate"></link><published>2022-09-18T10:57:57+08:00</published><updated>2022-09-18T10:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-09-18:/rssfilter-on-aliyun-cf.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;产品体验
 categories:&lt;/li&gt;
 &lt;li&gt;产品体验&lt;/li&gt;
@@ -723,7 +739,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;比如，有些 RSS，我只关心带有特定关键词的内容；另一些 RSS，我不想看到含有特定关键词的广告内容。有了 RSS 过滤器，这些需求都能得到满足。&lt;/p&gt;
 &lt;p&gt;好了，如果你觉得本项目对你有用，不妨请我喝杯咖啡。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="个人微信收款码-智海" src="https://raw.githubusercontent.com/hillerliao/img/main/IMG_0096%20copy.jpg"&gt;&lt;/p&gt;
-&lt;p&gt;如果有改进建议，欢迎交流。微信： &lt;code&gt;hillerliao&lt;/code&gt;。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>如何训练你的大脑用英语思考</title><link href="https://hillerliao.github.io/ru-he-xun-lian-ni-de-da-nao-yong-ying-yu-si-kao.html" rel="alternate"/><published>2022-08-16T08:36:53+08:00</published><updated>2022-08-16T08:36:53+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-08-16:/ru-he-xun-lian-ni-de-da-nao-yong-ying-yu-si-kao.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;如果有改进建议，欢迎交流。微信： &lt;code&gt;hillerliao&lt;/code&gt;。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>如何训练你的大脑用英语思考</title><link href="https://hillerliao.github.io/how-to-practice-thinking-in-english.html" rel="alternate"></link><published>2022-08-16T08:36:53+08:00</published><updated>2022-08-16T08:36:53+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-08-16:/how-to-practice-thinking-in-english.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;学外语
 categories:&lt;/li&gt;
 &lt;li&gt;学外语&lt;/li&gt;
@@ -772,7 +788,7 @@ categories:&lt;/li&gt;
 &lt;h2&gt;每天练习&lt;/h2&gt;
 &lt;p&gt;那么，你应该花多少时间在这些练习上？每天做一点。
 当你每天都这样做时，一遍又一遍，一点一点地做，这就是&lt;strong&gt;关键&lt;/strong&gt;。
-当你把事情变成一种习惯时，它会突然出现在你的脑海中，而在你意识到之前，实际上，你是在用英语思考。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>Vercel 环境无法正常请求带中文字符URL的问题排查</title><link href="https://hillerliao.github.io/vercel-huan-jing-wu-fa-zheng-chang-qing-qiu-dai-zhong-wen-zi-fu-urlde-wen-ti-pai-cha.html" rel="alternate"/><published>2022-08-11T21:12:57+08:00</published><updated>2022-08-11T21:12:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-08-11:/vercel-huan-jing-wu-fa-zheng-chang-qing-qiu-dai-zhong-wen-zi-fu-urlde-wen-ti-pai-cha.html</id><summary type="html">&lt;ul&gt;
+当你把事情变成一种习惯时，它会突然出现在你的脑海中，而在你意识到之前，实际上，你是在用英语思考。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Vercel 环境无法正常请求带中文字符URL的问题排查</title><link href="https://hillerliao.github.io/fix-chinese-characters-included-url-bug-in-vercel.html" rel="alternate"></link><published>2022-08-11T21:12:57+08:00</published><updated>2022-08-11T21:12:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-08-11:/fix-chinese-characters-included-url-bug-in-vercel.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;运维
 categories:&lt;/li&gt;
 &lt;li&gt;运维&lt;/li&gt;
@@ -790,7 +806,7 @@ categories:&lt;/li&gt;
 &lt;h2&gt;问题分析&lt;/h2&gt;
 &lt;p&gt;根据第一版程序，请求&lt;code&gt;https://pyrsshub.vercel.app/aisixiang/search/author/%E9%83%91%E6%B0%B8%E5%B9%B4&lt;/code&gt;得到的HTML 源码&lt;code&gt;&amp;lt;title&amp;gt;&amp;lt;![CDATA[%E9%83%91%E6%B0%B8%E5%B9%B4 - author搜索 - 爱思想]]&amp;gt;&amp;lt;/title&amp;gt;&lt;/code&gt;可以看出，RSS 地址中的中文字符在 HTML 源码没有正常显示，还是 urlencode之后的状态。
 第一版本&lt;a href="https://github.com/hillerliao/RSSHub-python/commit/cfcb04afa116941292a1bddab03cfbad4fde59da"&gt;程序&lt;/a&gt;通过以下代码直接将URL 中的中文字符转换为为GBK编码的字符。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;urllib.parse&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;
 &lt;span class="n"&gt;keywords_gbk&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;gbk&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -806,13 +822,13 @@ categories:&lt;/li&gt;
 &lt;strong&gt;编码&lt;/strong&gt;：接着，将解码后的字符，按照目标网站指定的字符集进行编码（&lt;code&gt;urlencode&lt;/code&gt;），可以用&lt;code&gt;quote&lt;/code&gt;方法实现。
 具体到爱思想搜索结果列表页，为什么确定用的是gbk 字符来编码？&lt;code&gt;https://www.aisixiang.com/data/search.php?keyWords=%D1%D6%D1%A7%CD%A8&amp;amp;searchfield=author&lt;/code&gt; 属于其他页面搜索框的 Get 方法触发的请求，URL包含汉字，这时的URL编码方法由网页的编码决定，也就是由HTML源码中字符集的设定决定。 查看 HTML 源码 &lt;code&gt;&amp;lt;meta http-equiv="Content-Type" content="text/html; charset=gbk" /&amp;gt;&lt;/code&gt;得知，所发请求必须是GBK 编码的 URL。
 &lt;a href="https://github.com/hillerliao/RSSHub-python/commit/53e055637a85191cf88987740eeedb7bdb8204af"&gt;最终程序&lt;/a&gt;修改为：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;urllib.parse&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;
 &lt;span class="n"&gt;keywords&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="c1"&gt;# 或者用 gbk 字符集解码&lt;/span&gt;
 &lt;span class="n"&gt;keywords_gbk&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;keywords&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;gbk&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;以字符&lt;code&gt;郑永年&lt;/code&gt;为例：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;urllib.parse&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;quote&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;
 
 &lt;span class="n"&gt;str_urlencoded&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="si"&gt;%E&lt;/span&gt;&lt;span class="s1"&gt;9&lt;/span&gt;&lt;span class="si"&gt;%83%&lt;/span&gt;&lt;span class="s1"&gt;91&lt;/span&gt;&lt;span class="si"&gt;%E&lt;/span&gt;&lt;span class="s1"&gt;6%B0%B8&lt;/span&gt;&lt;span class="si"&gt;%E&lt;/span&gt;&lt;span class="s1"&gt;5%B9%B4&amp;#39;&lt;/span&gt; 
 &lt;span class="n"&gt;str_utf8_decoded&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;unquote&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;str_urlencoded&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;encoding&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -836,7 +852,314 @@ categories:&lt;/li&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.ruanyifeng.com/blog/2010/02/url_encoding.html"&gt;关于URL编码 - 阮一峰的网络日志&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.csdn.net/a359680405/article/details/44857359"&gt;Python菜鸟晋级11----urlencode与unquote_翻滚吧挨踢男的博客-CSDN博客&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>如何发布 pelican 到 github pages</title><link href="https://hillerliao.github.io/publish-pelican-to-ghp.html" rel="alternate"/><published>2021-12-26T17:32:00+08:00</published><updated>2021-12-26T17:32:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2021-12-26:/publish-pelican-to-ghp.html</id><summary type="html">&lt;p&gt;Short version for index and feeds&lt;/p&gt;</summary><content type="html">&lt;p&gt;去年决定将静态博客的生成工具从 hexo 改成基于 Python 的 pelican，初次搬运之后就没在动过，以至于已经忘了该如何更新。&lt;/p&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>Termux 环境下 frpc 和 OpenClaw 服务保活方案</title><link href="https://hillerliao.github.io/termux-frpc-openclaw-service-survival.html" rel="alternate"></link><published>2022-05-10T16:00:00+08:00</published><updated>2022-05-10T16:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2022-05-10:/termux-frpc-openclaw-service-survival.html</id><summary type="html">&lt;h2&gt;背景与痛点&lt;/h2&gt;
+&lt;h3&gt;问题场景&lt;/h3&gt;
+&lt;p&gt;在 Android 设备上运行 frpc（内网穿透客户端）和 OpenClaw 时，面临以下挑战：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;手机重启后服务不自动启动&lt;/strong&gt;&lt;br&gt;
+   Android 系统不会 …&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2&gt;背景与痛点&lt;/h2&gt;
+&lt;h3&gt;问题场景&lt;/h3&gt;
+&lt;p&gt;在 Android 设备上运行 frpc（内网穿透客户端）和 OpenClaw 时，面临以下挑战：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;手机重启后服务不自动启动&lt;/strong&gt;&lt;br&gt;
+   Android 系统不会自动运行 Termux 中的后台服务&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;进程崩溃后不会重启&lt;/strong&gt;&lt;br&gt;
+   frpc 或 OpenClaw 可能因网络波动、内存不足等原因崩溃，需要手动介入&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;无法方便地查看日志&lt;/strong&gt;&lt;br&gt;
+   后台运行的进程没有会话管理，调试困难&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;需求&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 手机开机后 frpc + OpenClaw 自动启动&lt;/li&gt;
+&lt;li&gt;✅ 进程崩溃后自动检测并重启&lt;/li&gt;
+&lt;li&gt;✅ 方便查看运行日志&lt;/li&gt;
+&lt;li&gt;✅ 低资源占用（不频繁检测）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;方案概述&lt;/h2&gt;
+&lt;p&gt;利用 Termux 生态中的三个工具组合：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;工具&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;termux:boot&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;开机时自动执行脚本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;tmux&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;会话管理（保持进程运行、方便查看日志）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;cron&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;定时任务（每5分钟检测进程存活）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;架构图&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;┌─────────────────────────────────────────────────────────────┐
+│                        Android 系统                          │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                  Termux 环境                         │   │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌──────────────┐ │   │
+│  │  │ termux:boot │→ │   tmux      │→ │ frpc        │ │   │
+│  │  │ (开机执行)   │  │ (会话管理)   │  │ openclaw    │ │   │
+│  │  └─────────────┘  └─────────────┘  └──────────────┘ │   │
+│  │                                                  │     │   │
+│  │  ┌─────────────┐  ┌────────────────────────────┐  │     │   │
+│  │  │    cron     │→ │ monitor.sh (每5分钟执行)   │  │     │   │
+│  │  │ (定时检测)   │  │ 检测进程是否存在 → 重启    │  │     │   │
+│  │  └─────────────┘  └────────────────────────────┘  │     │   │
+│  └─────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2&gt;依赖安装&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安装 tmux（会话管理）&lt;/span&gt;
+pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;tmux
+
+&lt;span class="c1"&gt;# 安装 cron（定时任务）&lt;/span&gt;
+pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;crontab
+
+&lt;span class="c1"&gt;# 启动 cron 服务&lt;/span&gt;
+crond
+
+&lt;span class="c1"&gt;# 安装 termux:boot（开机自启）&lt;/span&gt;
+pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;termux-boot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;termux:boot 安装后需要在 Android 设置中授权自启动权限（忽略电池优化）&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;脚本内容&lt;/h2&gt;
+&lt;h3&gt;1. OpenClaw 启动脚本 (&lt;code&gt;~/openclaw-run.sh&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;负责清理旧进程、重新启动 OpenClaw：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+&lt;span class="c1"&gt;# OpenClaw 启动脚本&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 杀掉旧进程&lt;/span&gt;
+pkill&lt;span class="w"&gt; &lt;/span&gt;-9&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;openclaw&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+
+&lt;span class="c1"&gt;# 等待资源释放&lt;/span&gt;
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 创建新 tmux 会话&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;openclaw
+
+&lt;span class="c1"&gt;# 等待会话就绪&lt;/span&gt;
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 发送启动命令到 tmux 会话&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;send-keys&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;export PATH=&lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt;:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN&lt;/span&gt;&lt;span class="s2"&gt;; openclaw gateway --bind lan --port &lt;/span&gt;&lt;span class="nv"&gt;$PORT&lt;/span&gt;&lt;span class="s2"&gt; --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;C-m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;2. 开机启动脚本 (&lt;code&gt;~/.termux/boot/services.sh&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;手机开机时自动启动 frpc 和 OpenClaw：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+&lt;span class="c1"&gt;# termux:boot services - 开机自启动脚本&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 启动 frpc&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new-session&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc -c &lt;/span&gt;&lt;span class="nv"&gt;$PREFIX&lt;/span&gt;&lt;span class="s2"&gt;/etc/frp/frpc.ini&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 清理旧 OpenClaw 进程后启动&lt;/span&gt;
+pkill&lt;span class="w"&gt; &lt;/span&gt;-9&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;openclaw&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;openclaw
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;send-keys&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;export PATH=&lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt;:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN&lt;/span&gt;&lt;span class="s2"&gt;; openclaw gateway --bind lan --port &lt;/span&gt;&lt;span class="nv"&gt;$PORT&lt;/span&gt;&lt;span class="s2"&gt; --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;C-m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;3. 进程监控脚本 (&lt;code&gt;~/monitor.sh&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;每5分钟检测一次，崩溃则重启：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+&lt;span class="c1"&gt;# 进程监控脚本 - 每5分钟检测并重启崩溃的服务&lt;/span&gt;
+
+&lt;span class="c1"&gt;# frpc 检测&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] frpc 崩溃，重启中...&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;new-session&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc -c &lt;/span&gt;&lt;span class="nv"&gt;$PREFIX&lt;/span&gt;&lt;span class="s2"&gt;/etc/frp/frpc.ini&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="c1"&gt;# OpenClaw 检测&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;openclaw.*gateway&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] OpenClaw 崩溃，重启中...&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+&lt;span class="w"&gt;    &lt;/span&gt;bash&lt;span class="w"&gt; &lt;/span&gt;~/openclaw-run.sh
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2&gt;操作步骤&lt;/h2&gt;
+&lt;h3&gt;第一步：安装依赖&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pkg&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;crontab&lt;span class="w"&gt; &lt;/span&gt;termux-api
+crond
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;第二步：创建脚本文件&lt;/h3&gt;
+&lt;h4&gt;创建目录&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;~/.termux/boot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;创建 &lt;code&gt;~/openclaw-run.sh&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;（将下方内容写入文件）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+pkill&lt;span class="w"&gt; &lt;/span&gt;-9&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;openclaw&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;openclaw
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;send-keys&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;export PATH=&lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt;:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN&lt;/span&gt;&lt;span class="s2"&gt;; openclaw gateway --bind lan --port &lt;/span&gt;&lt;span class="nv"&gt;$PORT&lt;/span&gt;&lt;span class="s2"&gt; --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;C-m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;创建 &lt;code&gt;~/.termux/boot/services.sh&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;（将下方内容写入文件）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new-session&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc -c &lt;/span&gt;&lt;span class="nv"&gt;$PREFIX&lt;/span&gt;&lt;span class="s2"&gt;/etc/frp/frpc.ini&amp;quot;&lt;/span&gt;
+
+pkill&lt;span class="w"&gt; &lt;/span&gt;-9&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;openclaw&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;openclaw
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;send-keys&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;export PATH=&lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt;:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN&lt;/span&gt;&lt;span class="s2"&gt;; openclaw gateway --bind lan --port &lt;/span&gt;&lt;span class="nv"&gt;$PORT&lt;/span&gt;&lt;span class="s2"&gt; --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;C-m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4&gt;创建 &lt;code&gt;~/monitor.sh&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;（将下方内容写入文件）&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;new-session&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc -c &lt;/span&gt;&lt;span class="nv"&gt;$PREFIX&lt;/span&gt;&lt;span class="s2"&gt;/etc/frp/frpc.ini&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;openclaw.*gateway&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+&lt;span class="w"&gt;    &lt;/span&gt;bash&lt;span class="w"&gt; &lt;/span&gt;~/openclaw-run.sh
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;第三步：设置权限&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;~/.termux/boot/services.sh&lt;span class="w"&gt; &lt;/span&gt;~/openclaw-run.sh&lt;span class="w"&gt; &lt;/span&gt;~/monitor.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;第四步：配置 cron&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 编辑 crontab&lt;/span&gt;
+crontab&lt;span class="w"&gt; &lt;/span&gt;-e
+
+&lt;span class="c1"&gt;# 添加以下内容（每5分钟检测一次）&lt;/span&gt;
+*/5&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;~/monitor.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;第五步：测试&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 手动启动服务&lt;/span&gt;
+bash&lt;span class="w"&gt; &lt;/span&gt;~/.termux/boot/services.sh
+
+&lt;span class="c1"&gt;# 查看 tmux 会话&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;ls
+
+&lt;span class="c1"&gt;# 查看 frpc 日志&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;attach&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;frpc
+
+&lt;span class="c1"&gt;# 查看 OpenClaw 日志&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;attach&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw
+
+&lt;span class="c1"&gt;# 手动测试检测脚本&lt;/span&gt;
+bash&lt;span class="w"&gt; &lt;/span&gt;~/monitor.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2&gt;常用命令&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作&lt;/th&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 tmux 会话&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux ls&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 frpc 日志&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux attach -t frpc&lt;/code&gt;（Ctrl+B 然后 D 退出）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 OpenClaw 日志&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux attach -t openclaw&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;强制退出日志视图&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;Ctrl+B 然后 D&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;杀掉 tmux 会话&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux kill-session -t frpc/openclaw&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;手动执行检测&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;bash ~/monitor.sh&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 cron 日志&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;logcat -s crond&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;常见问题&lt;/h2&gt;
+&lt;h3&gt;Q1: 检测频率会影响电池吗？&lt;/h3&gt;
+&lt;p&gt;不会。&lt;code&gt;pgrep&lt;/code&gt; 进程检查是非常轻量的系统调用，比手机待机功耗低几个数量级。每5分钟一次完全可接受。&lt;/p&gt;
+&lt;h3&gt;Q2: 为什么用 tmux 而不是 nohup？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;tmux 可以方便地查看实时日志&lt;/li&gt;
+&lt;li&gt;tmux 保持会话不中断&lt;/li&gt;
+&lt;li&gt;可以随时手动连接查看状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Q3: termux:boot 没生效？&lt;/h3&gt;
+&lt;p&gt;检查：
+1. Android 设置中允许 Termux 自启动
+2. 脚本权限正确（&lt;code&gt;chmod +x&lt;/code&gt;）
+3. 脚本有执行权限&lt;/p&gt;
+&lt;h3&gt;Q4: 如何调整检测频率？&lt;/h3&gt;
+&lt;p&gt;编辑 crontab：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crontab&lt;span class="w"&gt; &lt;/span&gt;-e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;每1分钟：&lt;code&gt;* * * * * ~/monitor.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;每5分钟：&lt;code&gt;*/5 * * * * ~/monitor.sh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;每10分钟：&lt;code&gt;*/10 * * * * ~/monitor.sh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;效果&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;手机重启&lt;/strong&gt; → frpc + OpenClaw 自动启动&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;进程崩溃&lt;/strong&gt; → 5分钟内自动检测并重启&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;随时查看日志&lt;/strong&gt; → &lt;code&gt;tmux attach -t frpc/openclaw&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;参考资源&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Termux:Boot"&gt;Termux Wiki - Boot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Cron"&gt;Termux Wiki - Cron&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tmuxcheatsheet.com/"&gt;Tmux 常用命令&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="md_in_obsidian"></category></entry><entry><title>如何发布 pelican 到 github pages</title><link href="https://hillerliao.github.io/publish-pelican-to-ghp.html" rel="alternate"></link><published>2021-12-26T17:32:00+08:00</published><updated>2021-12-26T17:32:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2021-12-26:/publish-pelican-to-ghp.html</id><summary type="html">&lt;p&gt;Short version for index and feeds&lt;/p&gt;</summary><content type="html">&lt;p&gt;去年决定将静态博客的生成工具从 hexo 改成基于 Python 的 pelican，初次搬运之后就没在动过，以至于已经忘了该如何更新。&lt;/p&gt;
 &lt;p&gt;为避免再次遗忘，现决定将发布过程写下来。  &lt;/p&gt;
 &lt;h2&gt;第一次配置环境&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# 进入项目根目录  
@@ -855,9 +1178,9 @@ git clone https://github.com/getpelican/pelican-themes.git
 
 &lt;span class="c1"&gt;# publish to github pages&lt;/span&gt;
 &lt;span class="n"&gt;pip&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;import&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;2.1.0&lt;/span&gt;
-&lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nn"&gt;output&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
+&lt;span class="n"&gt;ghp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;output&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
 &lt;span class="n"&gt;git&lt;/span&gt; &lt;span class="n"&gt;push&lt;/span&gt; &lt;span class="n"&gt;origin&lt;/span&gt; &lt;span class="n"&gt;gh&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pages&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="blog"/><category term="pelican"/></entry><entry><title>部署Flask项目到手机上 并供外网访问</title><link href="https://hillerliao.github.io/bu-shu-flaskxiang-mu-dao-shou-ji-shang-bing-gong-wai-wang-fang-wen.html" rel="alternate"/><published>2021-11-29T21:03:57+08:00</published><updated>2021-11-29T21:03:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2021-11-29:/bu-shu-flaskxiang-mu-dao-shou-ji-shang-bing-gong-wai-wang-fang-wen.html</id><summary type="html">&lt;ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="blog"></category><category term="pelican"></category></entry><entry><title>部署Flask项目到手机上 并供外网访问</title><link href="https://hillerliao.github.io/deploy-flask-project-on-android.html" rel="alternate"></link><published>2021-11-29T21:03:57+08:00</published><updated>2021-11-29T21:03:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2021-11-29:/deploy-flask-project-on-android.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;教程
 categories:&lt;/li&gt;
 &lt;li&gt;教程&lt;/li&gt;
@@ -1083,7 +1406,7 @@ service supervisor start
 &lt;li&gt;启动supervisor服务。此时会自动启动 uwsgi 服务。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;总体还算比较稳定，出现过一次花生壳内网版APP崩溃的情况。&lt;/p&gt;
-&lt;p&gt;首发在&lt;a href="https://www.yuque.com/hillerliao/zhihai.me/mtx53r"&gt;语雀&lt;/a&gt;&lt;/p&gt;</content><category term="blog"/></entry><entry><title>如何实现微信接收龙岩学院讲座提醒</title><link href="https://hillerliao.github.io/ru-he-shi-xian-wei-xin-jie-shou-long-yan-xue-yuan-jiang-zuo-ti-xing.html" rel="alternate"/><published>2020-11-05T19:57:57+08:00</published><updated>2020-11-05T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2020-11-05:/ru-he-shi-xian-wei-xin-jie-shou-long-yan-xue-yuan-jiang-zuo-ti-xing.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;首发在&lt;a href="https://www.yuque.com/hillerliao/zhihai.me/mtx53r"&gt;语雀&lt;/a&gt;&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>如何实现微信接收龙岩学院讲座提醒</title><link href="https://hillerliao.github.io/qugakt.html" rel="alternate"></link><published>2020-11-05T19:57:57+08:00</published><updated>2020-11-05T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2020-11-05:/qugakt.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;编程
 categories:&lt;/li&gt;
 &lt;li&gt;编程&lt;/li&gt;
@@ -1128,7 +1451,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;WxPusher (微信推送服务)是一个使用微信公众号作为通道的，实时信息推送平台，你可以通过调用 API 的方式，把信息推送到微信上，无需安装额外的软件，即可做到信息实时通知。 你可以使用 WxPusher 来做服务器报警通知、抢课通知、抢票通知，信息更新提示等。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;我们在其上创建一个应用「消息来了」，然后创建一个主题「龙院讲座」，获得订阅二维码。将二维码分享给朋友，对方只需要扫一扫，即可实现订阅。
-&lt;img alt="龙岩学院讲座提醒-二维码.jpg" src="https://cdn.nlark.com/yuque/0/2020/jpeg/147312/1604542059523-bbb8bdcc-f45f-4d8b-9c78-847fe87afb52.jpeg#align=left&amp;amp;display=inline&amp;amp;height=395&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92-%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg&amp;amp;originHeight=1304&amp;amp;originWidth=990&amp;amp;size=69543&amp;amp;status=done&amp;amp;style=stroke&amp;amp;width=300#align=left&amp;amp;display=inline&amp;amp;height=1304&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;originHeight=1304&amp;amp;originWidth=990&amp;amp;status=done&amp;amp;style=none&amp;amp;width=990"&gt;&lt;/p&gt;</content><category term="blog"/></entry><entry><title>天猫精灵智能音箱新闻收听体验报告</title><link href="https://hillerliao.github.io/tian-mao-jing-ling-zhi-neng-yin-xiang-xin-wen-shou-ting-ti-yan-bao-gao.html" rel="alternate"/><published>2020-10-22T19:57:57+08:00</published><updated>2020-10-22T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2020-10-22:/tian-mao-jing-ling-zhi-neng-yin-xiang-xin-wen-shou-ting-ti-yan-bao-gao.html</id><summary type="html">&lt;ul&gt;
+&lt;img alt="龙岩学院讲座提醒-二维码.jpg" src="https://cdn.nlark.com/yuque/0/2020/jpeg/147312/1604542059523-bbb8bdcc-f45f-4d8b-9c78-847fe87afb52.jpeg#align=left&amp;amp;display=inline&amp;amp;height=395&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;name=%E9%BE%99%E5%B2%A9%E5%AD%A6%E9%99%A2%E8%AE%B2%E5%BA%A7%E6%8F%90%E9%86%92-%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg&amp;amp;originHeight=1304&amp;amp;originWidth=990&amp;amp;size=69543&amp;amp;status=done&amp;amp;style=stroke&amp;amp;width=300#align=left&amp;amp;display=inline&amp;amp;height=1304&amp;amp;margin=%5Bobject%20Object%5D&amp;amp;originHeight=1304&amp;amp;originWidth=990&amp;amp;status=done&amp;amp;style=none&amp;amp;width=990"&gt;&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>天猫精灵智能音箱新闻收听体验报告</title><link href="https://hillerliao.github.io/hxz52w.html" rel="alternate"></link><published>2020-10-22T19:57:57+08:00</published><updated>2020-10-22T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2020-10-22:/hxz52w.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;产品体验
 categories:&lt;/li&gt;
 &lt;li&gt;产品体验&lt;/li&gt;
@@ -1161,7 +1484,7 @@ categories:&lt;/li&gt;
 一些不错的公众号文章，会提供音频版，但散落在微信公众平台，并不能为天猫精灵所用。天猫精灵能否与自媒体合作，给他们方便的工具，将内容提交到开放平台。如 财经早餐、人民日报、十点读书等，在喜马拉雅更新不勤快，但公众号更新很勤快，导致天猫精灵无法使用。&lt;/p&gt;
 &lt;p&gt;3、让用户分享音频，UGC
 许多内容都是文字的，能否通过用户生产音频？比如用户可以念新闻，选择是否分享给其他用户。&lt;/p&gt;
-&lt;p&gt;当然我知道这个体验反馈估计不会引起天猫精灵的注意，因为资讯是第三方的乐天头条提供的。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>基于古诗词名言名篇应用需求分析</title><link href="https://hillerliao.github.io/ji-yu-gu-shi-ci-ming-yan-ming-pian-ying-yong-xu-qiu-fen-xi.html" rel="alternate"/><published>2019-02-25T19:57:57+08:00</published><updated>2019-02-25T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-25:/ji-yu-gu-shi-ci-ming-yan-ming-pian-ying-yong-xu-qiu-fen-xi.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;当然我知道这个体验反馈估计不会引起天猫精灵的注意，因为资讯是第三方的乐天头条提供的。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>基于古诗词名言名篇应用需求分析</title><link href="https://hillerliao.github.io/ji-yu-gu-shi-ci-ming-yan-ming-pian-ying-yong-xu-qiu-fen-xi.html" rel="alternate"></link><published>2019-02-25T19:57:57+08:00</published><updated>2019-02-25T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-25:/ji-yu-gu-shi-ci-ming-yan-ming-pian-ying-yong-xu-qiu-fen-xi.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;产品设计
 categories:&lt;/li&gt;
 &lt;li&gt;产品设计&lt;/li&gt;
@@ -1291,7 +1614,7 @@ categories:&lt;/li&gt;
 &lt;h2&gt;反馈&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;属于 nice to have，不属于 must have 。  &lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>我理解的「离钱近」</title><link href="https://hillerliao.github.io/wo-li-jie-de-chi-qian-jin.html" rel="alternate"/><published>2019-02-22T19:57:57+08:00</published><updated>2019-02-22T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-22:/wo-li-jie-de-chi-qian-jin.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>我理解的「离钱近」</title><link href="https://hillerliao.github.io/cvplkz.html" rel="alternate"></link><published>2019-02-22T19:57:57+08:00</published><updated>2019-02-22T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-22:/cvplkz.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;商业思考
 categories:&lt;/li&gt;
 &lt;li&gt;商业思考&lt;/li&gt;
@@ -1316,7 +1639,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;区块链是个好技术，在许多地方有它的价值，金融等行业也在尝试使用。但就像 AI ，没有场景、没有数据，一切都白搭，顶多为掌握了场景的甲方打工。庞大如百度，自动驾驶技术也得和车企合作。&lt;/p&gt;
 &lt;p&gt;所以，不一定要有「账户」才离钱近，有交易场景，用户愿意买单，就是离钱近。当然，如果交易基数大、频次高、客单价高，就更好了。&lt;/p&gt;
 &lt;p&gt;再具体到你的技术团队本身的优势，目前做的事情完全体现不出价值，机会成本太高了。好好挖掘实际需求、能利用自身优势做的事情，可能是更好的选择。可以暂时不全身心做主战场的事情，但可以花一部分精力去做主战场的事情，就好比
-Tushare 团队，兼职做、免费用，虽然暂时看不出什么大的前景，但慢慢积累用户，做出口碑，未来他们也许就可以拿到投资，全身心投入。现在已经开始搞积分了，token 的感觉，哈哈。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>旧电脑安装 Ubuntu 折腾记</title><link href="https://hillerliao.github.io/jiu-dian-nao-an-zhuang-ubuntu-zhe-teng-ji.html" rel="alternate"/><published>2019-02-13T19:57:57+08:00</published><updated>2019-02-13T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-13:/jiu-dian-nao-an-zhuang-ubuntu-zhe-teng-ji.html</id><summary type="html">&lt;ul&gt;
+Tushare 团队，兼职做、免费用，虽然暂时看不出什么大的前景，但慢慢积累用户，做出口碑，未来他们也许就可以拿到投资，全身心投入。现在已经开始搞积分了，token 的感觉，哈哈。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>旧电脑安装 Ubuntu 折腾记</title><link href="https://hillerliao.github.io/rcgvbw.html" rel="alternate"></link><published>2019-02-13T19:57:57+08:00</published><updated>2019-02-13T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-02-13:/rcgvbw.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;电脑数码
 categories:&lt;/li&gt;
 &lt;li&gt;电脑数码&lt;/li&gt;
@@ -1349,7 +1672,7 @@ categories:&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jingyan.baidu.com/article/ce4366494448fd3773afd306.html"&gt;利用 Rufus 制作 U 盘启动盘&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://blog.csdn.net/ifmvo/article/details/54023628"&gt;Ubuntu 离线安装网卡驱动&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.cnbeta.com/articles/tech/417919.htm"&gt;7 款适用老旧设备并对初学者非常友好的轻量级 Linux 发行版&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>财报牛牛「个股群」入群指南</title><link href="https://hillerliao.github.io/cai-bao-niu-niu-ge-gu-qun-ru-qun-zhi-nan.html" rel="alternate"/><published>2019-01-05T19:06:00+08:00</published><updated>2019-01-05T19:06:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-01-05:/cai-bao-niu-niu-ge-gu-qun-ru-qun-zhi-nan.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>财报牛牛「个股群」入群指南</title><link href="https://hillerliao.github.io/guide-for-joining-cbnn-group.html" rel="alternate"></link><published>2019-01-05T19:06:00+08:00</published><updated>2019-01-05T19:06:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2019-01-05:/guide-for-joining-cbnn-group.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;项目
 categories:&lt;/li&gt;
 &lt;li&gt;项目&lt;/li&gt;
@@ -1388,7 +1711,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cbnn-wechat-account-qrcode.jpeg"&gt;&lt;/p&gt;
 &lt;p&gt;长按或保存二维码，联系牛牛(微信号：cbnn2018)&lt;/p&gt;
 &lt;p&gt;如果你想要其他个股群，也欢迎反馈，并提供你觉得不错的个股信息源。&lt;/p&gt;
-&lt;p&gt;「个股群」服务目前免费。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>如何将网站的内容发送到微信群</title><link href="https://hillerliao.github.io/ru-he-jiang-wang-zhan-de-nei-rong-fa-song-dao-wei-xin-qun.html" rel="alternate"/><published>2018-10-15T19:57:57+08:00</published><updated>2018-10-15T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2018-10-15:/ru-he-jiang-wang-zhan-de-nei-rong-fa-song-dao-wei-xin-qun.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;「个股群」服务目前免费。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>如何将网站的内容发送到微信群</title><link href="https://hillerliao.github.io/wbmnod.html" rel="alternate"></link><published>2018-10-15T19:57:57+08:00</published><updated>2018-10-15T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2018-10-15:/wbmnod.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;编程
 categories:&lt;/li&gt;
 &lt;li&gt;编程&lt;/li&gt;
@@ -1417,7 +1740,7 @@ categories:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;最后一步的 webhook 是关键，涉及到打通外部网络与微信群的通路，靠的是一个开源的项目 &lt;a href="https://github.com/joeeeeey/web_wechat_api"&gt;web_wechat_api&lt;/a&gt;，它将微信个人号发送消息等接口封装成 web api ，方便外部系统调用。目前我稍微改造了一下，通过 Docker 部署在 VPS 上，省去部署程序的痛苦。&lt;/p&gt;
 &lt;p&gt;其次，这一步可能会漏消息，没搞明白什么原因。目前的解决方案是，如果发送结果为失败，则继续尝试重新发送。&lt;/p&gt;
-&lt;p&gt;再者，基于个人微信号搭建的微信机器人，不太稳定，为此，我每隔一个小时给指定的小群发送一个托福单词，如果发送间断，说明通道服务挂了，需要登录 VPS 及时重启。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>财报牛牛能为你做什么</title><link href="https://hillerliao.github.io/cai-bao-niu-niu-neng-wei-ni-zuo-shi-yao.html" rel="alternate"/><published>2018-08-13T23:53:00+08:00</published><updated>2018-08-13T23:53:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2018-08-13:/cai-bao-niu-niu-neng-wei-ni-zuo-shi-yao.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;再者，基于个人微信号搭建的微信机器人，不太稳定，为此，我每隔一个小时给指定的小群发送一个托福单词，如果发送间断，说明通道服务挂了，需要登录 VPS 及时重启。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>财报牛牛能为你做什么</title><link href="https://hillerliao.github.io/what-is-cai-bao-niu-niu.html" rel="alternate"></link><published>2018-08-13T23:53:00+08:00</published><updated>2018-08-13T23:53:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2018-08-13:/what-is-cai-bao-niu-niu.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;项目
 categories:&lt;/li&gt;
 &lt;li&gt;项目&lt;/li&gt;
@@ -1461,7 +1784,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;你还可以在「财报牛牛」的个股详情页里，获得财报公告和电话会议链接，省去从纷繁复杂的信息海洋中搜寻这些材料的烦恼。  &lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="https://raw.githubusercontent.com/HenryLoveMiller/img/main/cnbb-search.jpeg"&gt;  &lt;/p&gt;
 &lt;p&gt;此外，如果你想查阅某个股票最新的财报信息，只需在「财报牛牛」公众号内输入股票代码或股票名称，即可获得你想要的结果。  &lt;/p&gt;
-&lt;p&gt;好了，今天牛牛就为你介绍到这里啦。如果你还有其他“不爽”，记得给牛牛留言。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>利用类Slack软件背单词</title><link href="https://hillerliao.github.io/li-yong-lei-slackruan-jian-bei-dan-ci.html" rel="alternate"/><published>2017-11-14T19:57:57+08:00</published><updated>2017-11-14T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-11-14:/li-yong-lei-slackruan-jian-bei-dan-ci.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;好了，今天牛牛就为你介绍到这里啦。如果你还有其他“不爽”，记得给牛牛留言。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>利用类Slack软件背单词</title><link href="https://hillerliao.github.io/xs32su.html" rel="alternate"></link><published>2017-11-14T19:57:57+08:00</published><updated>2017-11-14T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-11-14:/xs32su.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;编程
 categories:&lt;/li&gt;
 &lt;li&gt;编程&lt;/li&gt;
@@ -1494,7 +1817,7 @@ categories:&lt;/li&gt;
 &lt;li&gt;WEB 服务。部署基于 Django 的 Mezzanine ，省得自己折腾。为了学这个花了不少时间，顺便部署了一个 &lt;a href="http://zhihai.me"&gt;博客&lt;/a&gt; 。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4&gt;接收器&lt;/h4&gt;
-&lt;p&gt;该 BearyChat 出场了。在客户端，以 BearyChat 作为消息接收工具。BearyChat 提供了 Ingoing 这个好用的工具。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>今日参考盈亏该如何计算</title><link href="https://hillerliao.github.io/jin-ri-can-kao-ying-yu-gai-ru-he-ji-suan.html" rel="alternate"/><published>2017-11-03T19:57:57+08:00</published><updated>2017-11-03T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-11-03:/jin-ri-can-kao-ying-yu-gai-ru-he-ji-suan.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;该 BearyChat 出场了。在客户端，以 BearyChat 作为消息接收工具。BearyChat 提供了 Ingoing 这个好用的工具。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>今日参考盈亏该如何计算</title><link href="https://hillerliao.github.io/dzpxkg.html" rel="alternate"></link><published>2017-11-03T19:57:57+08:00</published><updated>2017-11-03T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-11-03:/dzpxkg.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;证券
 categories:&lt;/li&gt;
 &lt;li&gt;证券&lt;/li&gt;
@@ -1528,7 +1851,7 @@ categories:&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;算法二：&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>开通工银亚洲账户的经历</title><link href="https://hillerliao.github.io/kai-tong-gong-yin-ya-zhou-zhang-hu-de-jing-li.html" rel="alternate"/><published>2017-09-01T19:57:57+08:00</published><updated>2017-09-01T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-09-01:/kai-tong-gong-yin-ya-zhou-zhang-hu-de-jing-li.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>开通工银亚洲账户的经历</title><link href="https://hillerliao.github.io/aoktqb.html" rel="alternate"></link><published>2017-09-01T19:57:57+08:00</published><updated>2017-09-01T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-09-01:/aoktqb.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;琐事
 categories:&lt;/li&gt;
 &lt;li&gt;琐事&lt;/li&gt;
@@ -1552,7 +1875,7 @@ categories:&lt;/li&gt;
 &lt;p&gt;2017-08-30：工银亚洲来电话和我确认个人信息、收件地址等。提醒我注意汇入资金激活账户。&lt;/p&gt;
 &lt;p&gt;2017 年 9 月 1 日，短信通知：&lt;em&gt;【工银亚洲】您的账户及银行服务已开通，请存入同名存款激活相关账户及银行服务。账户激活前一概拒纳收取任何非同名存款。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;对了，此时我该如何存款呢？账号在哪里？一会儿找客服确认。&lt;/p&gt;
-&lt;p&gt;先分享到这里，若有错别字我再改。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>产品设计之列表设计要点</title><link href="https://hillerliao.github.io/chan-pin-she-ji-zhi-lie-biao-she-ji-yao-dian.html" rel="alternate"/><published>2017-08-30T19:57:57+08:00</published><updated>2017-08-30T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-30:/chan-pin-she-ji-zhi-lie-biao-she-ji-yao-dian.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;先分享到这里，若有错别字我再改。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>产品设计之列表设计要点</title><link href="https://hillerliao.github.io/urffxs.html" rel="alternate"></link><published>2017-08-30T19:57:57+08:00</published><updated>2017-08-30T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-30:/urffxs.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;产品设计
 categories:&lt;/li&gt;
 &lt;li&gt;产品设计&lt;/li&gt;
@@ -1592,7 +1915,7 @@ categories:&lt;/li&gt;
   每条记录显示：股票名称、股票代码、市场、交易方向、成交价格、成交数量、成交时间。&lt;/li&gt;
 &lt;li&gt;操作按钮。
   点击各行是否提供操作菜单。&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>如何通过IB模拟账号体验程序化交易</title><link href="https://hillerliao.github.io/ru-he-tong-guo-ibmo-ni-zhang-hao-ti-yan-cheng-xu-hua-jiao-yi.html" rel="alternate"/><published>2017-08-24T19:57:57+08:00</published><updated>2017-08-24T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-24:/ru-he-tong-guo-ibmo-ni-zhang-hao-ti-yan-cheng-xu-hua-jiao-yi.html</id><summary type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>如何通过IB模拟账号体验程序化交易</title><link href="https://hillerliao.github.io/gc9osg.html" rel="alternate"></link><published>2017-08-24T19:57:57+08:00</published><updated>2017-08-24T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-24:/gc9osg.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;证券
 categories:&lt;/li&gt;
 &lt;li&gt;证券&lt;/li&gt;
@@ -1628,13 +1951,13 @@ categories:&lt;/li&gt;
 &lt;li&gt;其他信息&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.interactivebrokers.com/en/index.php?f=16040"&gt;TWS 下载地址&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://github.com/getlantern/forum/issues/833"&gt;科学上网&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><category term="blog"/></entry><entry><title>ibpy-tutorial</title><link href="https://hillerliao.github.io/ibpy-tutorial.html" rel="alternate"/><published>2017-08-23T19:57:57+08:00</published><updated>2017-08-23T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-23:/ibpy-tutorial.html</id><content type="html">&lt;ul&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>ibpy-tutorial</title><link href="https://hillerliao.github.io/rmgp29.html" rel="alternate"></link><published>2017-08-23T19:57:57+08:00</published><updated>2017-08-23T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2017-08-23:/rmgp29.html</id><content type="html">&lt;ul&gt;
 &lt;li&gt;证券
 categories:&lt;/li&gt;
 &lt;li&gt;证券&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;a href="https://valiant-falstaff.github.io/IbPy-Getting-Started/"&gt;IbPy Tutorial&lt;/a&gt;，流畅的行文，让我夜不能寐！希望能把它翻译成中文。&lt;/p&gt;</content><category term="blog"/></entry><entry><title>我是如何复习迎考 Series 65 的</title><link href="https://hillerliao.github.io/wo-shi-ru-he-fu-xi-ying-kao-series-65-de.html" rel="alternate"/><published>2014-11-26T19:57:57+08:00</published><updated>2014-11-26T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2014-11-26:/wo-shi-ru-he-fu-xi-ying-kao-series-65-de.html</id><summary type="html">&lt;ul&gt;
+&lt;p&gt;&lt;a href="https://valiant-falstaff.github.io/IbPy-Getting-Started/"&gt;IbPy Tutorial&lt;/a&gt;，流畅的行文，让我夜不能寐！希望能把它翻译成中文。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>我是如何复习迎考 Series 65 的</title><link href="https://hillerliao.github.io/hr3mpx.html" rel="alternate"></link><published>2014-11-26T19:57:57+08:00</published><updated>2014-11-26T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2014-11-26:/hr3mpx.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;琐事
 categories:&lt;/li&gt;
 &lt;li&gt;琐事&lt;/li&gt;
@@ -1730,7 +2053,7 @@ categories:&lt;/li&gt;
 &lt;td&gt;有光盘，不过现在电脑都不带光驱了，没用到&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</content><category term="blog"/></entry><entry><title>玩转四方sybian s60v3体验报告</title><link href="https://hillerliao.github.io/wan-zhuan-si-fang-sybian-s60v3ti-yan-bao-gao.html" rel="alternate"/><published>2010-06-27T19:57:57+08:00</published><updated>2010-06-27T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2010-06-27:/wan-zhuan-si-fang-sybian-s60v3ti-yan-bao-gao.html</id><summary type="html">&lt;ul&gt;
+&lt;/table&gt;</content><category term="blog"></category></entry><entry><title>玩转四方sybian s60v3体验报告</title><link href="https://hillerliao.github.io/aqhic9.html" rel="alternate"></link><published>2010-06-27T19:57:57+08:00</published><updated>2010-06-27T19:57:57+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2010-06-27:/aqhic9.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;产品体验
 categories:&lt;/li&gt;
 &lt;li&gt;产品体验&lt;/li&gt;
@@ -1779,4 +2102,4 @@ categories:&lt;/li&gt;
 &lt;hr&gt;
 &lt;p&gt;融合有关 LBS 的介绍&lt;/p&gt;
 &lt;p&gt;等待界面&lt;/p&gt;
-&lt;p&gt;*注册流程对比。可以考虑自动获取用户手机号，生成一个数字 id，eg 贝多；&lt;/p&gt;</content><category term="blog"/></entry></feed>
+&lt;p&gt;*注册流程对比。可以考虑自动获取用户手机号，生成一个数字 id，eg 贝多；&lt;/p&gt;</content><category term="blog"></category></entry></feed>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="zh" prefix="og: http://ogp.me/ns#">
 	<head>
 		<link href="http://gmpg.org/xfn/11" rel="profile">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +8,15 @@
 		<!-- Metadata -->
 	<meta name="description" content="">
 	<meta property="og:description" content="">
-	<meta property="og:title" content="如何通过IB模拟账号体验程序化交易" />
+	<meta property="og:title" content="如何将网站的内容发送到微信群" />
 	<meta property="og:type" content="article" />
-	<meta property="og:url" content="https://hillerliao.github.io/ru-he-tong-guo-ibmo-ni-zhang-hao-ti-yan-cheng-xu-hua-jiao-yi.html" />
+	<meta property="og:url" content="https://hillerliao.github.io/wbmnod.html" />
 		<meta property="og:image" content="https://hillerliao.github.io/images/avatar.jpg" />
 
 		<!-- Enable responsiveness on mobile devices-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-		<title>如何通过IB模拟账号体验程序化交易 - 互联网产品折腾师</title>
+		<title>如何将网站的内容发送到微信群 - 互联网产品折腾师</title>
 
 		<!-- CSS -->
 		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
@@ -75,33 +75,27 @@
 	</div>
 </div>		<div class="content container">
 <div class="post">
-	<h1 class="post-title">如何通过IB模拟账号体验程序化交易</h1>
-	<span class="post-date">Thu 24 August 2017</span>
+	<h1 class="post-title">如何将网站的内容发送到微信群</h1>
+	<span class="post-date">Mon 15 October 2018</span>
 	<ul>
-<li>证券
+<li>编程
 categories:</li>
-<li>证券</li>
+<li>编程</li>
 </ul>
 <hr>
-<h2>所需工具</h2>
+<h3>过程简述</h3>
+<p><code>雪球等 --&gt; rsshub_rss / Huginn_rss --&gt; inoreader_rss聚合 --&gt; web_wechat_api --&gt; 微信</code></p>
+<h3>过程分述</h3>
+<p>目前的推送过程是：</p>
 <ul>
-<li>IB 账号信息</li>
-<li>通过老虎证券获取 IB 账号和密码</li>
-<li>登录 IB 后台，申请 <a href="https://www.interactivebrokers.com/en/software/allocationfunds/topics/papertrader.htm">IB 模拟交易账号</a></li>
-<li>抓包</li>
-<li>安卓本地抓包工具 <a href="https://github.com/JZ-Darkal/AndroidHttpCapture">HttpCapture</a></li>
-<li>包文件解析工具 <a href="http://www.telerik.com/download/fiddler">Fiddler</a></li>
-<li>IB API for Python</li>
-<li><a href="https://interactivebrokers.github.io/tws-api/classIBApi_1_1Contract.html#gsc.tab=0">IB 官方 API 文档</a></li>
-<li><a href="https://github.com/blampe/IbPy">IbPy 第三方 Python API</a><ul>
-<li><a href="https://valiant-falstaff.github.io/IbPy-Getting-Started/">入门教程</a></li>
-<li><a href="https://www.quantstart.com/articles/Using-Python-IBPy-and-the-Interactive-Brokers-API-to-Automate-Trades">下单 DEMO</a></li>
+<li>通过开源的 Rsshub / Huginn 作为数据抓取工具，生成 rss 格式数据；</li>
+<li>inoreader 订阅多个 rsshub 生成的 rss 数据，形成 rss 组；</li>
+<li>rss 组自身有又可以额外生成一个新 rss，这个新 rss 包括了多个子 rss ；</li>
+<li>VPS 上创建定时任务检查 rss 更新，then 通过 webhook 发一条消息到微信群。</li>
 </ul>
-</li>
-<li>其他信息</li>
-<li><a href="https://www.interactivebrokers.com/en/index.php?f=16040">TWS 下载地址</a></li>
-<li><a href="https://github.com/getlantern/forum/issues/833">科学上网</a></li>
-</ul>
+<p>最后一步的 webhook 是关键，涉及到打通外部网络与微信群的通路，靠的是一个开源的项目 <a href="https://github.com/joeeeeey/web_wechat_api">web_wechat_api</a>，它将微信个人号发送消息等接口封装成 web api ，方便外部系统调用。目前我稍微改造了一下，通过 Docker 部署在 VPS 上，省去部署程序的痛苦。</p>
+<p>其次，这一步可能会漏消息，没搞明白什么原因。目前的解决方案是，如果发送结果为失败，则继续尝试重新发送。</p>
+<p>再者，基于个人微信号搭建的微信机器人，不太稳定，为此，我每隔一个小时给指定的小群发送一个托福单词，如果发送间断，说明通道服务挂了，需要登录 VPS 及时重启。</p>
 
 
 </div>
