@@ -1,5 +1,270 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/all.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-02-03T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>用你的旧手机运行 OpenClaw，省下买服务器的钱</title><link href="https://hillerliao.github.io/install-openclaw-on-old-phone-with-termux.html" rel="alternate"></link><published>2026-02-03T00:00:00+08:00</published><updated>2026-02-03T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-02-03:/install-openclaw-on-old-phone-with-termux.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/all.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-02-13T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>Termux 环境下 frpc 和 OpenClaw 服务保活方案</title><link href="https://hillerliao.github.io/termux-frpc-openclaw-auto-restart.html" rel="alternate"></link><published>2026-02-13T00:00:00+08:00</published><updated>2026-02-13T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-02-13:/termux-frpc-openclaw-auto-restart.html</id><summary type="html">&lt;h2&gt;背景与痛点&lt;/h2&gt;
+&lt;h3&gt;问题场景&lt;/h3&gt;
+&lt;p&gt;在 Android 设备上运行 frpc（内网穿透客户端）和 OpenClaw 时，面临以下挑战：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;手机重启后服务不自动启动&lt;/strong&gt; - Android 系统不会 …&lt;/li&gt;&lt;/ol&gt;</summary><content type="html">&lt;h2&gt;背景与痛点&lt;/h2&gt;
+&lt;h3&gt;问题场景&lt;/h3&gt;
+&lt;p&gt;在 Android 设备上运行 frpc（内网穿透客户端）和 OpenClaw 时，面临以下挑战：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;手机重启后服务不自动启动&lt;/strong&gt; - Android 系统不会自动运行 Termux 中的后台服务&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;进程崩溃后不会重启&lt;/strong&gt; - frpc 或 OpenClaw 可能因网络波动、内存不足等原因崩溃，需要手动介入&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;无法方便地查看日志&lt;/strong&gt; - 后台运行的进程没有会话管理，调试困难&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;需求&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 手机开机后 frpc + OpenClaw 自动启动&lt;/li&gt;
+&lt;li&gt;✅ 进程崩溃后自动检测并重启&lt;/li&gt;
+&lt;li&gt;✅ 方便查看运行日志&lt;/li&gt;
+&lt;li&gt;✅ 低资源占用（不频繁检测）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;方案概述&lt;/h2&gt;
+&lt;p&gt;利用 Termux 生态中的三个工具组合：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;工具&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;termux:boot&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;开机时自动执行脚本&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;termux-wake-lock&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;防止系统休眠杀死进程&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;tmux&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;会话管理（保持进程运行、方便查看日志）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;cron&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;定时任务（每5分钟检测进程存活）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;依赖安装&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 安装 tmux（会话管理）&lt;/span&gt;
+pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;tmux
+
+&lt;span class="c1"&gt;# 安装 cron（定时任务）&lt;/span&gt;
+pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;crontab
+
+&lt;span class="c1"&gt;# 安装 termux:boot（开机自启）&lt;/span&gt;
+pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;termux-boot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;termux:boot 安装后需要在 Android 设置中授权自启动权限&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;脚本内容&lt;/h2&gt;
+&lt;h3&gt;1. OpenClaw 启动脚本 (&lt;code&gt;~/openclaw-run.sh&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;负责清理旧进程、重新启动 OpenClaw：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+&lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-e
+
+&lt;span class="nv"&gt;SESSION&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;openclaw&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;PORT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;18789&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;NPM_BIN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.npm-global/bin&amp;quot;&lt;/span&gt;
+&lt;span class="nv"&gt;TOKEN_FILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.openclaw_token&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 基础检查&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;command&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[ERR] tmux not found. Install: pkg install tmux&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[ERR] &lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt; not found&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN_FILE&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[ERR] token file not found: &lt;/span&gt;&lt;span class="nv"&gt;$TOKEN_FILE&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="nv"&gt;TOKEN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN_FILE&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;tr&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;\r &amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+
+mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/tmp&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 杀掉旧 session&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$SESSION&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt;
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 新建 session 并启动&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$SESSION&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+
+tmux&lt;span class="w"&gt; &lt;/span&gt;send-keys&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$SESSION&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;export PATH=&lt;/span&gt;&lt;span class="nv"&gt;$NPM_BIN&lt;/span&gt;&lt;span class="s2"&gt;:\$PATH; export TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=&amp;#39;&lt;/span&gt;&lt;span class="nv"&gt;$TOKEN&lt;/span&gt;&lt;span class="s2"&gt;&amp;#39;; openclaw gateway --bind lan --port &lt;/span&gt;&lt;span class="nv"&gt;$PORT&lt;/span&gt;&lt;span class="s2"&gt; --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="se"&gt;\&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;C-m
+
+&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[OK] OpenClaw started in tmux session: &lt;/span&gt;&lt;span class="nv"&gt;$SESSION&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;2. 开机启动脚本 (&lt;code&gt;~/.termux/boot/services.sh&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;手机开机时自动启动 crond、frpc 和 OpenClaw：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 1. 清理旧会话&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 2. 启动 crond（关键）&lt;/span&gt;
+crond
+
+&lt;span class="c1"&gt;# 3. 启动 frpc（持有 wake lock）&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new-session&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;exec /data/data/com.termux/files/usr/bin/frpc -c /data/data/com.termux/files/usr/etc/frp/frpc.ini&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# 4. 启动 OpenClaw&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;new&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;openclaw
+sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+tmux&lt;span class="w"&gt; &lt;/span&gt;send-keys&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;openclaw&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;export PATH=/data/data/com.termux/files/home/.npm-global/bin:\$PATH TMPDIR=\$HOME/tmp; export OPENCLAW_GATEWAY_TOKEN=tokenac27a3d5; openclaw gateway --bind lan --port 18789 --token \$OPENCLAW_GATEWAY_TOKEN --allow-unconfigured&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;C-m
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;3. frpc 启动脚本 (&lt;code&gt;~/.termux/boot/frpc-start.sh&lt;/code&gt;)&lt;/h3&gt;
+&lt;p&gt;负责启动 frpc 并持有 wake lock：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+termux-wake-lock
+&lt;span class="nb"&gt;exec&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/data/data/com.termux/files/usr/bin/frpc&lt;span class="w"&gt; &lt;/span&gt;-c&lt;span class="w"&gt; &lt;/span&gt;/data/data/com.termux/files/usr/etc/frp/frpc.ini
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;关键点&lt;/strong&gt;：使用 &lt;code&gt;exec&lt;/code&gt; 前缀确保 wake lock 正确持有&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;4. 进程监控脚本 (&lt;code&gt;~/monitor.sh&lt;/code&gt;)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/data/data/com.termux/files/usr/bin/bash&lt;/span&gt;
+
+&lt;span class="nv"&gt;LOG_FILE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/monitor.log
+&lt;span class="nv"&gt;MAX_LOG_LINES&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1000&lt;/span&gt;
+
+log&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;[&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;date&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;+%Y-%m-%d %H:%M:%S&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] &lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$LOG_FILE&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+trim_log&lt;span class="o"&gt;()&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;local&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;lines&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;wc&lt;span class="w"&gt; &lt;/span&gt;-l&lt;span class="w"&gt; &lt;/span&gt;&amp;lt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$LOG_FILE&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;||&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$lines&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-gt&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$MAX_LOG_LINES&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;tail&lt;span class="w"&gt; &lt;/span&gt;-n&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$MAX_LOG_LINES&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$LOG_FILE&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$LOG_FILE&lt;/span&gt;&lt;span class="s2"&gt;.tmp&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;mv&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$LOG_FILE&lt;/span&gt;&lt;span class="s2"&gt;.tmp&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$LOG_FILE&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+log&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;========== Monitor started ==========&amp;quot;&lt;/span&gt;
+
+&lt;span class="c1"&gt;# frpc 检测&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;log&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc 进程不存在，准备重启...&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;kill-session&lt;span class="w"&gt; &lt;/span&gt;-t&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null
+&lt;span class="w"&gt;    &lt;/span&gt;sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;new-session&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-s&lt;span class="w"&gt; &lt;/span&gt;frpc&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;exec /data/data/com.termux/files/usr/bin/frpc -c /data/data/com.termux/files/usr/etc/frp/frpc.ini&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;log&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc 重启命令已发送&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;log&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;frpc 运行正常&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="c1"&gt;# OpenClaw 检测&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;openclaw.*gateway&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;log&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;OpenClaw 进程不存在，准备重启...&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;bash&lt;span class="w"&gt; &lt;/span&gt;~/openclaw-run.sh&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;sleep&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;pgrep&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;openclaw.*gateway&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;log&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;OpenClaw 进程确认已启动&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;else&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;log&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;OpenClaw 启动验证失败&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;log&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;OpenClaw 运行正常&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+trim_log
+log&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;========== Monitor finished ==========&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2&gt;操作步骤&lt;/h2&gt;
+&lt;h3&gt;第一步：安装依赖&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pkg&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;tmux&lt;span class="w"&gt; &lt;/span&gt;crontab&lt;span class="w"&gt; &lt;/span&gt;termux-api&lt;span class="w"&gt; &lt;/span&gt;crond
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;第二步：创建脚本文件&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;mkdir&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;~/.termux/boot
+chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;~/.termux/boot/services.sh&lt;span class="w"&gt; &lt;/span&gt;~/.termux/boot/frpc-start.sh&lt;span class="w"&gt; &lt;/span&gt;~/openclaw-run.sh&lt;span class="w"&gt; &lt;/span&gt;~/monitor.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;第三步：配置 cron&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crontab&lt;span class="w"&gt; &lt;/span&gt;-e
+&lt;span class="c1"&gt;# 添加以下内容（每5分钟检测一次）&lt;/span&gt;
+*/5&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;*&lt;span class="w"&gt; &lt;/span&gt;/data/data/com.termux/files/home/monitor.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h2&gt;常用命令&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作&lt;/th&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 tmux 会话&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux ls&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 frpc 日志&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux attach -t frpc&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查看 OpenClaw 日志&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux attach -t openclaw&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;杀掉 tmux 会话&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tmux kill-session -t frpc/openclaw&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;手动执行检测&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;bash ~/monitor.sh&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查看监控日志&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;tail -f ~/monitor.log&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2&gt;效果&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;手机重启&lt;/strong&gt; → crond + frpc + OpenClaw &lt;strong&gt;全部自动启动&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;进程崩溃&lt;/strong&gt; → 5分钟内自动检测并重启&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;随时查看日志&lt;/strong&gt; → &lt;code&gt;tmux attach -t openclaw&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚠️ 关键经验教训&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;termux:boot 只在开机时执行一次&lt;/strong&gt;，杀进程后不会自动重启&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;boot 脚本不能用环境变量&lt;/strong&gt;，必须硬编码 token 和 port&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;crond 必须加入 boot 脚本&lt;/strong&gt;，否则进程监控不生效&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;monitor.sh 用绝对路径&lt;/strong&gt;，cron 环境下 $PREFIX 不生效&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;frpc 用 exec 启动&lt;/strong&gt;，确保 wake lock 正确持有&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2&gt;参考资源&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Termux:Boot"&gt;Termux Wiki - Boot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://wiki.termux.com/wiki/Cron"&gt;Termux Wiki - Cron&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tmuxcheatsheet.com/"&gt;Tmux 常用命令&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category></entry><entry><title>用你的旧手机运行 OpenClaw，省下买服务器的钱</title><link href="https://hillerliao.github.io/install-openclaw-on-old-phone-with-termux.html" rel="alternate"></link><published>2026-02-03T00:00:00+08:00</published><updated>2026-02-03T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-02-03:/install-openclaw-on-old-phone-with-termux.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;OpenClaw&lt;/li&gt;
 &lt;li&gt;Termux&lt;/li&gt;
 &lt;li&gt;Android&lt;/li&gt;

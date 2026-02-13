@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>廖智海</title><link>https://hillerliao.github.io/</link><description>互联网产品折腾师</description><lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0800</lastBuildDate><item><title>用你的旧手机运行 OpenClaw，省下买服务器的钱</title><link>https://hillerliao.github.io/install-openclaw-on-old-phone-with-termux.html</link><description>&lt;ul&gt;
+<rss version="2.0"><channel><title>廖智海</title><link>https://hillerliao.github.io/</link><description>互联网产品折腾师</description><lastBuildDate>Fri, 13 Feb 2026 00:00:00 +0800</lastBuildDate><item><title>Termux 环境下 frpc 和 OpenClaw 服务保活方案</title><link>https://hillerliao.github.io/termux-frpc-openclaw-auto-restart.html</link><description>&lt;h2&gt;背景与痛点&lt;/h2&gt;
+&lt;h3&gt;问题场景&lt;/h3&gt;
+&lt;p&gt;在 Android 设备上运行 frpc（内网穿透客户端）和 OpenClaw 时，面临以下挑战：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;手机重启后服务不自动启动&lt;/strong&gt; - Android 系统不会 …&lt;/li&gt;&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hillerliao</dc:creator><pubDate>Fri, 13 Feb 2026 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:hillerliao.github.io,2026-02-13:/termux-frpc-openclaw-auto-restart.html</guid><category>blog</category></item><item><title>用你的旧手机运行 OpenClaw，省下买服务器的钱</title><link>https://hillerliao.github.io/install-openclaw-on-old-phone-with-termux.html</link><description>&lt;ul&gt;
 &lt;li&gt;OpenClaw&lt;/li&gt;
 &lt;li&gt;Termux&lt;/li&gt;
 &lt;li&gt;Android&lt;/li&gt;
