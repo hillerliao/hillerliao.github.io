@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>廖智海</title><link>https://hillerliao.github.io/</link><description>互联网产品折腾师</description><lastBuildDate>Fri, 13 Feb 2026 00:00:00 +0800</lastBuildDate><item><title>Termux 环境下 frpc 和 OpenClaw 服务保活方案</title><link>https://hillerliao.github.io/termux-frpc-openclaw-auto-restart.html</link><description>&lt;h2&gt;背景与痛点&lt;/h2&gt;
+<rss version="2.0"><channel><title>廖智海</title><link>https://hillerliao.github.io/</link><description>互联网产品折腾师</description><lastBuildDate>Wed, 25 Feb 2026 00:00:00 +0800</lastBuildDate><item><title>段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）</title><link>https://hillerliao.github.io/openclaw-duan-yong-ping-monitor.html</link><description>&lt;h1&gt;段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）&lt;/h1&gt;
+&lt;p&gt;过完年，相信你已经多多少少听说过 &lt;strong&gt;OpenClaw&lt;/strong&gt; 这个词。&lt;/p&gt;
+&lt;p&gt;简单一句话概括：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;它是 …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hillerdescription: 利用 OpenClaw 智能监控段永平的投资动态，通过 AI 语义理解筛选有价值信息，推送到 Telegram。</dc:creator><pubDate>Wed, 25 Feb 2026 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:hillerliao.github.io,2026-02-25:/openclaw-duan-yong-ping-monitor.html</guid><category>blog</category></item><item><title>Termux 环境下 frpc 和 OpenClaw 服务保活方案</title><link>https://hillerliao.github.io/termux-frpc-openclaw-auto-restart.html</link><description>&lt;h2&gt;背景与痛点&lt;/h2&gt;
 &lt;h3&gt;问题场景&lt;/h3&gt;
 &lt;p&gt;在 Android 设备上运行 frpc（内网穿透客户端）和 OpenClaw 时，面临以下挑战：&lt;/p&gt;
 &lt;ol&gt;

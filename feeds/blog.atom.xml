@@ -1,5 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - blog</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-02-13T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>Termux 环境下 frpc 和 OpenClaw 服务保活方案</title><link href="https://hillerliao.github.io/termux-frpc-openclaw-auto-restart.html" rel="alternate"></link><published>2026-02-13T00:00:00+08:00</published><updated>2026-02-13T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-02-13:/termux-frpc-openclaw-auto-restart.html</id><summary type="html">&lt;h2&gt;背景与痛点&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - blog</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-02-25T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）</title><link href="https://hillerliao.github.io/openclaw-duan-yong-ping-monitor.html" rel="alternate"></link><published>2026-02-25T00:00:00+08:00</published><updated>2026-02-25T00:00:00+08:00</updated><author><name>hillerdescription: 利用 OpenClaw 智能监控段永平的投资动态，通过 AI 语义理解筛选有价值信息，推送到 Telegram。</name></author><id>tag:hillerliao.github.io,2026-02-25:/openclaw-duan-yong-ping-monitor.html</id><summary type="html">&lt;h1&gt;段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）&lt;/h1&gt;
+&lt;p&gt;过完年，相信你已经多多少少听说过 &lt;strong&gt;OpenClaw&lt;/strong&gt; 这个词。&lt;/p&gt;
+&lt;p&gt;简单一句话概括：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;它是 …&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;h1&gt;段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）&lt;/h1&gt;
+&lt;p&gt;过完年，相信你已经多多少少听说过 &lt;strong&gt;OpenClaw&lt;/strong&gt; 这个词。&lt;/p&gt;
+&lt;p&gt;简单一句话概括：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;它是一个&lt;strong&gt;能理解你意图、替你干活的 AI Agent&lt;/strong&gt;，有点像 &lt;em&gt;Siri + DeepSeek + 自动化工具&lt;/em&gt; 的结合体。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;很多人拿到 OpenClaw 后，第一反应往往是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;👉 &lt;em&gt;“这东西到底能干啥？”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这篇文章，我不讲概念，只讲一个&lt;strong&gt;我自己已经跑起来的真实案例&lt;/strong&gt;：
+&lt;strong&gt;如何用 OpenClaw，智能监控段永平的投资动态，只推送“有价值的信息”。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果你关注的不是投资人，而是娱乐明星、行业大佬、KOL，道理完全一样。&lt;/p&gt;
+&lt;h2&gt;一个痛点：信息太多，但重点太少&lt;/h2&gt;
+&lt;p&gt;如果你是价值投资者，大概率关注过投资人 &lt;strong&gt;段永平&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;他的特点很鲜明：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;几乎&lt;strong&gt;只在雪球发言&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;发言频率不高，但&lt;strong&gt;含金量极高&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内容混杂：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;投资观点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;生活闲聊&lt;/li&gt;
+&lt;li&gt;回复网友&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;雪球&lt;/strong&gt;本身提供了「订阅用户动态」功能，这已经是一个不错的基础能力。&lt;/p&gt;
+&lt;p&gt;但实际用下来会发现一个问题：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;❌ &lt;strong&gt;所有内容都会推送，混在一起&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;你真正想看到的，可能只有这些：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提到 &lt;strong&gt;具体公司&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;涉及 &lt;strong&gt;买入 / 持仓 / 估值判断&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;能反映其&lt;strong&gt;投资逻辑变化&lt;/strong&gt;的发言&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那么问题来了：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;能不能：只在“有投资价值”的时候提醒我？&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;答案是：&lt;strong&gt;可以，而且我已经跑起来了。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;实际效果预览&lt;/h2&gt;
+&lt;p&gt;这是我在 &lt;strong&gt;Telegram&lt;/strong&gt; 上收到的真实推送示例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;🚨 段永平雪球更新【重点】
+📝 内容：回复网友关于期权操作和阿里持仓看法
+💡 看法：70元买阿里足够便宜，体现其长期价值投资理念
+🔗 原文：https://xueqiu.com/1247347556/376663072
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;其中这个 &lt;strong&gt;「【重点】」&lt;/strong&gt;，并不是我手动加的，而是我给 OpenClaw 设定的&lt;strong&gt;条件告警规则&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;只要段永平的发言中：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提到具体公司（如：苹果、腾讯、阿里、茅台、Google 等）&lt;/li&gt;
+&lt;li&gt;且语义上与投资相关
+  👉 就自动标记为重点，并给出 AI 解读&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;整体架构（非常简单）&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;雪球 → RSSHub → OpenClaw 定时任务
+     → AI 语义判断
+     → 消息推送（Telegram / 微信）
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;OpenClaw 部署在云服务器上，&lt;strong&gt;便宜、省心、7×24 小时运行&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;如果你不想买服务器，用闲置旧手机也行。
+👉 之前我写过一篇完整教程：《&lt;a href="https://mp.weixin.qq.com/s/KASWkkuD2-Q5f22FDQ7bNA"&gt;不用买服务器！旧手机免费运行 OpenClaw&lt;/a&gt;》&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;实现过程：全程自然语言，没写代码&lt;/h2&gt;
+&lt;p&gt;这是我最想分享的部分。&lt;/p&gt;
+&lt;p&gt;整个系统，我&lt;strong&gt;没有手动写一行代码&lt;/strong&gt;，全部是跟 OpenClaw 对话完成的。&lt;/p&gt;
+&lt;h3&gt;① 先说清楚目标&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;我：帮我监控投资人段永平的最新动态，
+    可以通过 RSS 地址获取新内容。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;然后我把 RSS 地址丢给它：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;https://&amp;lt;my domain&amp;gt;/xueqiu/user/1247347556
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这个 RSS 是我用开源项目 &lt;strong&gt;RSSHub-Python&lt;/strong&gt; 生成的。
+本质上，它把段永平的雪球帖子，转换成&lt;strong&gt;机器更容易处理的数据格式&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;我还特意强调了一点：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ &lt;strong&gt;只在“有新帖子”时才提醒&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3&gt;② RSS 不稳定？那就让 OpenClaw 自己部署&lt;/h3&gt;
+&lt;p&gt;一开始我用的是别人提供的 RSS 地址，不太稳定，我就想到自己部署一套RSSHub-Python服务。于是对话变成了这样：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;我：这个项目能部署吗？
+   https://github.com/hillerliao/rsshub-python
+
+AI：支持 Docker / Vercel / 本地部署
+
+我：Docker 吧
+
+AI：网络问题……
+
+我：那就本地部署
+
+(若干分钟后...)
+
+AI：部署成功，地址 http://127.0.0.1/xueqiu/user/1247347556
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;为了测试验证，可以让OpenClaw给你请求该地址实际获取到的内容。&lt;/p&gt;
+&lt;p&gt;这个项目内部依赖浏览器环境抓取页面，如果环境不完整，可能会报错。如果你获取到的是这种字样的： &lt;code&gt;Playwright not supported on Vercel&lt;/code&gt;，发给OpenClaw，让它安装一下 Playwright，具体是啥不用管。&lt;/p&gt;
+&lt;p&gt;整个过程，&lt;strong&gt;OpenClaw 自己解决依赖、环境、启动问题&lt;/strong&gt;，我基本只是做选择题。&lt;/p&gt;
+&lt;p&gt;一个小插曲，它把我已经存在的一个网页服务给搞成404无法访问了，幸好后来让它帮忙修复了。改坏东西是OpenClaw容易犯的毛病。所以初期尝试的时候，建议在闲置电脑或独立服务器上部署。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你是云服务器，建议 4G 内存以上&lt;br&gt;
+中国大陆服务器可用 &lt;a href="https://gitee.com/hillerliao/rsshub-python"&gt;Gitee 镜像&lt;/a&gt;，或让 OpenClaw 用 &lt;code&gt;r.jina.ai&lt;/code&gt; 访问 GitHub 版地址。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3&gt;③ 核心价值：不是关键词，而是“理解内容”&lt;/h3&gt;
+&lt;p&gt;我只说了一句话：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;我：提到具体公司时要重点提醒
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;OpenClaw 背后做的事情，其实是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;语义理解&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;上下文判断&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;投资 vs 生活区分&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;举个最关键的例子：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;✅「70 元买阿里很便宜」 → &lt;strong&gt;重点&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;❌「今天吃了个苹果」 → &lt;strong&gt;不提醒&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这一步，是传统自动化工具&lt;strong&gt;最难做到的地方&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3&gt;④ 消息推送&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;我：推送到 Telegram  
+AI：已配置完成
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;就这么结束了。（现在简单是因为之前费力气调通了消息通道。😅）&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;那用别的工具不行吗？&lt;/h2&gt;
+&lt;p&gt;行，但体验完全不一样。&lt;/p&gt;
+&lt;p&gt;我之前用 &lt;strong&gt;N8N&lt;/strong&gt; （一个开源的低代码服务）搭过类似流程，简单对比一下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;对比项&lt;/th&gt;
+&lt;th&gt;N8N&lt;/th&gt;
+&lt;th&gt;OpenClaw&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;部署&lt;/td&gt;
+&lt;td&gt;需要自己部署&lt;/td&gt;
+&lt;td&gt;几乎无感&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;配置&lt;/td&gt;
+&lt;td&gt;画节点 + 写 JS&lt;/td&gt;
+&lt;td&gt;自然语言&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;判断逻辑&lt;/td&gt;
+&lt;td&gt;关键词为主&lt;/td&gt;
+&lt;td&gt;语义理解&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AI 能力&lt;/td&gt;
+&lt;td&gt;需额外集成&lt;/td&gt;
+&lt;td&gt;首次填大模型API KEY即可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;当时为了判断“是否为新帖子”，我写了不少 JS，调试非常痛苦。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;本质差异只有一句话：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OpenClaw 能“看懂你在说什么”，
+而传统自动化工具，只是在“对字符串”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我用的是 MiniMax 的大模型，它在中文语境下，对投资语义的区分非常准确。&lt;/p&gt;
+&lt;p&gt;而且后续要优化，直接和机器人通过聊天沟通就行了，不需要登录相关工具后台去来回调试操作。&lt;/p&gt;
+&lt;h2&gt;下一步我准备怎么升级？&lt;/h2&gt;
+&lt;p&gt;现在系统已经稳定运行，但我还打算继续加东西：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;媒体监控&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不止雪球&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;自动抓取段永平相关持仓、采访、报道&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;周期报告&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;每周 / 每月&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;自动汇总观点变化&lt;/li&gt;
+&lt;li&gt;AI 生成分析摘要&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;写在最后&lt;/h2&gt;
+&lt;p&gt;以前，搭一个这样的&lt;strong&gt;智能信息监控系统&lt;/strong&gt;，
+意味着：服务器 + 脚本 + 定时任务 + 调试。&lt;/p&gt;
+&lt;p&gt;现在，只需要动动嘴就把活儿干了。一旦用上，以前的工具好比是手动挡，OpenClaw好比是自动驾驶。&lt;/p&gt;
+&lt;p&gt;这就是 &lt;strong&gt;OpenClaw + AI Agent&lt;/strong&gt; 真正让我感到“有代际差异”的地方。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;👉 &lt;strong&gt;你最想监控的是哪位投资人 / 行业大佬？&lt;/strong&gt;
+欢迎在评论区留言。&lt;/p&gt;
+&lt;p&gt;如果你在搭建过程中踩坑，或者想看后续升级方案，也欢迎进群交流。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/Aa3Ovl8lqbwRXaSpXBSGdpuQWMicXiaJlkOnfenjWOs49GiaaMPsoXsv8FRj3NxQqAWO7beHiavVyhVssENTSwr5tA/640?wx_fmt=png&amp;amp;from=appmsg&amp;amp;watermark=1&amp;amp;tp=webp&amp;amp;wxfrom=5&amp;amp;wx_lazy=1#imgIndex=3"&gt;  &lt;/p&gt;
+&lt;p&gt;如果需要购买MiniMax的大模型API，可以点击原读原文以9折优惠购买。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>Termux 环境下 frpc 和 OpenClaw 服务保活方案</title><link href="https://hillerliao.github.io/termux-frpc-openclaw-auto-restart.html" rel="alternate"></link><published>2026-02-13T00:00:00+08:00</published><updated>2026-02-13T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-02-13:/termux-frpc-openclaw-auto-restart.html</id><summary type="html">&lt;h2&gt;背景与痛点&lt;/h2&gt;
 &lt;h3&gt;问题场景&lt;/h3&gt;
 &lt;p&gt;在 Android 设备上运行 frpc（内网穿透客户端）和 OpenClaw 时，面临以下挑战：&lt;/p&gt;
 &lt;ol&gt;

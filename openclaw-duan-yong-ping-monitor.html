@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://hillerliao.github.io/openclaw-duan-yong-ping-monitor.html" />
+		<meta property="og:image" content="https://hillerliao.github.io/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操） - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/poole.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/hyde.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="https://hillerliao.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="https://hillerliao.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+<link href="https://hillerliao.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Categories Atom Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="https://hillerliao.github.io/">
+					<img class="profile-picture" src="https://hillerliao.github.io/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="https://hillerliao.github.io/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）</h1>
+	<span class="post-date">Wed 25 February 2026</span>
+	<h1>段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）</h1>
+<p>过完年，相信你已经多多少少听说过 <strong>OpenClaw</strong> 这个词。</p>
+<p>简单一句话概括：</p>
+<blockquote>
+<p>它是一个<strong>能理解你意图、替你干活的 AI Agent</strong>，有点像 <em>Siri + DeepSeek + 自动化工具</em> 的结合体。</p>
+</blockquote>
+<p>很多人拿到 OpenClaw 后，第一反应往往是：</p>
+<blockquote>
+<p>👉 <em>“这东西到底能干啥？”</em></p>
+</blockquote>
+<p>这篇文章，我不讲概念，只讲一个<strong>我自己已经跑起来的真实案例</strong>：
+<strong>如何用 OpenClaw，智能监控段永平的投资动态，只推送“有价值的信息”。</strong></p>
+<p>如果你关注的不是投资人，而是娱乐明星、行业大佬、KOL，道理完全一样。</p>
+<h2>一个痛点：信息太多，但重点太少</h2>
+<p>如果你是价值投资者，大概率关注过投资人 <strong>段永平</strong>。</p>
+<p>他的特点很鲜明：</p>
+<ul>
+<li>几乎<strong>只在雪球发言</strong></li>
+<li>发言频率不高，但<strong>含金量极高</strong></li>
+<li>
+<p>内容混杂：</p>
+</li>
+<li>
+<p>投资观点</p>
+</li>
+<li>生活闲聊</li>
+<li>回复网友</li>
+</ul>
+<p><strong>雪球</strong>本身提供了「订阅用户动态」功能，这已经是一个不错的基础能力。</p>
+<p>但实际用下来会发现一个问题：</p>
+<blockquote>
+<p>❌ <strong>所有内容都会推送，混在一起</strong></p>
+</blockquote>
+<p>你真正想看到的，可能只有这些：</p>
+<ul>
+<li>提到 <strong>具体公司</strong></li>
+<li>涉及 <strong>买入 / 持仓 / 估值判断</strong></li>
+<li>能反映其<strong>投资逻辑变化</strong>的发言</li>
+</ul>
+<p>那么问题来了：</p>
+<blockquote>
+<p><strong>能不能：只在“有投资价值”的时候提醒我？</strong></p>
+</blockquote>
+<p>答案是：<strong>可以，而且我已经跑起来了。</strong></p>
+<h2>实际效果预览</h2>
+<p>这是我在 <strong>Telegram</strong> 上收到的真实推送示例：</p>
+<div class="highlight"><pre><span></span><code>🚨 段永平雪球更新【重点】
+📝 内容：回复网友关于期权操作和阿里持仓看法
+💡 看法：70元买阿里足够便宜，体现其长期价值投资理念
+🔗 原文：https://xueqiu.com/1247347556/376663072
+</code></pre></div>
+
+<p>其中这个 <strong>「【重点】」</strong>，并不是我手动加的，而是我给 OpenClaw 设定的<strong>条件告警规则</strong>：</p>
+<blockquote>
+<p><strong>只要段永平的发言中：</strong></p>
+<ul>
+<li>提到具体公司（如：苹果、腾讯、阿里、茅台、Google 等）</li>
+<li>且语义上与投资相关
+  👉 就自动标记为重点，并给出 AI 解读</li>
+</ul>
+</blockquote>
+<h2>整体架构（非常简单）</h2>
+<div class="highlight"><pre><span></span><code>雪球 → RSSHub → OpenClaw 定时任务
+     → AI 语义判断
+     → 消息推送（Telegram / 微信）
+</code></pre></div>
+
+<p>OpenClaw 部署在云服务器上，<strong>便宜、省心、7×24 小时运行</strong>。</p>
+<p>如果你不想买服务器，用闲置旧手机也行。
+👉 之前我写过一篇完整教程：《<a href="https://mp.weixin.qq.com/s/KASWkkuD2-Q5f22FDQ7bNA">不用买服务器！旧手机免费运行 OpenClaw</a>》</p>
+<hr>
+<h2>实现过程：全程自然语言，没写代码</h2>
+<p>这是我最想分享的部分。</p>
+<p>整个系统，我<strong>没有手动写一行代码</strong>，全部是跟 OpenClaw 对话完成的。</p>
+<h3>① 先说清楚目标</h3>
+<div class="highlight"><pre><span></span><code>我：帮我监控投资人段永平的最新动态，
+    可以通过 RSS 地址获取新内容。
+</code></pre></div>
+
+<p>然后我把 RSS 地址丢给它：</p>
+<div class="highlight"><pre><span></span><code>https://&lt;my domain&gt;/xueqiu/user/1247347556
+</code></pre></div>
+
+<p>这个 RSS 是我用开源项目 <strong>RSSHub-Python</strong> 生成的。
+本质上，它把段永平的雪球帖子，转换成<strong>机器更容易处理的数据格式</strong>。</p>
+<p>我还特意强调了一点：</p>
+<blockquote>
+<p>⚠️ <strong>只在“有新帖子”时才提醒</strong></p>
+</blockquote>
+<hr>
+<h3>② RSS 不稳定？那就让 OpenClaw 自己部署</h3>
+<p>一开始我用的是别人提供的 RSS 地址，不太稳定，我就想到自己部署一套RSSHub-Python服务。于是对话变成了这样：</p>
+<div class="highlight"><pre><span></span><code>我：这个项目能部署吗？
+   https://github.com/hillerliao/rsshub-python
+
+AI：支持 Docker / Vercel / 本地部署
+
+我：Docker 吧
+
+AI：网络问题……
+
+我：那就本地部署
+
+(若干分钟后...)
+
+AI：部署成功，地址 http://127.0.0.1/xueqiu/user/1247347556
+</code></pre></div>
+
+<p>为了测试验证，可以让OpenClaw给你请求该地址实际获取到的内容。</p>
+<p>这个项目内部依赖浏览器环境抓取页面，如果环境不完整，可能会报错。如果你获取到的是这种字样的： <code>Playwright not supported on Vercel</code>，发给OpenClaw，让它安装一下 Playwright，具体是啥不用管。</p>
+<p>整个过程，<strong>OpenClaw 自己解决依赖、环境、启动问题</strong>，我基本只是做选择题。</p>
+<p>一个小插曲，它把我已经存在的一个网页服务给搞成404无法访问了，幸好后来让它帮忙修复了。改坏东西是OpenClaw容易犯的毛病。所以初期尝试的时候，建议在闲置电脑或独立服务器上部署。</p>
+<blockquote>
+<p>如果你是云服务器，建议 4G 内存以上<br>
+中国大陆服务器可用 <a href="https://gitee.com/hillerliao/rsshub-python">Gitee 镜像</a>，或让 OpenClaw 用 <code>r.jina.ai</code> 访问 GitHub 版地址。</p>
+</blockquote>
+<hr>
+<h3>③ 核心价值：不是关键词，而是“理解内容”</h3>
+<p>我只说了一句话：</p>
+<div class="highlight"><pre><span></span><code>我：提到具体公司时要重点提醒
+</code></pre></div>
+
+<p>OpenClaw 背后做的事情，其实是：</p>
+<ul>
+<li><strong>语义理解</strong></li>
+<li><strong>上下文判断</strong></li>
+<li><strong>投资 vs 生活区分</strong></li>
+</ul>
+<p>举个最关键的例子：</p>
+<ul>
+<li>✅「70 元买阿里很便宜」 → <strong>重点</strong></li>
+<li>❌「今天吃了个苹果」 → <strong>不提醒</strong></li>
+</ul>
+<p>这一步，是传统自动化工具<strong>最难做到的地方</strong>。</p>
+<hr>
+<h3>④ 消息推送</h3>
+<div class="highlight"><pre><span></span><code>我：推送到 Telegram  
+AI：已配置完成
+</code></pre></div>
+
+<p>就这么结束了。（现在简单是因为之前费力气调通了消息通道。😅）</p>
+<hr>
+<h2>那用别的工具不行吗？</h2>
+<p>行，但体验完全不一样。</p>
+<p>我之前用 <strong>N8N</strong> （一个开源的低代码服务）搭过类似流程，简单对比一下：</p>
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>N8N</th>
+<th>OpenClaw</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>部署</td>
+<td>需要自己部署</td>
+<td>几乎无感</td>
+</tr>
+<tr>
+<td>配置</td>
+<td>画节点 + 写 JS</td>
+<td>自然语言</td>
+</tr>
+<tr>
+<td>判断逻辑</td>
+<td>关键词为主</td>
+<td>语义理解</td>
+</tr>
+<tr>
+<td>AI 能力</td>
+<td>需额外集成</td>
+<td>首次填大模型API KEY即可</td>
+</tr>
+</tbody>
+</table>
+<p>当时为了判断“是否为新帖子”，我写了不少 JS，调试非常痛苦。</p>
+<p><strong>本质差异只有一句话：</strong></p>
+<blockquote>
+<p>OpenClaw 能“看懂你在说什么”，
+而传统自动化工具，只是在“对字符串”。</p>
+</blockquote>
+<p>我用的是 MiniMax 的大模型，它在中文语境下，对投资语义的区分非常准确。</p>
+<p>而且后续要优化，直接和机器人通过聊天沟通就行了，不需要登录相关工具后台去来回调试操作。</p>
+<h2>下一步我准备怎么升级？</h2>
+<p>现在系统已经稳定运行，但我还打算继续加东西：</p>
+<ol>
+<li>
+<p><strong>媒体监控</strong></p>
+</li>
+<li>
+<p>不止雪球</p>
+</li>
+<li>
+<p>自动抓取段永平相关持仓、采访、报道</p>
+</li>
+<li>
+<p><strong>周期报告</strong></p>
+</li>
+<li>
+<p>每周 / 每月</p>
+</li>
+<li>自动汇总观点变化</li>
+<li>AI 生成分析摘要</li>
+</ol>
+<h2>写在最后</h2>
+<p>以前，搭一个这样的<strong>智能信息监控系统</strong>，
+意味着：服务器 + 脚本 + 定时任务 + 调试。</p>
+<p>现在，只需要动动嘴就把活儿干了。一旦用上，以前的工具好比是手动挡，OpenClaw好比是自动驾驶。</p>
+<p>这就是 <strong>OpenClaw + AI Agent</strong> 真正让我感到“有代际差异”的地方。</p>
+<hr>
+<p>👉 <strong>你最想监控的是哪位投资人 / 行业大佬？</strong>
+欢迎在评论区留言。</p>
+<p>如果你在搭建过程中踩坑，或者想看后续升级方案，也欢迎进群交流。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/Aa3Ovl8lqbwRXaSpXBSGdpuQWMicXiaJlkOnfenjWOs49GiaaMPsoXsv8FRj3NxQqAWO7beHiavVyhVssENTSwr5tA/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3">  </p>
+<p>如果需要购买MiniMax的大模型API，可以点击原读原文以9折优惠购买。</p>
+
+
+</div>
+		</div>
+	</body>
+</html>
