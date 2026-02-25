@@ -1,3 +1,18 @@
+---
+title: 段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）
+date: 2026-02-25
+modified: 2026-02-25
+tags:
+    - openclaw
+    - 段永平
+    - ai
+    - 自动化
+    - 投资
+category: blog
+slug: openclaw-duan-yong-ping-monitor
+authors: hillerdescription: 利用 OpenClaw 智能监控段永平的投资动态，通过 AI 语义理解筛选有价值信息，推送到 Telegram。
+---
+
 # 段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）
 
 过完年，相信你已经多多少少听说过 **OpenClaw** 这个词。
