@@ -1,9 +1,9 @@
 ---
-Title: 我替你踩坑了：部署 OpenClaw 后，记得先做这一步，防止服务器被跑死
-Date: 2025-02-26
-Category: Tech
-Tags: openclaw, linux, server, log, disk
-Slug: prevent-openclaw-from-filling-up-your-disk
+title: 我替你踩坑了：部署 OpenClaw 后，记得先做这一步，防止服务器被跑死
+date: 2025-02-26
+category: Tech
+gags: openclaw, linux, server, log, disk
+slug: prevent-openclaw-from-filling-up-your-disk
 ---
 
 # 我替你踩坑了：部署 OpenClaw 后，记得先做这一步
