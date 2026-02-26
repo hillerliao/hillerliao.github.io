@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - Tech</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-02-26T12:02:14+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>我替你踩坑了：部署 OpenClaw 后，记得先做这一步，防止服务器被跑死</title><link href="https://hillerliao.github.io/prevent-openclaw-from-filling-up-your-disk.html" rel="alternate"></link><published>2026-02-26T12:02:14+08:00</published><updated>2026-02-26T12:02:14+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-02-26:/prevent-openclaw-from-filling-up-your-disk.html</id><summary type="html">&lt;h1&gt;我替你踩坑了：部署 OpenClaw 后，记得先做这一步&lt;/h1&gt;
-&lt;p&gt;如果你已经把 OpenClaw 跑起来了，这篇文章建议你花 5 分钟看完，&lt;strong&gt;可以直接帮你避开服 …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;h1&gt;我替你踩坑了：部署 OpenClaw 后，记得先做这一步&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - Tech</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-02-26T12:02:14+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>我替你踩坑了：部署 OpenClaw 后，记得先做这一步，防止服务器被跑死</title><link href="https://hillerliao.github.io/wo-ti-ni-cai-keng-liao-bu-shu-openclaw-hou-ji-de-xian-zuo-zhe-yi-bu-fang-zhi-fu-wu-qi-bei-pao-si.html" rel="alternate"></link><published>2026-02-26T12:02:14+08:00</published><updated>2026-02-26T12:02:14+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-02-26:/wo-ti-ni-cai-keng-liao-bu-shu-openclaw-hou-ji-de-xian-zuo-zhe-yi-bu-fang-zhi-fu-wu-qi-bei-pao-si.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;openclaw&lt;/li&gt;
+&lt;li&gt;linux&lt;/li&gt;
+&lt;li&gt;server &lt;/li&gt;
+&lt;li&gt;log &lt;/li&gt;
+&lt;li&gt;disk
+slug: prevent-openclaw-from-filling-up-your-disk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;我替你踩坑了：部署 OpenClaw 后，记得先做这一步&lt;/h1&gt;
+&lt;p&gt;如果你已经把 OpenClaw 跑起来了，这篇文章建议你花 5 分钟看完，&lt;strong&gt;可以 …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;openclaw&lt;/li&gt;
+&lt;li&gt;linux&lt;/li&gt;
+&lt;li&gt;server &lt;/li&gt;
+&lt;li&gt;log &lt;/li&gt;
+&lt;li&gt;disk
+slug: prevent-openclaw-from-filling-up-your-disk&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1&gt;我替你踩坑了：部署 OpenClaw 后，记得先做这一步&lt;/h1&gt;
 &lt;p&gt;如果你已经把 OpenClaw 跑起来了，这篇文章建议你花 5 分钟看完，&lt;strong&gt;可以直接帮你避开服务器跑死的坑&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2&gt;不想看过程？直接照做这 3 步&lt;/h2&gt;
@@ -157,4 +175,4 @@ sudo&lt;span class="w"&gt; &lt;/span&gt;chmod&lt;span class="w"&gt; &lt;/span&gt
 &lt;p&gt;这个坑我已经踩过了，
 你不需要再踩一次。&lt;/p&gt;
 &lt;p&gt;如果你在部署或使用OpenClaw过程中有碰到问题，都可以进群交流，大多数坑都已经有人踩过了。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="../images/a416b9ca688bec9e83693414c4075eb3.png"&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="openclaw"></category><category term="linux"></category><category term="server"></category><category term="log"></category><category term="disk"></category></entry></feed>
+&lt;p&gt;&lt;img alt="" src="../images/a416b9ca688bec9e83693414c4075eb3.png"&gt;&lt;/p&gt;</content><category term="Tech"></category></entry></feed>
