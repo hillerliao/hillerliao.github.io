@@ -8,12 +8,12 @@
 slug: prevent-openclaw-from-filling-up-your-disk&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1&gt;我替你踩坑了：部署 OpenClaw 后，记得先做这一步&lt;/h1&gt;
-&lt;p&gt;如果你已经把 OpenClaw 跑起来了，这篇文章建议你花 5 分钟看完，&lt;strong&gt;可以 …&lt;/strong&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hillerliao</dc:creator><pubDate>Thu, 26 Feb 2026 12:02:14 +0800</pubDate><guid isPermaLink="false">tag:hillerliao.github.io,2026-02-26:/wo-ti-ni-cai-keng-liao-bu-shu-openclaw-hou-ji-de-xian-zuo-zhe-yi-bu-fang-zhi-fu-wu-qi-bei-pao-si.html</guid><category>Tech</category></item><item><title>段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）</title><link>https://hillerliao.github.io/openclaw-duan-yong-ping-monitor.html</link><description>&lt;h1&gt;段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）&lt;/h1&gt;
-&lt;p&gt;过完年，相信你已经多多少少听说过 &lt;strong&gt;OpenClaw&lt;/strong&gt; 这个词。&lt;/p&gt;
+&lt;p&gt;如果你已经把 OpenClaw 跑起来了，这篇文章建议你花 5 分钟看完，&lt;strong&gt;可以直接帮你避开服务器跑死的坑&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;不想看过 …&lt;/h2&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hillerliao</dc:creator><pubDate>Thu, 26 Feb 2026 12:02:14 +0800</pubDate><guid isPermaLink="false">tag:hillerliao.github.io,2026-02-26:/wo-ti-ni-cai-keng-liao-bu-shu-openclaw-hou-ji-de-xian-zuo-zhe-yi-bu-fang-zhi-fu-wu-qi-bei-pao-si.html</guid><category>Tech</category></item><item><title>段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）</title><link>https://hillerliao.github.io/openclaw-duan-yong-ping-monitor.html</link><description>&lt;p&gt;过完年，相信你已经多多少少听说过 &lt;strong&gt;OpenClaw&lt;/strong&gt; 这个词。&lt;/p&gt;
 &lt;p&gt;简单一句话概括：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;它是 …&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hillerdescription: 利用 OpenClaw 智能监控段永平的投资动态，通过 AI 语义理解筛选有价值信息，推送到 Telegram。</dc:creator><pubDate>Wed, 25 Feb 2026 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:hillerliao.github.io,2026-02-25:/openclaw-duan-yong-ping-monitor.html</guid><category>blog</category></item><item><title>Termux 环境下 frpc 和 OpenClaw 服务保活方案</title><link>https://hillerliao.github.io/termux-frpc-openclaw-auto-restart.html</link><description>&lt;h2&gt;背景与痛点&lt;/h2&gt;
+&lt;p&gt;它是一个&lt;strong&gt;能理解你意图、替你干活的 AI Agent&lt;/strong&gt;，有点像 &lt;em&gt;Siri + DeepSeek + 自动 …&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hillerdescription: 利用 OpenClaw 智能监控段永平的投资动态，通过 AI 语义理解筛选有价值信息，推送到 Telegram。</dc:creator><pubDate>Wed, 25 Feb 2026 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:hillerliao.github.io,2026-02-25:/openclaw-duan-yong-ping-monitor.html</guid><category>blog</category></item><item><title>Termux 环境下 frpc 和 OpenClaw 服务保活方案</title><link>https://hillerliao.github.io/termux-frpc-openclaw-auto-restart.html</link><description>&lt;h2&gt;背景与痛点&lt;/h2&gt;
 &lt;h3&gt;问题场景&lt;/h3&gt;
 &lt;p&gt;在 Android 设备上运行 frpc（内网穿透客户端）和 OpenClaw 时，面临以下挑战：&lt;/p&gt;
 &lt;ol&gt;
@@ -25,9 +25,9 @@ slug: prevent-openclaw-from-filling-up-your-disk&lt;/li&gt;
 &lt;li&gt;AI 助手&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;![[Pasted image 20260203103854.png]]&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="../images/74590364992b496b8dbbfaf93d907f96.png"&gt;&lt;/p&gt;
 &lt;h2&gt;需求背景&lt;/h2&gt;
-&lt;p&gt;最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hillerliao</dc:creator><pubDate>Tue, 03 Feb 2026 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:hillerliao.github.io,2026-02-03:/install-openclaw-on-old-phone-with-termux.html</guid><category>blog</category></item><item><title>n8n Cron Trigger 使用 UTC 时区的坑：一次完整排查与解决记录</title><link>https://hillerliao.github.io/n8n-cron-trigger-utc-timezone-issue.html</link><description>&lt;h2&gt;问题背景&lt;/h2&gt;
+&lt;p&gt;最近，一个叫做 OpenClaw 的软件开始火了起来。我试着在虚拟机 Ubuntu 系统上跑了一下，虽然部署过程 …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">hillerliao</dc:creator><pubDate>Tue, 03 Feb 2026 00:00:00 +0800</pubDate><guid isPermaLink="false">tag:hillerliao.github.io,2026-02-03:/install-openclaw-on-old-phone-with-termux.html</guid><category>blog</category></item><item><title>n8n Cron Trigger 使用 UTC 时区的坑：一次完整排查与解决记录</title><link>https://hillerliao.github.io/n8n-cron-trigger-utc-timezone-issue.html</link><description>&lt;h2&gt;问题背景&lt;/h2&gt;
 &lt;p&gt;我使用 n8n 做自动化，通过 Cron Trigger，每天&lt;strong&gt;早上 7 点&lt;/strong&gt;自动执行一个工作流：
 - 抓取 &lt;strong&gt;当天天气预报&lt;/strong&gt;
 - 获取 &lt;strong&gt;农历日&lt;/strong&gt;
