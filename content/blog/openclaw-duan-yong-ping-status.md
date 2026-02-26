@@ -13,8 +13,6 @@ slug: openclaw-duan-yong-ping-monitor
 authors: hillerdescription: 利用 OpenClaw 智能监控段永平的投资动态，通过 AI 语义理解筛选有价值信息，推送到 Telegram。
 ---
 
-# 段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）
-
 过完年，相信你已经多多少少听说过 **OpenClaw** 这个词。
 
 简单一句话概括：
@@ -248,6 +246,6 @@ AI：已配置完成
 
 如果你在搭建过程中踩坑，或者想看后续升级方案，也欢迎进群交流。
 
-![](https://mmbiz.qpic.cn/sz_mmbiz_png/Aa3Ovl8lqbwRXaSpXBSGdpuQWMicXiaJlkOnfenjWOs49GiaaMPsoXsv8FRj3NxQqAWO7beHiavVyhVssENTSwr5tA/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=3)  
+![](../images/a416b9ca688bec9e83693414c4075eb3.png)  
 
 如果需要购买MiniMax的大模型API，可以点击原读原文以9折优惠购买。

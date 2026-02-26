@@ -11,8 +11,6 @@ tags:
 slug: prevent-openclaw-from-filling-up-your-disk
 ---
 
-# 我替你踩坑了：部署 OpenClaw 后，记得先做这一步
-
 如果你已经把 OpenClaw 跑起来了，这篇文章建议你花 5 分钟看完，**可以直接帮你避开服务器跑死的坑**。
 
 ---
