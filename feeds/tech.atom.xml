@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - Tech</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/tech.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2025-02-26T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>我替你踩坑了：部署 OpenClaw 后，记得先做这一步，防止服务器被跑死</title><link href="https://hillerliao.github.io/prevent-openclaw-from-filling-up-your-disk.html" rel="alternate"></link><published>2025-02-26T00:00:00+08:00</published><updated>2025-02-26T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2025-02-26:/prevent-openclaw-from-filling-up-your-disk.html</id><summary type="html">&lt;h1&gt;我替你踩坑了：部署 OpenClaw 后，记得先做这一步&lt;/h1&gt;
+&lt;p&gt;如果你已经把 OpenClaw 跑起来了，这篇文章建议你花 5 分钟看完，&lt;strong&gt;可以直接帮你避开服 …&lt;/strong&gt;&lt;/p&gt;</summary><content type="html">&lt;h1&gt;我替你踩坑了：部署 OpenClaw 后，记得先做这一步&lt;/h1&gt;
+&lt;p&gt;如果你已经把 OpenClaw 跑起来了，这篇文章建议你花 5 分钟看完，&lt;strong&gt;可以直接帮你避开服务器跑死的坑&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;不想看过程？直接照做这 3 步&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 1. 清理已有日志&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;/tmp/openclaw/*.log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 2. 设置日志上限（单文件 &amp;gt;1GB 自动删）&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;tee&lt;span class="w"&gt; &lt;/span&gt;/usr/local/bin/openclaw-log-guard.sh&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;lt;&amp;lt;&amp;#39;EOF&amp;#39;&lt;/span&gt;
+&lt;span class="s"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="s"&gt;find /tmp/openclaw -name &amp;quot;*.log&amp;quot; -size +1G -delete&lt;/span&gt;
+&lt;span class="s"&gt;EOF&lt;/span&gt;
+sudo&lt;span class="w"&gt; &lt;/span&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;/usr/local/bin/openclaw-log-guard.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# 3. 每小时执行一次&lt;/span&gt;
+&lt;span class="o"&gt;(&lt;/span&gt;crontab&lt;span class="w"&gt; &lt;/span&gt;-l&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;0 * * * * /usr/local/bin/openclaw-log-guard.sh&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;crontab&lt;span class="w"&gt; &lt;/span&gt;-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;做到这里就够了。
+下面是我为什么会踩到这个坑。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;事情背景：早上 7 点，服务器告警&lt;/h2&gt;
+&lt;p&gt;早上七点多，收到阿里云短信：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;磁盘使用率超过 95%&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;一、确认磁盘真的满了&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;df&lt;span class="w"&gt; &lt;/span&gt;-h
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;只看一行：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/&lt;/code&gt;（根分区）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Use% &amp;gt; 95%&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;二、到底是谁在占磁盘？&lt;/h2&gt;
+&lt;h3&gt;1️⃣ 先看哪个目录最大&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;du&lt;span class="w"&gt; &lt;/span&gt;-sh&lt;span class="w"&gt; &lt;/span&gt;/*&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sort&lt;span class="w"&gt; &lt;/span&gt;-rh&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;head&lt;span class="w"&gt; &lt;/span&gt;-10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;结果发现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/tmp&lt;/code&gt; 占用了 &lt;strong&gt;十几 GB&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3&gt;2️⃣ 继续往 &lt;code&gt;/tmp&lt;/code&gt; 里找&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;du&lt;span class="w"&gt; &lt;/span&gt;-sh&lt;span class="w"&gt; &lt;/span&gt;/tmp/*&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;sort&lt;span class="w"&gt; &lt;/span&gt;-rh&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;head&lt;span class="w"&gt; &lt;/span&gt;-10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;当时最扎眼的一行是：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;10G   /tmp/openclaw
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h3&gt;3️⃣ 看里面是什么&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;ls&lt;span class="w"&gt; &lt;/span&gt;-lh&lt;span class="w"&gt; &lt;/span&gt;/tmp/openclaw
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;看到的是几个日志文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一个接近 &lt;strong&gt;9GB&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;另一个 &lt;strong&gt;1GB+&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;到这里已经可以确定：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;是 OpenClaw 日志把磁盘写满了&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2&gt;三、这些日志主要在记什么？&lt;/h2&gt;
+&lt;p&gt;查看日志里主要的错误信息：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;grep&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Ei&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;disconnect|reconnect|unauthorized|token|1008|ws&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;tmp&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;openclaw&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;openclaw&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2026&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;02&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt;.&lt;span class="nv"&gt;log&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;head&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;内容主要是三类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Gateway / WebSocket 日志&lt;/strong&gt;
+   Web UI 连接、断开、重连都会写。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;浏览器或工具调用失败日志&lt;/strong&gt;
+   比如浏览器控制没连上、工具参数不完整，&lt;strong&gt;失败会反复重试&lt;/strong&gt;，每次都写一条。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;插件或消息通道异常日志&lt;/strong&gt;
+   插件加载了，但目标不匹配，也会持续尝试并记录失败。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;重点不在“有没有错误”，而在于：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;这些日志默认没有大小上限&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一旦进入异常循环，文件会一直涨。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;四、我当时怎么处理的（先止血）&lt;/h2&gt;
+&lt;h3&gt;1️⃣ 直接删日志&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;rm&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;/tmp/openclaw/*.log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;2️⃣ 再看磁盘&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;df&lt;span class="w"&gt; &lt;/span&gt;-h
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这时根分区使用率降到了 &lt;strong&gt;69% 左右&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;五、真正关键的一步：防止再发生&lt;/h2&gt;
+&lt;p&gt;只清一次没意义，必须加“上限”。&lt;/p&gt;
+&lt;h3&gt;限制 OpenClaw 日志大小&lt;/h3&gt;
+&lt;h4&gt;1️⃣ 新建清理脚本&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;tee&lt;span class="w"&gt; &lt;/span&gt;/usr/local/bin/openclaw-log-guard.sh&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;/dev/null&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;lt;&amp;lt;&amp;#39;EOF&amp;#39;&lt;/span&gt;
+&lt;span class="s"&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class="s"&gt;find /tmp/openclaw -name &amp;quot;*.log&amp;quot; -size +1G -delete&lt;/span&gt;
+&lt;span class="s"&gt;EOF&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sudo&lt;span class="w"&gt; &lt;/span&gt;chmod&lt;span class="w"&gt; &lt;/span&gt;+x&lt;span class="w"&gt; &lt;/span&gt;/usr/local/bin/openclaw-log-guard.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;作用只有一句话：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;任何 OpenClaw 日志文件超过 1GB，就删除&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h4&gt;2️⃣ 设置定时任务（每小时一次）&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;crontab&lt;span class="w"&gt; &lt;/span&gt;-e
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;加一行：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;local&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="kr"&gt;open&lt;/span&gt;&lt;span class="n"&gt;claw&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;log&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;guard&lt;/span&gt;&lt;span class="mf"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sh&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;不频繁&lt;/li&gt;
+&lt;li&gt;不影响排障&lt;/li&gt;
+&lt;li&gt;足够安全&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;六、现在的状态&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;磁盘不再突然 95%+&lt;/li&gt;
+&lt;li&gt;日志不会无限增长&lt;/li&gt;
+&lt;li&gt;OpenClaw 正常运行&lt;/li&gt;
+&lt;li&gt;不需要人工盯着&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;最后一句话&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;部署 OpenClaw 后，
+&lt;strong&gt;第一件要做的事是：给日志设上限。&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这个坑我已经踩过了，
+你不需要再踩一次。&lt;/p&gt;
+&lt;p&gt;如果你在部署或使用OpenClaw过程中有碰到问题，都可以进群交流，大多数坑都已经有人踩过了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="../images/a416b9ca688bec9e83693414c4075eb3.png"&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="openclaw"></category><category term="linux"></category><category term="server"></category><category term="log"></category><category term="disk"></category></entry></feed>
