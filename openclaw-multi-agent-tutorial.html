@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="OpenClaw多Agent配置实战（多BOT版）" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://hillerliao.github.io/openclaw-multi-agent-tutorial.html" />
+		<meta property="og:image" content="https://hillerliao.github.io/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>OpenClaw多Agent配置实战（多BOT版） - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/poole.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/hyde.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="https://hillerliao.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="https://hillerliao.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+<link href="https://hillerliao.github.io/feeds/ji-zhu-jiao-cheng.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Categories Atom Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="https://hillerliao.github.io/">
+					<img class="profile-picture" src="https://hillerliao.github.io/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="https://hillerliao.github.io/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">OpenClaw多Agent配置实战（多BOT版）</h1>
+	<span class="post-date">Wed 25 March 2026</span>
+	<blockquote>
+<p><strong>懒人方案</strong>：如果不想手动折腾配置文件，可以直接进入 <code>~/.openclaw</code> 文件夹，启用 OpenCode，把这篇文章扔给它，让 OpenCode 参照着搞定。你只需要安装OpenCode就行（让OpenClaw帮你安装）。两个工具互相帮忙！</p>
+</blockquote>
+<hr>
+<h2>为什么要多Agent？</h2>
+<p>最近有一些任务，OpenClaw 处理起来不是很得力，容易出错，不太爽。</p>
+<ul>
+<li>"帮我查一下这个函数怎么用" → 便宜的普通模型能够快速响应，还算不错。</li>
+<li>"帮忙破解这个接口的数据解密方法" → 一般的模型可能就搞不定了，得上更厉害的模型。而更厉害的模型，也就意味着需要更多的钱去购买。</li>
+</ul>
+<p>有什么办法能够让我在不同的时候使用不同的模型，既把事办了，也把钱省了呢？</p>
+<p>经过一番研究发现，<strong>OpenClaw的多Agent架构完美解决了这个问题</strong>：每个Agent可以绑定不同的模型，通过路由规则自动分配任务。</p>
+<hr>
+<h2>最终效果</h2>
+<p>配置完成后，我的系统是这样的：</p>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>模型</th>
+<th>用途</th>
+<th>成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>main</td>
+<td>MiniMax M2.7</td>
+<td>日常对话、简单编码</td>
+<td>低</td>
+</tr>
+<tr>
+<td>code-reviewer</td>
+<td>GPT 5.4 Pro</td>
+<td>代码审查、安全分析</td>
+<td>高</td>
+</tr>
+</tbody>
+</table>
+<p>用户通过不同的飞书机器人发起请求，OpenClaw自动路由到对应的Agent。</p>
+<hr>
+<h2>原理图</h2>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────┐
+│                      用户消息                                │
+└─────────────────────────────────────────────────────────────┘
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    OpenClaw Gateway                          │
+│                  (根据Bindings路由)                           │
+└─────────────────────────────────────────────────────────────┘
+                     │                    │
+                     ▼                    ▼
+     ┌───────────────────────┐  ┌───────────────────────┐
+     │   飞书机器人1(default)  │  │ 飞书机器人2(code-reviewer)│
+     └───────────────────────┘  └───────────────────────┘
+                     │                    │
+                     ▼                    ▼
+     ┌───────────────────────┐  ┌───────────────────────┐
+     │     main Agent        │  │  code-reviewer Agent  │
+     │   模型: MiniMax       │  │   模型: GPT 5.4 Pro   │
+     │   成本: 低            │  │   成本: 高            │
+     └───────────────────────┘  └───────────────────────┘
+</code></pre></div>
+
+<hr>
+<h2>环境准备</h2>
+<h3>1. 确认OpenClaw版本</h3>
+<div class="highlight"><pre><span></span><code>openclaw<span class="w"> </span>--version
+</code></pre></div>
+
+<p>确保版本 &gt;= 2026.3.x</p>
+<h3>2. 获取OpenCode Zen API密钥</h3>
+<p>访问 <a href="https://opencode.ai/auth">https://opencode.ai/auth</a>，注册并获取API密钥。</p>
+<blockquote>
+<p>GPT 5.4系列模型通过OpenCode Zen提供。</p>
+</blockquote>
+<h3>3. 确认飞书扩展</h3>
+<p>本文使用OpenClaw内置的飞书扩展 <strong><code>feishu</code></strong>（路径：<code>openclaw/extensions/feishu</code>），安装方便。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 查看已启用的插件</span>
+openclaw<span class="w"> </span>plugins<span class="w"> </span>list
+</code></pre></div>
+
+<p>期望输出中应包含：</p>
+<div class="highlight"><pre><span></span><code><span class="n">feishu</span><span class="o">:</span><span class="w"> </span><span class="n">enabled</span>
+</code></pre></div>
+
+<h3>4. 准备飞书应用</h3>
+<p>需要两个飞书应用：
+- <strong>应用1</strong>：已有的飞书机器人（用于main Agent）
+- <strong>应用2</strong>：新建的代码审查机器人（用于code-reviewer Agent）</p>
+<p>在 <a href="https://open.feishu.cn/">飞书开放平台</a> 创建新应用，获取 <code>App ID</code> 和 <code>App Secret</code>。</p>
+<blockquote>
+<p>飞书应用需要开启以下权限：<code>im:message</code>、<code>im:message:send_as_bot</code> 等。最好是把能开的权限都开上。</p>
+</blockquote>
+<hr>
+<h2>实战步骤</h2>
+<h3>Step 1：查看当前配置</h3>
+<p>先了解一下现有的配置结构：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 查看当前Agent列表</span>
+openclaw<span class="w"> </span>agents<span class="w"> </span>list
+</code></pre></div>
+
+<p>输出：</p>
+<div class="highlight"><pre><span></span><code>Agents:
+- main (default)
+  Model: minimax/MiniMax-M2.7
+  Routing: default
+</code></pre></div>
+
+<p>查看配置文件：</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 配置文件位置</span>
+cat<span class="w"> </span>~/.openclaw/openclaw.json
+</code></pre></div>
+
+<p>当前只有 <code>main</code> 一个Agent，使用MiniMax模型。</p>
+<hr>
+<h3>Step 2：添加OpenCode Zen模型提供商</h3>
+<blockquote>
+<p>这一步可以通过<code>openclaw configure</code>命令完成，模型配置步骤有OpenCode选项，更不容易出错。</p>
+</blockquote>
+<p>编辑 <code>~/.openclaw/openclaw.json</code>，在 <code>models.providers</code> 中添加GPT 5.4系列模型：</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;providers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;minimax&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.minimaxi.com/anthropic&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;api&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;anthropic-messages&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MiniMax-M2.7&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MiniMax M2.7&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;opencode-zen&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;baseUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://opencode.ai/zen/v1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;api&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openai-completions&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;authHeader&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gpt-5.4&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GPT 5.4&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;contextWindow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;maxTokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8192</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gpt-5.4-pro&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GPT 5.4 Pro&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;reasoning&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;contextWindow&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200000</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;maxTokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8192</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>在 <code>agents.defaults.models</code> 中添加模型别名：</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;agents&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;defaults&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;minimax/MiniMax-M2.7&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;alias&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MiniMax&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;opencode-zen/gpt-5.4-pro&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;alias&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GPT 5.4 Pro (Code Review)&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr>
+<h3>Step 3：添加OpenCode Zen API密钥</h3>
+<p>编辑 <code>~/.openclaw/agents/main/agent/auth-profiles.json</code>：</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;profiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;minimax:cn&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;api_key&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;minimax&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your-minimax-api-key&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;opencode-zen:default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;api_key&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;opencode-zen&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;your-opencode-zen-api-key&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr>
+<h3>Step 4：创建code-reviewer Agent</h3>
+<p>使用CLI命令一键创建：</p>
+<div class="highlight"><pre><span></span><code>openclaw<span class="w"> </span>agents<span class="w"> </span>add<span class="w"> </span>code-reviewer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--workspace<span class="w"> </span>~/.openclaw/workspace-code-reviewer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>opencode-zen/gpt-5.4-pro<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--non-interactive
+</code></pre></div>
+
+<p>这条命令会自动创建：
+- 独立的工作空间目录：<code>~/.openclaw/workspace-code-reviewer</code>
+- 独立的Agent配置目录：<code>~/.openclaw/agents/code-reviewer/agent</code>
+- 独立的会话存储：<code>~/.openclaw/agents/code-reviewer/sessions/</code></p>
+<hr>
+<h3>Step 5：定义Agent人格</h3>
+<p>每个Agent都可以有独立的人格配置。</p>
+<p><strong>AGENTS.md</strong> (<code>~/.openclaw/workspace-code-reviewer/AGENTS.md</code>)：</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Code Review Agent</span>
+
+你是一个专门的代码审查助手，使用GPT 5.4 Pro进行深度代码分析。
+
+<span class="gu">## 职责</span>
+<span class="k">-</span><span class="w"> </span>代码质量审查
+<span class="k">-</span><span class="w"> </span>潜在Bug识别
+<span class="k">-</span><span class="w"> </span>性能优化建议
+<span class="k">-</span><span class="w"> </span>安全性检查
+<span class="k">-</span><span class="w"> </span>最佳实践建议
+
+<span class="gu">## 审查标准</span>
+<span class="k">1.</span> 代码可读性
+<span class="k">2.</span> 错误处理
+<span class="k">3.</span> 性能考虑
+<span class="k">4.</span> 安全性
+<span class="k">5.</span> 测试覆盖
+
+<span class="gu">## 输出格式</span>
+<span class="k">-</span><span class="w"> </span>总体评分（A-F）
+<span class="k">-</span><span class="w"> </span>问题列表（文件:行号）
+<span class="k">-</span><span class="w"> </span>严重程度（高/中/低）
+<span class="k">-</span><span class="w"> </span>建议修复方案
+</code></pre></div>
+
+<p><strong>SOUL.md</strong> (<code>~/.openclaw/workspace-code-reviewer/SOUL.md</code>)：</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Code Review Agent Soul</span>
+
+你是一个经验丰富、耐心细致的代码审查专家。
+
+<span class="gu">## 性格</span>
+<span class="k">-</span><span class="w"> </span>严谨但友好
+<span class="k">-</span><span class="w"> </span>注重细节
+<span class="k">-</span><span class="w"> </span>建设性而非批评性
+
+<span class="gu">## 语气</span>
+<span class="k">-</span><span class="w"> </span>专业但亲切
+<span class="k">-</span><span class="w"> </span>清晰简洁
+<span class="k">-</span><span class="w"> </span>避免技术术语滥用
+</code></pre></div>
+
+<hr>
+<h3>Step 6：配置飞书机器人</h3>
+<p>在 <code>openclaw.json</code> 的 <code>channels</code> 部分配置飞书多账户：</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;channels&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;feishu&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;accounts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;default&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;appId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cli_已有应用ID&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;appSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;已有应用Secret&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;code-review&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;appId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;cli_新应用ID&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;appSecret&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;新应用Secret&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">&quot;connectionMode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;websocket&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;domain&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;feishu&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;groupPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;open&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p><strong>说明</strong>：<code>accounts</code> 是多账户配置的关键字段，每个账户对应一个飞书应用。<code>default</code> 账户用于main Agent，<code>code-review</code> 账户用于code-reviewer Agent。</p>
+</blockquote>
+<hr>
+<h3>Step 7：配置路由绑定</h3>
+<p>在 <code>openclaw.json</code> 中添加Bindings：</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;bindings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;agentId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;code-reviewer&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;match&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;channel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;feishu&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;accountId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;code-review&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>路由规则解读</strong>：
+- 当消息来自 <code>feishu</code> 渠道
+- 且账户为 <code>code-review</code>（即新创建的飞书机器人）
+- 则路由到 <code>code-reviewer</code> Agent</p>
+<hr>
+<h3>Step 8：重启网关使配置生效</h3>
+<div class="highlight"><pre><span></span><code>openclaw<span class="w"> </span>gateway<span class="w"> </span>restart
+</code></pre></div>
+
+<hr>
+<h3>Step 9：验证配置</h3>
+<div class="highlight"><pre><span></span><code>openclaw<span class="w"> </span>agents<span class="w"> </span>list<span class="w"> </span>--bindings
+</code></pre></div>
+
+<p>期望输出：</p>
+<div class="highlight"><pre><span></span><code>Agents:
+- main (default)
+  Model: minimax/MiniMax-M2.7
+  Routing: default
+
+- code-reviewer
+  Model: opencode-zen/gpt-5.4-pro
+  Routing rules:
+    - feishu accountId=code-review
+</code></pre></div>
+
+<p>检查频道状态：</p>
+<div class="highlight"><pre><span></span><code>openclaw<span class="w"> </span>channels<span class="w"> </span>status
+</code></pre></div>
+
+<p>期望看到两个飞书账户都在运行：</p>
+<div class="highlight"><pre><span></span><code>- Feishu default: enabled, configured, running
+- Feishu code-review: enabled, configured, running
+</code></pre></div>
+
+<hr>
+<h2>测试效果</h2>
+<h3>测试1：日常编码（走main Agent，MiniMax模型）</h3>
+<p>通过第一个飞书机器人发送：</p>
+<div class="highlight"><pre><span></span><code>帮我写一个Python函数，计算斐波那契数列
+</code></pre></div>
+
+<p>MiniMax快速响应，成本低。</p>
+<h3>测试2：代码审查（走code-reviewer Agent，GPT 5.4 Pro）</h3>
+<p>（简单例子示意，非大模型真实输出）</p>
+<p>通过第二个飞书机器人发送：</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">process_user_input</span><span class="p">(</span><span class="n">user_input</span><span class="p">):</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM users WHERE id = &quot;</span> <span class="o">+</span> <span class="n">user_input</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+
+<p>GPT 5.4 Pro 深度分析，输出：</p>
+<div class="highlight"><pre><span></span><code>🚨<span class="w"> </span>严重问题：<span class="nv">SQL</span>注入漏洞
+
+文件位置:<span class="w"> </span>代码片段:<span class="mi">2</span>
+问题:<span class="w"> </span>用户输入直接拼接<span class="nv">SQL</span>查询
+严重程度:<span class="w"> </span>高
+建议修复:<span class="w"> </span>使用参数化查询
+
+修复代码:
+```<span class="nv">python</span>
+<span class="nv">def</span><span class="w"> </span><span class="nv">process_user_input</span><span class="ss">(</span><span class="nv">user_input</span><span class="ss">)</span>:
+<span class="w">    </span><span class="nv">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;SELECT * FROM users WHERE id = %s&quot;</span>
+<span class="w">    </span><span class="nb">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">db</span>.<span class="nv">execute</span><span class="ss">(</span><span class="nv">query</span>,<span class="w"> </span><span class="ss">(</span><span class="nv">user_input</span>,<span class="ss">))</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nb">result</span>
+</code></pre></div>
+
+<hr>
+<h2>总结</h2>
+<p>多Agent架构的核心价值：</p>
+<ol>
+<li><strong>成本优化</strong>：简单任务用便宜模型，复杂任务用强模型</li>
+<li><strong>专业化</strong>：每个Agent可以定制专属的人格和规则</li>
+</ol>
+<p><strong>好钢用在刀刃上</strong>，让每个模型做最擅长的事。</p>
+
+		<span class="post-tags">
+			Tags:
+			<ul>
+					<li><a href="https://hillerliao.github.io/tag/openclaw.html">OpenClaw</a></li>
+					<li><a href="https://hillerliao.github.io/tag/ai.html">AI</a></li>
+					<li><a href="https://hillerliao.github.io/tag/duo-agent.html">多Agent</a></li>
+					<li><a href="https://hillerliao.github.io/tag/fei-shu.html">飞书</a></li>
+					<li><a href="https://hillerliao.github.io/tag/pei-zhi-jiao-cheng.html">配置教程</a></li>
+			</ul>
+		</span>
+
+</div>
+		</div>
+	</body>
+</html>
