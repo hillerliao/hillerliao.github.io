@@ -1,5 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - blog</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-04-23T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>不仅龙虾，旧手机也能跑 Hermes Agent（安装实录）</title><link href="https://hillerliao.github.io/termux-hermes-agent-install-guide.html" rel="alternate"></link><published>2026-04-23T00:00:00+08:00</published><updated>2026-04-23T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-23:/termux-hermes-agent-install-guide.html</id><summary type="html">&lt;h2&gt;需求背景&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - blog</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-04-23T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>养虾太累？让爱马仕接手，从升级到备份全包</title><link href="https://hillerliao.github.io/hermes-agent-picoclaw-upgrade-guide.html" rel="alternate"></link><published>2026-04-23T00:00:00+08:00</published><updated>2026-04-23T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-23:/hermes-agent-picoclaw-upgrade-guide.html</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;OpenClaw 或 PicoClaw 这类"虾产品"安装难、配置难、维护更难。但现在，你只需要动动嘴，剩下的交给 Hermes Agent 就可以了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;一、想试那只"虾"，第一步就卡 …&lt;/h2&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;OpenClaw 或 PicoClaw 这类"虾产品"安装难、配置难、维护更难。但现在，你只需要动动嘴，剩下的交给 Hermes Agent 就可以了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;一、想试那只"虾"，第一步就卡住&lt;/h2&gt;
+&lt;p&gt;OpenClaw 用着用着就碰到各种各样的问题。你听说一个叫做 PicoClaw 的类 OpenClaw 产品，它号称轻量、省钱、性能猛——"只要 10 美元硬件，内存 &amp;lt;10MB，启动 &amp;lt;1s"。&lt;/p&gt;
+&lt;p&gt;这不就是 OpenClaw 绝佳的替代品吗？心动不如行动，打开 GitHub 瞧瞧。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载哪个版本？Linux x86_64 还是 arm64？&lt;/li&gt;
+&lt;li&gt;下载完怎么启动？&lt;code&gt;gateway&lt;/code&gt; 是啥？&lt;code&gt;agent&lt;/code&gt; 又是啥？&lt;/li&gt;
+&lt;li&gt;配置文件里 &lt;code&gt;allow_from&lt;/code&gt; 是什么？不填能用吗？&lt;/li&gt;
+&lt;li&gt;升级的时候...等等，我连当前版本是啥都不知道！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;更崩溃的是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;命令行黑黑的窗口，输错一个字符就报错&lt;/li&gt;
+&lt;li&gt;文档全是英文，还有技术黑话（hot_reload、sandbox、spawn...）&lt;/li&gt;
+&lt;li&gt;一修改配置，服务起不来了，不知道哪错了&lt;/li&gt;
+&lt;li&gt;想升级，怕把配置搞丢，怕升级后连不上飞书&lt;/li&gt;
+&lt;li&gt;升级失败？回滚是啥？备份了哪些文件？完全懵住&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;一句话&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;"虾"是好虾，但小白根本不会煮&lt;/strong&gt; —— 不是不想学，是怕搞坏、怕背锅、怕花时间学完一次再也不用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;二、如果有个"运维助理"，你只说"我要升级"，它全包呢？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;引入 Hermes Agent：不是另一个复杂工具，而是你的&lt;strong&gt;会执行的朋友&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;⚠️ 如果还没有安装 Hermes Agent，可以运行：&lt;code&gt;curl -sSL https://hermes-agent.nousresearch.com/install.sh | bash&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;打个比方：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;你&lt;/strong&gt;：是老板，（说"我要什么结果"）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hermes Agent&lt;/strong&gt;：员工（负责研究怎么做、一步步执行、出问题修好、还会留 undo 方案）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;和传统方式对比&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;传统自学&lt;/th&gt;
+&lt;th&gt;Hermes Agent&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;先看半天文档，云里雾里&lt;/td&gt;
+&lt;td&gt;直接说需求&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;边查边试，错一步就卡住&lt;/td&gt;
+&lt;td&gt;它自己查官方最佳实践&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;做完了不知道对不对&lt;/td&gt;
+&lt;td&gt;它每一步都告诉你进展&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;升级失败不知道怎么回&lt;/td&gt;
+&lt;td&gt;它提前备份，给你回滚命令&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;下次还得重学一遍&lt;/td&gt;
+&lt;td&gt;对话记录就是操作手册&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;你的物理动作对比&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;手动：打开浏览器、搜文档、复制命令、输密码、提心吊胆&lt;/li&gt;
+&lt;li&gt;Hermes Agent：打开聊天窗口，打一句话，等结果，回一句"好的"&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;三、实战：一句话让 Hermes Agent 升级 PicoClaw&lt;/h2&gt;
+&lt;h3&gt;Step 1️⃣：有点紧张——"能帮忙升级吗？先告诉我计划，别乱动"&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hermes Agent&lt;/strong&gt;："好的，我先调查一下当前版本和环境，然后制定升级计划给你确认。不会直接执行的。"&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;你心里想&lt;/strong&gt;：之前踩坑无数，还没说清楚这些龙虾们，就开始干活了，干了一半还出错，把自己也搞死了，这次一定要谨慎一点。&lt;/p&gt;
+&lt;p&gt;幸好这 Hermes Agent 还挺稳，在谨慎调教之下，没有上来就干。&lt;/p&gt;
+&lt;h3&gt;Step 2️⃣：Hermes Agent 调研完，给出计划表&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;目标：升级到最新稳定版 v0.2.6
+步骤：
+1. 备份 config.json 和 .env（白名单不会丢）
+2. 停止当前服务
+3. 用官方脚本 upgrade_picoclaw.sh 下载并安装
+4. SHA256 校验，安全第一
+5. 检查并恢复你的 feishu.allow_from 设置
+6. 重启服务，验证连接
+7. 如有问题，回滚命令：cp backup/* /home/ubuntu/picoclaw-bin/
+请说&amp;quot;按计划执行&amp;quot;我立刻开始。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;你只需要回&lt;/strong&gt;："按最佳实践执行吧"&lt;/p&gt;
+&lt;h3&gt;Step 3️⃣：你喝茶等，它全干了&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Hermes：[执行中...]
+• 备份配置到 ~/.picoclaw/backup-pre-upgrade-20260421-094936
+• 停止服务 OK
+• 下载 v0.2.6... 24%... 78%... 100%
+• SHA256 校验通过 ✅
+• 安装新二进制 OK
+• 恢复 feishu.allow_from = [&amp;quot;*&amp;quot;]
+• 重启服务成功
+• 验证：v0.2.6, PID 1853506, 内存 9.1MB, 飞书已连接
+完成。升级前旧版本：0.2.5，现在是 0.2.6。
+如要回滚，运行：cp /home/ubuntu/picoclaw-backup-20260421-095056/picoclaw* /home/ubuntu/picoclaw-bin/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;你的感受&lt;/strong&gt;：连 confirmation 都不用给，它自己就把事办妥了，还告诉你怎么 undo。&lt;/p&gt;
+&lt;h3&gt;Step 4️⃣：你想起上次报错——"对了，我总遇到 max_tool_iterations 超限"&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Hermes Agent&lt;/strong&gt;："我发现当前配置是 50，我调成 100 了。还有 summarize_message_threshold 从 20 降到 15，tools.feedback 也打开了。这样应该不会报错了。"&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;你&lt;/strong&gt;："这么猛？这就调好了？"&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Hermes Agent&lt;/strong&gt;："嗯，顺便的事。"&lt;/p&gt;
+&lt;h2&gt;四、如果让你自己动手，要几步？&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;操作&lt;/th&gt;
+&lt;th&gt;你要干的&lt;/th&gt;
+&lt;th&gt;Hermes 帮你干的&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;升级&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;1. 打开 GitHub releases 页面 2. 找最新 stable tag 3. 下载对应系统架构的包 4. 手动算 SHA256 对比 5. 停服务、解压、覆盖、别忘了备份旧版 6. 恢复 config 里的 allow_from 7. 重启、验证、看日志 8. 记录升级前后版本，以备回滚&lt;/td&gt;
+&lt;td&gt;你只说"升级" → 它全部做完，还告诉你怎么回滚&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;调优&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;1. 搜 max_tool_iterations 设多少合适 2. 看官方文档理解参数含义 3. 改 config.json 4. 重启测试&lt;/td&gt;
+&lt;td&gt;你随口提一句"迭代报错" → 它直接改好&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;安全&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;1. 想想要不要备份 2. 手动 cp 文件，记备份路径 3. 升级失败时要想得起备份在哪&lt;/td&gt;
+&lt;td&gt;自动备份到带时间戳的目录，最后附回滚命令&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;五、Hermes Agent 运维模式的三大安全保障&lt;/h2&gt;
+&lt;h3&gt;1️⃣ 永远有后悔药&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;升级前自动备份到 &lt;code&gt;~/picoclaw-backup-20260421-095056&lt;/code&gt;
+回滚命令它主动告诉你，不用你费劲找备份在哪。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;2️⃣ 它只干官方推荐的事&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不会用奇怪参数，而是找到 &lt;code&gt;upgrade_picoclaw.sh&lt;/code&gt; 官方脚本，走稳定流程。
+你不需要判断哪个分支靠谱，它帮你选 stable。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;3️⃣ 事后能审计&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;聊天记录就是完整操作日志。
+哪天服务出问题，翻翻聊天就知道：那天升级到哪个版本、改了哪些配置、备份在哪里。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;六、小白也能用的"运维指令"清单&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不需要记命令，只需要像聊天一样说&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;你想做的事&lt;/th&gt;
+&lt;th&gt;对 Hermes Agent 说的话&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;升级 PicoClaw&lt;/td&gt;
+&lt;td&gt;"帮我把 PicoClaw 升级到最新稳定版"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;重启服务&lt;/td&gt;
+&lt;td&gt;"重启 picoclaw gateway"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;查看最近日志&lt;/td&gt;
+&lt;td&gt;"最近 50 行 picoclaw 的日志有 error 吗？"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;备份配置&lt;/td&gt;
+&lt;td&gt;"备份一下 picoclaw 的配置文件"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;改个参数&lt;/td&gt;
+&lt;td&gt;"把 max_tool_iterations 改成 100"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;回滚版本&lt;/td&gt;
+&lt;td&gt;"我想回滚到升级前的版本，备份目录在 xxx"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;检查状态&lt;/td&gt;
+&lt;td&gt;"PicoClaw 现在运行正常吗？飞书连上了吗？"&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;诀窍&lt;/strong&gt;：
+  就像跟同事说话，哪怕说不利索也没关系——
+  Hermes Agent 会追问细节（"要升到哪个版本？"），你回答就行。&lt;/p&gt;
+&lt;h2&gt;七、什么情况下别让 Hermes Agent 干？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;❌ 需要你输入密码的交互式操作（比如第一次 SSH 连服务器）&lt;/li&gt;
+&lt;li&gt;❌ 涉及生产数据删除（rm -rf 之类的大杀器）&lt;/li&gt;
+&lt;li&gt;✅ 但有&lt;strong&gt;标准流程、有官方脚本、有回滚方案&lt;/strong&gt;的任务——完美适合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;PicoClaw 升级：用官方脚本、有备份、可回滚 → &lt;strong&gt;最适合的场景&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;八、总结：运维不再是"专家的黑盒"&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;过去&lt;/strong&gt;：
+ 小白：想升级，但不敢动 → 等专家、排期、背锅&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;现在&lt;/strong&gt;：
+ 小白：说"升级 PicoClaw" → Hermes 执行 → 小白确认 → 完成
+ （专家知识被封装在 Agent 的"最佳实践"里）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心转变&lt;/strong&gt;：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你不需要成为 🦞 运维专家，
+ 你只需要学会&lt;strong&gt;描述问题 + 批准执行&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;下一次，当你的"虾"需要升级时——
+ 别怕，你的运维搭档已经在聊天窗口等你了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;📎 附录：升级过程的"快照"&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;用户：你能帮忙升级你同一个机器上的&lt;/span&gt;&lt;span class="n"&gt;PicoClaw&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;吗？你先告诉我你准备怎么做？先别执行。&lt;/span&gt;
+&lt;span class="n"&gt;Hermes&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;列出详细计划&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="err"&gt;用户：按照升级服务的最佳实践开始执行吧。&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;最佳实践&lt;/span&gt;
+&lt;span class="n"&gt;Hermes&lt;/span&gt;&lt;span class="err"&gt;：&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;执行&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="err"&gt;✅&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;升级成功！版本&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="err"&gt;，备份在&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="n"&gt;picoclaw&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;backup&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;xxx&lt;/span&gt;
+
+&lt;span class="err"&gt;用户：我总遇到&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;max_tool_iterations&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;报错。&lt;/span&gt;
+&lt;span class="n"&gt;Hermes&lt;/span&gt;&lt;span class="err"&gt;：已调整&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;max_tool_iterations&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;50&lt;/span&gt;&lt;span class="err"&gt;→&lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;summarize_threshold&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="err"&gt;→&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="err"&gt;，启用&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;tool_feedback&lt;/span&gt;&lt;span class="err"&gt;。&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="err"&gt;重启服务&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="err"&gt;✅&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;配置已优化并生效&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="blog"></category></entry><entry><title>不仅龙虾，旧手机也能跑 Hermes Agent（安装实录）</title><link href="https://hillerliao.github.io/termux-hermes-agent-install-guide.html" rel="alternate"></link><published>2026-04-23T00:00:00+08:00</published><updated>2026-04-23T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-23:/termux-hermes-agent-install-guide.html</id><summary type="html">&lt;h2&gt;需求背景&lt;/h2&gt;
 &lt;p&gt;近期 AI Agent 相关项目关注度较高，例如在"龙虾（OpenClaw）"之后，一些类似工具，尤其是 Hermes Agent 开始被更多人尝试。就像 OpenClaw，除了在 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;需求背景&lt;/h2&gt;
 &lt;p&gt;近期 AI Agent 相关项目关注度较高，例如在"龙虾（OpenClaw）"之后，一些类似工具，尤其是 Hermes Agent 开始被更多人尝试。就像 OpenClaw，除了在电脑或服务器上运行，这类工具基本都可以在移动设备上部署，只是可能有一些细微差异需要注意。&lt;/p&gt;
 &lt;p&gt;手机具备以下特点：&lt;/p&gt;
