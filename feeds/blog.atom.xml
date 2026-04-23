@@ -1,5 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - blog</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-02-25T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）</title><link href="https://hillerliao.github.io/openclaw-duan-yong-ping-monitor.html" rel="alternate"></link><published>2026-02-25T00:00:00+08:00</published><updated>2026-02-25T00:00:00+08:00</updated><author><name>hillerdescription: 利用 OpenClaw 智能监控段永平的投资动态，通过 AI 语义理解筛选有价值信息，推送到 Telegram。</name></author><id>tag:hillerliao.github.io,2026-02-25:/openclaw-duan-yong-ping-monitor.html</id><summary type="html">&lt;p&gt;过完年，相信你已经多多少少听说过 &lt;strong&gt;OpenClaw&lt;/strong&gt; 这个词。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - blog</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/blog.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-04-23T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>不仅龙虾，旧手机也能跑 Hermes Agent（安装实录）</title><link href="https://hillerliao.github.io/termux-hermes-agent-install-guide.html" rel="alternate"></link><published>2026-04-23T00:00:00+08:00</published><updated>2026-04-23T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-23:/termux-hermes-agent-install-guide.html</id><summary type="html">&lt;h2&gt;需求背景&lt;/h2&gt;
+&lt;p&gt;近期 AI Agent 相关项目关注度较高，例如在"龙虾（OpenClaw）"之后，一些类似工具，尤其是 Hermes Agent 开始被更多人尝试。就像 OpenClaw，除了在 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;需求背景&lt;/h2&gt;
+&lt;p&gt;近期 AI Agent 相关项目关注度较高，例如在"龙虾（OpenClaw）"之后，一些类似工具，尤其是 Hermes Agent 开始被更多人尝试。就像 OpenClaw，除了在电脑或服务器上运行，这类工具基本都可以在移动设备上部署，只是可能有一些细微差异需要注意。&lt;/p&gt;
+&lt;p&gt;手机具备以下特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;长时间在线&lt;/li&gt;
+&lt;li&gt;自带网络环境&lt;/li&gt;
+&lt;li&gt;可作为低成本运行节点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里记录一次在&lt;strong&gt;安卓手机上，通过 Termux 部署 Hermes Agent&lt;/strong&gt; 的实际过程。&lt;/p&gt;
+&lt;h2&gt;前置条件&lt;/h2&gt;
+&lt;p&gt;开始之前，需满足：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一部安卓手机（建议 RAM ≥ 4GB）&lt;/li&gt;
+&lt;li&gt;可能需要魔法上网&lt;/li&gt;
+&lt;li&gt;安装 Termux App（建议 F-Droid 版本）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;什么是 Termux&lt;/h2&gt;
+&lt;p&gt;Termux 是一个在安卓系统上提供 Linux 命令行环境的应用，可以执行常见的包管理、编译和脚本操作。安装后可以通过 &lt;code&gt;pkg&lt;/code&gt; 管理软件包。&lt;/p&gt;
+&lt;h2&gt;方法一：一键安装&lt;/h2&gt;
+&lt;p&gt;在 Termux 中下载脚本并执行安装：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-O&lt;span class="w"&gt; &lt;/span&gt;https://raw.githubusercontent.com/hillerliao/termux-hermes-agent/main/install-termux.sh
+bash&lt;span class="w"&gt; &lt;/span&gt;install-termux.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;该脚本会执行以下操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检测运行环境&lt;/li&gt;
+&lt;li&gt;安装系统依赖&lt;/li&gt;
+&lt;li&gt;安装 Python 环境&lt;/li&gt;
+&lt;li&gt;克隆 Hermes Agent 仓库&lt;/li&gt;
+&lt;li&gt;安装 Python 依赖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;执行过程中会出现编译输出（Rust / C 扩展）。⚠️ 视手机配置和网络情况，执行过程可能非常耗时，下文方法二也是如此。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;方法二：手动安装&lt;/h2&gt;
+&lt;p&gt;如需手动执行，或一键脚本运行异常，可按以下步骤操作。&lt;/p&gt;
+&lt;h3&gt;1️⃣ 安装系统依赖&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pkg&lt;span class="w"&gt; &lt;/span&gt;update
+pkg&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;-y&lt;span class="w"&gt; &lt;/span&gt;git&lt;span class="w"&gt; &lt;/span&gt;build-essential&lt;span class="w"&gt; &lt;/span&gt;clang&lt;span class="w"&gt; &lt;/span&gt;cmake&lt;span class="w"&gt; &lt;/span&gt;rust&lt;span class="w"&gt; &lt;/span&gt;python
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;用于安装编译和运行所需的基础环境，包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;git（用于克隆项目代码）&lt;/li&gt;
+&lt;li&gt;Python 运行环境&lt;/li&gt;
+&lt;li&gt;C / C++ 编译工具链（clang）&lt;/li&gt;
+&lt;li&gt;Rust 编译环境（部分依赖需要）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;2️⃣ 设置 ANDROID_API_LEVEL&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ANDROID_API_LEVEL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;getprop&lt;span class="w"&gt; &lt;/span&gt;ro.build.version.sdk&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;该变量用于告知编译工具当前安卓系统的 API 等级，部分依赖在编译时会用到。可写入：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;export ANDROID_API_LEVEL=$(getprop ro.build.version.sdk)&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;用于在每次启动 Termux 时自动生效。&lt;/p&gt;
+&lt;h3&gt;3️⃣ 克隆仓库&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;clone&lt;span class="w"&gt; &lt;/span&gt;https://github.com/nousresearch/hermes-agent.git&lt;span class="w"&gt; &lt;/span&gt;~/hermes-agent
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;将 Hermes Agent 源代码下载到本地目录，用于后续安装。&lt;/p&gt;
+&lt;h3&gt;4️⃣ 安装 Python 依赖&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;~/hermes-agent
+pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;-e&lt;span class="w"&gt; &lt;/span&gt;.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;安装项目所需的 Python 依赖，并以"开发模式"安装当前项目，使 &lt;code&gt;hermes&lt;/code&gt; 命令可用。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;说明：仓库自带的 &lt;code&gt;install.sh&lt;/code&gt; 面向标准 Linux 环境，Termux 中不使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;5️⃣ 初始化配置&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;hermes&lt;span class="w"&gt; &lt;/span&gt;setup
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;运行交互式配置向导，用于设置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;模型 API Key&lt;/li&gt;
+&lt;li&gt;基本运行参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;配置文件默认生成在：&lt;code&gt;~/.hermes/config.yaml&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ 输入大模型的 API Key 时可能看上去没反应，但实际上已经输入成功，继续回车下一步就行。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;6️⃣ 验证安装&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;hermes&lt;span class="w"&gt; &lt;/span&gt;--version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;用于确认 Hermes Agent 已正确安装，并可正常调用。&lt;/p&gt;
+&lt;h2&gt;常用命令&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;hermes&lt;span class="w"&gt; &lt;/span&gt;--version
+hermes&lt;span class="w"&gt; &lt;/span&gt;setup
+hermes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;后台运行说明&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;设备需保持供电&lt;/li&gt;
+&lt;li&gt;关闭系统电池优化&lt;/li&gt;
+&lt;li&gt;避免 Termux 被系统回收&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;功能使用&lt;/h2&gt;
+&lt;p&gt;安装完成并配置后，可实现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过消息平台与 Agent 通信&lt;/li&gt;
+&lt;li&gt;执行定时任务&lt;/li&gt;
+&lt;li&gt;接入扩展能力&lt;/li&gt;
+&lt;li&gt;执行基础自动化任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;已知限制&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;性能受限于手机硬件&lt;/li&gt;
+&lt;li&gt;部分依赖在 ARM 架构不可用&lt;/li&gt;
+&lt;li&gt;安装过程包含编译步骤，耗时较长&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;该过程本质为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Termux 提供 Linux 环境&lt;/li&gt;
+&lt;li&gt;在本地安装 Hermes Agent&lt;/li&gt;
+&lt;li&gt;通过配置实现运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;适用于在移动设备上进行基础 Agent 部署测试。&lt;/p&gt;</content><category term="blog"></category></entry><entry><title>段永平发言太杂？我用 OpenClaw 自动筛选有价值观点（附实操）</title><link href="https://hillerliao.github.io/openclaw-duan-yong-ping-monitor.html" rel="alternate"></link><published>2026-02-25T00:00:00+08:00</published><updated>2026-02-25T00:00:00+08:00</updated><author><name>hillerdescription: 利用 OpenClaw 智能监控段永平的投资动态，通过 AI 语义理解筛选有价值信息，推送到 Telegram。</name></author><id>tag:hillerliao.github.io,2026-02-25:/openclaw-duan-yong-ping-monitor.html</id><summary type="html">&lt;p&gt;过完年，相信你已经多多少少听说过 &lt;strong&gt;OpenClaw&lt;/strong&gt; 这个词。&lt;/p&gt;
 &lt;p&gt;简单一句话概括：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;它是一个&lt;strong&gt;能理解你意图、替你干活的 AI Agent&lt;/strong&gt;，有点像 &lt;em&gt;Siri + DeepSeek + 自动 …&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;</summary><content type="html">&lt;p&gt;过完年，相信你已经多多少少听说过 &lt;strong&gt;OpenClaw&lt;/strong&gt; 这个词。&lt;/p&gt;

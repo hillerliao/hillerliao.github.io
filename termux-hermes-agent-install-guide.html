@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="记录一次在安卓手机上，通过 Termux 部署 Hermes Agent 的实际过程。">
+	<meta property="og:description" content="记录一次在安卓手机上，通过 Termux 部署 Hermes Agent 的实际过程。">
+	<meta property="og:title" content="不仅龙虾，旧手机也能跑 Hermes Agent（安装实录）" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://hillerliao.github.io/termux-hermes-agent-install-guide.html" />
+		<meta property="og:image" content="https://hillerliao.github.io/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>不仅龙虾，旧手机也能跑 Hermes Agent（安装实录） - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/poole.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/hyde.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="https://hillerliao.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="https://hillerliao.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+<link href="https://hillerliao.github.io/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Categories Atom Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="https://hillerliao.github.io/">
+					<img class="profile-picture" src="https://hillerliao.github.io/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="https://hillerliao.github.io/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">不仅龙虾，旧手机也能跑 Hermes Agent（安装实录）</h1>
+	<span class="post-date">Thu 23 April 2026</span>
+	<h2>需求背景</h2>
+<p>近期 AI Agent 相关项目关注度较高，例如在"龙虾（OpenClaw）"之后，一些类似工具，尤其是 Hermes Agent 开始被更多人尝试。就像 OpenClaw，除了在电脑或服务器上运行，这类工具基本都可以在移动设备上部署，只是可能有一些细微差异需要注意。</p>
+<p>手机具备以下特点：</p>
+<ul>
+<li>长时间在线</li>
+<li>自带网络环境</li>
+<li>可作为低成本运行节点</li>
+</ul>
+<p>这里记录一次在<strong>安卓手机上，通过 Termux 部署 Hermes Agent</strong> 的实际过程。</p>
+<h2>前置条件</h2>
+<p>开始之前，需满足：</p>
+<ul>
+<li>一部安卓手机（建议 RAM ≥ 4GB）</li>
+<li>可能需要魔法上网</li>
+<li>安装 Termux App（建议 F-Droid 版本）</li>
+</ul>
+<h2>什么是 Termux</h2>
+<p>Termux 是一个在安卓系统上提供 Linux 命令行环境的应用，可以执行常见的包管理、编译和脚本操作。安装后可以通过 <code>pkg</code> 管理软件包。</p>
+<h2>方法一：一键安装</h2>
+<p>在 Termux 中下载脚本并执行安装：</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/hillerliao/termux-hermes-agent/main/install-termux.sh
+bash<span class="w"> </span>install-termux.sh
+</code></pre></div>
+
+<p>该脚本会执行以下操作：</p>
+<ul>
+<li>检测运行环境</li>
+<li>安装系统依赖</li>
+<li>安装 Python 环境</li>
+<li>克隆 Hermes Agent 仓库</li>
+<li>安装 Python 依赖</li>
+</ul>
+<blockquote>
+<p>执行过程中会出现编译输出（Rust / C 扩展）。⚠️ 视手机配置和网络情况，执行过程可能非常耗时，下文方法二也是如此。</p>
+</blockquote>
+<h2>方法二：手动安装</h2>
+<p>如需手动执行，或一键脚本运行异常，可按以下步骤操作。</p>
+<h3>1️⃣ 安装系统依赖</h3>
+<div class="highlight"><pre><span></span><code>pkg<span class="w"> </span>update
+pkg<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>git<span class="w"> </span>build-essential<span class="w"> </span>clang<span class="w"> </span>cmake<span class="w"> </span>rust<span class="w"> </span>python
+</code></pre></div>
+
+<p>用于安装编译和运行所需的基础环境，包括：</p>
+<ul>
+<li>git（用于克隆项目代码）</li>
+<li>Python 运行环境</li>
+<li>C / C++ 编译工具链（clang）</li>
+<li>Rust 编译环境（部分依赖需要）</li>
+</ul>
+<h3>2️⃣ 设置 ANDROID_API_LEVEL</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">ANDROID_API_LEVEL</span><span class="o">=</span><span class="k">$(</span>getprop<span class="w"> </span>ro.build.version.sdk<span class="k">)</span>
+</code></pre></div>
+
+<p>该变量用于告知编译工具当前安卓系统的 API 等级，部分依赖在编译时会用到。可写入：</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export ANDROID_API_LEVEL=$(getprop ro.build.version.sdk)&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.bashrc
+</code></pre></div>
+
+<p>用于在每次启动 Termux 时自动生效。</p>
+<h3>3️⃣ 克隆仓库</h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/nousresearch/hermes-agent.git<span class="w"> </span>~/hermes-agent
+</code></pre></div>
+
+<p>将 Hermes Agent 源代码下载到本地目录，用于后续安装。</p>
+<h3>4️⃣ 安装 Python 依赖</h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>~/hermes-agent
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</code></pre></div>
+
+<p>安装项目所需的 Python 依赖，并以"开发模式"安装当前项目，使 <code>hermes</code> 命令可用。</p>
+<blockquote>
+<p>说明：仓库自带的 <code>install.sh</code> 面向标准 Linux 环境，Termux 中不使用。</p>
+</blockquote>
+<h3>5️⃣ 初始化配置</h3>
+<div class="highlight"><pre><span></span><code>hermes<span class="w"> </span>setup
+</code></pre></div>
+
+<p>运行交互式配置向导，用于设置：</p>
+<ul>
+<li>模型 API Key</li>
+<li>基本运行参数</li>
+</ul>
+<p>配置文件默认生成在：<code>~/.hermes/config.yaml</code></p>
+<blockquote>
+<p>⚠️ 输入大模型的 API Key 时可能看上去没反应，但实际上已经输入成功，继续回车下一步就行。</p>
+</blockquote>
+<h3>6️⃣ 验证安装</h3>
+<div class="highlight"><pre><span></span><code>hermes<span class="w"> </span>--version
+</code></pre></div>
+
+<p>用于确认 Hermes Agent 已正确安装，并可正常调用。</p>
+<h2>常用命令</h2>
+<div class="highlight"><pre><span></span><code>hermes<span class="w"> </span>--version
+hermes<span class="w"> </span>setup
+hermes
+</code></pre></div>
+
+<h2>后台运行说明</h2>
+<ul>
+<li>设备需保持供电</li>
+<li>关闭系统电池优化</li>
+<li>避免 Termux 被系统回收</li>
+</ul>
+<h2>功能使用</h2>
+<p>安装完成并配置后，可实现：</p>
+<ul>
+<li>通过消息平台与 Agent 通信</li>
+<li>执行定时任务</li>
+<li>接入扩展能力</li>
+<li>执行基础自动化任务</li>
+</ul>
+<h2>已知限制</h2>
+<ul>
+<li>性能受限于手机硬件</li>
+<li>部分依赖在 ARM 架构不可用</li>
+<li>安装过程包含编译步骤，耗时较长</li>
+</ul>
+<h2>总结</h2>
+<p>该过程本质为：</p>
+<ul>
+<li>使用 Termux 提供 Linux 环境</li>
+<li>在本地安装 Hermes Agent</li>
+<li>通过配置实现运行</li>
+</ul>
+<p>适用于在移动设备上进行基础 Agent 部署测试。</p>
+
+
+</div>
+		</div>
+	</body>
+</html>
