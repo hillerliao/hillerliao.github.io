@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - AI</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/ai.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-04-23T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>OpenClaw 老是访问不了网页？试试 Hermes Agent</title><link href="https://hillerliao.github.io/openclaw-hermes-agent-web-scraping.html" rel="alternate"></link><published>2026-04-23T00:00:00+08:00</published><updated>2026-04-23T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-23:/openclaw-hermes-agent-web-scraping.html</id><summary type="html">&lt;p&gt;对比 OpenClaw 和 Hermes Agent 在抓取需要 JS 渲染的网页时的表现，解析 headless Chromium 与普通 HTTP 请求的差异。&lt;/p&gt;</summary><content type="html">&lt;p&gt;我想查韭圈儿（一个投资类网站）的恐贪指数——一个 0 到 100 的市场情绪指标，数字越高代表越贪婪——同时用了两个 AI 工具：OpenClaw 和 Hermes Agent。&lt;/p&gt;
+&lt;p&gt;OpenClaw 跟我说目标页面不存在（404错误）。Hermes Agent 一开始也告诉我说404，后来我叫它继续研究，终于告诉我最新的恐贪指数为75（2026-04-21），属于贪婪状态。&lt;/p&gt;
+&lt;p&gt;我自己打开浏览器验证——和 Hermes Agent 拿到的一样。同一个页面，不同智能体，得到两种结果。从抓取网页的能力来看，&lt;strong&gt;Hermes Agent 更胜一筹&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2&gt;Hermes Agent 拿到了什么&lt;/h2&gt;
+&lt;p&gt;从网页 https://funddb.cn/tool/fear 中，Hermes Agent 拿到的数据是这样的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;恐贪指数：75&lt;/li&gt;
+&lt;li&gt;指数属性：贪婪&lt;/li&gt;
+&lt;li&gt;更新时间：2026 年 4 月 21 日&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;还有六大情绪指标：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;指数波动率：15.15%，近一年较低&lt;/li&gt;
+&lt;li&gt;两市成交量：24096.94 亿，近一年较高&lt;/li&gt;
+&lt;li&gt;股价强度：3.67%，近一年中立&lt;/li&gt;
+&lt;li&gt;升贴水率：-7.02%，近一年较低&lt;/li&gt;
+&lt;li&gt;避险天堂：7.18%，近一年极高&lt;/li&gt;
+&lt;li&gt;杠杆水平：11.21%，近一年较高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不只是一个总分，背后六个维度都有据可查。这不是一个简单的数字，而是一个完整的市场情绪画像。&lt;/p&gt;
+&lt;p&gt;不仅仅这个网站，当今大部分网页都需要 JS 渲染才能显示内容，程序想要获得页面上的数据通常比较困难。网站甚至还会增加反爬检测，仍以上述网站为例，它一旦识别到是爬虫在请求，就会返回404状态欺骗爬虫。&lt;/p&gt;
+&lt;p&gt;大部分智能体会优先发送简单的请求尝试访问目标页面，毫无意外，结果直接碰壁。Hermes Agent 一开始也是跟我说404，和 OpenClaw 得到的结果一样。但为什么我稍微引导了一下，它就比较顺利地拿到了我想要的数据呢？我让 Hermes Agent 进行自我解剖了一番，基本搞清楚了原因。&lt;/p&gt;
+&lt;h2&gt;两种访问链接的方式差异&lt;/h2&gt;
+&lt;p&gt;OpenClaw、Hermes Agent 等智能体向目标服务器发送 HTTP 请求后，服务器会检查 User-Agent（UA）、请求头、IP 地址等信息——这些是 HTTP 协议层面的特征，没有 JS 执行，也没有真实浏览器才有的各种响应行为。服务器稍加判断，认出是机器人，直接拒绝。&lt;/p&gt;
+&lt;p&gt;Hermes Agent 在请求网页方面有多种办法。除了发送 HTTP 请求，它还会使用 agent-browser 这个命令行工具。该工具底层跑的是 headless Chromium——一个没有图形界面的 Chrome，但却是完整的真实浏览器。通过 CDP（Chrome DevTools Protocol，Chrome 原生的调试协议）驱动浏览器打开页面、执行 JS、完成渲染，再抓取内容返回。服务器收到的请求，和人用 Chrome 访问时一样，不容易区分。&lt;/p&gt;
+&lt;p&gt;OpenClaw 默认没有第二类工具，就很难突破目标网站的限制，也就拿不到真实数据。&lt;/p&gt;
+&lt;p&gt;当然，headless 浏览器不是没有代价。它比普通 HTTP 请求慢，资源消耗也更多。如果只是访问普通页面，HTTP 请求更轻量、更快。两种方式各有适用场景，不是一个完全替代另一个。这也很好地解释了 Hermes Agent 一开始也用 HTTP 请求的原因。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;就好比是两个人去餐厅吃饭：一个说"我是机器人，我来拿数据"，被拒之门外；另一个说"我想吃顿饭"，被热情接待。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不是餐厅对第二个更客气。而是第一个直接暴露了自己的爬虫身份。有些网站的反爬系统，专门在识别"谁在说话"。HTTP 请求和真实浏览器请求，特征差别巨大。一旦被识别为机器人，餐厅的门就直接关上了。&lt;/p&gt;
+&lt;h2&gt;最后说两句&lt;/h2&gt;
+&lt;p&gt;我原本主要用 OpenClaw，它支持通过第三方 Skill 扩展浏览器等想要的能力，但需要额外配置，折腾起来比较麻烦。而 Hermes Agent 针对网页浏览这种让用户很头疼的问题，内置了比较好的解决方案，一下子就让人感觉丝滑很多。&lt;/p&gt;
+&lt;p&gt;所以，如果你也在用 OpenClaw，遇到过网页访问的难题，但又不想折腾第三方工具，不妨试试 Hermes Agent。如果碰到问题，欢迎扫码入群交流。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;原文链接：https://mp.weixin.qq.com/s/CBrlFrIAhTA_A0BYC0TEGg&lt;/em&gt;&lt;/p&gt;</content><category term="AI"></category><category term="OpenClaw"></category><category term="Hermes Agent"></category><category term="AI"></category><category term="网页抓取"></category><category term="智能体"></category></entry></feed>
