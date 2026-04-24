@@ -1,5 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - AI</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/ai.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-04-23T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>OpenClaw 老是访问不了网页？试试 Hermes Agent</title><link href="https://hillerliao.github.io/openclaw-hermes-agent-web-scraping.html" rel="alternate"></link><published>2026-04-23T00:00:00+08:00</published><updated>2026-04-23T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-23:/openclaw-hermes-agent-web-scraping.html</id><summary type="html">&lt;p&gt;对比 OpenClaw 和 Hermes Agent 在抓取需要 JS 渲染的网页时的表现，解析 headless Chromium 与普通 HTTP 请求的差异。&lt;/p&gt;</summary><content type="html">&lt;p&gt;我想查韭圈儿（一个投资类网站）的恐贪指数——一个 0 到 100 的市场情绪指标，数字越高代表越贪婪——同时用了两个 AI 工具：OpenClaw 和 Hermes Agent。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - AI</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/ai.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-04-24T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>用 龙虾🦞 监控 OpenRouter 免费模型上新</title><link href="https://hillerliao.github.io/openrouter-free-model-monitor-lobster.html" rel="alternate"></link><published>2026-04-24T00:00:00+08:00</published><updated>2026-04-24T00:00:00+08:00</updated><author><name>龙虾</name></author><id>tag:hillerliao.github.io,2026-04-24:/openrouter-free-model-monitor-lobster.html</id><summary type="html">&lt;h2&gt;1. 痛点：不想天天刷页面薅羊毛&lt;/h2&gt;
+&lt;p&gt;时不时会看到新闻说，又有哪个新模型在 OpenRouter 上提供限时免费体验。前几天打开 OpenRouter，发现某款 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;1. 痛点：不想天天刷页面薅羊毛&lt;/h2&gt;
+&lt;p&gt;时不时会看到新闻说，又有哪个新模型在 OpenRouter 上提供限时免费体验。前几天打开 OpenRouter，发现某款国产大模型可以免费用。作为一个经常薅免费模型羊毛的人，我的第一反应是——这上新多久了？我怎么才知道？&lt;/p&gt;
+&lt;p&gt;OpenRouter 是一个 LLM API 聚合平台，汇集了各家大模型，其中不少提供免费额度。问题是，免费模型的上下架没有固定规律：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;你不知道什么时候会多出一个新模型&lt;/strong&gt; —— 可能是限时免费，错过了就没了&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;你不知道哪个模型悄悄下线了&lt;/strong&gt; —— 正在用的模型突然不能用了&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;你不知道哪个模型更值得用&lt;/strong&gt; —— 免费模型有几十个，质量和速度参差不齐，新上的可能更好&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我想第一时间知道，但手动刷网站太累了。OpenRouter 并未提供 RSS 订阅或邮件提醒之类的通知方式。&lt;/p&gt;
+&lt;p&gt;AI时代了，不能再用手工的笨办法。与其天天刷页面，不如让我的 AI 助手帮我盯着——一旦有新免费模型上线，自动通知我。&lt;/p&gt;
+&lt;h2&gt;2. 方案：让 AI 替你盯着&lt;/h2&gt;
+&lt;p&gt;核心逻辑很简单：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;定期调用 OpenRouter API&lt;/strong&gt;，获取当前所有免费模型列表&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;与本地记录对比&lt;/strong&gt;，找出新增和下架的模型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有变化就通知我&lt;/strong&gt;，没变化就静默&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;本文以轻量级 AI 助手框架 &lt;strong&gt;nanobot&lt;/strong&gt;为例。它有一个 &lt;strong&gt;heartbeat 机制&lt;/strong&gt;——你可以在 &lt;code&gt;HEARTBEAT.md&lt;/code&gt; 中定义周期性任务，nanobot 会按配置的间隔（比如每小时一次）自动执行，全程无需人工干预。&lt;/p&gt;
+&lt;p&gt;其他同类 AI 助手（如 OpenClaw、Hermes Agent）的实现逻辑类似。&lt;/p&gt;
+&lt;h2&gt;3. 动手拆解（共四步）&lt;/h2&gt;
+&lt;p&gt;下面这些步骤主要是 nanobot 自己想的。&lt;/p&gt;
+&lt;p&gt;我把需求用自然语言告诉 nanobot，它自动生成 Python 脚本。&lt;/p&gt;
+&lt;h3&gt;3.1 第一步：写个脚本，调 API 拿列表&lt;/h3&gt;
+&lt;p&gt;OpenRouter 提供了公开的模型列表 API：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;GET https://openrouter.ai/api/v1/models
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;返回的 JSON 中，每个模型有 &lt;code&gt;id&lt;/code&gt; 和 &lt;code&gt;pricing&lt;/code&gt; 字段。免费模型的特征是 &lt;code&gt;pricing.prompt&lt;/code&gt; 和 &lt;code&gt;pricing.completion&lt;/code&gt; 都为 &lt;code&gt;"0"&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;nanobot 生成的脚本核心逻辑：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;filter_free_models&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+        &lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;pricing&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{})&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;prompt&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;
+        &lt;span class="ow"&gt;and&lt;/span&gt; &lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;pricing&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{})&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;completion&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;0&amp;quot;&lt;/span&gt;
+    &lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这一步需要 OpenRouter 的 API Key，nanobot 会提示你提供。&lt;/p&gt;
+&lt;p&gt;如果让我自己想，还真想不到这么优雅的解决方案。我最初的思路是直接抓页面，检查有没有新模型出现——远不如调 API 干净准确。&lt;/p&gt;
+&lt;h3&gt;3.2 第二步：存个快照，当对比基准&lt;/h3&gt;
+&lt;p&gt;第一次运行时，nanobot 自动把当前免费模型列表保存为 JSON 文件（如 &lt;code&gt;config/openrouter_free_models.json&lt;/code&gt;）。下次检查时，它对比这个文件里的内容，看是否有变化。&lt;/p&gt;
+&lt;h3&gt;3.3 第三步：配个心跳，让任务自动重复运行&lt;/h3&gt;
+&lt;p&gt;在 nanobot 的 &lt;code&gt;HEARTBEAT.md&lt;/code&gt; 中添加一行任务：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gu"&gt;## OpenRouter 免费模型监控&lt;/span&gt;
+&lt;span class="k"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;检查 OpenRouter 免费模型列表是否有新增（对比 config/openrouter_free_models.json），如有变化通过飞书通知用户
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;配置完成后，nanobot 每次 heartbeat 自动执行：调 API → 对比 → 通知 → 更新快照。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;⚠️ OpenRouter 的 API 结构和免费策略可能随时调整。如果监控脚本失效，请检查 API 返回的数据格式是否变化。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;3.4 第四步：坐等通知，新模型到手&lt;/h3&gt;
+&lt;p&gt;配置完成。等通知就行。&lt;/p&gt;
+&lt;h2&gt;4. 效果：我收到了什么？&lt;/h2&gt;
+&lt;p&gt;当 OpenRouter 上新免费模型时，我会在飞书收到类似这样的消息：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🤖 bot 🆓 OpenRouter 新增免费模型&lt;/p&gt;
+&lt;p&gt;🕐 2026-04-23 18:00
+新增 1 个免费模型，当前共 29 个&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tencent: Hy3 preview (free)&lt;/strong&gt;
+ID: &lt;code&gt;tencent/hy3-preview:free&lt;/code&gt;
+模态: text-&amp;gt;text｜上下文: 262,144
+简介: Hy3 Preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use...
+&lt;a href="https://openrouter.ai/tencent/hy3-preview:free"&gt;查看详情&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不需要主动去查，模型上新第一时间知道。&lt;/p&gt;
+&lt;h2&gt;5. 总结：全程没写一行代码&lt;/h2&gt;
+&lt;p&gt;整个方案搭建过程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;把需求用自然语言告诉 nanobot，它生成脚本并配好环境&lt;/li&gt;
+&lt;li&gt;运行一次，保存当前免费模型列表作为基准&lt;/li&gt;
+&lt;li&gt;在 &lt;code&gt;HEARTBEAT.md&lt;/code&gt; 写一句话描述任务&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;剩下的全自动。&lt;/p&gt;
+&lt;p&gt;这就是 AI 助手的魅力——你不需要打开编程软件写监控脚本、配置 cron、自己对接通知渠道。把需求说清楚，剩下的它来。&lt;/p&gt;
+&lt;h2&gt;6. 附录：手把手配置指南&lt;/h2&gt;
+&lt;p&gt;如果你还不清楚如何让 AI 助手使用 OpenRouter 的免费模型，下面是简单的配置方法。&lt;/p&gt;
+&lt;h3&gt;方法一：使用 openrouter/free 路由（推荐）&lt;/h3&gt;
+&lt;p&gt;OpenRouter 提供了免费路由 &lt;code&gt;openrouter/free&lt;/code&gt;，自动选择当前可用的免费模型之一，无需手动指定模型 ID。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配置步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;注册 OpenRouter 账号：访问 &lt;a href="https://openrouter.ai"&gt;openrouter.ai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;创建 API Key：Settings → Keys → Create Key&lt;/li&gt;
+&lt;li&gt;在 AI 助手的配置文件中添加：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sk-or-v1-xxxxxxxx&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;base_url&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;https://openrouter.ai/api/v1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;model&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;openrouter/free&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;注意事项：&lt;/strong&gt;
+- 调用时必须在请求头中携带 &lt;code&gt;HTTP-Referer&lt;/code&gt; 和 &lt;code&gt;X-Title&lt;/code&gt; 字段，否则返回 402 错误
+- 免费路由会智能过滤，只选择支持你所需功能的模型
+- 上下文长度支持 200,000 token&lt;/p&gt;
+&lt;h3&gt;方法二：直接指定免费模型&lt;/h3&gt;
+&lt;p&gt;在 &lt;a href="https://openrouter.ai/models"&gt;OpenRouter 模型列表页&lt;/a&gt; 筛选免费模型，直接指定模型 ID：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sk-or-v1-xxxxxxxx&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;base_url&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;https://openrouter.ai/api/v1&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;&amp;quot;model&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;tencent/hy3-preview:free&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;模型 ID 带 &lt;code&gt;:free&lt;/code&gt; 后缀的是免费模型。目前 OpenRouter 上有数十款免费模型，包括 Google Gemini、Meta Llama、阿里巴巴 Qwen、腾讯混元等。&lt;/p&gt;</content><category term="AI"></category><category term="AI"></category><category term="OpenRouter"></category><category term="自动化"></category><category term="教程"></category></entry><entry><title>OpenClaw 老是访问不了网页？试试 Hermes Agent</title><link href="https://hillerliao.github.io/openclaw-hermes-agent-web-scraping.html" rel="alternate"></link><published>2026-04-23T00:00:00+08:00</published><updated>2026-04-23T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-23:/openclaw-hermes-agent-web-scraping.html</id><summary type="html">&lt;p&gt;对比 OpenClaw 和 Hermes Agent 在抓取需要 JS 渲染的网页时的表现，解析 headless Chromium 与普通 HTTP 请求的差异。&lt;/p&gt;</summary><content type="html">&lt;p&gt;我想查韭圈儿（一个投资类网站）的恐贪指数——一个 0 到 100 的市场情绪指标，数字越高代表越贪婪——同时用了两个 AI 工具：OpenClaw 和 Hermes Agent。&lt;/p&gt;
 &lt;p&gt;OpenClaw 跟我说目标页面不存在（404错误）。Hermes Agent 一开始也告诉我说404，后来我叫它继续研究，终于告诉我最新的恐贪指数为75（2026-04-21），属于贪婪状态。&lt;/p&gt;
 &lt;p&gt;我自己打开浏览器验证——和 Hermes Agent 拿到的一样。同一个页面，不同智能体，得到两种结果。从抓取网页的能力来看，&lt;strong&gt;Hermes Agent 更胜一筹&lt;/strong&gt;。&lt;/p&gt;
 &lt;h2&gt;Hermes Agent 拿到了什么&lt;/h2&gt;

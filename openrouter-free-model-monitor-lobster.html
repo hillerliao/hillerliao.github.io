@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns#">
+	<head>
+		<link href="http://gmpg.org/xfn/11" rel="profile">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<!-- Metadata -->
+	<meta name="description" content="">
+	<meta property="og:description" content="">
+	<meta property="og:title" content="用 龙虾🦞 监控 OpenRouter 免费模型上新" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="https://hillerliao.github.io/openrouter-free-model-monitor-lobster.html" />
+		<meta property="og:image" content="https://hillerliao.github.io/images/avatar.jpg" />
+
+		<!-- Enable responsiveness on mobile devices-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+		<title>用 龙虾🦞 监控 OpenRouter 免费模型上新 - 互联网产品折腾师</title>
+
+		<!-- CSS -->
+		<link href="//fonts.googleapis.com/" rel="dns-prefetch">
+		<link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Abril+Fatface|PT+Sans:400,400italic,700&amp;subset=latin,latin-ext" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/poole.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/hyde.css" />
+		<link rel="stylesheet" href="https://hillerliao.github.io/theme/css/syntax.css" />
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" crossorigin="anonymous">
+
+		<!-- Feeds -->
+<link href="https://hillerliao.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Full Atom Feed" />
+<link href="https://hillerliao.github.io/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="廖智海 Full RSS Feed" />
+<link href="https://hillerliao.github.io/feeds/ai.atom.xml" type="application/atom+xml" rel="alternate" title="廖智海 Categories Atom Feed" />
+
+		<!-- Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79917414-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79917414-1');
+</script>
+	</head>
+
+	<body class="theme-base-0d">
+<div class="sidebar">
+	<div class="container sidebar-sticky">
+		<div class="sidebar-about">
+
+			<h1>
+				<a href="https://hillerliao.github.io/">
+					<img class="profile-picture" src="https://hillerliao.github.io/images/avatar.jpg">
+					廖智海
+				</a>
+			</h1>
+			<p class="lead"></p>
+			<p class="lead"> </p>
+			<p></p>
+		</div>
+			<ul class="sidebar-nav">
+			</ul>
+		<nav class="sidebar-social">
+					<a class="sidebar-social-item" href="https://twitter.com/hillerliao" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a class="sidebar-social-item" href="https://github.com/hillerliao" target="_blank">
+						<i class="fa fa-github"></i>
+					</a>
+			<a class="sidebar-social-item" href="https://hillerliao.github.io/feeds/all.atom.xml">
+				<i class="fa fa-rss"></i>
+			</a>
+		</nav>
+	</div>
+</div>		<div class="content container">
+<div class="post">
+	<h1 class="post-title">用 龙虾🦞 监控 OpenRouter 免费模型上新</h1>
+	<span class="post-date">Fri 24 April 2026</span>
+	<h2>1. 痛点：不想天天刷页面薅羊毛</h2>
+<p>时不时会看到新闻说，又有哪个新模型在 OpenRouter 上提供限时免费体验。前几天打开 OpenRouter，发现某款国产大模型可以免费用。作为一个经常薅免费模型羊毛的人，我的第一反应是——这上新多久了？我怎么才知道？</p>
+<p>OpenRouter 是一个 LLM API 聚合平台，汇集了各家大模型，其中不少提供免费额度。问题是，免费模型的上下架没有固定规律：</p>
+<ul>
+<li><strong>你不知道什么时候会多出一个新模型</strong> —— 可能是限时免费，错过了就没了</li>
+<li><strong>你不知道哪个模型悄悄下线了</strong> —— 正在用的模型突然不能用了</li>
+<li><strong>你不知道哪个模型更值得用</strong> —— 免费模型有几十个，质量和速度参差不齐，新上的可能更好</li>
+</ul>
+<p>我想第一时间知道，但手动刷网站太累了。OpenRouter 并未提供 RSS 订阅或邮件提醒之类的通知方式。</p>
+<p>AI时代了，不能再用手工的笨办法。与其天天刷页面，不如让我的 AI 助手帮我盯着——一旦有新免费模型上线，自动通知我。</p>
+<h2>2. 方案：让 AI 替你盯着</h2>
+<p>核心逻辑很简单：</p>
+<ol>
+<li><strong>定期调用 OpenRouter API</strong>，获取当前所有免费模型列表</li>
+<li><strong>与本地记录对比</strong>，找出新增和下架的模型</li>
+<li><strong>有变化就通知我</strong>，没变化就静默</li>
+</ol>
+<p>本文以轻量级 AI 助手框架 <strong>nanobot</strong>为例。它有一个 <strong>heartbeat 机制</strong>——你可以在 <code>HEARTBEAT.md</code> 中定义周期性任务，nanobot 会按配置的间隔（比如每小时一次）自动执行，全程无需人工干预。</p>
+<p>其他同类 AI 助手（如 OpenClaw、Hermes Agent）的实现逻辑类似。</p>
+<h2>3. 动手拆解（共四步）</h2>
+<p>下面这些步骤主要是 nanobot 自己想的。</p>
+<p>我把需求用自然语言告诉 nanobot，它自动生成 Python 脚本。</p>
+<h3>3.1 第一步：写个脚本，调 API 拿列表</h3>
+<p>OpenRouter 提供了公开的模型列表 API：</p>
+<div class="highlight"><pre><span></span><code>GET https://openrouter.ai/api/v1/models
+</code></pre></div>
+
+<p>返回的 JSON 中，每个模型有 <code>id</code> 和 <code>pricing</code> 字段。免费模型的特征是 <code>pricing.prompt</code> 和 <code>pricing.completion</code> 都为 <code>"0"</code>。</p>
+<p>nanobot 生成的脚本核心逻辑：</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">filter_free_models</span><span class="p">(</span><span class="n">models</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span>
+        <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pricing&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;prompt&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span>
+        <span class="ow">and</span> <span class="n">m</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;pricing&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;completion&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;0&quot;</span>
+    <span class="p">]</span>
+</code></pre></div>
+
+<p>这一步需要 OpenRouter 的 API Key，nanobot 会提示你提供。</p>
+<p>如果让我自己想，还真想不到这么优雅的解决方案。我最初的思路是直接抓页面，检查有没有新模型出现——远不如调 API 干净准确。</p>
+<h3>3.2 第二步：存个快照，当对比基准</h3>
+<p>第一次运行时，nanobot 自动把当前免费模型列表保存为 JSON 文件（如 <code>config/openrouter_free_models.json</code>）。下次检查时，它对比这个文件里的内容，看是否有变化。</p>
+<h3>3.3 第三步：配个心跳，让任务自动重复运行</h3>
+<p>在 nanobot 的 <code>HEARTBEAT.md</code> 中添加一行任务：</p>
+<div class="highlight"><pre><span></span><code><span class="gu">## OpenRouter 免费模型监控</span>
+<span class="k">-</span><span class="w"> </span>检查 OpenRouter 免费模型列表是否有新增（对比 config/openrouter_free_models.json），如有变化通过飞书通知用户
+</code></pre></div>
+
+<p>配置完成后，nanobot 每次 heartbeat 自动执行：调 API → 对比 → 通知 → 更新快照。</p>
+<blockquote>
+<p>⚠️ OpenRouter 的 API 结构和免费策略可能随时调整。如果监控脚本失效，请检查 API 返回的数据格式是否变化。</p>
+</blockquote>
+<h3>3.4 第四步：坐等通知，新模型到手</h3>
+<p>配置完成。等通知就行。</p>
+<h2>4. 效果：我收到了什么？</h2>
+<p>当 OpenRouter 上新免费模型时，我会在飞书收到类似这样的消息：</p>
+<blockquote>
+<p>🤖 bot 🆓 OpenRouter 新增免费模型</p>
+<p>🕐 2026-04-23 18:00
+新增 1 个免费模型，当前共 29 个</p>
+<p><strong>Tencent: Hy3 preview (free)</strong>
+ID: <code>tencent/hy3-preview:free</code>
+模态: text-&gt;text｜上下文: 262,144
+简介: Hy3 Preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use...
+<a href="https://openrouter.ai/tencent/hy3-preview:free">查看详情</a></p>
+</blockquote>
+<p>不需要主动去查，模型上新第一时间知道。</p>
+<h2>5. 总结：全程没写一行代码</h2>
+<p>整个方案搭建过程：</p>
+<ol>
+<li>把需求用自然语言告诉 nanobot，它生成脚本并配好环境</li>
+<li>运行一次，保存当前免费模型列表作为基准</li>
+<li>在 <code>HEARTBEAT.md</code> 写一句话描述任务</li>
+</ol>
+<p>剩下的全自动。</p>
+<p>这就是 AI 助手的魅力——你不需要打开编程软件写监控脚本、配置 cron、自己对接通知渠道。把需求说清楚，剩下的它来。</p>
+<h2>6. 附录：手把手配置指南</h2>
+<p>如果你还不清楚如何让 AI 助手使用 OpenRouter 的免费模型，下面是简单的配置方法。</p>
+<h3>方法一：使用 openrouter/free 路由（推荐）</h3>
+<p>OpenRouter 提供了免费路由 <code>openrouter/free</code>，自动选择当前可用的免费模型之一，无需手动指定模型 ID。</p>
+<p><strong>配置步骤：</strong></p>
+<ol>
+<li>注册 OpenRouter 账号：访问 <a href="https://openrouter.ai">openrouter.ai</a></li>
+<li>创建 API Key：Settings → Keys → Create Key</li>
+<li>在 AI 助手的配置文件中添加：</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sk-or-v1-xxxxxxxx&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;base_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://openrouter.ai/api/v1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openrouter/free&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><strong>注意事项：</strong>
+- 调用时必须在请求头中携带 <code>HTTP-Referer</code> 和 <code>X-Title</code> 字段，否则返回 402 错误
+- 免费路由会智能过滤，只选择支持你所需功能的模型
+- 上下文长度支持 200,000 token</p>
+<h3>方法二：直接指定免费模型</h3>
+<p>在 <a href="https://openrouter.ai/models">OpenRouter 模型列表页</a> 筛选免费模型，直接指定模型 ID：</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sk-or-v1-xxxxxxxx&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;base_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://openrouter.ai/api/v1&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tencent/hy3-preview:free&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>模型 ID 带 <code>:free</code> 后缀的是免费模型。目前 OpenRouter 上有数十款免费模型，包括 Google Gemini、Meta Llama、阿里巴巴 Qwen、腾讯混元等。</p>
+
+		<span class="post-tags">
+			Tags:
+			<ul>
+					<li><a href="https://hillerliao.github.io/tag/ai.html">AI</a></li>
+					<li><a href="https://hillerliao.github.io/tag/openrouter.html">OpenRouter</a></li>
+					<li><a href="https://hillerliao.github.io/tag/zi-dong-hua.html">自动化</a></li>
+					<li><a href="https://hillerliao.github.io/tag/jiao-cheng.html">教程</a></li>
+			</ul>
+		</span>
+
+</div>
+		</div>
+	</body>
+</html>
