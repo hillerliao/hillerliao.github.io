@@ -6,6 +6,8 @@ Slug: openclaw-yijiangnan-bathroom
 Author: hillerliao
 Summary: 用 OpenClaw 把《忆江南》做成图片，推送到卫生间的 MindReset 电子墨水屏上，让孩子在刷牙时自然想起古诗。
 
+![卫生间电子墨水屏上显示《忆江南》](../images/openclaw-yijiangnan-bathroom.jpg)
+
 孩子这周学了白居易的《忆江南》。
 
 按照以前的经验，刚学完几天还记着，但过不了多久就会忘干净。要是专门提醒他背，又容易变成任务，反而让他更抵触。
