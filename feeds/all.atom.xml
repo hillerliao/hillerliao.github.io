@@ -1,5 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/all.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-04-24T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>用 龙虾🦞 监控 OpenRouter 免费模型上新</title><link href="https://hillerliao.github.io/openrouter-free-model-monitor-lobster.html" rel="alternate"></link><published>2026-04-24T00:00:00+08:00</published><updated>2026-04-24T00:00:00+08:00</updated><author><name>龙虾</name></author><id>tag:hillerliao.github.io,2026-04-24:/openrouter-free-model-monitor-lobster.html</id><summary type="html">&lt;h2&gt;1. 痛点：不想天天刷页面薅羊毛&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/all.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-04-29T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>我让 OpenClaw 把《忆江南》贴在卫生间 提醒孩子背古诗</title><link href="https://hillerliao.github.io/openclaw-yijiangnan-bathroom.html" rel="alternate"></link><published>2026-04-29T00:00:00+08:00</published><updated>2026-04-29T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-29:/openclaw-yijiangnan-bathroom.html</id><summary type="html">&lt;p&gt;用 OpenClaw 把《忆江南》做成图片，推送到卫生间的 MindReset 电子墨水屏上，让孩子在刷牙时自然想起古诗。&lt;/p&gt;</summary><content type="html">&lt;p&gt;孩子这周学了白居易的《忆江南》。&lt;/p&gt;
+&lt;p&gt;按照以前的经验，刚学完几天还记着，但过不了多久就会忘干净。要是专门提醒他背，又容易变成任务，反而让他更抵触。&lt;/p&gt;
+&lt;p&gt;我突然想到一个地方：&lt;strong&gt;卫生间&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;每天早晚刷牙，他都会站在那里两三分钟。这个时间不长，但足够看见几个字。如果我放在卫生间那块电子墨水屏上，正好显示着“忆江南”三个字，是不是就能顺手提醒他想起这首诗？&lt;/p&gt;
+&lt;p&gt;不是逼他背，也不是增加一个学习任务，只是在一个每天都会经过的地方，轻轻贴一个提醒。&lt;/p&gt;
+&lt;p&gt;于是我对 &lt;strong&gt;OpenClaw（本地智能体）&lt;/strong&gt; 说了一句：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“把忆江南这三个简体汉字发成图片推送到卫生间的那一块墨水屏幕，字尽可能大一点，不能太小，只要把屏幕四边留点空白就行。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;几分钟后，卫生间的电子墨水屏上就&lt;strong&gt;贴&lt;/strong&gt;上了三个大字：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;忆江南&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;白底黑字，居中，挺大，四边留了一点空白。&lt;/p&gt;
+&lt;p&gt;这件事本身不复杂，有意思的地方在于：OpenClaw 这类智能体不只是“会聊天”，而且可以把一句很日常的话，变成现实世界里的一个动作。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;这块小屏幕，为什么能被 OpenClaw 控制？&lt;/h2&gt;
+&lt;p&gt;这里需要解释一下这块屏幕。&lt;/p&gt;
+&lt;p&gt;我用的是 &lt;strong&gt;MindReset Dot&lt;/strong&gt; 一类的电子墨水屏。你可以先把它理解成一个“小型 Kindle 屏幕”，它不刺眼，功耗很低，内容刷新之后可以长时间停留在那里。&lt;/p&gt;
+&lt;p&gt;但它和 Kindle 最大的区别是：Kindle 是拿在手里读书的，MindReset 这种屏幕更像是&lt;strong&gt;贴&lt;/strong&gt;在家里某个固定位置的“信息牌”。&lt;/p&gt;
+&lt;p&gt;比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;贴在冰箱上，显示今天要买什么；&lt;/li&gt;
+&lt;li&gt;贴在玄关，显示出门前要带的东西；&lt;/li&gt;
+&lt;li&gt;贴在书桌，显示今天最重要的一件事；&lt;/li&gt;
+&lt;li&gt;贴在卫生间，显示孩子本周要背的诗。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果只是一个普通电子相框，其实也没什么特别。你手动换图，它就显示一张图。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;MindReset 这类设备真正有魅力的地方在于：它能联网，而且有开放 API。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这意味着它不是一个孤立的屏幕，而是一个可以被外部程序控制的显示节点。&lt;/p&gt;
+&lt;p&gt;对普通用户来说，这可能只是“我可以远程换屏幕内容”。&lt;/p&gt;
+&lt;p&gt;但对 &lt;strong&gt;OpenClaw&lt;/strong&gt; 这类智能体来说，这就是一个入口。它可以根据你的指令，自动生成内容，再调用 API，把内容&lt;strong&gt;贴&lt;/strong&gt;到指定屏幕上。&lt;/p&gt;
+&lt;p&gt;所以，这块屏幕不是一个“死”的硬件。&lt;/p&gt;
+&lt;p&gt;它是家里一个可以被 OpenClaw 更新的信息角落。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;为什么提醒背诗，我反而选了卫生间？&lt;/h2&gt;
+&lt;p&gt;孩子背诗，最自然的地方当然是书桌。&lt;/p&gt;
+&lt;p&gt;但我这次反而选了卫生间。&lt;/p&gt;
+&lt;p&gt;原因很简单：刷牙是一个非常稳定的日常动作。每天早晚都会发生，而且每次都有两三分钟的空档。&lt;/p&gt;
+&lt;p&gt;这个时间不适合塞进复杂学习任务，但很适合放一个轻量提醒。&lt;/p&gt;
+&lt;p&gt;比如看到“忆江南”三个字，他可能就会自然想起：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;江南好，风景旧曾谙。&lt;br&gt;
+日出江花红胜火，春来江水绿如蓝。&lt;br&gt;
+能不忆江南？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这不是正式背诵，也不是考试。&lt;/p&gt;
+&lt;p&gt;它更像是把课堂里刚学到的东西，轻轻&lt;strong&gt;贴&lt;/strong&gt;回生活里。&lt;/p&gt;
+&lt;p&gt;这也是电子墨水屏很适合的地方。&lt;/p&gt;
+&lt;p&gt;手机提醒太强了。它会震动，会弹窗，会把人拉进另一个信息流。孩子看到手机，也很容易被别的东西吸引。&lt;/p&gt;
+&lt;p&gt;纸条又太弱了。贴上去几天之后，就很容易变成背景，大家都看不见了。&lt;/p&gt;
+&lt;p&gt;电子墨水屏刚好在中间。&lt;/p&gt;
+&lt;p&gt;它不吵，不亮，不抢注意力，但它一直在那里。&lt;/p&gt;
+&lt;p&gt;你路过，就能看到。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;OpenClaw 做的，不是回答，而是执行&lt;/h2&gt;
+&lt;p&gt;如果只是让聊天机器人回答问题，它最多会告诉你：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“你可以用 Python 生成一张图片，然后调用电子墨水屏的 API 推送过去。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但 OpenClaw 不是停在“告诉你怎么做”。&lt;/p&gt;
+&lt;p&gt;这一次，它实际完成了这些步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;找到卫生间那块屏幕对应的设备别名 &lt;code&gt;toilet&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;解析出真实设备 比如ID：&lt;code&gt;48F6EE576429&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;按屏幕尺寸（296×152 px）生成一张黑白图片。&lt;/li&gt;
+&lt;li&gt;找到系统里能显示中文的字体（文泉驿正黑）。&lt;/li&gt;
+&lt;li&gt;把「忆江南」三个字放到尽可能大。&lt;/li&gt;
+&lt;li&gt;保留四边空白。&lt;/li&gt;
+&lt;li&gt;调用 MindReset 的图片 API，把图片&lt;strong&gt;贴&lt;/strong&gt;到屏幕上。&lt;/li&gt;
+&lt;li&gt;再通过飞书把原图发回来给我确认。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些步骤如果人工做，当然也可以。&lt;/p&gt;
+&lt;p&gt;你可以打开设计软件，建一个 296×152 像素的画布，选中文字体，调整字号，导出 PNG，再打开设备后台或者写 curl 请求，把图片推送过去。&lt;/p&gt;
+&lt;p&gt;但重点是：&lt;strong&gt;这次我没有做这些操作。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我只是用自然语言描述了我要的结果。&lt;/p&gt;
+&lt;p&gt;OpenClaw 把这句话拆成了可以执行的步骤，并且真的执行了。&lt;/p&gt;
+&lt;p&gt;这就是我觉得这类工具开始变得有用的地方。它不是又一个问答窗口，而是一个可以调用工具、读写文件、生成图片、访问 API、控制设备的本地智能体。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;有些提醒，不适合出现在手机里&lt;/h2&gt;
+&lt;p&gt;我们平时说“提醒”，很容易想到手机通知。&lt;/p&gt;
+&lt;p&gt;但手机通知适合的是即时信息，比如快递到了、会议快开始了、有人发消息了。&lt;/p&gt;
+&lt;p&gt;《忆江南》这种内容不是即时通知。它不需要震动，也不需要弹窗。它只需要在某个固定地方安静地出现，让人每天多看几次。&lt;/p&gt;
+&lt;p&gt;这就是墨水屏的价值。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;手机提醒&lt;/th&gt;
+&lt;th&gt;OpenClaw + MindReset 墨水屏&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;会打断当前动作&lt;/td&gt;
+&lt;td&gt;不打断，只是安静显示&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;很快消失&lt;/td&gt;
+&lt;td&gt;一直停留在那里&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;容易引导人继续刷手机&lt;/td&gt;
+&lt;td&gt;只显示一件事&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;适合即时消息&lt;/td&gt;
+&lt;td&gt;适合长期提醒&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;信息在 App 里&lt;/td&gt;
+&lt;td&gt;信息&lt;strong&gt;贴&lt;/strong&gt;在真实空间里&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;需要主动打开或查看&lt;/td&gt;
+&lt;td&gt;路过就能看到&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;所以，我不觉得这是一个“酷炫硬件玩法”。&lt;/p&gt;
+&lt;p&gt;它更像是一种家庭信息摆放方式的变化。&lt;/p&gt;
+&lt;p&gt;以前我们把信息放在手机里、App 里、群聊里、备忘录里。&lt;/p&gt;
+&lt;p&gt;现在，我们可以让 OpenClaw 把一部分信息&lt;strong&gt;贴&lt;/strong&gt;回家里的空间里。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;从一首诗开始，家里还能&lt;strong&gt;贴&lt;/strong&gt;哪些“轻提醒”？&lt;/h2&gt;
+&lt;p&gt;如果你家里也有类似的联网电子墨水屏，或者你正在考虑买一块，最值得尝试的不是复杂自动化，而是从很小的家庭提醒开始。&lt;/p&gt;
+&lt;p&gt;尤其是那些“重要，但不紧急”的信息。&lt;/p&gt;
+&lt;p&gt;比如孩子本周刚学的古诗。&lt;/p&gt;
+&lt;p&gt;如果每天只是在书桌前背，孩子会觉得这是学习任务。但如果它出现在刷牙、吃饭、出门这些生活场景里，压力会低很多。&lt;/p&gt;
+&lt;p&gt;下面这些玩法都可以从同一个思路扩展出来。&lt;/p&gt;
+&lt;h3&gt;1. 本周古诗&lt;/h3&gt;
+&lt;p&gt;卫生间显示诗名，饭桌旁显示一句诗，书桌旁显示完整诗文。&lt;/p&gt;
+&lt;p&gt;比如卫生间只显示：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;忆江南
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;或者只显示最容易忘的一句：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;春来江水绿如蓝
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;2. 每日英语单词&lt;/h3&gt;
+&lt;p&gt;每天一个单词，配一句很短的例句。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;remember
+记得，想起
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;刷牙时看一眼，比专门打开背单词 App 轻很多。&lt;/p&gt;
+&lt;h3&gt;3. 乘法口诀&lt;/h3&gt;
+&lt;p&gt;如果孩子最近在练某一组乘法口诀，可以只显示当天的一条。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="mf"&gt;7&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="err"&gt;×&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;8&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;56&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;不要一次显示太多。墨水屏最适合少量、稳定、反复出现的信息。&lt;/p&gt;
+&lt;h3&gt;4. 成语提醒&lt;/h3&gt;
+&lt;p&gt;每天一个成语，晚上吃饭时让孩子讲讲意思。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;画蛇添足
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这比直接塞给孩子一整页成语表更自然。&lt;/p&gt;
+&lt;h3&gt;5. 出门清单&lt;/h3&gt;
+&lt;p&gt;贴在玄关：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;水杯
+作业
+红领巾
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这个适合早上出门前看一眼。&lt;/p&gt;
+&lt;h3&gt;6. 睡前问题&lt;/h3&gt;
+&lt;p&gt;放在床头：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;今天最开心的事？
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;不是学习任务，而是引导孩子做一点表达和回顾。&lt;/p&gt;
+&lt;h3&gt;7. 家庭共读&lt;/h3&gt;
+&lt;p&gt;如果本周全家一起读一本书，可以每天显示一句摘录。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;今天读第 3 章
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3&gt;8. 低压力错题提醒&lt;/h3&gt;
+&lt;p&gt;不要显示“你又错了”。
+只显示一个关键词，让孩子自己回想。&lt;/p&gt;
+&lt;p&gt;比如数学里容易错的是“单位换算”，屏幕上就只显示：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;单位
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;提醒越轻，越容易长期存在。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;普通人不需要懂 API，只需要知道这三层&lt;/h2&gt;
+&lt;p&gt;如果你关心怎么入手，可以把这套东西拆成三层。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第一层是硬件&lt;/strong&gt;：一块可以联网、有开放 API 的电子墨水屏，比如 MindReset Dot。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第二层是智能体&lt;/strong&gt;：OpenClaw 或 Hermes Agent 这类工具，能理解你的自然语言指令，也能调用本地脚本和网络 API。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;第三层是场景&lt;/strong&gt;：孩子背诗、出门提醒、家庭共读、每日单词、错题复习。&lt;/p&gt;
+&lt;p&gt;真正有价值的是三层连起来。&lt;/p&gt;
+&lt;p&gt;如果只有屏幕，它只是一个可以显示东西的硬件。&lt;/p&gt;
+&lt;p&gt;如果只有 OpenClaw，它还停留在电脑里或者聊天窗口里。&lt;/p&gt;
+&lt;p&gt;但当 OpenClaw 能控制这块屏幕时，事情就变了。&lt;/p&gt;
+&lt;p&gt;你的家里多了一个可以被自然语言更新的信息位置。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;背后其实很简单：一句话变成一张图，再&lt;strong&gt;贴&lt;/strong&gt;到屏幕上&lt;/h2&gt;
+&lt;p&gt;如果你关心技术，背后其实并不神秘。&lt;/p&gt;
+&lt;p&gt;这次任务大致是这样完成的：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;自然语言指令
+→ OpenClaw 理解目标
+→ 找到卫生间屏幕设备 ID
+→ 生成 296×152 黑白 PNG 图片
+→ 用中文字体渲染「忆江南」
+→ 转成适合设备的图片格式
+→ 调用 MindReset 图片 API
+→ **贴**到电子墨水屏
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;一些实际参数是：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;屏幕尺寸：296 × 152 px
+图片格式：黑白 PNG
+生成工具：Python Pillow
+中文字体：文泉驿正黑
+设备别名：toilet
+推送方式：MindReset 图片 API
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这些技术细节对普通用户来说不用记。&lt;/p&gt;
+&lt;p&gt;关键是，OpenClaw 可以把这些步骤封装起来。下一次我不需要再关心图片尺寸、字体路径、base64 编码、API 请求格式。&lt;/p&gt;
+&lt;p&gt;我只需要说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“把这周的古诗&lt;strong&gt;贴&lt;/strong&gt;到卫生间屏幕。字大一点。只显示诗名。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;或者：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“明天开始，每天早上把一个英语单词&lt;strong&gt;贴&lt;/strong&gt;到玄关屏幕上。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这才是实操价值。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;这不是把家变成补习班&lt;/h2&gt;
+&lt;p&gt;我知道有人看到这里，可能会担心：这是不是又在给孩子增加学习压力？&lt;/p&gt;
+&lt;p&gt;我反而觉得，好的用法应该是相反的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不要把屏幕塞满学习内容。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不要每天推一大堆任务。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不要让孩子一刷牙就看到密密麻麻的知识点。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这块屏幕最适合的是：&lt;strong&gt;少量、温和、稳定、低压力&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;比如这次只显示三个字：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;忆江南&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;它不是完整课文，也不是背诵要求。&lt;/p&gt;
+&lt;p&gt;它只是一个入口。&lt;/p&gt;
+&lt;p&gt;孩子看到它，可能会想起老师这周讲过的诗，可能会顺口念一句，也可能只是多看一眼。&lt;/p&gt;
+&lt;p&gt;这就够了。&lt;/p&gt;
+&lt;p&gt;学习不一定总是正襟危坐地发生。有时候，生活里的轻提醒，反而更容易留下痕迹。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;当信息从手机里走出来&lt;/h2&gt;
+&lt;p&gt;过去几年，我们把越来越多的信息塞进手机。&lt;/p&gt;
+&lt;p&gt;日程在手机里，备忘在手机里，孩子作业在群里，家庭提醒也在群里。&lt;/p&gt;
+&lt;p&gt;结果是：什么都在手机里，最后什么都容易被信息流淹没。&lt;/p&gt;
+&lt;p&gt;电子墨水屏提供了一个反方向的可能。&lt;/p&gt;
+&lt;p&gt;它把一小部分信息从手机里拿出来，&lt;strong&gt;贴&lt;/strong&gt;回真实空间。&lt;/p&gt;
+&lt;p&gt;而 OpenClaw 这类智能体，让这件事变得更灵活。&lt;/p&gt;
+&lt;p&gt;你不用每次打开 App 去改内容，也不用手动上传图片。你只要用一句自然语言告诉它，你想让哪个角落显示什么。&lt;/p&gt;
+&lt;p&gt;卫生间可以显示本周古诗。&lt;/p&gt;
+&lt;p&gt;玄关可以显示出门清单。&lt;/p&gt;
+&lt;p&gt;冰箱可以显示今天晚饭安排。&lt;/p&gt;
+&lt;p&gt;书桌可以显示今天最重要的一件事。&lt;/p&gt;
+&lt;p&gt;这些都不是大场面，但很真实。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;最后，它只是安静地&lt;strong&gt;贴&lt;/strong&gt;在了那里&lt;/h2&gt;
+&lt;p&gt;那天晚上，孩子去刷牙。&lt;/p&gt;
+&lt;p&gt;他抬头看到卫生间墨水屏上的三个字：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;忆江南&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;也许他没有立刻完整背出来。&lt;/p&gt;
+&lt;p&gt;但这三个字已经把那首诗从课本里，带到了生活里。&lt;/p&gt;
+&lt;p&gt;正是因为&lt;strong&gt;总忘记&lt;/strong&gt;，我们才需要把它轻轻&lt;strong&gt;贴&lt;/strong&gt;在最日常的地方。不是任务，不是考试，只是一个每天都会路过、会看见的提醒。&lt;/p&gt;
+&lt;p&gt;这就是我觉得 OpenClaw 和 MindReset 这类设备组合起来很有意思的地方。&lt;/p&gt;
+&lt;p&gt;它不是又多了一个 App，也不是又多了一个需要盯着看的屏幕。&lt;/p&gt;
+&lt;p&gt;它让家里的某个角落，开始能听懂一句话，并且安静地帮你做一件小事。&lt;/p&gt;
+&lt;p&gt;OpenClaw 真正进入家庭，也许不是从一个会走路的机器人开始，而是从一块会被它更新的电子墨水屏开始。&lt;/p&gt;
+&lt;p&gt;扫码入群，一起交流 OpenClaw 玩法。&lt;/p&gt;</content><category term="AI"></category><category term="OpenClaw"></category><category term="MindReset"></category><category term="电子墨水屏"></category><category term="家庭教育"></category><category term="AI智能体"></category></entry><entry><title>用 龙虾🦞 监控 OpenRouter 免费模型上新</title><link href="https://hillerliao.github.io/openrouter-free-model-monitor-lobster.html" rel="alternate"></link><published>2026-04-24T00:00:00+08:00</published><updated>2026-04-24T00:00:00+08:00</updated><author><name>龙虾</name></author><id>tag:hillerliao.github.io,2026-04-24:/openrouter-free-model-monitor-lobster.html</id><summary type="html">&lt;h2&gt;1. 痛点：不想天天刷页面薅羊毛&lt;/h2&gt;
 &lt;p&gt;时不时会看到新闻说，又有哪个新模型在 OpenRouter 上提供限时免费体验。前几天打开 OpenRouter，发现某款 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;1. 痛点：不想天天刷页面薅羊毛&lt;/h2&gt;
 &lt;p&gt;时不时会看到新闻说，又有哪个新模型在 OpenRouter 上提供限时免费体验。前几天打开 OpenRouter，发现某款国产大模型可以免费用。作为一个经常薅免费模型羊毛的人，我的第一反应是——这上新多久了？我怎么才知道？&lt;/p&gt;
 &lt;p&gt;OpenRouter 是一个 LLM API 聚合平台，汇集了各家大模型，其中不少提供免费额度。问题是，免费模型的上下架没有固定规律：&lt;/p&gt;
