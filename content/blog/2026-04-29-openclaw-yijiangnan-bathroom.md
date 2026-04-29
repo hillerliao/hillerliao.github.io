@@ -386,3 +386,5 @@ remember
 OpenClaw 真正进入家庭，也许不是从一个会走路的机器人开始，而是从一块会被它更新的电子墨水屏开始。
 
 扫码入群，一起交流 OpenClaw 玩法。
+
+![OpenClaw 交流群二维码](../images/openclaw-group-qrcode.jpg)
