@@ -1,16 +1,10 @@
----
-title: 我不再相信AI Agent说的「执行成功」了
-date: 2026-04-30 15:31
-authors: hillerliao
-category: AI
-tags:
-  - AI Agent
-  - Hermes Agent
-  - 自动化
-  - 个人博客
-slug: hermes-agent-execution-success-verification
-summary: 一次延后提醒的小事，让我重新理解 AI Agent 的「执行成功」到底靠不靠谱。
----
+Title: 我不再相信AI Agent说的「执行成功」了
+Date: 2026-04-30
+Category: AI
+Tags: AI Agent, Hermes Agent, 自动化, 个人博客
+Slug: hermes-agent-execution-success-verification
+Author: hillerliao
+Summary: 一次延后提醒的小事，让我重新理解 AI Agent 的「执行成功」到底靠不靠谱。
 
 我最近把一些很碎的提醒，交给 Hermes Agent来处理。
 
