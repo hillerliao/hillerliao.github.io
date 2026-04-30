@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - AI</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/ai.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-04-30T15:31:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>我不再相信AI Agent说的「执行成功」了</title><link href="https://hillerliao.github.io/wo-bu-zai-xiang-xin-ai-agentshuo-de-zhi-xing-cheng-gong-liao.html" rel="alternate"></link><published>2026-04-30T15:31:00+08:00</published><updated>2026-04-30T15:31:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-30:/wo-bu-zai-xiang-xin-ai-agentshuo-de-zhi-xing-cheng-gong-liao.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;AI Agent&lt;/li&gt;
-&lt;li&gt;Hermes Agent&lt;/li&gt;
-&lt;li&gt;自动化&lt;/li&gt;
-&lt;li&gt;个人博客
-slug: hermes-agent-execution-success-verification
-summary: 一次延后提醒的小事，让我重新理解 AI Agent 的「执行成功」到底靠不靠谱。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;我最近把一些很碎 …&lt;/p&gt;</summary><content type="html">&lt;ul&gt;
-&lt;li&gt;AI Agent&lt;/li&gt;
-&lt;li&gt;Hermes Agent&lt;/li&gt;
-&lt;li&gt;自动化&lt;/li&gt;
-&lt;li&gt;个人博客
-slug: hermes-agent-execution-success-verification
-summary: 一次延后提醒的小事，让我重新理解 AI Agent 的「执行成功」到底靠不靠谱。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;我最近把一些很碎的提醒，交给 Hermes Agent来处理。&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>廖智海 - AI</title><link href="https://hillerliao.github.io/" rel="alternate"></link><link href="https://hillerliao.github.io/feeds/ai.atom.xml" rel="self"></link><id>https://hillerliao.github.io/</id><updated>2026-04-30T00:00:00+08:00</updated><subtitle>互联网产品折腾师</subtitle><entry><title>我不再相信AI Agent说的「执行成功」了</title><link href="https://hillerliao.github.io/hermes-agent-execution-success-verification.html" rel="alternate"></link><published>2026-04-30T00:00:00+08:00</published><updated>2026-04-30T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-30:/hermes-agent-execution-success-verification.html</id><summary type="html">&lt;p&gt;一次延后提醒的小事，让我重新理解 AI Agent 的「执行成功」到底靠不靠谱。&lt;/p&gt;</summary><content type="html">&lt;p&gt;我最近把一些很碎的提醒，交给 Hermes Agent来处理。&lt;/p&gt;
 &lt;p&gt;你可以先把它理解成一个接入微信、Telegram、飞书这些聊天工具的个人 AI 助理，不只是陪你聊天，也能调用工具，比如查资料、读文件、跑命令、管理定时任务。&lt;/p&gt;
 &lt;p&gt;这里说的提醒，不是手机闹钟，也不是微信自带功能。实际效果就是，我在微信里告诉 Hermes Agent，明天几点提醒我做什么，它接到指令后调用定时任务工具登记下来，到点再把提醒发回到微信里。&lt;/p&gt;
 &lt;p&gt;前一天我就是这么设了一个提醒，第二天上午9点提醒我去朝阳出入境大厅取港澳通行证。&lt;/p&gt;
@@ -118,7 +100,7 @@ summary: 一次延后提醒的小事，让我重新理解 AI Agent 的「执行�
 &lt;p&gt;如果你也在用 AI Agent 管定时任务，这里有一个简单的做法：&lt;strong&gt;让 Agent 马上发一条消息验证一下。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;别太相信 AI Agent 说的「执行成功」。&lt;strong&gt;验证过的「执行成功」&lt;/strong&gt;才是真的成功。&lt;/p&gt;
 &lt;p&gt;扫码入群，交流 AI Agent 使用体验。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="扫码入群，交流 AI Agent 使用体验" src="https://hillerliao.github.io/images/openclaw-group-qrcode.jpg"&gt;&lt;/p&gt;</content><category term="AI"></category></entry><entry><title>我让 OpenClaw 把《忆江南》贴在卫生间 提醒孩子背古诗</title><link href="https://hillerliao.github.io/openclaw-yijiangnan-bathroom.html" rel="alternate"></link><published>2026-04-29T00:00:00+08:00</published><updated>2026-04-29T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-29:/openclaw-yijiangnan-bathroom.html</id><summary type="html">&lt;p&gt;用 OpenClaw 把《忆江南》做成图片，推送到卫生间的 MindReset 电子墨水屏上，让孩子在刷牙时自然想起古诗。&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="卫生间电子墨水屏上显示《忆江南》" src="../images/openclaw-yijiangnan-bathroom.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="扫码入群，交流 AI Agent 使用体验" src="https://hillerliao.github.io/images/openclaw-group-qrcode.jpg"&gt;&lt;/p&gt;</content><category term="AI"></category><category term="AI Agent"></category><category term="Hermes Agent"></category><category term="自动化"></category><category term="个人博客"></category></entry><entry><title>我让 OpenClaw 把《忆江南》贴在卫生间 提醒孩子背古诗</title><link href="https://hillerliao.github.io/openclaw-yijiangnan-bathroom.html" rel="alternate"></link><published>2026-04-29T00:00:00+08:00</published><updated>2026-04-29T00:00:00+08:00</updated><author><name>hillerliao</name></author><id>tag:hillerliao.github.io,2026-04-29:/openclaw-yijiangnan-bathroom.html</id><summary type="html">&lt;p&gt;用 OpenClaw 把《忆江南》做成图片，推送到卫生间的 MindReset 电子墨水屏上，让孩子在刷牙时自然想起古诗。&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="卫生间电子墨水屏上显示《忆江南》" src="../images/openclaw-yijiangnan-bathroom.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;孩子这周学了白居易的《忆江南》。&lt;/p&gt;
 &lt;p&gt;按照以前的经验，刚学完几天还记着，但过不了多久就会忘干净。要是专门提醒他背，又容易变成任务，反而让他更抵触。&lt;/p&gt;
 &lt;p&gt;我突然想到一个地方：&lt;strong&gt;卫生间&lt;/strong&gt;。&lt;/p&gt;
