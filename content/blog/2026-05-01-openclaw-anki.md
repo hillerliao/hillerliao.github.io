@@ -6,7 +6,7 @@ Slug: openclaw-anki
 Author: hillerliao
 Summary: 让 OpenClaw 接管 Anki，把建牌组、批量制卡、搜索和复习提醒变成一句话就能完成的日常操作。
 
-![图片](https://mmbiz.qpic.cn/mmbiz_png/8cp3SIe2bhgrxoZPiasIlvDlRNO1ojadBrzOXylduiakp9FRXVlZicCyH2o1dFGLuMGEsWWGdSUguM5brmNqMSaQmDMFIG7ibJibCWibxAB2wTp7c/640?wx_fmt=png&from=appmsg&watermark=1&tp=webp&wxfrom=5&wx_lazy=1#imgIndex=0)
+![OpenClaw + Anki 文章封面](../images/openclaw-anki-cover.webp)
 
 我最近在干一件事：把我所有常用的软件，都交给 OpenClaw 管。
 
